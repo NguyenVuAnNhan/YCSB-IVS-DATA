@@ -25,7 +25,7 @@ METRICS = [
 
 def extract_suffix(csv_path: Path) -> str:
     stem = csv_path.stem
-    m = re.match(r"^postgresql_run\d+_(.+)$", stem)
+    m = re.match(r"^neo4j_run\d+_(.+)$", stem)
     if m:
         return m.group(1)
     return "unknown"
@@ -196,11 +196,11 @@ def make_summary_plot(
 
 
 def main() -> None:
-    files = sorted(DATA_DIR.glob("postgresql_*.csv"))
+    files = sorted(DATA_DIR.glob("neo4j_*.csv"))
     if not files:
-        raise RuntimeError("No PostgreSQL files found in DATA/")
+        raise RuntimeError("No Neo4j files found in DATA/")
 
-    base_out_dir = RESULTS_DIR / "postgresql"
+    base_out_dir = RESULTS_DIR / "neo4j"
     base_out_dir.mkdir(parents=True, exist_ok=True)
 
     files_by_suffix: dict[str, list[Path]] = {}
@@ -215,7 +215,7 @@ def main() -> None:
         generated_for_suffix = 0
 
         for metric_col, folder_name, metric_label in METRICS:
-            metric_dir = suffix_root / f"postgresql_epoch_{folder_name}"
+            metric_dir = suffix_root / f"neo4j_epoch_{folder_name}"
             run_out_dir = metric_dir / "run_phases"
             extend_out_dir = metric_dir / "extend_phase"
             run_out_dir.mkdir(parents=True, exist_ok=True)
