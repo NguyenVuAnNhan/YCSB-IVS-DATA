@@ -1,0 +1,9 @@
+---
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: cosmo
+---
+
+{{< include DATA_DICTIONARY.md >}}

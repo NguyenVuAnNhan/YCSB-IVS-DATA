@@ -2,6 +2,8 @@
 
 This repo contains benchmark CSVs in `DATA/` and plotting/analysis scripts in `scripts/`.
 
+For raw column definitions and metric meanings, see `DATA_DICTIONARY.qmd` or the rendered `DATA_DICTIONARY.html`.
+
 ## 1) Prerequisites
 
 Use Python 3 with:
@@ -84,4 +86,3 @@ python3 scripts/organize_and_summarize_postgresql_plots.py
    - `python3 scripts/generate_db_epoch_outputs.py --db neo4j`
 3. (Optional) Refresh global summary:
    - `python3 scripts/benchmark_analysis.py`
-
