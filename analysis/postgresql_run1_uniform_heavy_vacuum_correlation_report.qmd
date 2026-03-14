@@ -127,6 +127,7 @@ def prepare_phase(df: pd.DataFrame, phase: str) -> pd.DataFrame:
     sub["wal_bytes_per_op"] = sub["d_wal_bytes"] / sub["Operations"]
     sub["wal_records_per_op"] = sub["d_wal_records"] / sub["Operations"]
     sub["buffer_alloc_per_op"] = sub["d_buffers_alloc"] / sub["Operations"]
+    sub["log10_throughput"] = np.log10(sub["Throughput(ops/sec)"].where(sub["Throughput(ops/sec)"] > 0))
 
     return sub
 
@@ -467,6 +468,35 @@ plt.show()
 ```
 
 The overview already shows that `reference` does not behave like the other repeated phases. Its performance stays comparatively flat or slightly improves, while `run`, `clean-run`, `avg-run`, and `extend` all drift toward lower throughput and higher latency.
+
+## Log Throughput Vs Cache-Hit Ratio
+
+```{python}
+fig, axes = plt.subplots(len(ANALYSIS_PHASES), 1, figsize=(10, 16), sharex=False)
+
+for row_idx, phase in enumerate(ANALYSIS_PHASES):
+    sub = phase_data[phase].dropna(subset=["cache_hit_ratio", "log10_throughput"])
+    color = PHASE_COLORS[phase]
+    x = 100 * sub["cache_hit_ratio"]
+    y = sub["log10_throughput"]
+    xs = np.linspace(x.min(), x.max(), 200)
+    slope, intercept = np.polyfit(x, y, 1)
+
+    axes[row_idx].scatter(x, y, color=color, alpha=0.82, s=28)
+    axes[row_idx].plot(xs, slope * xs + intercept, color=color, linewidth=2)
+    axes[row_idx].set_title(f"{phase}: log10(throughput) vs cache-hit ratio")
+    axes[row_idx].set_xlabel("Cache-hit ratio (%)")
+    axes[row_idx].set_ylabel("log10(ops/sec)")
+
+fig.tight_layout()
+plt.show()
+```
+
+The log transform makes the phase shapes easier to compare on one visual scale:
+
+- `run`, `clean-run`, and `avg-run` still show strong downward structure as cache-hit ratio falls.
+- `extend` remains clearly negative too, but its relationship looks smoother once the raw throughput scale is compressed.
+- `reference` stays comparatively flat, which reinforces the earlier conclusion that it behaves differently from the degrading phases.
 
 ## Phase Details
 
