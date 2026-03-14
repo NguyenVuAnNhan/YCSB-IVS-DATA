@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Phase-by-Phase Correlation Analysis: postgresql_run1_uniform_heavy_vacuum.csv</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="postgresql_run1_uniform_heavy_vacuum_correlation_report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="postgresql_run1_uniform_heavy_vacuum_correlation_report_files/libs/quarto-html/quarto.js"></script>
+<script src="postgresql_run1_uniform_heavy_vacuum_correlation_report_files/libs/quarto-html/popper.min.js"></script>
+<script src="postgresql_run1_uniform_heavy_vacuum_correlation_report_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="postgresql_run1_uniform_heavy_vacuum_correlation_report_files/libs/quarto-html/anchor.min.js"></script>
+<link href="postgresql_run1_uniform_heavy_vacuum_correlation_report_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="postgresql_run1_uniform_heavy_vacuum_correlation_report_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="postgresql_run1_uniform_heavy_vacuum_correlation_report_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="postgresql_run1_uniform_heavy_vacuum_correlation_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="postgresql_run1_uniform_heavy_vacuum_correlation_report_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">1</span> Overview</a></li>
+  <li><a href="#load-and-prepare-the-data" id="toc-load-and-prepare-the-data" class="nav-link" data-scroll-target="#load-and-prepare-the-data"><span class="header-section-number">2</span> Load And Prepare The Data</a></li>
+  <li><a href="#phase-inventory" id="toc-phase-inventory" class="nav-link" data-scroll-target="#phase-inventory"><span class="header-section-number">3</span> Phase Inventory</a></li>
+  <li><a href="#cross-phase-summary" id="toc-cross-phase-summary" class="nav-link" data-scroll-target="#cross-phase-summary"><span class="header-section-number">4</span> Cross-Phase Summary</a></li>
+  <li><a href="#cross-phase-eda-overview" id="toc-cross-phase-eda-overview" class="nav-link" data-scroll-target="#cross-phase-eda-overview"><span class="header-section-number">5</span> Cross-Phase EDA Overview</a></li>
+  <li><a href="#phase-details" id="toc-phase-details" class="nav-link" data-scroll-target="#phase-details"><span class="header-section-number">6</span> Phase Details</a>
+  <ul class="collapse">
+  <li><a href="#extend" id="toc-extend" class="nav-link" data-scroll-target="#extend"><span class="header-section-number">6.1</span> <code>extend</code></a></li>
+  <li><a href="#run" id="toc-run" class="nav-link" data-scroll-target="#run"><span class="header-section-number">6.2</span> <code>run</code></a></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference"><span class="header-section-number">6.3</span> <code>reference</code></a></li>
+  <li><a href="#clean-run" id="toc-clean-run" class="nav-link" data-scroll-target="#clean-run"><span class="header-section-number">6.4</span> <code>clean-run</code></a></li>
+  <li><a href="#avg-run" id="toc-avg-run" class="nav-link" data-scroll-target="#avg-run"><span class="header-section-number">6.5</span> <code>avg-run</code></a></li>
+  </ul></li>
+  <li><a href="#regression-comparison-across-phases" id="toc-regression-comparison-across-phases" class="nav-link" data-scroll-target="#regression-comparison-across-phases"><span class="header-section-number">7</span> Regression Comparison Across Phases</a></li>
+  <li><a href="#final-takeaway" id="toc-final-takeaway" class="nav-link" data-scroll-target="#final-takeaway"><span class="header-section-number">8</span> Final Takeaway</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Phase-by-Phase Correlation Analysis: postgresql_run1_uniform_heavy_vacuum.csv</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="overview" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="overview"><span class="header-section-number">1</span> Overview</h2>
+<p>This report updates the earlier analysis by treating each repeated benchmark phase as its own unit of analysis:</p>
+<ul>
+<li><code>extend</code></li>
+<li><code>run</code></li>
+<li><code>reference</code></li>
+<li><code>clean-run</code></li>
+<li><code>avg-run</code></li>
+</ul>
+<p>The single-row <code>load</code> phase is excluded from correlation work because it does not have enough temporal depth for EDA or per-epoch change analysis.</p>
+<p>The PostgreSQL counters in this dataset are cumulative, so the report uses two complementary views:</p>
+<ul>
+<li>monotonic correlations on raw per-phase series, which capture long-run drift</li>
+<li>first-difference correlations on per-epoch changes, which reduce the risk of mistaking “everything grows over time” for a direct relationship</li>
+</ul>
+</section>
+<section id="load-and-prepare-the-data" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="load-and-prepare-the-data"><span class="header-section-number">2</span> Load And Prepare The Data</h2>
+<div id="3ebade2e" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">dataset</th>
+<th data-quarto-table-cell-role="th">rows</th>
+<th data-quarto-table-cell-role="th">epochs</th>
+<th data-quarto-table-cell-role="th">phases_present</th>
+<th data-quarto-table-cell-role="th">analyzed_phases</th>
+<th data-quarto-table-cell-role="th">operations_present</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>postgresql_run1_uniform_heavy_vacuum.csv</td>
+<td>501</td>
+<td>101</td>
+<td>avg-run, clean-run, extend, load, reference, run</td>
+<td>extend, run, reference, clean-run, avg-run</td>
+<td>EXTEND, INSERT, READ</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="phase-inventory" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="phase-inventory"><span class="header-section-number">3</span> Phase Inventory</h2>
+<div id="4e1f75eb" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Phase</th>
+<th data-quarto-table-cell-role="th">Operation</th>
+<th data-quarto-table-cell-role="th">rows</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>avg-run</td>
+<td>READ</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>clean-run</td>
+<td>READ</td>
+<td>100</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>extend</td>
+<td>EXTEND</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>load</td>
+<td>INSERT</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>reference</td>
+<td>READ</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>run</td>
+<td>READ</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>All repeated phases except <code>load</code> contain 100 epochs, which makes them suitable for separate EDA and within-phase correlation analysis.</p>
+</section>
+<section id="cross-phase-summary" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="cross-phase-summary"><span class="header-section-number">4</span> Cross-Phase Summary</h2>
+<div id="cac86bb7" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_340b7" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_340b7_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Operation</th>
+<th id="T_340b7_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Epochs</th>
+<th id="T_340b7_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Throughput change %</th>
+<th id="T_340b7_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Avg latency change %</th>
+<th id="T_340b7_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">P95 latency change %</th>
+<th id="T_340b7_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Cache hit change pts</th>
+<th id="T_340b7_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Top monotonic driver</th>
+<th id="T_340b7_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Top monotonic rho</th>
+<th id="T_340b7_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">Top first-diff driver</th>
+<th id="T_340b7_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">Top first-diff r</th>
+</tr>
+<tr class="odd">
+<th class="index_name level0" data-quarto-table-cell-role="th">Phase</th>
+<th class="blank col0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th class="blank col1" data-quarto-table-cell-role="th">&nbsp;</th>
+<th class="blank col2" data-quarto-table-cell-role="th">&nbsp;</th>
+<th class="blank col3" data-quarto-table-cell-role="th">&nbsp;</th>
+<th class="blank col4" data-quarto-table-cell-role="th">&nbsp;</th>
+<th class="blank col5" data-quarto-table-cell-role="th">&nbsp;</th>
+<th class="blank col6" data-quarto-table-cell-role="th">&nbsp;</th>
+<th class="blank col7" data-quarto-table-cell-role="th">&nbsp;</th>
+<th class="blank col8" data-quarto-table-cell-role="th">&nbsp;</th>
+<th class="blank col9" data-quarto-table-cell-role="th">&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_340b7_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">extend</td>
+<td id="T_340b7_row0_col0" class="data row0 col0">EXTEND</td>
+<td id="T_340b7_row0_col1" class="data row0 col1">100</td>
+<td id="T_340b7_row0_col2" class="data row0 col2">-46.3</td>
+<td id="T_340b7_row0_col3" class="data row0 col3">+86.5</td>
+<td id="T_340b7_row0_col4" class="data row0 col4">+56.3</td>
+<td id="T_340b7_row0_col5" class="data row0 col5">-27.690</td>
+<td id="T_340b7_row0_col6" class="data row0 col6">Cache-hit ratio</td>
+<td id="T_340b7_row0_col7" class="data row0 col7">-0.986</td>
+<td id="T_340b7_row0_col8" class="data row0 col8">WAL bytes per op</td>
+<td id="T_340b7_row0_col9" class="data row0 col9">+0.398</td>
+</tr>
+<tr class="even">
+<td id="T_340b7_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">run</td>
+<td id="T_340b7_row1_col0" class="data row1 col0">READ</td>
+<td id="T_340b7_row1_col1" class="data row1 col1">100</td>
+<td id="T_340b7_row1_col2" class="data row1 col2">-85.5</td>
+<td id="T_340b7_row1_col3" class="data row1 col3">+650.8</td>
+<td id="T_340b7_row1_col4" class="data row1 col4">+526.1</td>
+<td id="T_340b7_row1_col5" class="data row1 col5">-27.792</td>
+<td id="T_340b7_row1_col6" class="data row1 col6">Cache-hit ratio</td>
+<td id="T_340b7_row1_col7" class="data row1 col7">-0.996</td>
+<td id="T_340b7_row1_col8" class="data row1 col8">Delta checkpoint write time</td>
+<td id="T_340b7_row1_col9" class="data row1 col9">-0.205</td>
+</tr>
+<tr class="odd">
+<td id="T_340b7_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">reference</td>
+<td id="T_340b7_row2_col0" class="data row2 col0">READ</td>
+<td id="T_340b7_row2_col1" class="data row2 col1">100</td>
+<td id="T_340b7_row2_col2" class="data row2 col2">+14.8</td>
+<td id="T_340b7_row2_col3" class="data row2 col3">-14.7</td>
+<td id="T_340b7_row2_col4" class="data row2 col4">-9.5</td>
+<td id="T_340b7_row2_col5" class="data row2 col5">-0.593</td>
+<td id="T_340b7_row2_col6" class="data row2 col6">Block reads per op</td>
+<td id="T_340b7_row2_col7" class="data row2 col7">-0.180</td>
+<td id="T_340b7_row2_col8" class="data row2 col8">Block reads per op</td>
+<td id="T_340b7_row2_col9" class="data row2 col9">-0.102</td>
+</tr>
+<tr class="even">
+<td id="T_340b7_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">clean-run</td>
+<td id="T_340b7_row3_col0" class="data row3 col0">READ</td>
+<td id="T_340b7_row3_col1" class="data row3 col1">100</td>
+<td id="T_340b7_row3_col2" class="data row3 col2">-79.3</td>
+<td id="T_340b7_row3_col3" class="data row3 col3">+420.4</td>
+<td id="T_340b7_row3_col4" class="data row3 col4">+366.7</td>
+<td id="T_340b7_row3_col5" class="data row3 col5">-19.696</td>
+<td id="T_340b7_row3_col6" class="data row3 col6">Buffer allocs per op</td>
+<td id="T_340b7_row3_col7" class="data row3 col7">+0.989</td>
+<td id="T_340b7_row3_col8" class="data row3 col8">Buffer allocs per op</td>
+<td id="T_340b7_row3_col9" class="data row3 col9">-0.165</td>
+</tr>
+<tr class="odd">
+<td id="T_340b7_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">avg-run</td>
+<td id="T_340b7_row4_col0" class="data row4 col0">READ</td>
+<td id="T_340b7_row4_col1" class="data row4 col1">100</td>
+<td id="T_340b7_row4_col2" class="data row4 col2">-81.7</td>
+<td id="T_340b7_row4_col3" class="data row4 col3">+493.3</td>
+<td id="T_340b7_row4_col4" class="data row4 col4">+417.8</td>
+<td id="T_340b7_row4_col5" class="data row4 col5">-19.789</td>
+<td id="T_340b7_row4_col6" class="data row4 col6">Buffer allocs per op</td>
+<td id="T_340b7_row4_col7" class="data row4 col7">+0.991</td>
+<td id="T_340b7_row4_col8" class="data row4 col8">Buffer allocs per op</td>
+<td id="T_340b7_row4_col9" class="data row4 col9">+0.242</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<ul>
+<li><code>run</code>, <code>clean-run</code>, and <code>avg-run</code> all show strong long-run degradation: throughput falls by <strong>85.5%</strong>, <strong>79.3%</strong>, and <strong>81.7%</strong> respectively, while average latency grows sharply.</li>
+<li><code>extend</code> also degrades, but less severely on throughput than the read-oriented run-family phases. Its strongest short-run signal is <code>WAL bytes per op</code> with <code>r=+0.398</code>, which keeps the WAL story visible even after detrending.</li>
+<li><code>reference</code> is the structural outlier: throughput improves by <strong>14.8%</strong>, average latency improves by <strong>14.7%</strong>, and cache-hit ratio changes by only <strong>-0.593</strong> points.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="cross-phase-eda-overview" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="cross-phase-eda-overview"><span class="header-section-number">5</span> Cross-Phase EDA Overview</h2>
+<div id="c196b32b" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postgresql_run1_uniform_heavy_vacuum_correlation_report_files/figure-html/cell-5-output-1.png" width="1335" height="1637" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The overview already shows that <code>reference</code> does not behave like the other repeated phases. Its performance stays comparatively flat or slightly improves, while <code>run</code>, <code>clean-run</code>, <code>avg-run</code>, and <code>extend</code> all drift toward lower throughput and higher latency.</p>
+</section>
+<section id="phase-details" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="phase-details"><span class="header-section-number">6</span> Phase Details</h2>
+<section id="extend" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="extend"><span class="header-section-number">6.1</span> <code>extend</code></h3>
+<div id="94460ce8" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_245d2" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_245d2_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Phase</th>
+<th id="T_245d2_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Operation</th>
+<th id="T_245d2_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Epochs</th>
+<th id="T_245d2_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Throughput change %</th>
+<th id="T_245d2_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Avg latency change %</th>
+<th id="T_245d2_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">P95 latency change %</th>
+<th id="T_245d2_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Cache hit change pts</th>
+<th id="T_245d2_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Top monotonic driver</th>
+<th id="T_245d2_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">Top monotonic rho</th>
+<th id="T_245d2_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">Top first-diff driver</th>
+<th id="T_245d2_level0_col10" class="col_heading level0 col10" data-quarto-table-cell-role="th">Top first-diff r</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_245d2_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_245d2_row0_col0" class="data row0 col0">extend</td>
+<td id="T_245d2_row0_col1" class="data row0 col1">EXTEND</td>
+<td id="T_245d2_row0_col2" class="data row0 col2">100</td>
+<td id="T_245d2_row0_col3" class="data row0 col3">-46.3</td>
+<td id="T_245d2_row0_col4" class="data row0 col4">+86.5</td>
+<td id="T_245d2_row0_col5" class="data row0 col5">+56.3</td>
+<td id="T_245d2_row0_col6" class="data row0 col6">-27.690</td>
+<td id="T_245d2_row0_col7" class="data row0 col7">Cache-hit ratio</td>
+<td id="T_245d2_row0_col8" class="data row0 col8">-0.986</td>
+<td id="T_245d2_row0_col9" class="data row0 col9">WAL bytes per op</td>
+<td id="T_245d2_row0_col10" class="data row0 col10">+0.398</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postgresql_run1_uniform_heavy_vacuum_correlation_report_files/figure-html/cell-6-output-2.png" width="1191" height="758" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><strong>Top monotonic correlations</strong></p>
+</div>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_9dd8b" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_9dd8b_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target</th>
+<th id="T_9dd8b_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Metric</th>
+<th id="T_9dd8b_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Spearman rho</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_9dd8b_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_9dd8b_row0_col0" class="data row0 col0">Throughput</td>
+<td id="T_9dd8b_row0_col1" class="data row0 col1">Cache-hit ratio</td>
+<td id="T_9dd8b_row0_col2" class="data row0 col2">+0.986</td>
+</tr>
+<tr class="even">
+<td id="T_9dd8b_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_9dd8b_row1_col0" class="data row1 col0">Throughput</td>
+<td id="T_9dd8b_row1_col1" class="data row1 col1">WAL bytes per op</td>
+<td id="T_9dd8b_row1_col2" class="data row1 col2">-0.986</td>
+</tr>
+<tr class="odd">
+<td id="T_9dd8b_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_9dd8b_row2_col0" class="data row2 col0">Throughput</td>
+<td id="T_9dd8b_row2_col1" class="data row2 col1">Buffer allocs per op</td>
+<td id="T_9dd8b_row2_col2" class="data row2 col2">-0.986</td>
+</tr>
+<tr class="even">
+<td id="T_9dd8b_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_9dd8b_row3_col0" class="data row3 col0">Throughput</td>
+<td id="T_9dd8b_row3_col1" class="data row3 col1">Block reads per op</td>
+<td id="T_9dd8b_row3_col2" class="data row3 col2">-0.986</td>
+</tr>
+<tr class="odd">
+<td id="T_9dd8b_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_9dd8b_row4_col0" class="data row4 col0">Average latency</td>
+<td id="T_9dd8b_row4_col1" class="data row4 col1">Cache-hit ratio</td>
+<td id="T_9dd8b_row4_col2" class="data row4 col2">-0.986</td>
+</tr>
+<tr class="even">
+<td id="T_9dd8b_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_9dd8b_row5_col0" class="data row5 col0">Average latency</td>
+<td id="T_9dd8b_row5_col1" class="data row5 col1">WAL bytes per op</td>
+<td id="T_9dd8b_row5_col2" class="data row5 col2">+0.986</td>
+</tr>
+<tr class="odd">
+<td id="T_9dd8b_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_9dd8b_row6_col0" class="data row6 col0">Average latency</td>
+<td id="T_9dd8b_row6_col1" class="data row6 col1">Buffer allocs per op</td>
+<td id="T_9dd8b_row6_col2" class="data row6 col2">+0.986</td>
+</tr>
+<tr class="even">
+<td id="T_9dd8b_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_9dd8b_row7_col0" class="data row7 col0">Average latency</td>
+<td id="T_9dd8b_row7_col1" class="data row7 col1">Block reads per op</td>
+<td id="T_9dd8b_row7_col2" class="data row7 col2">+0.986</td>
+</tr>
+<tr class="odd">
+<td id="T_9dd8b_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_9dd8b_row8_col0" class="data row8 col0">P95 latency</td>
+<td id="T_9dd8b_row8_col1" class="data row8 col1">Block reads per op</td>
+<td id="T_9dd8b_row8_col2" class="data row8 col2">+0.854</td>
+</tr>
+<tr class="even">
+<td id="T_9dd8b_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_9dd8b_row9_col0" class="data row9 col0">P95 latency</td>
+<td id="T_9dd8b_row9_col1" class="data row9 col1">Buffer allocs per op</td>
+<td id="T_9dd8b_row9_col2" class="data row9 col2">+0.853</td>
+</tr>
+<tr class="odd">
+<td id="T_9dd8b_level0_row10" class="row_heading level0 row10" data-quarto-table-cell-role="th">10</td>
+<td id="T_9dd8b_row10_col0" class="data row10 col0">P95 latency</td>
+<td id="T_9dd8b_row10_col1" class="data row10 col1">WAL bytes per op</td>
+<td id="T_9dd8b_row10_col2" class="data row10 col2">+0.853</td>
+</tr>
+<tr class="even">
+<td id="T_9dd8b_level0_row11" class="row_heading level0 row11" data-quarto-table-cell-role="th">11</td>
+<td id="T_9dd8b_row11_col0" class="data row11 col0">P95 latency</td>
+<td id="T_9dd8b_row11_col1" class="data row11 col1">Cache-hit ratio</td>
+<td id="T_9dd8b_row11_col2" class="data row11 col2">-0.852</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><strong>Top first-difference correlations</strong></p>
+</div>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_b13d7" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_b13d7_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target</th>
+<th id="T_b13d7_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Metric</th>
+<th id="T_b13d7_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">First-diff r</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_b13d7_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_b13d7_row0_col0" class="data row0 col0">Throughput</td>
+<td id="T_b13d7_row0_col1" class="data row0 col1">WAL bytes per op</td>
+<td id="T_b13d7_row0_col2" class="data row0 col2">-0.284</td>
+</tr>
+<tr class="even">
+<td id="T_b13d7_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_b13d7_row1_col0" class="data row1 col0">Throughput</td>
+<td id="T_b13d7_row1_col1" class="data row1 col1">Block hits per op</td>
+<td id="T_b13d7_row1_col2" class="data row1 col2">-0.272</td>
+</tr>
+<tr class="odd">
+<td id="T_b13d7_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_b13d7_row2_col0" class="data row2 col0">Throughput</td>
+<td id="T_b13d7_row2_col1" class="data row2 col1">Delta checkpoint write time</td>
+<td id="T_b13d7_row2_col2" class="data row2 col2">-0.252</td>
+</tr>
+<tr class="even">
+<td id="T_b13d7_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_b13d7_row3_col0" class="data row3 col0">Throughput</td>
+<td id="T_b13d7_row3_col1" class="data row3 col1">WAL records per op</td>
+<td id="T_b13d7_row3_col2" class="data row3 col2">-0.157</td>
+</tr>
+<tr class="odd">
+<td id="T_b13d7_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_b13d7_row4_col0" class="data row4 col0">Average latency</td>
+<td id="T_b13d7_row4_col1" class="data row4 col1">WAL bytes per op</td>
+<td id="T_b13d7_row4_col2" class="data row4 col2">+0.398</td>
+</tr>
+<tr class="even">
+<td id="T_b13d7_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_b13d7_row5_col0" class="data row5 col0">Average latency</td>
+<td id="T_b13d7_row5_col1" class="data row5 col1">Delta checkpoint sync time</td>
+<td id="T_b13d7_row5_col2" class="data row5 col2">+0.235</td>
+</tr>
+<tr class="odd">
+<td id="T_b13d7_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_b13d7_row6_col0" class="data row6 col0">Average latency</td>
+<td id="T_b13d7_row6_col1" class="data row6 col1">WAL records per op</td>
+<td id="T_b13d7_row6_col2" class="data row6 col2">+0.221</td>
+</tr>
+<tr class="even">
+<td id="T_b13d7_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_b13d7_row7_col0" class="data row7 col0">Average latency</td>
+<td id="T_b13d7_row7_col1" class="data row7 col1">Delta checkpoint write time</td>
+<td id="T_b13d7_row7_col2" class="data row7 col2">+0.209</td>
+</tr>
+<tr class="odd">
+<td id="T_b13d7_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_b13d7_row8_col0" class="data row8 col0">P95 latency</td>
+<td id="T_b13d7_row8_col1" class="data row8 col1">Delta checkpoint write time</td>
+<td id="T_b13d7_row8_col2" class="data row8 col2">+0.156</td>
+</tr>
+<tr class="even">
+<td id="T_b13d7_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_b13d7_row9_col0" class="data row9 col0">P95 latency</td>
+<td id="T_b13d7_row9_col1" class="data row9 col1">WAL bytes per op</td>
+<td id="T_b13d7_row9_col2" class="data row9 col2">+0.132</td>
+</tr>
+<tr class="odd">
+<td id="T_b13d7_level0_row10" class="row_heading level0 row10" data-quarto-table-cell-role="th">10</td>
+<td id="T_b13d7_row10_col0" class="data row10 col0">P95 latency</td>
+<td id="T_b13d7_row10_col1" class="data row10 col1">Cache-hit ratio</td>
+<td id="T_b13d7_row10_col2" class="data row10 col2">+0.098</td>
+</tr>
+<tr class="even">
+<td id="T_b13d7_level0_row11" class="row_heading level0 row11" data-quarto-table-cell-role="th">11</td>
+<td id="T_b13d7_row11_col0" class="data row11 col0">P95 latency</td>
+<td id="T_b13d7_row11_col1" class="data row11 col1">Delta checkpoint sync time</td>
+<td id="T_b13d7_row11_col2" class="data row11 col2">-0.090</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<ul>
+<li>The strongest long-run driver for average latency in this phase is <code>Cache-hit ratio</code> (<code>rho=-0.986</code>).</li>
+<li>This phase degrades materially: throughput changes by -46.3% and average latency changes by 86.5%, alongside a cache-hit shift of -27.690 points.</li>
+<li>After detrending, the clearest same-step signal for average latency is <code>WAL bytes per op</code> (<code>r=+0.398</code>), so this metric still moves with short-run latency swings.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="run" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="run"><span class="header-section-number">6.2</span> <code>run</code></h3>
+<div id="3f6b4419" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_b8b99" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_b8b99_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Phase</th>
+<th id="T_b8b99_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Operation</th>
+<th id="T_b8b99_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Epochs</th>
+<th id="T_b8b99_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Throughput change %</th>
+<th id="T_b8b99_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Avg latency change %</th>
+<th id="T_b8b99_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">P95 latency change %</th>
+<th id="T_b8b99_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Cache hit change pts</th>
+<th id="T_b8b99_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Top monotonic driver</th>
+<th id="T_b8b99_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">Top monotonic rho</th>
+<th id="T_b8b99_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">Top first-diff driver</th>
+<th id="T_b8b99_level0_col10" class="col_heading level0 col10" data-quarto-table-cell-role="th">Top first-diff r</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_b8b99_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_b8b99_row0_col0" class="data row0 col0">run</td>
+<td id="T_b8b99_row0_col1" class="data row0 col1">READ</td>
+<td id="T_b8b99_row0_col2" class="data row0 col2">100</td>
+<td id="T_b8b99_row0_col3" class="data row0 col3">-85.5</td>
+<td id="T_b8b99_row0_col4" class="data row0 col4">+650.8</td>
+<td id="T_b8b99_row0_col5" class="data row0 col5">+526.1</td>
+<td id="T_b8b99_row0_col6" class="data row0 col6">-27.792</td>
+<td id="T_b8b99_row0_col7" class="data row0 col7">Cache-hit ratio</td>
+<td id="T_b8b99_row0_col8" class="data row0 col8">-0.996</td>
+<td id="T_b8b99_row0_col9" class="data row0 col9">Delta checkpoint write time</td>
+<td id="T_b8b99_row0_col10" class="data row0 col10">-0.205</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postgresql_run1_uniform_heavy_vacuum_correlation_report_files/figure-html/cell-7-output-2.png" width="1191" height="758" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><strong>Top monotonic correlations</strong></p>
+</div>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_34361" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_34361_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target</th>
+<th id="T_34361_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Metric</th>
+<th id="T_34361_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Spearman rho</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_34361_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_34361_row0_col0" class="data row0 col0">Throughput</td>
+<td id="T_34361_row0_col1" class="data row0 col1">Cache-hit ratio</td>
+<td id="T_34361_row0_col2" class="data row0 col2">+0.996</td>
+</tr>
+<tr class="even">
+<td id="T_34361_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_34361_row1_col0" class="data row1 col0">Throughput</td>
+<td id="T_34361_row1_col1" class="data row1 col1">Buffer allocs per op</td>
+<td id="T_34361_row1_col2" class="data row1 col2">-0.996</td>
+</tr>
+<tr class="odd">
+<td id="T_34361_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_34361_row2_col0" class="data row2 col0">Throughput</td>
+<td id="T_34361_row2_col1" class="data row2 col1">WAL records per op</td>
+<td id="T_34361_row2_col2" class="data row2 col2">-0.995</td>
+</tr>
+<tr class="even">
+<td id="T_34361_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_34361_row3_col0" class="data row3 col0">Throughput</td>
+<td id="T_34361_row3_col1" class="data row3 col1">WAL bytes per op</td>
+<td id="T_34361_row3_col2" class="data row3 col2">-0.995</td>
+</tr>
+<tr class="odd">
+<td id="T_34361_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_34361_row4_col0" class="data row4 col0">Average latency</td>
+<td id="T_34361_row4_col1" class="data row4 col1">Cache-hit ratio</td>
+<td id="T_34361_row4_col2" class="data row4 col2">-0.996</td>
+</tr>
+<tr class="even">
+<td id="T_34361_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_34361_row5_col0" class="data row5 col0">Average latency</td>
+<td id="T_34361_row5_col1" class="data row5 col1">Buffer allocs per op</td>
+<td id="T_34361_row5_col2" class="data row5 col2">+0.995</td>
+</tr>
+<tr class="odd">
+<td id="T_34361_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_34361_row6_col0" class="data row6 col0">Average latency</td>
+<td id="T_34361_row6_col1" class="data row6 col1">WAL records per op</td>
+<td id="T_34361_row6_col2" class="data row6 col2">+0.995</td>
+</tr>
+<tr class="even">
+<td id="T_34361_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_34361_row7_col0" class="data row7 col0">Average latency</td>
+<td id="T_34361_row7_col1" class="data row7 col1">WAL bytes per op</td>
+<td id="T_34361_row7_col2" class="data row7 col2">+0.995</td>
+</tr>
+<tr class="odd">
+<td id="T_34361_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_34361_row8_col0" class="data row8 col0">P95 latency</td>
+<td id="T_34361_row8_col1" class="data row8 col1">Cache-hit ratio</td>
+<td id="T_34361_row8_col2" class="data row8 col2">-0.991</td>
+</tr>
+<tr class="even">
+<td id="T_34361_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_34361_row9_col0" class="data row9 col0">P95 latency</td>
+<td id="T_34361_row9_col1" class="data row9 col1">Buffer allocs per op</td>
+<td id="T_34361_row9_col2" class="data row9 col2">+0.991</td>
+</tr>
+<tr class="odd">
+<td id="T_34361_level0_row10" class="row_heading level0 row10" data-quarto-table-cell-role="th">10</td>
+<td id="T_34361_row10_col0" class="data row10 col0">P95 latency</td>
+<td id="T_34361_row10_col1" class="data row10 col1">WAL records per op</td>
+<td id="T_34361_row10_col2" class="data row10 col2">+0.990</td>
+</tr>
+<tr class="even">
+<td id="T_34361_level0_row11" class="row_heading level0 row11" data-quarto-table-cell-role="th">11</td>
+<td id="T_34361_row11_col0" class="data row11 col0">P95 latency</td>
+<td id="T_34361_row11_col1" class="data row11 col1">WAL bytes per op</td>
+<td id="T_34361_row11_col2" class="data row11 col2">+0.990</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><strong>Top first-difference correlations</strong></p>
+</div>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_9bfd1" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_9bfd1_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target</th>
+<th id="T_9bfd1_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Metric</th>
+<th id="T_9bfd1_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">First-diff r</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_9bfd1_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_9bfd1_row0_col0" class="data row0 col0">Throughput</td>
+<td id="T_9bfd1_row0_col1" class="data row0 col1">Block hits per op</td>
+<td id="T_9bfd1_row0_col2" class="data row0 col2">-0.600</td>
+</tr>
+<tr class="even">
+<td id="T_9bfd1_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_9bfd1_row1_col0" class="data row1 col0">Throughput</td>
+<td id="T_9bfd1_row1_col1" class="data row1 col1">WAL records per op</td>
+<td id="T_9bfd1_row1_col2" class="data row1 col2">-0.195</td>
+</tr>
+<tr class="odd">
+<td id="T_9bfd1_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_9bfd1_row2_col0" class="data row2 col0">Throughput</td>
+<td id="T_9bfd1_row2_col1" class="data row2 col1">Cache-hit ratio</td>
+<td id="T_9bfd1_row2_col2" class="data row2 col2">+0.182</td>
+</tr>
+<tr class="even">
+<td id="T_9bfd1_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_9bfd1_row3_col0" class="data row3 col0">Throughput</td>
+<td id="T_9bfd1_row3_col1" class="data row3 col1">WAL bytes per op</td>
+<td id="T_9bfd1_row3_col2" class="data row3 col2">+0.090</td>
+</tr>
+<tr class="odd">
+<td id="T_9bfd1_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_9bfd1_row4_col0" class="data row4 col0">Average latency</td>
+<td id="T_9bfd1_row4_col1" class="data row4 col1">Delta checkpoint write time</td>
+<td id="T_9bfd1_row4_col2" class="data row4 col2">-0.205</td>
+</tr>
+<tr class="even">
+<td id="T_9bfd1_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_9bfd1_row5_col0" class="data row5 col0">Average latency</td>
+<td id="T_9bfd1_row5_col1" class="data row5 col1">Buffer allocs per op</td>
+<td id="T_9bfd1_row5_col2" class="data row5 col2">-0.179</td>
+</tr>
+<tr class="odd">
+<td id="T_9bfd1_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_9bfd1_row6_col0" class="data row6 col0">Average latency</td>
+<td id="T_9bfd1_row6_col1" class="data row6 col1">WAL bytes per op</td>
+<td id="T_9bfd1_row6_col2" class="data row6 col2">-0.108</td>
+</tr>
+<tr class="even">
+<td id="T_9bfd1_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_9bfd1_row7_col0" class="data row7 col0">Average latency</td>
+<td id="T_9bfd1_row7_col1" class="data row7 col1">Cache-hit ratio</td>
+<td id="T_9bfd1_row7_col2" class="data row7 col2">-0.064</td>
+</tr>
+<tr class="odd">
+<td id="T_9bfd1_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_9bfd1_row8_col0" class="data row8 col0">P95 latency</td>
+<td id="T_9bfd1_row8_col1" class="data row8 col1">Buffer allocs per op</td>
+<td id="T_9bfd1_row8_col2" class="data row8 col2">-0.150</td>
+</tr>
+<tr class="even">
+<td id="T_9bfd1_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_9bfd1_row9_col0" class="data row9 col0">P95 latency</td>
+<td id="T_9bfd1_row9_col1" class="data row9 col1">Delta checkpoint write time</td>
+<td id="T_9bfd1_row9_col2" class="data row9 col2">-0.106</td>
+</tr>
+<tr class="odd">
+<td id="T_9bfd1_level0_row10" class="row_heading level0 row10" data-quarto-table-cell-role="th">10</td>
+<td id="T_9bfd1_row10_col0" class="data row10 col0">P95 latency</td>
+<td id="T_9bfd1_row10_col1" class="data row10 col1">Block reads per op</td>
+<td id="T_9bfd1_row10_col2" class="data row10 col2">-0.094</td>
+</tr>
+<tr class="even">
+<td id="T_9bfd1_level0_row11" class="row_heading level0 row11" data-quarto-table-cell-role="th">11</td>
+<td id="T_9bfd1_row11_col0" class="data row11 col0">P95 latency</td>
+<td id="T_9bfd1_row11_col1" class="data row11 col1">Cache-hit ratio</td>
+<td id="T_9bfd1_row11_col2" class="data row11 col2">-0.087</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<ul>
+<li>The strongest long-run driver for average latency in this phase is <code>Cache-hit ratio</code> (<code>rho=-0.996</code>).</li>
+<li>This phase degrades materially: throughput changes by -85.5% and average latency changes by 650.8%, alongside a cache-hit shift of -27.792 points.</li>
+<li>After detrending, no derived metric has a strong same-step tie to average latency (best <code>r=-0.205</code> for <code>Delta checkpoint write time</code>), which suggests the main story here is gradual drift rather than sharp local shocks.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="reference" class="level3" data-number="6.3">
+<h3 data-number="6.3" class="anchored" data-anchor-id="reference"><span class="header-section-number">6.3</span> <code>reference</code></h3>
+<div id="20f7a5fa" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_e4efd" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_e4efd_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Phase</th>
+<th id="T_e4efd_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Operation</th>
+<th id="T_e4efd_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Epochs</th>
+<th id="T_e4efd_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Throughput change %</th>
+<th id="T_e4efd_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Avg latency change %</th>
+<th id="T_e4efd_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">P95 latency change %</th>
+<th id="T_e4efd_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Cache hit change pts</th>
+<th id="T_e4efd_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Top monotonic driver</th>
+<th id="T_e4efd_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">Top monotonic rho</th>
+<th id="T_e4efd_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">Top first-diff driver</th>
+<th id="T_e4efd_level0_col10" class="col_heading level0 col10" data-quarto-table-cell-role="th">Top first-diff r</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_e4efd_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_e4efd_row0_col0" class="data row0 col0">reference</td>
+<td id="T_e4efd_row0_col1" class="data row0 col1">READ</td>
+<td id="T_e4efd_row0_col2" class="data row0 col2">100</td>
+<td id="T_e4efd_row0_col3" class="data row0 col3">+14.8</td>
+<td id="T_e4efd_row0_col4" class="data row0 col4">-14.7</td>
+<td id="T_e4efd_row0_col5" class="data row0 col5">-9.5</td>
+<td id="T_e4efd_row0_col6" class="data row0 col6">-0.593</td>
+<td id="T_e4efd_row0_col7" class="data row0 col7">Block reads per op</td>
+<td id="T_e4efd_row0_col8" class="data row0 col8">-0.180</td>
+<td id="T_e4efd_row0_col9" class="data row0 col9">Block reads per op</td>
+<td id="T_e4efd_row0_col10" class="data row0 col10">-0.102</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postgresql_run1_uniform_heavy_vacuum_correlation_report_files/figure-html/cell-8-output-2.png" width="1188" height="758" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><strong>Top monotonic correlations</strong></p>
+</div>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_ea16d" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_ea16d_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target</th>
+<th id="T_ea16d_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Metric</th>
+<th id="T_ea16d_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Spearman rho</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_ea16d_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_ea16d_row0_col0" class="data row0 col0">Throughput</td>
+<td id="T_ea16d_row0_col1" class="data row0 col1">Block reads per op</td>
+<td id="T_ea16d_row0_col2" class="data row0 col2">+0.180</td>
+</tr>
+<tr class="even">
+<td id="T_ea16d_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_ea16d_row1_col0" class="data row1 col0">Throughput</td>
+<td id="T_ea16d_row1_col1" class="data row1 col1">Block hits per op</td>
+<td id="T_ea16d_row1_col2" class="data row1 col2">+0.141</td>
+</tr>
+<tr class="odd">
+<td id="T_ea16d_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_ea16d_row2_col0" class="data row2 col0">Throughput</td>
+<td id="T_ea16d_row2_col1" class="data row2 col1">Cache-hit ratio</td>
+<td id="T_ea16d_row2_col2" class="data row2 col2">-0.137</td>
+</tr>
+<tr class="even">
+<td id="T_ea16d_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_ea16d_row3_col0" class="data row3 col0">Throughput</td>
+<td id="T_ea16d_row3_col1" class="data row3 col1">WAL bytes per op</td>
+<td id="T_ea16d_row3_col2" class="data row3 col2">+0.116</td>
+</tr>
+<tr class="odd">
+<td id="T_ea16d_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_ea16d_row4_col0" class="data row4 col0">Average latency</td>
+<td id="T_ea16d_row4_col1" class="data row4 col1">Block reads per op</td>
+<td id="T_ea16d_row4_col2" class="data row4 col2">-0.180</td>
+</tr>
+<tr class="even">
+<td id="T_ea16d_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_ea16d_row5_col0" class="data row5 col0">Average latency</td>
+<td id="T_ea16d_row5_col1" class="data row5 col1">Block hits per op</td>
+<td id="T_ea16d_row5_col2" class="data row5 col2">-0.138</td>
+</tr>
+<tr class="odd">
+<td id="T_ea16d_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_ea16d_row6_col0" class="data row6 col0">Average latency</td>
+<td id="T_ea16d_row6_col1" class="data row6 col1">Cache-hit ratio</td>
+<td id="T_ea16d_row6_col2" class="data row6 col2">+0.135</td>
+</tr>
+<tr class="even">
+<td id="T_ea16d_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_ea16d_row7_col0" class="data row7 col0">Average latency</td>
+<td id="T_ea16d_row7_col1" class="data row7 col1">WAL bytes per op</td>
+<td id="T_ea16d_row7_col2" class="data row7 col2">-0.114</td>
+</tr>
+<tr class="odd">
+<td id="T_ea16d_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_ea16d_row8_col0" class="data row8 col0">P95 latency</td>
+<td id="T_ea16d_row8_col1" class="data row8 col1">Block reads per op</td>
+<td id="T_ea16d_row8_col2" class="data row8 col2">-0.131</td>
+</tr>
+<tr class="even">
+<td id="T_ea16d_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_ea16d_row9_col0" class="data row9 col0">P95 latency</td>
+<td id="T_ea16d_row9_col1" class="data row9 col1">Block hits per op</td>
+<td id="T_ea16d_row9_col2" class="data row9 col2">-0.103</td>
+</tr>
+<tr class="odd">
+<td id="T_ea16d_level0_row10" class="row_heading level0 row10" data-quarto-table-cell-role="th">10</td>
+<td id="T_ea16d_row10_col0" class="data row10 col0">P95 latency</td>
+<td id="T_ea16d_row10_col1" class="data row10 col1">Cache-hit ratio</td>
+<td id="T_ea16d_row10_col2" class="data row10 col2">+0.088</td>
+</tr>
+<tr class="even">
+<td id="T_ea16d_level0_row11" class="row_heading level0 row11" data-quarto-table-cell-role="th">11</td>
+<td id="T_ea16d_row11_col0" class="data row11 col0">P95 latency</td>
+<td id="T_ea16d_row11_col1" class="data row11 col1">WAL bytes per op</td>
+<td id="T_ea16d_row11_col2" class="data row11 col2">-0.067</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><strong>Top first-difference correlations</strong></p>
+</div>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_a8265" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_a8265_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target</th>
+<th id="T_a8265_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Metric</th>
+<th id="T_a8265_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">First-diff r</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_a8265_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_a8265_row0_col0" class="data row0 col0">Throughput</td>
+<td id="T_a8265_row0_col1" class="data row0 col1">Block reads per op</td>
+<td id="T_a8265_row0_col2" class="data row0 col2">+0.110</td>
+</tr>
+<tr class="even">
+<td id="T_a8265_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_a8265_row1_col0" class="data row1 col0">Throughput</td>
+<td id="T_a8265_row1_col1" class="data row1 col1">Block hits per op</td>
+<td id="T_a8265_row1_col2" class="data row1 col2">-0.093</td>
+</tr>
+<tr class="odd">
+<td id="T_a8265_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_a8265_row2_col0" class="data row2 col0">Throughput</td>
+<td id="T_a8265_row2_col1" class="data row2 col1">Buffer allocs per op</td>
+<td id="T_a8265_row2_col2" class="data row2 col2">-0.065</td>
+</tr>
+<tr class="even">
+<td id="T_a8265_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_a8265_row3_col0" class="data row3 col0">Throughput</td>
+<td id="T_a8265_row3_col1" class="data row3 col1">Cache-hit ratio</td>
+<td id="T_a8265_row3_col2" class="data row3 col2">-0.056</td>
+</tr>
+<tr class="odd">
+<td id="T_a8265_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_a8265_row4_col0" class="data row4 col0">Average latency</td>
+<td id="T_a8265_row4_col1" class="data row4 col1">Block reads per op</td>
+<td id="T_a8265_row4_col2" class="data row4 col2">-0.102</td>
+</tr>
+<tr class="even">
+<td id="T_a8265_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_a8265_row5_col0" class="data row5 col0">Average latency</td>
+<td id="T_a8265_row5_col1" class="data row5 col1">Block hits per op</td>
+<td id="T_a8265_row5_col2" class="data row5 col2">+0.083</td>
+</tr>
+<tr class="odd">
+<td id="T_a8265_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_a8265_row6_col0" class="data row6 col0">Average latency</td>
+<td id="T_a8265_row6_col1" class="data row6 col1">Buffer allocs per op</td>
+<td id="T_a8265_row6_col2" class="data row6 col2">+0.063</td>
+</tr>
+<tr class="even">
+<td id="T_a8265_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_a8265_row7_col0" class="data row7 col0">Average latency</td>
+<td id="T_a8265_row7_col1" class="data row7 col1">Cache-hit ratio</td>
+<td id="T_a8265_row7_col2" class="data row7 col2">+0.051</td>
+</tr>
+<tr class="odd">
+<td id="T_a8265_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_a8265_row8_col0" class="data row8 col0">P95 latency</td>
+<td id="T_a8265_row8_col1" class="data row8 col1">Block hits per op</td>
+<td id="T_a8265_row8_col2" class="data row8 col2">+0.102</td>
+</tr>
+<tr class="even">
+<td id="T_a8265_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_a8265_row9_col0" class="data row9 col0">P95 latency</td>
+<td id="T_a8265_row9_col1" class="data row9 col1">Block reads per op</td>
+<td id="T_a8265_row9_col2" class="data row9 col2">-0.098</td>
+</tr>
+<tr class="odd">
+<td id="T_a8265_level0_row10" class="row_heading level0 row10" data-quarto-table-cell-role="th">10</td>
+<td id="T_a8265_row10_col0" class="data row10 col0">P95 latency</td>
+<td id="T_a8265_row10_col1" class="data row10 col1">Delta checkpoint sync time</td>
+<td id="T_a8265_row10_col2" class="data row10 col2">+0.067</td>
+</tr>
+<tr class="even">
+<td id="T_a8265_level0_row11" class="row_heading level0 row11" data-quarto-table-cell-role="th">11</td>
+<td id="T_a8265_row11_col0" class="data row11 col0">P95 latency</td>
+<td id="T_a8265_row11_col1" class="data row11 col1">Cache-hit ratio</td>
+<td id="T_a8265_row11_col2" class="data row11 col2">+0.045</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<ul>
+<li>The strongest long-run driver for average latency in this phase is <code>Block reads per op</code> (<code>rho=-0.180</code>).</li>
+<li>This phase is the outlier: throughput improves by 14.8% while average latency improves by 14.7%, and cache-hit ratio is almost flat (-0.593 points).</li>
+<li>After detrending, no derived metric has a strong same-step tie to average latency (best <code>r=-0.102</code> for <code>Block reads per op</code>), which suggests the main story here is gradual drift rather than sharp local shocks.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="clean-run" class="level3" data-number="6.4">
+<h3 data-number="6.4" class="anchored" data-anchor-id="clean-run"><span class="header-section-number">6.4</span> <code>clean-run</code></h3>
+<div id="8ac95d8c" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_9d1a2" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_9d1a2_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Phase</th>
+<th id="T_9d1a2_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Operation</th>
+<th id="T_9d1a2_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Epochs</th>
+<th id="T_9d1a2_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Throughput change %</th>
+<th id="T_9d1a2_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Avg latency change %</th>
+<th id="T_9d1a2_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">P95 latency change %</th>
+<th id="T_9d1a2_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Cache hit change pts</th>
+<th id="T_9d1a2_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Top monotonic driver</th>
+<th id="T_9d1a2_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">Top monotonic rho</th>
+<th id="T_9d1a2_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">Top first-diff driver</th>
+<th id="T_9d1a2_level0_col10" class="col_heading level0 col10" data-quarto-table-cell-role="th">Top first-diff r</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_9d1a2_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_9d1a2_row0_col0" class="data row0 col0">clean-run</td>
+<td id="T_9d1a2_row0_col1" class="data row0 col1">READ</td>
+<td id="T_9d1a2_row0_col2" class="data row0 col2">100</td>
+<td id="T_9d1a2_row0_col3" class="data row0 col3">-79.3</td>
+<td id="T_9d1a2_row0_col4" class="data row0 col4">+420.4</td>
+<td id="T_9d1a2_row0_col5" class="data row0 col5">+366.7</td>
+<td id="T_9d1a2_row0_col6" class="data row0 col6">-19.696</td>
+<td id="T_9d1a2_row0_col7" class="data row0 col7">Buffer allocs per op</td>
+<td id="T_9d1a2_row0_col8" class="data row0 col8">+0.989</td>
+<td id="T_9d1a2_row0_col9" class="data row0 col9">Buffer allocs per op</td>
+<td id="T_9d1a2_row0_col10" class="data row0 col10">-0.165</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postgresql_run1_uniform_heavy_vacuum_correlation_report_files/figure-html/cell-9-output-2.png" width="1191" height="758" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><strong>Top monotonic correlations</strong></p>
+</div>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_e1f07" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_e1f07_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target</th>
+<th id="T_e1f07_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Metric</th>
+<th id="T_e1f07_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Spearman rho</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_e1f07_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_e1f07_row0_col0" class="data row0 col0">Throughput</td>
+<td id="T_e1f07_row0_col1" class="data row0 col1">Buffer allocs per op</td>
+<td id="T_e1f07_row0_col2" class="data row0 col2">-0.989</td>
+</tr>
+<tr class="even">
+<td id="T_e1f07_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_e1f07_row1_col0" class="data row1 col0">Throughput</td>
+<td id="T_e1f07_row1_col1" class="data row1 col1">WAL bytes per op</td>
+<td id="T_e1f07_row1_col2" class="data row1 col2">-0.989</td>
+</tr>
+<tr class="odd">
+<td id="T_e1f07_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_e1f07_row2_col0" class="data row2 col0">Throughput</td>
+<td id="T_e1f07_row2_col1" class="data row2 col1">WAL records per op</td>
+<td id="T_e1f07_row2_col2" class="data row2 col2">-0.989</td>
+</tr>
+<tr class="even">
+<td id="T_e1f07_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_e1f07_row3_col0" class="data row3 col0">Throughput</td>
+<td id="T_e1f07_row3_col1" class="data row3 col1">Cache-hit ratio</td>
+<td id="T_e1f07_row3_col2" class="data row3 col2">+0.983</td>
+</tr>
+<tr class="odd">
+<td id="T_e1f07_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_e1f07_row4_col0" class="data row4 col0">Average latency</td>
+<td id="T_e1f07_row4_col1" class="data row4 col1">Buffer allocs per op</td>
+<td id="T_e1f07_row4_col2" class="data row4 col2">+0.989</td>
+</tr>
+<tr class="even">
+<td id="T_e1f07_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_e1f07_row5_col0" class="data row5 col0">Average latency</td>
+<td id="T_e1f07_row5_col1" class="data row5 col1">WAL bytes per op</td>
+<td id="T_e1f07_row5_col2" class="data row5 col2">+0.988</td>
+</tr>
+<tr class="odd">
+<td id="T_e1f07_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_e1f07_row6_col0" class="data row6 col0">Average latency</td>
+<td id="T_e1f07_row6_col1" class="data row6 col1">WAL records per op</td>
+<td id="T_e1f07_row6_col2" class="data row6 col2">+0.988</td>
+</tr>
+<tr class="even">
+<td id="T_e1f07_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_e1f07_row7_col0" class="data row7 col0">Average latency</td>
+<td id="T_e1f07_row7_col1" class="data row7 col1">Cache-hit ratio</td>
+<td id="T_e1f07_row7_col2" class="data row7 col2">-0.982</td>
+</tr>
+<tr class="odd">
+<td id="T_e1f07_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_e1f07_row8_col0" class="data row8 col0">P95 latency</td>
+<td id="T_e1f07_row8_col1" class="data row8 col1">Buffer allocs per op</td>
+<td id="T_e1f07_row8_col2" class="data row8 col2">+0.981</td>
+</tr>
+<tr class="even">
+<td id="T_e1f07_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_e1f07_row9_col0" class="data row9 col0">P95 latency</td>
+<td id="T_e1f07_row9_col1" class="data row9 col1">WAL bytes per op</td>
+<td id="T_e1f07_row9_col2" class="data row9 col2">+0.980</td>
+</tr>
+<tr class="odd">
+<td id="T_e1f07_level0_row10" class="row_heading level0 row10" data-quarto-table-cell-role="th">10</td>
+<td id="T_e1f07_row10_col0" class="data row10 col0">P95 latency</td>
+<td id="T_e1f07_row10_col1" class="data row10 col1">WAL records per op</td>
+<td id="T_e1f07_row10_col2" class="data row10 col2">+0.980</td>
+</tr>
+<tr class="even">
+<td id="T_e1f07_level0_row11" class="row_heading level0 row11" data-quarto-table-cell-role="th">11</td>
+<td id="T_e1f07_row11_col0" class="data row11 col0">P95 latency</td>
+<td id="T_e1f07_row11_col1" class="data row11 col1">Cache-hit ratio</td>
+<td id="T_e1f07_row11_col2" class="data row11 col2">-0.975</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><strong>Top first-difference correlations</strong></p>
+</div>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_63eb1" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_63eb1_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target</th>
+<th id="T_63eb1_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Metric</th>
+<th id="T_63eb1_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">First-diff r</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_63eb1_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_63eb1_row0_col0" class="data row0 col0">Throughput</td>
+<td id="T_63eb1_row0_col1" class="data row0 col1">Cache-hit ratio</td>
+<td id="T_63eb1_row0_col2" class="data row0 col2">+0.154</td>
+</tr>
+<tr class="even">
+<td id="T_63eb1_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_63eb1_row1_col0" class="data row1 col0">Throughput</td>
+<td id="T_63eb1_row1_col1" class="data row1 col1">Block reads per op</td>
+<td id="T_63eb1_row1_col2" class="data row1 col2">-0.133</td>
+</tr>
+<tr class="odd">
+<td id="T_63eb1_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_63eb1_row2_col0" class="data row2 col0">Throughput</td>
+<td id="T_63eb1_row2_col1" class="data row2 col1">Delta checkpoint sync time</td>
+<td id="T_63eb1_row2_col2" class="data row2 col2">+0.084</td>
+</tr>
+<tr class="even">
+<td id="T_63eb1_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_63eb1_row3_col0" class="data row3 col0">Throughput</td>
+<td id="T_63eb1_row3_col1" class="data row3 col1">WAL records per op</td>
+<td id="T_63eb1_row3_col2" class="data row3 col2">-0.082</td>
+</tr>
+<tr class="odd">
+<td id="T_63eb1_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_63eb1_row4_col0" class="data row4 col0">Average latency</td>
+<td id="T_63eb1_row4_col1" class="data row4 col1">Buffer allocs per op</td>
+<td id="T_63eb1_row4_col2" class="data row4 col2">-0.165</td>
+</tr>
+<tr class="even">
+<td id="T_63eb1_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_63eb1_row5_col0" class="data row5 col0">Average latency</td>
+<td id="T_63eb1_row5_col1" class="data row5 col1">Cache-hit ratio</td>
+<td id="T_63eb1_row5_col2" class="data row5 col2">-0.164</td>
+</tr>
+<tr class="odd">
+<td id="T_63eb1_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_63eb1_row6_col0" class="data row6 col0">Average latency</td>
+<td id="T_63eb1_row6_col1" class="data row6 col1">Delta checkpoint sync time</td>
+<td id="T_63eb1_row6_col2" class="data row6 col2">-0.161</td>
+</tr>
+<tr class="even">
+<td id="T_63eb1_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_63eb1_row7_col0" class="data row7 col0">Average latency</td>
+<td id="T_63eb1_row7_col1" class="data row7 col1">WAL records per op</td>
+<td id="T_63eb1_row7_col2" class="data row7 col2">-0.130</td>
+</tr>
+<tr class="odd">
+<td id="T_63eb1_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_63eb1_row8_col0" class="data row8 col0">P95 latency</td>
+<td id="T_63eb1_row8_col1" class="data row8 col1">Cache-hit ratio</td>
+<td id="T_63eb1_row8_col2" class="data row8 col2">-0.263</td>
+</tr>
+<tr class="even">
+<td id="T_63eb1_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_63eb1_row9_col0" class="data row9 col0">P95 latency</td>
+<td id="T_63eb1_row9_col1" class="data row9 col1">WAL records per op</td>
+<td id="T_63eb1_row9_col2" class="data row9 col2">-0.221</td>
+</tr>
+<tr class="odd">
+<td id="T_63eb1_level0_row10" class="row_heading level0 row10" data-quarto-table-cell-role="th">10</td>
+<td id="T_63eb1_row10_col0" class="data row10 col0">P95 latency</td>
+<td id="T_63eb1_row10_col1" class="data row10 col1">Delta checkpoint sync time</td>
+<td id="T_63eb1_row10_col2" class="data row10 col2">-0.202</td>
+</tr>
+<tr class="even">
+<td id="T_63eb1_level0_row11" class="row_heading level0 row11" data-quarto-table-cell-role="th">11</td>
+<td id="T_63eb1_row11_col0" class="data row11 col0">P95 latency</td>
+<td id="T_63eb1_row11_col1" class="data row11 col1">Buffer allocs per op</td>
+<td id="T_63eb1_row11_col2" class="data row11 col2">-0.178</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<ul>
+<li>The strongest long-run driver for average latency in this phase is <code>Buffer allocs per op</code> (<code>rho=+0.989</code>).</li>
+<li>This phase degrades materially: throughput changes by -79.3% and average latency changes by 420.4%, alongside a cache-hit shift of -19.696 points.</li>
+<li>After detrending, no derived metric has a strong same-step tie to average latency (best <code>r=-0.165</code> for <code>Buffer allocs per op</code>), which suggests the main story here is gradual drift rather than sharp local shocks.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="avg-run" class="level3" data-number="6.5">
+<h3 data-number="6.5" class="anchored" data-anchor-id="avg-run"><span class="header-section-number">6.5</span> <code>avg-run</code></h3>
+<div id="ca631299" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_df2d7" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_df2d7_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Phase</th>
+<th id="T_df2d7_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Operation</th>
+<th id="T_df2d7_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Epochs</th>
+<th id="T_df2d7_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Throughput change %</th>
+<th id="T_df2d7_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Avg latency change %</th>
+<th id="T_df2d7_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">P95 latency change %</th>
+<th id="T_df2d7_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Cache hit change pts</th>
+<th id="T_df2d7_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Top monotonic driver</th>
+<th id="T_df2d7_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">Top monotonic rho</th>
+<th id="T_df2d7_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">Top first-diff driver</th>
+<th id="T_df2d7_level0_col10" class="col_heading level0 col10" data-quarto-table-cell-role="th">Top first-diff r</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_df2d7_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_df2d7_row0_col0" class="data row0 col0">avg-run</td>
+<td id="T_df2d7_row0_col1" class="data row0 col1">READ</td>
+<td id="T_df2d7_row0_col2" class="data row0 col2">100</td>
+<td id="T_df2d7_row0_col3" class="data row0 col3">-81.7</td>
+<td id="T_df2d7_row0_col4" class="data row0 col4">+493.3</td>
+<td id="T_df2d7_row0_col5" class="data row0 col5">+417.8</td>
+<td id="T_df2d7_row0_col6" class="data row0 col6">-19.789</td>
+<td id="T_df2d7_row0_col7" class="data row0 col7">Buffer allocs per op</td>
+<td id="T_df2d7_row0_col8" class="data row0 col8">+0.991</td>
+<td id="T_df2d7_row0_col9" class="data row0 col9">Buffer allocs per op</td>
+<td id="T_df2d7_row0_col10" class="data row0 col10">+0.242</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postgresql_run1_uniform_heavy_vacuum_correlation_report_files/figure-html/cell-10-output-2.png" width="1191" height="758" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><strong>Top monotonic correlations</strong></p>
+</div>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_3e292" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_3e292_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target</th>
+<th id="T_3e292_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Metric</th>
+<th id="T_3e292_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Spearman rho</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_3e292_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_3e292_row0_col0" class="data row0 col0">Throughput</td>
+<td id="T_3e292_row0_col1" class="data row0 col1">Buffer allocs per op</td>
+<td id="T_3e292_row0_col2" class="data row0 col2">-0.992</td>
+</tr>
+<tr class="even">
+<td id="T_3e292_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_3e292_row1_col0" class="data row1 col0">Throughput</td>
+<td id="T_3e292_row1_col1" class="data row1 col1">WAL records per op</td>
+<td id="T_3e292_row1_col2" class="data row1 col2">-0.992</td>
+</tr>
+<tr class="odd">
+<td id="T_3e292_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_3e292_row2_col0" class="data row2 col0">Throughput</td>
+<td id="T_3e292_row2_col1" class="data row2 col1">WAL bytes per op</td>
+<td id="T_3e292_row2_col2" class="data row2 col2">-0.992</td>
+</tr>
+<tr class="even">
+<td id="T_3e292_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_3e292_row3_col0" class="data row3 col0">Throughput</td>
+<td id="T_3e292_row3_col1" class="data row3 col1">Cache-hit ratio</td>
+<td id="T_3e292_row3_col2" class="data row3 col2">+0.988</td>
+</tr>
+<tr class="odd">
+<td id="T_3e292_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_3e292_row4_col0" class="data row4 col0">Average latency</td>
+<td id="T_3e292_row4_col1" class="data row4 col1">Buffer allocs per op</td>
+<td id="T_3e292_row4_col2" class="data row4 col2">+0.991</td>
+</tr>
+<tr class="even">
+<td id="T_3e292_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_3e292_row5_col0" class="data row5 col0">Average latency</td>
+<td id="T_3e292_row5_col1" class="data row5 col1">WAL bytes per op</td>
+<td id="T_3e292_row5_col2" class="data row5 col2">+0.991</td>
+</tr>
+<tr class="odd">
+<td id="T_3e292_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_3e292_row6_col0" class="data row6 col0">Average latency</td>
+<td id="T_3e292_row6_col1" class="data row6 col1">WAL records per op</td>
+<td id="T_3e292_row6_col2" class="data row6 col2">+0.991</td>
+</tr>
+<tr class="even">
+<td id="T_3e292_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_3e292_row7_col0" class="data row7 col0">Average latency</td>
+<td id="T_3e292_row7_col1" class="data row7 col1">Cache-hit ratio</td>
+<td id="T_3e292_row7_col2" class="data row7 col2">-0.987</td>
+</tr>
+<tr class="odd">
+<td id="T_3e292_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_3e292_row8_col0" class="data row8 col0">P95 latency</td>
+<td id="T_3e292_row8_col1" class="data row8 col1">WAL bytes per op</td>
+<td id="T_3e292_row8_col2" class="data row8 col2">+0.977</td>
+</tr>
+<tr class="even">
+<td id="T_3e292_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_3e292_row9_col0" class="data row9 col0">P95 latency</td>
+<td id="T_3e292_row9_col1" class="data row9 col1">Buffer allocs per op</td>
+<td id="T_3e292_row9_col2" class="data row9 col2">+0.977</td>
+</tr>
+<tr class="odd">
+<td id="T_3e292_level0_row10" class="row_heading level0 row10" data-quarto-table-cell-role="th">10</td>
+<td id="T_3e292_row10_col0" class="data row10 col0">P95 latency</td>
+<td id="T_3e292_row10_col1" class="data row10 col1">WAL records per op</td>
+<td id="T_3e292_row10_col2" class="data row10 col2">+0.977</td>
+</tr>
+<tr class="even">
+<td id="T_3e292_level0_row11" class="row_heading level0 row11" data-quarto-table-cell-role="th">11</td>
+<td id="T_3e292_row11_col0" class="data row11 col0">P95 latency</td>
+<td id="T_3e292_row11_col1" class="data row11 col1">Cache-hit ratio</td>
+<td id="T_3e292_row11_col2" class="data row11 col2">-0.972</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><strong>Top first-difference correlations</strong></p>
+</div>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_f5d11" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_f5d11_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target</th>
+<th id="T_f5d11_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Metric</th>
+<th id="T_f5d11_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">First-diff r</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_f5d11_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_f5d11_row0_col0" class="data row0 col0">Throughput</td>
+<td id="T_f5d11_row0_col1" class="data row0 col1">Block hits per op</td>
+<td id="T_f5d11_row0_col2" class="data row0 col2">+0.261</td>
+</tr>
+<tr class="even">
+<td id="T_f5d11_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_f5d11_row1_col0" class="data row1 col0">Throughput</td>
+<td id="T_f5d11_row1_col1" class="data row1 col1">Block reads per op</td>
+<td id="T_f5d11_row1_col2" class="data row1 col2">+0.114</td>
+</tr>
+<tr class="odd">
+<td id="T_f5d11_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_f5d11_row2_col0" class="data row2 col0">Throughput</td>
+<td id="T_f5d11_row2_col1" class="data row2 col1">Cache-hit ratio</td>
+<td id="T_f5d11_row2_col2" class="data row2 col2">-0.106</td>
+</tr>
+<tr class="even">
+<td id="T_f5d11_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_f5d11_row3_col0" class="data row3 col0">Throughput</td>
+<td id="T_f5d11_row3_col1" class="data row3 col1">WAL records per op</td>
+<td id="T_f5d11_row3_col2" class="data row3 col2">-0.098</td>
+</tr>
+<tr class="odd">
+<td id="T_f5d11_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_f5d11_row4_col0" class="data row4 col0">Average latency</td>
+<td id="T_f5d11_row4_col1" class="data row4 col1">Buffer allocs per op</td>
+<td id="T_f5d11_row4_col2" class="data row4 col2">+0.242</td>
+</tr>
+<tr class="even">
+<td id="T_f5d11_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_f5d11_row5_col0" class="data row5 col0">Average latency</td>
+<td id="T_f5d11_row5_col1" class="data row5 col1">WAL records per op</td>
+<td id="T_f5d11_row5_col2" class="data row5 col2">+0.206</td>
+</tr>
+<tr class="odd">
+<td id="T_f5d11_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_f5d11_row6_col0" class="data row6 col0">Average latency</td>
+<td id="T_f5d11_row6_col1" class="data row6 col1">Delta checkpoint sync time</td>
+<td id="T_f5d11_row6_col2" class="data row6 col2">+0.125</td>
+</tr>
+<tr class="even">
+<td id="T_f5d11_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_f5d11_row7_col0" class="data row7 col0">Average latency</td>
+<td id="T_f5d11_row7_col1" class="data row7 col1">Block hits per op</td>
+<td id="T_f5d11_row7_col2" class="data row7 col2">-0.111</td>
+</tr>
+<tr class="odd">
+<td id="T_f5d11_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_f5d11_row8_col0" class="data row8 col0">P95 latency</td>
+<td id="T_f5d11_row8_col1" class="data row8 col1">Buffer allocs per op</td>
+<td id="T_f5d11_row8_col2" class="data row8 col2">+0.179</td>
+</tr>
+<tr class="even">
+<td id="T_f5d11_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_f5d11_row9_col0" class="data row9 col0">P95 latency</td>
+<td id="T_f5d11_row9_col1" class="data row9 col1">WAL records per op</td>
+<td id="T_f5d11_row9_col2" class="data row9 col2">+0.136</td>
+</tr>
+<tr class="odd">
+<td id="T_f5d11_level0_row10" class="row_heading level0 row10" data-quarto-table-cell-role="th">10</td>
+<td id="T_f5d11_row10_col0" class="data row10 col0">P95 latency</td>
+<td id="T_f5d11_row10_col1" class="data row10 col1">Block reads per op</td>
+<td id="T_f5d11_row10_col2" class="data row10 col2">-0.092</td>
+</tr>
+<tr class="even">
+<td id="T_f5d11_level0_row11" class="row_heading level0 row11" data-quarto-table-cell-role="th">11</td>
+<td id="T_f5d11_row11_col0" class="data row11 col0">P95 latency</td>
+<td id="T_f5d11_row11_col1" class="data row11 col1">WAL bytes per op</td>
+<td id="T_f5d11_row11_col2" class="data row11 col2">+0.085</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<ul>
+<li>The strongest long-run driver for average latency in this phase is <code>Buffer allocs per op</code> (<code>rho=+0.991</code>).</li>
+<li>This phase degrades materially: throughput changes by -81.7% and average latency changes by 493.3%, alongside a cache-hit shift of -19.789 points.</li>
+<li>After detrending, no derived metric has a strong same-step tie to average latency (best <code>r=+0.242</code> for <code>Buffer allocs per op</code>), which suggests the main story here is gradual drift rather than sharp local shocks.</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="regression-comparison-across-phases" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="regression-comparison-across-phases"><span class="header-section-number">7</span> Regression Comparison Across Phases</h2>
+<div id="8c2f53aa" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_59c81" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_59c81_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Throughput ~ Cache-hit ratio slope</th>
+<th id="T_59c81_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Throughput ~ Cache-hit ratio R^2</th>
+<th id="T_59c81_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Average latency ~ Cache-hit ratio slope</th>
+<th id="T_59c81_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Average latency ~ Cache-hit ratio R^2</th>
+<th id="T_59c81_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Average latency ~ WAL bytes per op slope</th>
+<th id="T_59c81_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Average latency ~ WAL bytes per op R^2</th>
+<th id="T_59c81_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Average latency ~ Buffer allocs per op slope</th>
+<th id="T_59c81_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Average latency ~ Buffer allocs per op R^2</th>
+</tr>
+<tr class="odd">
+<th class="index_name level0" data-quarto-table-cell-role="th">Phase</th>
+<th class="blank col0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th class="blank col1" data-quarto-table-cell-role="th">&nbsp;</th>
+<th class="blank col2" data-quarto-table-cell-role="th">&nbsp;</th>
+<th class="blank col3" data-quarto-table-cell-role="th">&nbsp;</th>
+<th class="blank col4" data-quarto-table-cell-role="th">&nbsp;</th>
+<th class="blank col5" data-quarto-table-cell-role="th">&nbsp;</th>
+<th class="blank col6" data-quarto-table-cell-role="th">&nbsp;</th>
+<th class="blank col7" data-quarto-table-cell-role="th">&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_59c81_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">extend</td>
+<td id="T_59c81_row0_col0" class="data row0 col0">1143.192357</td>
+<td id="T_59c81_row0_col1" class="data row0 col1">0.938</td>
+<td id="T_59c81_row0_col2" class="data row0 col2">-2973.076769</td>
+<td id="T_59c81_row0_col3" class="data row0 col3">0.899</td>
+<td id="T_59c81_row0_col4" class="data row0 col4">0.014611</td>
+<td id="T_59c81_row0_col5" class="data row0 col5">0.972</td>
+<td id="T_59c81_row0_col6" class="data row0 col6">9.670531</td>
+<td id="T_59c81_row0_col7" class="data row0 col7">0.950</td>
+</tr>
+<tr class="even">
+<td id="T_59c81_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">run</td>
+<td id="T_59c81_row1_col0" class="data row1 col0">49813.733621</td>
+<td id="T_59c81_row1_col1" class="data row1 col1">0.823</td>
+<td id="T_59c81_row1_col2" class="data row1 col2">-745.104937</td>
+<td id="T_59c81_row1_col3" class="data row1 col3">0.982</td>
+<td id="T_59c81_row1_col4" class="data row1 col4">0.003472</td>
+<td id="T_59c81_row1_col5" class="data row1 col5">0.966</td>
+<td id="T_59c81_row1_col6" class="data row1 col6">2.351471</td>
+<td id="T_59c81_row1_col7" class="data row1 col7">0.985</td>
+</tr>
+<tr class="odd">
+<td id="T_59c81_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">reference</td>
+<td id="T_59c81_row2_col0" class="data row2 col0">-137643.629194</td>
+<td id="T_59c81_row2_col1" class="data row2 col1">0.003</td>
+<td id="T_59c81_row2_col2" class="data row2 col2">172.972776</td>
+<td id="T_59c81_row2_col3" class="data row2 col3">0.004</td>
+<td id="T_59c81_row2_col4" class="data row2 col4">-0.000015</td>
+<td id="T_59c81_row2_col5" class="data row2 col5">0.010</td>
+<td id="T_59c81_row2_col6" class="data row2 col6">-0.008717</td>
+<td id="T_59c81_row2_col7" class="data row2 col7">0.008</td>
+</tr>
+<tr class="even">
+<td id="T_59c81_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">clean-run</td>
+<td id="T_59c81_row3_col0" class="data row3 col0">64024.993635</td>
+<td id="T_59c81_row3_col1" class="data row3 col1">0.775</td>
+<td id="T_59c81_row3_col2" class="data row3 col2">-798.182973</td>
+<td id="T_59c81_row3_col3" class="data row3 col3">0.984</td>
+<td id="T_59c81_row3_col4" class="data row3 col4">0.002874</td>
+<td id="T_59c81_row3_col5" class="data row3 col5">0.957</td>
+<td id="T_59c81_row3_col6" class="data row3 col6">1.947164</td>
+<td id="T_59c81_row3_col7" class="data row3 col7">0.978</td>
+</tr>
+<tr class="odd">
+<td id="T_59c81_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">avg-run</td>
+<td id="T_59c81_row4_col0" class="data row4 col0">67214.802150</td>
+<td id="T_59c81_row4_col1" class="data row4 col1">0.799</td>
+<td id="T_59c81_row4_col2" class="data row4 col2">-802.958132</td>
+<td id="T_59c81_row4_col3" class="data row4 col3">0.972</td>
+<td id="T_59c81_row4_col4" class="data row4 col4">0.002751</td>
+<td id="T_59c81_row4_col5" class="data row4 col5">0.963</td>
+<td id="T_59c81_row4_col6" class="data row4 col6">1.863784</td>
+<td id="T_59c81_row4_col7" class="data row4 col7">0.985</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>This comparison reinforces the phase split:</p>
+<ul>
+<li><code>run</code>, <code>clean-run</code>, <code>avg-run</code>, and <code>extend</code> all have strong long-run fits between latency and storage-pressure proxies.</li>
+<li><code>reference</code> has near-zero <code>R^2</code> for the same relationships, which is another sign that it should not be folded into the same narrative as the other run-family phases.</li>
+</ul>
+</section>
+<section id="final-takeaway" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="final-takeaway"><span class="header-section-number">8</span> Final Takeaway</h2>
+<p>The most useful update from the phase-by-phase view is that there are really two stories in this file:</p>
+<ol type="1">
+<li><code>run</code>, <code>clean-run</code>, <code>avg-run</code>, and <code>extend</code> all show substantial drift toward worse performance, with cache efficiency falling and per-operation storage work rising.</li>
+<li><code>reference</code> does not follow that pattern; it is comparatively stable and even improves slightly, so it acts more like a control phase than another copy of <code>run</code>.</li>
+</ol>
+<p>That separation makes the most interesting correlation more precise:</p>
+<blockquote class="blockquote">
+<p>The dataset does not contain one generic “run-phase slowdown”. It contains a cluster of degrading phases where cache loss and growing I/O pressure track worse performance, plus a distinct <code>reference</code> phase where those relationships are weak and the system stays stable.</p>
+</blockquote>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

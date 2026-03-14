@@ -196,9 +196,9 @@ def make_summary_plot(
 
 
 def main() -> None:
-    files = sorted(DATA_DIR.glob("postgresql_*.csv"))
+    files = sorted(DATA_DIR.glob("postgresql_run*.csv"))
     if not files:
-        raise RuntimeError("No PostgreSQL files found in DATA/")
+        raise RuntimeError("No PostgreSQL run files found in DATA/")
 
     base_out_dir = RESULTS_DIR / "postgresql"
     base_out_dir.mkdir(parents=True, exist_ok=True)
@@ -211,13 +211,13 @@ def main() -> None:
     total = 0
     suffix_summary: dict[str, dict[str, object]] = {}
     for suffix, suffix_files in sorted(files_by_suffix.items()):
-        suffix_root = base_out_dir / suffix
         generated_for_suffix = 0
 
         for metric_col, folder_name, metric_label in METRICS:
-            metric_dir = suffix_root / f"postgresql_epoch_{folder_name}"
-            run_out_dir = metric_dir / "run_phases"
-            extend_out_dir = metric_dir / "extend_phase"
+            metric_dir = base_out_dir / f"postgresql_epoch_{folder_name}"
+            suffix_dir = metric_dir / suffix
+            run_out_dir = suffix_dir / "run"
+            extend_out_dir = suffix_dir / "extend"
             run_out_dir.mkdir(parents=True, exist_ok=True)
             extend_out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -228,7 +228,7 @@ def main() -> None:
                     metric_ylabel=metric_label,
                     output_dir=run_out_dir,
                     phase_order=RUN_PHASE_ORDER,
-                    plot_suffix="run_phases",
+                    plot_suffix="run",
                 )
                 make_plot(
                     csv_path=csv_path,
@@ -236,7 +236,7 @@ def main() -> None:
                     metric_ylabel=metric_label,
                     output_dir=extend_out_dir,
                     phase_order=EXTEND_PHASE_ORDER,
-                    plot_suffix="extend_phase",
+                    plot_suffix="extend",
                 )
                 generated_for_suffix += 2
                 total += 2
@@ -247,7 +247,7 @@ def main() -> None:
                 metric_ylabel=metric_label,
                 output_dir=run_out_dir,
                 phase_order=RUN_PHASE_ORDER,
-                plot_suffix="run_phases",
+                plot_suffix="run",
                 suffix_name=suffix,
             )
             make_summary_plot(
@@ -256,7 +256,7 @@ def main() -> None:
                 metric_ylabel=metric_label,
                 output_dir=extend_out_dir,
                 phase_order=EXTEND_PHASE_ORDER,
-                plot_suffix="extend_phase",
+                plot_suffix="extend",
                 suffix_name=suffix,
             )
             generated_for_suffix += 2

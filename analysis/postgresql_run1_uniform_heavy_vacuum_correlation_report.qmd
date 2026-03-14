@@ -1,0 +1,550 @@
+---
+title: "Phase-by-Phase Correlation Analysis: postgresql_run1_uniform_heavy_vacuum.csv"
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: cosmo
+execute:
+  echo: false
+  warning: false
+  message: false
+  error: true
+jupyter: python3
+---
+
+## Overview
+
+This report updates the earlier analysis by treating each repeated benchmark phase as its own unit of analysis:
+
+- `extend`
+- `run`
+- `reference`
+- `clean-run`
+- `avg-run`
+
+The single-row `load` phase is excluded from correlation work because it does not have enough temporal depth for EDA or per-epoch change analysis.
+
+The PostgreSQL counters in this dataset are cumulative, so the report uses two complementary views:
+
+- monotonic correlations on raw per-phase series, which capture long-run drift
+- first-difference correlations on per-epoch changes, which reduce the risk of mistaking "everything grows over time" for a direct relationship
+
+## Load And Prepare The Data
+
+```{python}
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from IPython.display import Markdown, display
+
+plt.style.use("seaborn-v0_8-whitegrid")
+plt.rcParams["figure.figsize"] = (11, 6)
+plt.rcParams["axes.spines.top"] = False
+plt.rcParams["axes.spines.right"] = False
+
+DATASET_NAME = "postgresql_run1_uniform_heavy_vacuum.csv"
+ANALYSIS_PHASES = ["extend", "run", "reference", "clean-run", "avg-run"]
+PHASE_LABELS = {
+    "extend": "extend",
+    "run": "run",
+    "reference": "reference",
+    "clean-run": "clean-run",
+    "avg-run": "avg-run",
+}
+PHASE_COLORS = {
+    "extend": "#bb3e03",
+    "run": "#005f73",
+    "reference": "#6c757d",
+    "clean-run": "#ae2012",
+    "avg-run": "#0a9396",
+}
+COUNTER_COLS = [
+    "blks_read",
+    "blks_hit",
+    "wal_bytes",
+    "wal_records",
+    "buffers_alloc",
+    "buffers_backend",
+    "buffers_checkpoint",
+    "buffers_clean",
+    "checkpoint_write_time",
+    "checkpoint_sync_time",
+]
+TARGET_METRICS = [
+    "Throughput(ops/sec)",
+    "AverageLatency(us)",
+    "95thPercentileLatency(us)",
+]
+DERIVED_METRICS = [
+    "cache_hit_ratio",
+    "blk_reads_per_op",
+    "blk_hits_per_op",
+    "wal_bytes_per_op",
+    "wal_records_per_op",
+    "buffer_alloc_per_op",
+    "d_checkpoint_write_time",
+    "d_checkpoint_sync_time",
+]
+METRIC_LABELS = {
+    "Throughput(ops/sec)": "Throughput",
+    "AverageLatency(us)": "Average latency",
+    "95thPercentileLatency(us)": "P95 latency",
+    "cache_hit_ratio": "Cache-hit ratio",
+    "blk_reads_per_op": "Block reads per op",
+    "blk_hits_per_op": "Block hits per op",
+    "wal_bytes_per_op": "WAL bytes per op",
+    "wal_records_per_op": "WAL records per op",
+    "buffer_alloc_per_op": "Buffer allocs per op",
+    "d_checkpoint_write_time": "Delta checkpoint write time",
+    "d_checkpoint_sync_time": "Delta checkpoint sync time",
+}
+
+
+def resolve_dataset() -> Path:
+    candidates = [
+        Path("DATA") / DATASET_NAME,
+        Path("../DATA") / DATASET_NAME,
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate.resolve()
+    raise FileNotFoundError(f"Could not find {DATASET_NAME} from {Path.cwd()}")
+
+
+def prepare_phase(df: pd.DataFrame, phase: str) -> pd.DataFrame:
+    sub = df[df["Phase"] == phase].sort_values("Epoch").copy()
+
+    for col in COUNTER_COLS:
+        sub[f"d_{col}"] = sub[col].diff()
+
+    denom = (sub["blks_hit"] + sub["blks_read"]).replace(0, np.nan)
+    sub["cache_hit_ratio"] = sub["blks_hit"] / denom
+    sub["blk_reads_per_op"] = sub["d_blks_read"] / sub["Operations"]
+    sub["blk_hits_per_op"] = sub["d_blks_hit"] / sub["Operations"]
+    sub["wal_bytes_per_op"] = sub["d_wal_bytes"] / sub["Operations"]
+    sub["wal_records_per_op"] = sub["d_wal_records"] / sub["Operations"]
+    sub["buffer_alloc_per_op"] = sub["d_buffers_alloc"] / sub["Operations"]
+
+    return sub
+
+
+def format_metric(name: str) -> str:
+    return METRIC_LABELS.get(name, name)
+
+
+def summarize_phase(phase: str, sub: pd.DataFrame) -> dict:
+    start = sub.iloc[0]
+    end = sub.iloc[-1]
+    operation = sub["Operation"].mode().iat[0]
+    return {
+        "Phase": phase,
+        "Operation": operation,
+        "Epochs": len(sub),
+        "Throughput start": start["Throughput(ops/sec)"],
+        "Throughput end": end["Throughput(ops/sec)"],
+        "Throughput change %": 100 * (end["Throughput(ops/sec)"] / start["Throughput(ops/sec)"] - 1),
+        "Avg latency start us": start["AverageLatency(us)"],
+        "Avg latency end us": end["AverageLatency(us)"],
+        "Avg latency change %": 100 * (end["AverageLatency(us)"] / start["AverageLatency(us)"] - 1),
+        "P95 latency change %": 100 * (
+            end["95thPercentileLatency(us)"] / start["95thPercentileLatency(us)"] - 1
+        ),
+        "Cache hit start %": 100 * start["cache_hit_ratio"],
+        "Cache hit end %": 100 * end["cache_hit_ratio"],
+        "Cache hit change pts": 100 * (end["cache_hit_ratio"] - start["cache_hit_ratio"]),
+    }
+
+
+def build_correlation_table(sub: pd.DataFrame, diff: bool = False, top_n: int = 4) -> pd.DataFrame:
+    source = sub[TARGET_METRICS + DERIVED_METRICS].copy()
+    corr_method = "spearman"
+    value_label = "Spearman rho"
+
+    if diff:
+        source = source.diff().dropna()
+        corr_method = "pearson"
+        value_label = "First-diff r"
+
+    corr = source.corr(method=corr_method, numeric_only=True)
+    rows = []
+
+    for target in TARGET_METRICS:
+        ranked = (
+            corr[target]
+            .loc[DERIVED_METRICS]
+            .dropna()
+            .sort_values(key=lambda s: s.abs(), ascending=False)
+            .head(top_n)
+        )
+        for metric, value in ranked.items():
+            rows.append(
+                {
+                    "Target": format_metric(target),
+                    "Metric": format_metric(metric),
+                    value_label: value,
+                }
+            )
+
+    return pd.DataFrame(rows)
+
+
+def fit_relationship(sub: pd.DataFrame, x_col: str, y_col: str) -> tuple[float, float, float]:
+    fit_df = sub[[x_col, y_col]].dropna()
+    x = fit_df[x_col].to_numpy(dtype=float)
+    y = fit_df[y_col].to_numpy(dtype=float)
+    slope, intercept = np.polyfit(x, y, 1)
+    y_hat = slope * x + intercept
+    r2 = 1 - ((y - y_hat) ** 2).sum() / ((y - y.mean()) ** 2).sum()
+    return slope, intercept, r2
+
+
+def top_driver(table: pd.DataFrame, value_col: str, target: str = "Average latency") -> pd.Series:
+    return table[table["Target"] == target].iloc[0]
+
+
+def render_phase_section(phase: str) -> None:
+    sub = phase_data[phase]
+    summary_row = summary_lookup.loc[phase]
+    mono_table = monotonic_lookup[phase]
+    diff_table = diff_lookup[phase]
+    mono_driver = top_driver(mono_table, "Spearman rho")
+    diff_driver = top_driver(diff_table, "First-diff r")
+
+    phase_summary = pd.DataFrame(
+        [
+            {
+                "Phase": phase,
+                "Operation": summary_row["Operation"],
+                "Epochs": int(summary_row["Epochs"]),
+                "Throughput change %": summary_row["Throughput change %"],
+                "Avg latency change %": summary_row["Avg latency change %"],
+                "P95 latency change %": summary_row["P95 latency change %"],
+                "Cache hit change pts": summary_row["Cache hit change pts"],
+                "Top monotonic driver": mono_driver["Metric"],
+                "Top monotonic rho": mono_driver["Spearman rho"],
+                "Top first-diff driver": diff_driver["Metric"],
+                "Top first-diff r": diff_driver["First-diff r"],
+            }
+        ]
+    )
+    display(
+        phase_summary.style.format(
+            {
+                "Throughput change %": "{:+.1f}",
+                "Avg latency change %": "{:+.1f}",
+                "P95 latency change %": "{:+.1f}",
+                "Cache hit change pts": "{:+.3f}",
+                "Top monotonic rho": "{:+.3f}",
+                "Top first-diff r": "{:+.3f}",
+            }
+        )
+    )
+
+    driver_metric_raw = next(
+        key for key, value in METRIC_LABELS.items() if value == mono_driver["Metric"]
+    )
+
+    fig, axes = plt.subplots(2, 2, figsize=(12.5, 8))
+    color = PHASE_COLORS[phase]
+
+    axes[0, 0].plot(sub["Epoch"], sub["Throughput(ops/sec)"], color=color, linewidth=2.2)
+    axes[0, 0].set_title(f"{phase}: Throughput by epoch")
+    axes[0, 0].set_xlabel("Epoch")
+    axes[0, 0].set_ylabel("ops/sec")
+
+    axes[0, 1].plot(sub["Epoch"], sub["AverageLatency(us)"], color=color, linewidth=2.2)
+    axes[0, 1].set_title(f"{phase}: Average latency by epoch")
+    axes[0, 1].set_xlabel("Epoch")
+    axes[0, 1].set_ylabel("microseconds")
+
+    scatter_left = sub.dropna(subset=["cache_hit_ratio", "Throughput(ops/sec)"])
+    x_left = 100 * scatter_left["cache_hit_ratio"]
+    y_left = scatter_left["Throughput(ops/sec)"]
+    axes[1, 0].scatter(x_left, y_left, color=color, alpha=0.8, s=28)
+    m_left, b_left = np.polyfit(x_left, y_left, 1)
+    axes[1, 0].plot(x_left, m_left * x_left + b_left, color=color, linewidth=2)
+    axes[1, 0].set_title(f"{phase}: Throughput vs cache-hit ratio")
+    axes[1, 0].set_xlabel("Cache-hit ratio (%)")
+    axes[1, 0].set_ylabel("ops/sec")
+
+    scatter_right = sub.dropna(subset=[driver_metric_raw, "AverageLatency(us)"])
+    x_right = scatter_right[driver_metric_raw]
+    y_right = scatter_right["AverageLatency(us)"]
+    axes[1, 1].scatter(x_right, y_right, color=color, alpha=0.8, s=28)
+    m_right, b_right = np.polyfit(x_right, y_right, 1)
+    axes[1, 1].plot(x_right, m_right * x_right + b_right, color=color, linewidth=2)
+    axes[1, 1].set_title(f"{phase}: Avg latency vs {mono_driver['Metric']}")
+    axes[1, 1].set_xlabel(mono_driver["Metric"])
+    axes[1, 1].set_ylabel("microseconds")
+
+    fig.tight_layout()
+    plt.show()
+
+    display(Markdown("**Top monotonic correlations**"))
+    display(mono_table.style.format({"Spearman rho": "{:+.3f}"}))
+
+    display(Markdown("**Top first-difference correlations**"))
+    display(diff_table.style.format({"First-diff r": "{:+.3f}"}))
+
+    throughput_change = summary_row["Throughput change %"]
+    avg_latency_change = summary_row["Avg latency change %"]
+    cache_hit_change = summary_row["Cache hit change pts"]
+
+    if throughput_change > 0 and avg_latency_change < 0:
+        trend_line = (
+            f"This phase is the outlier: throughput improves by {throughput_change:.1f}% while "
+            f"average latency improves by {-avg_latency_change:.1f}%, and cache-hit ratio is almost flat "
+            f"({cache_hit_change:+.3f} points)."
+        )
+    else:
+        trend_line = (
+            f"This phase degrades materially: throughput changes by {throughput_change:.1f}% and "
+            f"average latency changes by {avg_latency_change:.1f}%, alongside a cache-hit shift of "
+            f"{cache_hit_change:.3f} points."
+        )
+
+    if abs(diff_driver["First-diff r"]) >= 0.25:
+        diff_line = (
+            f"After detrending, the clearest same-step signal for average latency is "
+            f"`{diff_driver['Metric']}` (`r={diff_driver['First-diff r']:+.3f}`), so this metric still moves "
+            f"with short-run latency swings."
+        )
+    else:
+        diff_line = (
+            f"After detrending, no derived metric has a strong same-step tie to average latency "
+            f"(best `r={diff_driver['First-diff r']:+.3f}` for `{diff_driver['Metric']}`), which suggests the main "
+            f"story here is gradual drift rather than sharp local shocks."
+        )
+
+    display(
+        Markdown(
+            "\n".join(
+                [
+                    f"- The strongest long-run driver for average latency in this phase is `{mono_driver['Metric']}` (`rho={mono_driver['Spearman rho']:+.3f}`).",
+                    f"- {trend_line}",
+                    f"- {diff_line}",
+                ]
+            )
+        )
+    )
+
+
+data_path = resolve_dataset()
+raw = pd.read_csv(data_path)
+phase_data = {phase: prepare_phase(raw, phase) for phase in ANALYSIS_PHASES}
+
+analysis_df = pd.concat(phase_data.values(), ignore_index=True)
+analysis_df["Phase"] = pd.Categorical(analysis_df["Phase"], categories=ANALYSIS_PHASES, ordered=True)
+
+summary_rows = [summarize_phase(phase, phase_data[phase]) for phase in ANALYSIS_PHASES]
+summary_table = pd.DataFrame(summary_rows).set_index("Phase")
+monotonic_lookup = {phase: build_correlation_table(phase_data[phase], diff=False) for phase in ANALYSIS_PHASES}
+diff_lookup = {phase: build_correlation_table(phase_data[phase], diff=True) for phase in ANALYSIS_PHASES}
+
+driver_rows = []
+for phase in ANALYSIS_PHASES:
+    mono_driver = top_driver(monotonic_lookup[phase], "Spearman rho")
+    diff_driver = top_driver(diff_lookup[phase], "First-diff r")
+    driver_rows.append(
+        {
+            "Phase": phase,
+            "Top monotonic driver": mono_driver["Metric"],
+            "Top monotonic rho": mono_driver["Spearman rho"],
+            "Top first-diff driver": diff_driver["Metric"],
+            "Top first-diff r": diff_driver["First-diff r"],
+        }
+    )
+driver_summary = pd.DataFrame(driver_rows).set_index("Phase")
+
+summary_lookup = summary_table.join(driver_summary)
+
+display(
+    pd.DataFrame(
+        {
+            "dataset": [data_path.name],
+            "rows": [len(raw)],
+            "epochs": [raw["Epoch"].nunique()],
+            "phases_present": [", ".join(sorted(raw["Phase"].unique()))],
+            "analyzed_phases": [", ".join(ANALYSIS_PHASES)],
+            "operations_present": [", ".join(sorted(raw["Operation"].unique()))],
+        }
+    )
+)
+```
+
+## Phase Inventory
+
+```{python}
+phase_counts = (
+    raw.groupby(["Phase", "Operation"])
+    .size()
+    .rename("rows")
+    .reset_index()
+    .sort_values(["Phase", "Operation"])
+)
+
+display(phase_counts)
+```
+
+All repeated phases except `load` contain 100 epochs, which makes them suitable for separate EDA and within-phase correlation analysis.
+
+## Cross-Phase Summary
+
+```{python}
+display(
+    summary_lookup[
+        [
+            "Operation",
+            "Epochs",
+            "Throughput change %",
+            "Avg latency change %",
+            "P95 latency change %",
+            "Cache hit change pts",
+            "Top monotonic driver",
+            "Top monotonic rho",
+            "Top first-diff driver",
+            "Top first-diff r",
+        ]
+    ].style.format(
+        {
+            "Throughput change %": "{:+.1f}",
+            "Avg latency change %": "{:+.1f}",
+            "P95 latency change %": "{:+.1f}",
+            "Cache hit change pts": "{:+.3f}",
+            "Top monotonic rho": "{:+.3f}",
+            "Top first-diff r": "{:+.3f}",
+        }
+    )
+)
+
+extend_row = summary_lookup.loc["extend"]
+run_row = summary_lookup.loc["run"]
+reference_row = summary_lookup.loc["reference"]
+clean_row = summary_lookup.loc["clean-run"]
+avg_row = summary_lookup.loc["avg-run"]
+
+display(
+    Markdown(
+        f"""
+- `run`, `clean-run`, and `avg-run` all show strong long-run degradation: throughput falls by **{-run_row['Throughput change %']:.1f}%**, **{-clean_row['Throughput change %']:.1f}%**, and **{-avg_row['Throughput change %']:.1f}%** respectively, while average latency grows sharply.
+- `extend` also degrades, but less severely on throughput than the read-oriented run-family phases. Its strongest short-run signal is `{extend_row['Top first-diff driver']}` with `r={extend_row['Top first-diff r']:+.3f}`, which keeps the WAL story visible even after detrending.
+- `reference` is the structural outlier: throughput improves by **{reference_row['Throughput change %']:.1f}%**, average latency improves by **{-reference_row['Avg latency change %']:.1f}%**, and cache-hit ratio changes by only **{reference_row['Cache hit change pts']:+.3f}** points.
+"""
+    )
+)
+```
+
+## Cross-Phase EDA Overview
+
+```{python}
+fig, axes = plt.subplots(len(ANALYSIS_PHASES), 3, figsize=(14, 17), sharex="col")
+
+for row_idx, phase in enumerate(ANALYSIS_PHASES):
+    sub = phase_data[phase]
+    color = PHASE_COLORS[phase]
+
+    axes[row_idx, 0].plot(sub["Epoch"], sub["Throughput(ops/sec)"], color=color, linewidth=2)
+    axes[row_idx, 0].set_title(f"{phase}: Throughput")
+    axes[row_idx, 0].set_ylabel("ops/sec")
+
+    axes[row_idx, 1].plot(sub["Epoch"], sub["AverageLatency(us)"], color=color, linewidth=2)
+    axes[row_idx, 1].set_title(f"{phase}: Average latency")
+    axes[row_idx, 1].set_ylabel("microseconds")
+
+    axes[row_idx, 2].plot(sub["Epoch"], 100 * sub["cache_hit_ratio"], color=color, linewidth=2)
+    axes[row_idx, 2].set_title(f"{phase}: Cache-hit ratio")
+    axes[row_idx, 2].set_ylabel("%")
+
+for ax in axes[-1, :]:
+    ax.set_xlabel("Epoch")
+
+fig.suptitle("Each repeated phase has its own drift profile", fontsize=16, y=1.0)
+fig.tight_layout()
+plt.show()
+```
+
+The overview already shows that `reference` does not behave like the other repeated phases. Its performance stays comparatively flat or slightly improves, while `run`, `clean-run`, `avg-run`, and `extend` all drift toward lower throughput and higher latency.
+
+## Phase Details
+
+### `extend`
+
+```{python}
+render_phase_section("extend")
+```
+
+### `run`
+
+```{python}
+render_phase_section("run")
+```
+
+### `reference`
+
+```{python}
+render_phase_section("reference")
+```
+
+### `clean-run`
+
+```{python}
+render_phase_section("clean-run")
+```
+
+### `avg-run`
+
+```{python}
+render_phase_section("avg-run")
+```
+
+## Regression Comparison Across Phases
+
+```{python}
+regression_rows = []
+for phase in ANALYSIS_PHASES:
+    sub = phase_data[phase]
+    relationships = [
+        ("cache_hit_ratio", "Throughput(ops/sec)"),
+        ("cache_hit_ratio", "AverageLatency(us)"),
+        ("wal_bytes_per_op", "AverageLatency(us)"),
+        ("buffer_alloc_per_op", "AverageLatency(us)"),
+    ]
+    record = {"Phase": phase}
+    for x_col, y_col in relationships:
+        slope, intercept, r2 = fit_relationship(sub, x_col, y_col)
+        label = f"{format_metric(y_col)} ~ {format_metric(x_col)}"
+        record[f"{label} slope"] = slope
+        record[f"{label} R^2"] = r2
+    regression_rows.append(record)
+
+regression_table = pd.DataFrame(regression_rows).set_index("Phase")
+display(
+    regression_table.style.format(
+        {
+            col: "{:.3f}" for col in regression_table.columns if col.endswith("R^2")
+        }
+        | {
+            col: "{:.6f}" for col in regression_table.columns if col.endswith("slope")
+        }
+    )
+)
+```
+
+This comparison reinforces the phase split:
+
+- `run`, `clean-run`, `avg-run`, and `extend` all have strong long-run fits between latency and storage-pressure proxies.
+- `reference` has near-zero `R^2` for the same relationships, which is another sign that it should not be folded into the same narrative as the other run-family phases.
+
+## Final Takeaway
+
+The most useful update from the phase-by-phase view is that there are really two stories in this file:
+
+1. `run`, `clean-run`, `avg-run`, and `extend` all show substantial drift toward worse performance, with cache efficiency falling and per-operation storage work rising.
+2. `reference` does not follow that pattern; it is comparatively stable and even improves slightly, so it acts more like a control phase than another copy of `run`.
+
+That separation makes the most interesting correlation more precise:
+
+> The dataset does not contain one generic "run-phase slowdown". It contains a cluster of degrading phases where cache loss and growing I/O pressure track worse performance, plus a distinct `reference` phase where those relationships are weak and the system stays stable.
