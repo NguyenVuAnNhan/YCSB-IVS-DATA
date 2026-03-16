@@ -1,0 +1,430 @@
+---
+title: "WAL Effects On Latency And Throughput: postgresql_run1_uniform_heavy_vacuum.csv"
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: cosmo
+execute:
+  echo: false
+  warning: false
+  message: false
+  error: true
+jupyter: python3
+---
+
+## Overview
+
+This report focuses specifically on the write-ahead log (WAL) metrics in `postgresql_run1_uniform_heavy_vacuum.csv` and how they relate to:
+
+- `Throughput(ops/sec)`
+- `AverageLatency(us)`
+- `95thPercentileLatency(us)`
+- `99thPercentileLatency(us)`
+
+The dataset is split into the repeated benchmark phases:
+
+- `extend`
+- `run`
+- `reference`
+- `clean-run`
+- `avg-run`
+
+Because PostgreSQL WAL counters are cumulative, the report emphasizes per-epoch deltas normalized by `Operations`:
+
+- `wal_bytes_per_op`
+- `wal_records_per_op`
+- `wal_fpi_per_op`
+- `wal_buffers_full_per_op`
+
+## Load And Prepare The Data
+
+```{python}
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from IPython.display import Markdown, display
+
+plt.style.use("seaborn-v0_8-whitegrid")
+plt.rcParams["figure.figsize"] = (11, 6)
+plt.rcParams["axes.spines.top"] = False
+plt.rcParams["axes.spines.right"] = False
+
+DATASET_NAME = "postgresql_run1_uniform_heavy_vacuum.csv"
+PHASES = ["extend", "run", "reference", "clean-run", "avg-run"]
+PHASE_COLORS = {
+    "extend": "#bb3e03",
+    "run": "#005f73",
+    "reference": "#6c757d",
+    "clean-run": "#ae2012",
+    "avg-run": "#0a9396",
+}
+WAL_COUNTERS = ["wal_bytes", "wal_records", "wal_fpi", "wal_buffers_full"]
+PER_OP_WAL_METRICS = [f"{col}_per_op" for col in WAL_COUNTERS]
+PERF_METRICS = [
+    "Throughput(ops/sec)",
+    "AverageLatency(us)",
+    "95thPercentileLatency(us)",
+    "99thPercentileLatency(us)",
+]
+LABELS = {
+    "wal_bytes_per_op": "WAL bytes per op",
+    "wal_records_per_op": "WAL records per op",
+    "wal_fpi_per_op": "WAL FPI per op",
+    "wal_buffers_full_per_op": "WAL buffers-full per op",
+    "Throughput(ops/sec)": "Throughput",
+    "AverageLatency(us)": "Average latency",
+    "95thPercentileLatency(us)": "P95 latency",
+    "99thPercentileLatency(us)": "P99 latency",
+}
+
+
+def resolve_dataset() -> Path:
+    candidates = [
+        Path("DATA") / DATASET_NAME,
+        Path("../DATA") / DATASET_NAME,
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate.resolve()
+    raise FileNotFoundError(f"Could not find {DATASET_NAME} from {Path.cwd()}")
+
+
+def prepare_phase(df: pd.DataFrame, phase: str) -> pd.DataFrame:
+    sub = df[df["Phase"] == phase].sort_values("Epoch").copy()
+    for col in WAL_COUNTERS:
+        sub[f"d_{col}"] = sub[col].diff()
+        sub[f"{col}_per_op"] = sub[f"d_{col}"] / sub["Operations"]
+    sub["log10_throughput"] = np.log10(sub["Throughput(ops/sec)"].where(sub["Throughput(ops/sec)"] > 0))
+    return sub
+
+
+def fit_line(df: pd.DataFrame, x_col: str, y_col: str) -> tuple[float, float, float]:
+    fit_df = df[[x_col, y_col]].dropna()
+    x = fit_df[x_col].to_numpy(dtype=float)
+    y = fit_df[y_col].to_numpy(dtype=float)
+    slope, intercept = np.polyfit(x, y, 1)
+    y_hat = slope * x + intercept
+    r2 = 1 - ((y - y_hat) ** 2).sum() / ((y - y.mean()) ** 2).sum()
+    return slope, intercept, r2
+
+
+def monotonic_corr(sub: pd.DataFrame) -> pd.DataFrame:
+    corr = sub[PERF_METRICS + PER_OP_WAL_METRICS].corr(method="spearman", numeric_only=True)
+    rows = []
+    for target in PERF_METRICS:
+        ranked = (
+            corr[target]
+            .loc[PER_OP_WAL_METRICS]
+            .dropna()
+            .sort_values(key=lambda s: s.abs(), ascending=False)
+        )
+        for metric, value in ranked.items():
+            rows.append(
+                {
+                    "Target": LABELS[target],
+                    "Metric": LABELS[metric],
+                    "Spearman rho": value,
+                }
+            )
+    return pd.DataFrame(rows)
+
+
+def diff_corr(sub: pd.DataFrame) -> pd.DataFrame:
+    diff = sub[PERF_METRICS + PER_OP_WAL_METRICS].diff().dropna()
+    corr = diff.corr(method="pearson", numeric_only=True)
+    rows = []
+    for target in PERF_METRICS:
+        ranked = (
+            corr[target]
+            .loc[PER_OP_WAL_METRICS]
+            .dropna()
+            .sort_values(key=lambda s: s.abs(), ascending=False)
+        )
+        for metric, value in ranked.items():
+            rows.append(
+                {
+                    "Target": LABELS[target],
+                    "Metric": LABELS[metric],
+                    "First-diff r": value,
+                }
+            )
+    return pd.DataFrame(rows)
+
+
+data_path = resolve_dataset()
+raw = pd.read_csv(data_path)
+phase_data = {phase: prepare_phase(raw, phase) for phase in PHASES}
+
+display(
+    pd.DataFrame(
+        {
+            "dataset": [data_path.name],
+            "rows": [len(raw)],
+            "epochs": [raw["Epoch"].nunique()],
+            "phases_analyzed": [", ".join(PHASES)],
+            "wal_metrics": [", ".join(PER_OP_WAL_METRICS)],
+        }
+    )
+)
+```
+
+## Cross-Phase WAL Summary
+
+```{python}
+summary_rows = []
+for phase in PHASES:
+    sub = phase_data[phase]
+    start_raw = sub.iloc[0]
+    end_raw = sub.iloc[-1]
+    start = sub.iloc[1]
+    end = sub.iloc[-1]
+    summary_rows.append(
+        {
+            "Phase": phase,
+            "Operation": sub["Operation"].mode().iat[0],
+            "Throughput change %": 100 * (end_raw["Throughput(ops/sec)"] / start_raw["Throughput(ops/sec)"] - 1),
+            "Avg latency change %": 100 * (end_raw["AverageLatency(us)"] / start_raw["AverageLatency(us)"] - 1),
+            "WAL bytes/op start": start["wal_bytes_per_op"],
+            "WAL bytes/op end": end["wal_bytes_per_op"],
+            "WAL records/op start": start["wal_records_per_op"],
+            "WAL records/op end": end["wal_records_per_op"],
+            "WAL FPI/op start": start["wal_fpi_per_op"],
+            "WAL FPI/op end": end["wal_fpi_per_op"],
+            "WAL buffers-full/op start": start["wal_buffers_full_per_op"],
+            "WAL buffers-full/op end": end["wal_buffers_full_per_op"],
+        }
+    )
+
+summary_table = pd.DataFrame(summary_rows).set_index("Phase")
+display(
+    summary_table.style.format(
+        {
+            "Throughput change %": "{:+.1f}",
+            "Avg latency change %": "{:+.1f}",
+            "WAL bytes/op start": "{:,.2f}",
+            "WAL bytes/op end": "{:,.2f}",
+            "WAL records/op start": "{:.3f}",
+            "WAL records/op end": "{:.3f}",
+            "WAL FPI/op start": "{:.3f}",
+            "WAL FPI/op end": "{:.3f}",
+            "WAL buffers-full/op start": "{:.5f}",
+            "WAL buffers-full/op end": "{:.5f}",
+        }
+    )
+)
+
+display(
+    Markdown(
+        "\n".join(
+            [
+                "- Across the degrading phases, `wal_bytes_per_op` rises from roughly **1.8-2.0k** to about **60k** bytes per operation.",
+                "- `wal_records_per_op`, `wal_fpi_per_op`, and `wal_buffers_full_per_op` also rise sharply over time.",
+                "- `reference` is the important counterexample: it sees nearly the same WAL-per-op growth as `run`, but its throughput and latency remain stable or slightly improve.",
+            ]
+        )
+    )
+)
+```
+
+## WAL Intensity Over Time
+
+```{python}
+fig, axes = plt.subplots(len(PHASES), 2, figsize=(13, 16), sharex="col")
+
+for row_idx, phase in enumerate(PHASES):
+    sub = phase_data[phase]
+    color = PHASE_COLORS[phase]
+
+    axes[row_idx, 0].plot(sub["Epoch"], sub["wal_bytes_per_op"], color=color, linewidth=2)
+    axes[row_idx, 0].set_title(f"{phase}: WAL bytes per op")
+    axes[row_idx, 0].set_ylabel("bytes/op")
+
+    axes[row_idx, 1].plot(sub["Epoch"], sub["wal_records_per_op"], color=color, linewidth=2)
+    axes[row_idx, 1].set_title(f"{phase}: WAL records per op")
+    axes[row_idx, 1].set_ylabel("records/op")
+
+for ax in axes[-1, :]:
+    ax.set_xlabel("Epoch")
+
+fig.suptitle("WAL intensity rises in nearly every repeated phase", fontsize=16, y=1.0)
+fig.tight_layout()
+plt.show()
+```
+
+The key nuance is that the WAL curves are not unique to the degrading phases. `reference` also accumulates more WAL work per operation, which means WAL growth alone is not sufficient to explain slowdown.
+
+## WAL Bytes Per Operation Vs Performance
+
+```{python}
+fig, axes = plt.subplots(2, len(PHASES), figsize=(17, 7), sharex=False)
+
+for col_idx, phase in enumerate(PHASES):
+    sub = phase_data[phase].dropna(subset=["wal_bytes_per_op", "AverageLatency(us)", "log10_throughput"])
+    color = PHASE_COLORS[phase]
+    x = sub["wal_bytes_per_op"]
+
+    y_latency = sub["AverageLatency(us)"]
+    slope_l, intercept_l, r2_l = fit_line(sub, "wal_bytes_per_op", "AverageLatency(us)")
+    xs = np.linspace(x.min(), x.max(), 200)
+    axes[0, col_idx].scatter(x, y_latency, color=color, alpha=0.82, s=24)
+    axes[0, col_idx].plot(xs, slope_l * xs + intercept_l, color=color, linewidth=2)
+    axes[0, col_idx].set_title(f"{phase}: Avg latency")
+    axes[0, col_idx].set_ylabel("microseconds")
+    axes[0, col_idx].set_xlabel("WAL bytes/op")
+    axes[0, col_idx].text(
+        0.03,
+        0.94,
+        f"$R^2={r2_l:.3f}$",
+        transform=axes[0, col_idx].transAxes,
+        ha="left",
+        va="top",
+        fontsize=9,
+        bbox={"facecolor": "white", "alpha": 0.8, "edgecolor": "none"},
+    )
+
+    y_tp = sub["log10_throughput"]
+    slope_t, intercept_t, r2_t = fit_line(sub, "wal_bytes_per_op", "log10_throughput")
+    axes[1, col_idx].scatter(x, y_tp, color=color, alpha=0.82, s=24)
+    axes[1, col_idx].plot(xs, slope_t * xs + intercept_t, color=color, linewidth=2)
+    axes[1, col_idx].set_title(f"{phase}: log10 throughput")
+    axes[1, col_idx].set_ylabel("log10(ops/sec)")
+    axes[1, col_idx].set_xlabel("WAL bytes/op")
+    axes[1, col_idx].text(
+        0.03,
+        0.94,
+        f"$R^2={r2_t:.3f}$",
+        transform=axes[1, col_idx].transAxes,
+        ha="left",
+        va="top",
+        fontsize=9,
+        bbox={"facecolor": "white", "alpha": 0.8, "edgecolor": "none"},
+    )
+
+fig.tight_layout()
+plt.show()
+```
+
+This is the core picture:
+
+- `extend`, `run`, `clean-run`, and `avg-run` all show strong long-run relationships between WAL intensity and worse performance.
+- `reference` does not. Its `R^2` stays near zero for WAL-vs-performance fits, despite similar WAL growth.
+
+## Quartile View: More WAL, Worse Performance?
+
+```{python}
+quartile_rows = []
+for phase in PHASES:
+    sub = phase_data[phase].dropna(subset=["wal_bytes_per_op"]).copy()
+    sub["wal_bucket"] = pd.qcut(sub["wal_bytes_per_op"], 4, duplicates="drop")
+    grouped = (
+        sub.groupby("wal_bucket")
+        .agg(
+            epoch_min=("Epoch", "min"),
+            epoch_max=("Epoch", "max"),
+            wal_bytes_per_op=("wal_bytes_per_op", "mean"),
+            throughput=("Throughput(ops/sec)", "mean"),
+            avg_latency=("AverageLatency(us)", "mean"),
+        )
+        .reset_index()
+    )
+    grouped["Phase"] = phase
+    quartile_rows.append(grouped)
+
+quartile_table = pd.concat(quartile_rows, ignore_index=True)
+display(
+    quartile_table.style.format(
+        {
+            "wal_bytes_per_op": "{:,.2f}",
+            "throughput": "{:,.2f}",
+            "avg_latency": "{:,.2f}",
+        }
+    )
+)
+```
+
+The quartile view sharpens the contrast:
+
+- In `run`, `clean-run`, `avg-run`, and `extend`, higher `wal_bytes_per_op` buckets line up with lower throughput and higher latency.
+- In `reference`, the same upward movement in `wal_bytes_per_op` does not produce the same performance decay.
+
+## WAL Correlations By Phase
+
+### Long-Run Monotonic Correlations
+
+```{python}
+monotonic_tables = {phase: monotonic_corr(phase_data[phase]) for phase in PHASES}
+
+for phase in PHASES:
+    display(Markdown(f"**{phase}**"))
+    display(monotonic_tables[phase].style.format({"Spearman rho": "{:+.3f}"}))
+```
+
+### First-Difference Correlations
+
+```{python}
+diff_tables = {phase: diff_corr(phase_data[phase]) for phase in PHASES}
+
+for phase in PHASES:
+    display(Markdown(f"**{phase}**"))
+    display(diff_tables[phase].style.format({"First-diff r": "{:+.3f}"}))
+```
+
+Interpretation:
+
+- The long-run correlations are very strong in `extend`, `run`, `clean-run`, and `avg-run`.
+- The first-difference correlations are much weaker overall, which means a large part of the WAL signal is a slow drift story, not a point-to-point shock story.
+- `extend` stands out because `wal_bytes_per_op` and `wal_fpi_per_op` still retain a visible same-step link with latency after detrending.
+
+## Regression Comparison
+
+```{python}
+regression_rows = []
+for phase in PHASES:
+    sub = phase_data[phase]
+    for x_col, y_col in [
+        ("wal_bytes_per_op", "AverageLatency(us)"),
+        ("wal_records_per_op", "AverageLatency(us)"),
+        ("wal_fpi_per_op", "AverageLatency(us)"),
+        ("wal_buffers_full_per_op", "AverageLatency(us)"),
+        ("wal_bytes_per_op", "Throughput(ops/sec)"),
+    ]:
+        slope, intercept, r2 = fit_line(sub, x_col, y_col)
+        regression_rows.append(
+            {
+                "Phase": phase,
+                "Relationship": f"{LABELS[y_col]} ~ {LABELS[x_col]}",
+                "Slope": slope,
+                "R^2": r2,
+            }
+        )
+
+regression_table = pd.DataFrame(regression_rows)
+display(
+    regression_table.style.format(
+        {
+            "Slope": "{:.6f}",
+            "R^2": "{:.3f}",
+        }
+    )
+)
+```
+
+Two patterns matter most here:
+
+- For `extend`, `AverageLatency(us) ~ wal_bytes_per_op` is exceptionally strong, with a high `R^2` and a visible same-step correlation after differencing.
+- For `reference`, the same relationships collapse, which shows that WAL growth is not by itself a complete explanation for performance loss.
+
+## Final Takeaway
+
+The most defensible conclusion from this WAL-focused view is:
+
+> WAL intensity is strongly associated with throughput loss and latency growth in the degrading phases, especially `extend`, but it is not a universal standalone cause because `reference` experiences similar WAL growth without the same performance collapse.
+
+That gives a more precise story than "more WAL means slower system":
+
+- In `extend`, WAL behavior looks like an active part of the slowdown mechanism.
+- In `run`, `clean-run`, and `avg-run`, WAL still tracks degradation strongly, but mostly as part of a larger long-run drift.
+- In `reference`, WAL growth appears largely decoupled from user-visible slowdown.
