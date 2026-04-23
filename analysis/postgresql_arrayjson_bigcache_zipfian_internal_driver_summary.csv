@@ -1,0 +1,263 @@
+run,phase,driver,driver_label,latency_spearman_rho,throughput_spearman_rho
+4,avg-run,blks_hit_per_op,Block hits/op,-0.37684601113172544,0.3764996907854051
+4,avg-run,blks_read_per_op,Block reads/op,0.3246138983478856,-0.3246138983478856
+4,avg-run,buffers_alloc_per_op,Buffer allocs/op,0.9969078540507111,-0.9968831168831169
+4,avg-run,buffers_backend_per_op,Backend buffers/op,0.9917377860235003,-0.9917377860235003
+4,avg-run,buffers_checkpoint_per_op,Checkpoint buffers/op,0.9779962894248608,-0.9778231292517007
+4,avg-run,buffers_clean_per_op,Cleaner buffers/op,0.8691764461075631,-0.8686930538594605
+4,avg-run,cache_hit_ratio,Cache-hit ratio,0.9903390339033903,-0.9902910291029103
+4,avg-run,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.96,-0.9601978973407544
+4,avg-run,checkpoint_write_time_per_op,Checkpoint write time/op,0.9962770562770563,-0.9962770562770563
+4,avg-run,internal_inserts_per_logical_update,Internal inserts/logical update,0.012903225806451613,-0.02056451612903226
+4,avg-run,tup_fetched_per_op,Tuples fetched/op,-0.14964749536178107,0.1494495980210266
+4,avg-run,tup_inserted_per_op,Internal tuple inserts/op,-0.27963326585385834,0.27963326585385834
+4,avg-run,tup_returned_per_op,Tuples returned/op,-0.1491156462585034,0.14891774891774892
+4,avg-run,tup_updated_per_op,Logical tuple updates/op,0.04395350169200576,-0.04452559727833774
+4,avg-run,wal_buffers_full_per_op,WAL buffers full/op,0.5975139146567718,-0.5963512677798392
+4,avg-run,wal_bytes_per_op,WAL bytes/op,0.9982560296846011,-0.9982189239332097
+4,avg-run,wal_fpi_per_op,WAL FPIs/op,0.9951144094001236,-0.9950278293135436
+4,avg-run,wal_records_per_op,WAL records/op,0.9981447124304267,-0.9981076066790352
+5,avg-run,blks_hit_per_op,Block hits/op,-0.39705627705627705,0.39705627705627705
+5,avg-run,blks_read_per_op,Block reads/op,0.30273280083282667,-0.30273280083282667
+5,avg-run,buffers_alloc_per_op,Buffer allocs/op,0.9978354978354979,-0.9978354978354979
+5,avg-run,buffers_backend_per_op,Backend buffers/op,0.9925417439703154,-0.9925417439703154
+5,avg-run,buffers_checkpoint_per_op,Checkpoint buffers/op,0.9804452690166976,-0.9804452690166976
+5,avg-run,buffers_clean_per_op,Cleaner buffers/op,0.850540246248242,-0.850540246248242
+5,avg-run,cache_hit_ratio,Cache-hit ratio,0.9851185118511852,-0.9851185118511852
+5,avg-run,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.960411133001292,-0.960411133001292
+5,avg-run,checkpoint_write_time_per_op,Checkpoint write time/op,0.997687074829932,-0.997687074829932
+5,avg-run,internal_inserts_per_logical_update,Internal inserts/logical update,-0.02857142857142857,0.02857142857142857
+5,avg-run,tup_fetched_per_op,Tuples fetched/op,-0.13898577612863328,0.13898577612863328
+5,avg-run,tup_inserted_per_op,Internal tuple inserts/op,-0.25366963825740424,0.25366963825740424
+5,avg-run,tup_returned_per_op,Tuples returned/op,-0.13898577612863328,0.13898577612863328
+5,avg-run,tup_updated_per_op,Logical tuple updates/op,0.002679673708628401,-0.002679673708628401
+5,avg-run,wal_buffers_full_per_op,WAL buffers full/op,0.6962770562770563,-0.6962770562770563
+5,avg-run,wal_bytes_per_op,WAL bytes/op,0.9988868274582561,-0.9988868274582561
+5,avg-run,wal_fpi_per_op,WAL FPIs/op,0.9943722943722944,-0.9943722943722944
+5,avg-run,wal_records_per_op,WAL records/op,0.9988497217068646,-0.9988497217068646
+6,avg-run,blks_hit_per_op,Block hits/op,-0.4134817563388992,0.4135683364254793
+6,avg-run,blks_read_per_op,Block reads/op,0.26856843184479595,-0.26770595155353694
+6,avg-run,buffers_alloc_per_op,Buffer allocs/op,0.9918367346938776,-0.9917501546072974
+6,avg-run,buffers_backend_per_op,Backend buffers/op,0.9825726654298083,-0.9826963512677799
+6,avg-run,buffers_checkpoint_per_op,Checkpoint buffers/op,0.9806431663574521,-0.9804205318491033
+6,avg-run,buffers_clean_per_op,Cleaner buffers/op,0.881403878357502,-0.8813914883004529
+6,avg-run,cache_hit_ratio,Cache-hit ratio,0.9863546354635464,-0.9862346234623462
+6,avg-run,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.9328880643166357,-0.9332467532467532
+6,avg-run,checkpoint_write_time_per_op,Checkpoint write time/op,0.9925417439703154,-0.9924922696351268
+6,avg-run,internal_inserts_per_logical_update,Internal inserts/logical update,-0.002393162393162393,0.0071794871794871795
+6,avg-run,tup_fetched_per_op,Tuples fetched/op,-0.10531849103277675,0.10503401360544218
+6,avg-run,tup_inserted_per_op,Internal tuple inserts/op,-0.2731874445458719,0.2735399524541237
+6,avg-run,tup_returned_per_op,Tuples returned/op,-0.10570191713048856,0.105417439703154
+6,avg-run,tup_updated_per_op,Logical tuple updates/op,0.004915387409771793,-0.004371897419748245
+6,avg-run,wal_buffers_full_per_op,WAL buffers full/op,0.3860482374768089,-0.38589981447124305
+6,avg-run,wal_bytes_per_op,WAL bytes/op,0.9928756957328386,-0.9927643784786642
+6,avg-run,wal_fpi_per_op,WAL FPIs/op,0.9905380333951762,-0.9904267161410019
+6,avg-run,wal_records_per_op,WAL records/op,0.9928138528138528,-0.9927025355596785
+4,clean-run,blks_hit_per_op,Block hits/op,-0.45025355596784167,0.45063219119631387
+4,clean-run,blks_read_per_op,Block reads/op,0.32955425199861127,-0.32955527103318316
+4,clean-run,buffers_alloc_per_op,Buffer allocs/op,0.9973902288188002,-0.9973747599761966
+4,clean-run,buffers_backend_per_op,Backend buffers/op,0.9904019789734075,-0.9903864885220152
+4,clean-run,buffers_checkpoint_per_op,Checkpoint buffers/op,0.9815460729746444,-0.981512002206307
+4,clean-run,buffers_clean_per_op,Cleaner buffers/op,0.8748656010275399,-0.8747877406284068
+4,clean-run,cache_hit_ratio,Cache-hit ratio,0.9991839183918392,-0.999132910694298
+4,clean-run,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.9562275819418676,-0.9561810642626548
+4,clean-run,checkpoint_write_time_per_op,Checkpoint write time/op,0.9972047000618429,-0.9972387051337258
+4,clean-run,internal_inserts_per_logical_update,Internal inserts/logical update,-0.029927760577915376,0.029927760577915376
+4,clean-run,tup_fetched_per_op,Tuples fetched/op,-0.09903525046382189,0.09770592982708994
+4,clean-run,tup_inserted_per_op,Internal tuple inserts/op,-0.3274664654760548,0.32757261199240084
+4,clean-run,tup_returned_per_op,Tuples returned/op,-0.09849103277674706,0.09716171045720678
+4,clean-run,tup_updated_per_op,Logical tuple updates/op,-0.005050932402190083,0.0050509480204826915
+4,clean-run,wal_buffers_full_per_op,WAL buffers full/op,0.6062090290661719,-0.6066499896441793
+4,clean-run,wal_bytes_per_op,WAL bytes/op,0.9991094619666048,-0.9990630768850386
+4,clean-run,wal_fpi_per_op,WAL FPIs/op,0.9962770562770563,-0.9961193448388524
+4,clean-run,wal_records_per_op,WAL records/op,0.9991218305504019,-0.9990816298181028
+5,clean-run,blks_hit_per_op,Block hits/op,-0.43398886827458255,0.43410018552875695
+5,clean-run,blks_read_per_op,Block reads/op,0.3091179671546466,-0.3091179671546466
+5,clean-run,buffers_alloc_per_op,Buffer allocs/op,0.9982683982683983,-0.9982931354359926
+5,clean-run,buffers_backend_per_op,Backend buffers/op,0.991713048855906,-0.9916759431045146
+5,clean-run,buffers_checkpoint_per_op,Checkpoint buffers/op,0.9816079158936302,-0.9816326530612245
+5,clean-run,buffers_clean_per_op,Cleaner buffers/op,0.8531421582285489,-0.8530678178862544
+5,clean-run,cache_hit_ratio,Cache-hit ratio,0.9979117911791179,-0.9979117911791179
+5,clean-run,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.9589360478603157,-0.9587628866162725
+5,clean-run,checkpoint_write_time_per_op,Checkpoint write time/op,0.9982807668521955,-0.998330241187384
+5,clean-run,internal_inserts_per_logical_update,Internal inserts/logical update,-0.04009034443817053,0.04009034443817053
+5,clean-run,tup_fetched_per_op,Tuples fetched/op,-0.053518862090290664,0.05398886827458256
+5,clean-run,tup_inserted_per_op,Internal tuple inserts/op,-0.27920927399414247,0.27939480332478445
+5,clean-run,tup_returned_per_op,Tuples returned/op,-0.053518862090290664,0.05398886827458256
+5,clean-run,tup_updated_per_op,Logical tuple updates/op,-0.008513660523456616,0.008420103814407642
+5,clean-run,wal_buffers_full_per_op,WAL buffers full/op,0.6982683982683983,-0.6985157699443414
+5,clean-run,wal_bytes_per_op,WAL bytes/op,0.9990723562152134,-0.9990847247990106
+5,clean-run,wal_fpi_per_op,WAL FPIs/op,0.994743351886209,-0.994743351886209
+5,clean-run,wal_records_per_op,WAL records/op,0.9990228818800247,-0.9990476190476191
+6,clean-run,blks_hit_per_op,Block hits/op,-0.4929251700680272,0.49457019171304883
+6,clean-run,blks_read_per_op,Block reads/op,0.2703033059938801,-0.2703033059938801
+6,clean-run,buffers_alloc_per_op,Buffer allocs/op,0.9953617810760668,-0.9951515151515151
+6,clean-run,buffers_backend_per_op,Backend buffers/op,0.983426097711812,-0.9834013605442177
+6,clean-run,buffers_checkpoint_per_op,Checkpoint buffers/op,0.983426097711812,-0.9831168831168832
+6,clean-run,buffers_clean_per_op,Cleaner buffers/op,0.8818747005253671,-0.881403878357502
+6,clean-run,cache_hit_ratio,Cache-hit ratio,0.995067506750675,-0.9947434743474347
+6,clean-run,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.9341125541125541,-0.9347804576376005
+6,clean-run,checkpoint_write_time_per_op,Checkpoint write time/op,0.9947928262213976,-0.9944712430426716
+6,clean-run,internal_inserts_per_logical_update,Internal inserts/logical update,-0.0029411764705882353,0.0029411764705882353
+6,clean-run,tup_fetched_per_op,Tuples fetched/op,0.017241805813234385,-0.0153865182436611
+6,clean-run,tup_inserted_per_op,Internal tuple inserts/op,-0.2917828805428744,0.29181380219359637
+6,clean-run,tup_returned_per_op,Tuples returned/op,0.018317872603586888,-0.01645021645021645
+6,clean-run,tup_updated_per_op,Logical tuple updates/op,0.004054046650761598,-0.003059839972122444
+6,clean-run,wal_buffers_full_per_op,WAL buffers full/op,0.4093753865182437,-0.40691403834260975
+6,clean-run,wal_bytes_per_op,WAL bytes/op,0.9963760049474335,-0.9961410018552875
+6,clean-run,wal_fpi_per_op,WAL FPIs/op,0.993704390847248,-0.9934322820037106
+6,clean-run,wal_records_per_op,WAL records/op,0.9963017934446506,-0.9960420531849103
+4,extend,blks_hit_per_op,Block hits/op,0.997687074829932,-0.997687074829932
+4,extend,blks_read_per_op,Block reads/op,0.9922121679227035,-0.9922121679227035
+4,extend,buffers_alloc_per_op,Buffer allocs/op,0.9969202226345083,-0.9969202226345083
+4,extend,buffers_backend_per_op,Backend buffers/op,0.9933704390847248,-0.9933704390847248
+4,extend,buffers_checkpoint_per_op,Checkpoint buffers/op,0.9752133580705009,-0.9752133580705009
+4,extend,buffers_clean_per_op,Cleaner buffers/op,0.8771648128742843,-0.8771648128742843
+4,extend,cache_hit_ratio,Cache-hit ratio,-0.989030903090309,0.989030903090309
+4,extend,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.9625726654298082,-0.9625726654298082
+4,extend,checkpoint_write_time_per_op,Checkpoint write time/op,0.9969449598021026,-0.9969449598021026
+4,extend,internal_inserts_per_logical_update,Internal inserts/logical update,0.9988373531230674,-0.9988373531230674
+4,extend,tup_fetched_per_op,Tuples fetched/op,0.9989115646258503,-0.9989115646258503
+4,extend,tup_inserted_per_op,Internal tuple inserts/op,0.9988373531230674,-0.9988373531230674
+4,extend,tup_returned_per_op,Tuples returned/op,0.9989115646258503,-0.9989115646258503
+4,extend,tup_updated_per_op,Logical tuple updates/op,0.9909706804891157,-0.9909706804891157
+4,extend,wal_buffers_full_per_op,WAL buffers full/op,0.6084106369820655,-0.6084106369820655
+4,extend,wal_bytes_per_op,WAL bytes/op,0.9989115646258503,-0.9989115646258503
+4,extend,wal_fpi_per_op,WAL FPIs/op,0.994100185528757,-0.994100185528757
+4,extend,wal_records_per_op,WAL records/op,0.9987755102040816,-0.9987755102040816
+5,extend,blks_hit_per_op,Block hits/op,0.9965120593692022,-0.9965120593692022
+5,extend,blks_read_per_op,Block reads/op,0.9905726710169519,-0.9905726710169519
+5,extend,buffers_alloc_per_op,Buffer allocs/op,0.9982312925170068,-0.9982312925170068
+5,extend,buffers_backend_per_op,Backend buffers/op,0.993704390847248,-0.993704390847248
+5,extend,buffers_checkpoint_per_op,Checkpoint buffers/op,0.9759183673469388,-0.9759183673469388
+5,extend,buffers_clean_per_op,Cleaner buffers/op,0.8658295766468076,-0.8658295766468076
+5,extend,cache_hit_ratio,Cache-hit ratio,-0.9906630663066307,0.9906630663066307
+5,extend,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.9628324056895485,-0.9628324056895485
+5,extend,checkpoint_write_time_per_op,Checkpoint write time/op,0.9977365491651206,-0.9977365491651206
+5,extend,internal_inserts_per_logical_update,Internal inserts/logical update,0.9990476190476191,-0.9990476190476191
+5,extend,tup_fetched_per_op,Tuples fetched/op,0.9990599876314162,-0.9990599876314162
+5,extend,tup_inserted_per_op,Internal tuple inserts/op,0.9990476190476191,-0.9990476190476191
+5,extend,tup_returned_per_op,Tuples returned/op,0.9990599876314162,-0.9990599876314162
+5,extend,tup_updated_per_op,Logical tuple updates/op,0.9921607918558758,-0.9921607918558758
+5,extend,wal_buffers_full_per_op,WAL buffers full/op,0.7085466914038343,-0.7085466914038343
+5,extend,wal_bytes_per_op,WAL bytes/op,0.9989239332096475,-0.9989239332096475
+5,extend,wal_fpi_per_op,WAL FPIs/op,0.9873716759431045,-0.9873716759431045
+5,extend,wal_records_per_op,WAL records/op,0.9985776128633271,-0.9985776128633271
+6,extend,blks_hit_per_op,Block hits/op,0.99713048855906,-0.9971057513914656
+6,extend,blks_read_per_op,Block reads/op,0.9897549272517125,-0.9898044874799089
+6,extend,buffers_alloc_per_op,Buffer allocs/op,0.997687074829932,-0.9976623376623377
+6,extend,buffers_backend_per_op,Backend buffers/op,0.991069882498454,-0.9910080395794681
+6,extend,buffers_checkpoint_per_op,Checkpoint buffers/op,0.9839455782312925,-0.9838713667285096
+6,extend,buffers_clean_per_op,Cleaner buffers/op,0.8953550825947668,-0.8954294229370613
+6,extend,cache_hit_ratio,Cache-hit ratio,-0.9901230123012301,0.9900990099009901
+6,extend,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.9324675324675324,-0.9326159554730983
+6,extend,checkpoint_write_time_per_op,Checkpoint write time/op,0.9972294372294372,-0.9972047000618429
+6,extend,internal_inserts_per_logical_update,Internal inserts/logical update,0.9985528756957328,-0.9985281385281385
+6,extend,tup_fetched_per_op,Tuples fetched/op,0.9985281385281385,-0.9985034013605442
+6,extend,tup_inserted_per_op,Internal tuple inserts/op,0.9985528756957328,-0.9985281385281385
+6,extend,tup_returned_per_op,Tuples returned/op,0.9985281385281385,-0.9985034013605442
+6,extend,tup_updated_per_op,Logical tuple updates/op,0.9946655415992393,-0.9946035528331619
+6,extend,wal_buffers_full_per_op,WAL buffers full/op,0.4238713667285096,-0.4237847866419295
+6,extend,wal_bytes_per_op,WAL bytes/op,0.9985776128633271,-0.9985528756957328
+6,extend,wal_fpi_per_op,WAL FPIs/op,0.9936796536796537,-0.9936301793444651
+6,extend,wal_records_per_op,WAL records/op,0.99847866419295,-0.9984539270253556
+4,reference,blks_hit_per_op,Block hits/op,0.2614378329228096,-0.2738083506353033
+4,reference,blks_read_per_op,Block reads/op,0.3326431535662564,-0.34885095277820194
+4,reference,buffers_alloc_per_op,Buffer allocs/op,0.3357699443413729,-0.3550682288485691
+4,reference,buffers_backend_per_op,Backend buffers/op,0.33376623376623377,-0.35302739359026925
+4,reference,buffers_checkpoint_per_op,Checkpoint buffers/op,0.3211008039579468,-0.33916208253236535
+4,reference,buffers_clean_per_op,Cleaner buffers/op,0.34212396226287356,-0.36455550489970034
+4,reference,cache_hit_ratio,Cache-hit ratio,-0.35121512151215123,0.36952627837931085
+4,reference,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.33289527797091106,-0.35340573167938255
+4,reference,checkpoint_write_time_per_op,Checkpoint write time/op,0.3216326530612245,-0.3384879884621997
+4,reference,tup_fetched_per_op,Tuples fetched/op,0.3253088882020266,-0.3430330687316854
+4,reference,tup_returned_per_op,Tuples returned/op,0.32946761385875833,-0.3480644308200834
+4,reference,wal_buffers_full_per_op,WAL buffers full/op,0.11260358688930118,-0.1333283858596562
+4,reference,wal_bytes_per_op,WAL bytes/op,0.33128014842300557,-0.3508257652510124
+4,reference,wal_fpi_per_op,WAL FPIs/op,0.32884353741496597,-0.347467663598719
+4,reference,wal_records_per_op,WAL records/op,0.3315769944341373,-0.3511102453173209
+5,reference,blks_hit_per_op,Block hits/op,0.2630569755989299,-0.2555558045431421
+5,reference,blks_read_per_op,Block reads/op,0.4240298145293856,-0.4434359296254688
+5,reference,buffers_alloc_per_op,Buffer allocs/op,0.4178973407544836,-0.43487107179736095
+5,reference,buffers_backend_per_op,Backend buffers/op,0.42528138528138526,-0.4427128266686464
+5,reference,buffers_checkpoint_per_op,Checkpoint buffers/op,0.3836734693877551,-0.40204454588507116
+5,reference,buffers_clean_per_op,Cleaner buffers/op,0.2309134932237168,-0.2551384215413573
+5,reference,cache_hit_ratio,Cache-hit ratio,-0.4324392439243924,0.45019307106298073
+5,reference,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.43116883116883115,-0.44626264314823466
+5,reference,checkpoint_write_time_per_op,Checkpoint write time/op,0.4038961038961039,-0.4201152144449262
+5,reference,tup_fetched_per_op,Tuples fetched/op,0.4137227831020987,-0.4308940602491788
+5,reference,tup_returned_per_op,Tuples returned/op,0.41452730595561504,-0.43207610094529225
+5,reference,wal_buffers_full_per_op,WAL buffers full/op,0.27736549165120594,-0.28768355922906846
+5,reference,wal_bytes_per_op,WAL bytes/op,0.4147557204700062,-0.4319829806894033
+5,reference,wal_fpi_per_op,WAL FPIs/op,0.41161410018552874,-0.4281981589376472
+5,reference,wal_records_per_op,WAL records/op,0.41489177489177487,-0.4320942989762196
+6,reference,blks_hit_per_op,Block hits/op,0.47377374478087764,-0.4701827271943893
+6,reference,blks_read_per_op,Block reads/op,0.8118608840174163,-0.8201683536300923
+6,reference,buffers_alloc_per_op,Buffer allocs/op,0.8391341991341992,-0.8464050267193718
+6,reference,buffers_backend_per_op,Backend buffers/op,0.8358936301793445,-0.844543531833702
+6,reference,buffers_checkpoint_per_op,Checkpoint buffers/op,0.8099690785405071,-0.8185630002234079
+6,reference,buffers_clean_per_op,Cleaner buffers/op,0.789122733455949,-0.801076656696295
+6,reference,cache_hit_ratio,Cache-hit ratio,-0.834035403540354,0.8418822908772006
+6,reference,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.8177365491651206,-0.8272582221810545
+6,reference,checkpoint_write_time_per_op,Checkpoint write time/op,0.8289548546691404,-0.8373016364479238
+6,reference,tup_fetched_per_op,Tuples fetched/op,0.8121152060737198,-0.8186525838801924
+6,reference,tup_returned_per_op,Tuples returned/op,0.8326409227150342,-0.8409488884077241
+6,reference,tup_updated_per_op,Logical tuple updates/op,0.05567306167185677,-0.048456782652469776
+6,reference,wal_buffers_full_per_op,WAL buffers full/op,0.22048924084595464,-0.23138267444833613
+6,reference,wal_bytes_per_op,WAL bytes/op,0.8329499072356216,-0.8409256763250084
+6,reference,wal_fpi_per_op,WAL FPIs/op,0.841830550401979,-0.8496580044930006
+6,reference,wal_records_per_op,WAL records/op,0.8328509585652443,-0.8408638326410991
+4,run,blks_hit_per_op,Block hits/op,0.9899072356215214,-0.9899072356215214
+4,run,blks_read_per_op,Block reads/op,0.9848187454613394,-0.9848187454613394
+4,run,buffers_alloc_per_op,Buffer allocs/op,0.9893382807668522,-0.9893382807668522
+4,run,buffers_backend_per_op,Backend buffers/op,0.9802473716759431,-0.9802473716759431
+4,run,buffers_checkpoint_per_op,Checkpoint buffers/op,0.9728633271490414,-0.9728633271490414
+4,run,buffers_clean_per_op,Cleaner buffers/op,0.8901854168904838,-0.8901854168904838
+4,run,cache_hit_ratio,Cache-hit ratio,-0.9814701470147015,0.9814701470147015
+4,run,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.9487908125920825,-0.9487908125920825
+4,run,checkpoint_write_time_per_op,Checkpoint write time/op,0.9767717996289424,-0.9767717996289424
+4,run,internal_inserts_per_logical_update,Internal inserts/logical update,0.9906988249845393,-0.9906988249845393
+4,run,tup_fetched_per_op,Tuples fetched/op,0.990834879406308,-0.990834879406308
+4,run,tup_inserted_per_op,Internal tuple inserts/op,0.9906988249845393,-0.9906988249845393
+4,run,tup_returned_per_op,Tuples returned/op,0.990834879406308,-0.990834879406308
+4,run,tup_updated_per_op,Logical tuple updates/op,0.9846998934970815,-0.9846998934970815
+4,run,wal_buffers_full_per_op,WAL buffers full/op,0.669721706864564,-0.669721706864564
+4,run,wal_bytes_per_op,WAL bytes/op,0.990760667903525,-0.990760667903525
+4,run,wal_fpi_per_op,WAL FPIs/op,0.9877922077922078,-0.9877922077922078
+4,run,wal_records_per_op,WAL records/op,0.990674087816945,-0.990674087816945
+5,run,blks_hit_per_op,Block hits/op,0.9919109461966605,-0.9919109461966605
+5,run,blks_read_per_op,Block reads/op,0.9853192868281417,-0.9853192868281417
+5,run,buffers_alloc_per_op,Buffer allocs/op,0.9914409400123686,-0.9914409400123686
+5,run,buffers_backend_per_op,Backend buffers/op,0.9807544836116264,-0.9807544836116264
+5,run,buffers_checkpoint_per_op,Checkpoint buffers/op,0.9804205318491033,-0.9804205318491033
+5,run,buffers_clean_per_op,Cleaner buffers/op,0.8657676263615621,-0.8657676263615621
+5,run,cache_hit_ratio,Cache-hit ratio,-0.984086408640864,0.984086408640864
+5,run,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.94143475572047,-0.94143475572047
+5,run,checkpoint_write_time_per_op,Checkpoint write time/op,0.9788991960420532,-0.9788991960420532
+5,run,internal_inserts_per_logical_update,Internal inserts/logical update,0.9920470006184292,-0.9920470006184292
+5,run,tup_fetched_per_op,Tuples fetched/op,0.9922077922077922,-0.9922077922077922
+5,run,tup_inserted_per_op,Internal tuple inserts/op,0.9920470006184292,-0.9920470006184292
+5,run,tup_returned_per_op,Tuples returned/op,0.9922325293753865,-0.9922325293753865
+5,run,tup_updated_per_op,Logical tuple updates/op,0.9873086568992182,-0.9873086568992182
+5,run,wal_buffers_full_per_op,WAL buffers full/op,0.7127891156462585,-0.7127891156462585
+5,run,wal_bytes_per_op,WAL bytes/op,0.9921583178726036,-0.9921583178726036
+5,run,wal_fpi_per_op,WAL FPIs/op,0.9885714285714285,-0.9885714285714285
+5,run,wal_records_per_op,WAL records/op,0.9921335807050092,-0.9921335807050092
+6,run,blks_hit_per_op,Block hits/op,0.9909709338280767,-0.9910575139146568
+6,run,blks_read_per_op,Block reads/op,0.9860379101369884,-0.9861494206504301
+6,run,buffers_alloc_per_op,Buffer allocs/op,0.9900680272108844,-0.9900927643784787
+6,run,buffers_backend_per_op,Backend buffers/op,0.9784662956091528,-0.9786023500309214
+6,run,buffers_checkpoint_per_op,Checkpoint buffers/op,0.9749165120593692,-0.9750154607297464
+6,run,buffers_clean_per_op,Cleaner buffers/op,0.893372673466914,-0.8938558856918281
+6,run,cache_hit_ratio,Cache-hit ratio,-0.983006300630063,0.9830903090309031
+6,run,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.9290166975881261,-0.929004329004329
+6,run,checkpoint_write_time_per_op,Checkpoint write time/op,0.9807297464440322,-0.9807668521954236
+6,run,internal_inserts_per_logical_update,Internal inserts/logical update,0.9908225108225108,-0.9908967223252938
+6,run,tup_fetched_per_op,Tuples fetched/op,0.9907730364873222,-0.9908596165739023
+6,run,tup_inserted_per_op,Internal tuple inserts/op,0.9908225108225108,-0.9908967223252938
+6,run,tup_returned_per_op,Tuples returned/op,0.9907730364873222,-0.9908596165739023
+6,run,tup_updated_per_op,Logical tuple updates/op,0.9887351343833553,-0.9887971314321814
+6,run,wal_buffers_full_per_op,WAL buffers full/op,0.43033528242408087,-0.43019922758161006
+6,run,wal_bytes_per_op,WAL bytes/op,0.9908472479901052,-0.9909338280766852
+6,run,wal_fpi_per_op,WAL FPIs/op,0.9893506493506493,-0.9893506493506493
+6,run,wal_records_per_op,WAL records/op,0.9908225108225108,-0.9908967223252938

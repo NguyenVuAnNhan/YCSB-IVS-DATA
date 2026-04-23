@@ -1,0 +1,4 @@
+phase,deadlocks_min,deadlocks_max,deadlocks_post60_mean,temp_files_min,temp_files_max,temp_files_post60_mean,temp_bytes_min,temp_bytes_max,temp_bytes_post60_mean,wal_buffers_full_per_op_min,wal_buffers_full_per_op_max,wal_buffers_full_per_op_post60_mean
+run,0,0,0.0,0,245,75.00813008130082,0,918873873,268750731.8292683,0.0,0.43329,0.2162194308943089
+clean-run,0,0,0.0,0,4,0.0,0,393216,0.0,0.0025,0.43316,0.21455560975609753
+avg-run,0,0,0.0,0,20,11.853658536585366,0,84930096,44418749.07317073,0.0025,0.43316,0.21455560975609753

@@ -1,0 +1,10 @@
+run,comparison,exactly_equal,max_abs_delta_diff_bytes,spearman_rho
+4,run vs clean-run,False,19420283.0,0.9999999999999999
+4,run vs avg-run,False,38861628.0,0.9999999999999999
+4,clean-run vs avg-run,False,31850203.0,0.9999999999999999
+5,run vs clean-run,False,14842468.0,0.9999999999999999
+5,run vs avg-run,False,36374980.0,0.9999999999999999
+5,clean-run vs avg-run,False,25113834.0,0.9999999999999999
+6,run vs clean-run,False,19073111.0,0.9999999999999999
+6,run vs avg-run,False,36995349.0,0.9999999999999999
+6,clean-run vs avg-run,False,24786246.0,0.9999999999999999

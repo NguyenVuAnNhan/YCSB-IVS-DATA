@@ -1,0 +1,7 @@
+metric,rho_vs_excess_latency
+buffers_alloc_per_op,0.6002124959902811
+cache_hit_ratio,-0.5978640801743819
+tup_returned_per_op,0.5947556461286454
+tup_fetched_per_op,0.5947234009621958
+wal_bytes_per_op,0.5937302498355497
+blks_read_per_op,0.5710038565219074
