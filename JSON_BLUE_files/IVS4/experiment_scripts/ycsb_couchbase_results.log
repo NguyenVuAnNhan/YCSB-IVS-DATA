@@ -1,0 +1,110 @@
+=== Couchbase preflight check ===
+Preflight /pools status=401
+Preflight /pools/default/buckets/ycsb status=200
+Preflight /pools/default/buckets/ycsb_backup status=200
+Preflight /pools/default/buckets/ycsb_unchange status=200
+Couchbase access mode: couchbase.kv=false (auto mode=false, kv11210=true, query8093=true)
+=== Resetting Couchbase buckets before run ===
+Bucket 'ycsb' flush requested successfully (HTTP 200).
+Bucket 'ycsb_backup' flush requested successfully (HTTP 200).
+Bucket 'ycsb_unchange' flush requested successfully (HTTP 200).
+=== Executing the load phase ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/couchbase_run1_uniform_heavy_mixed.csv
+=== Executing the load phase for unchange reference bucket ===
+=== Setting parameter values for extend phase ===
+=== Executing the extend phase with extendproportion=1 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/couchbase_run1_uniform_heavy_mixed.csv
+Size computation started
+Extend verification - Min:1000 Max:3200 Avg:2000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending first iteration...
+First iteration: Appended values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_couchbase_run1_uniform_heavy_before_mixed.csv
+=== Setting parameter values for run phase ===
+Checking query plan before run phase
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/couchbase_run1_uniform_heavy_mixed.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/couchbase_run1_uniform_heavy_mixed.csv
+Backing up the bucket started
+Bucket 'ycsb_backup' flush requested successfully (HTTP 200).
+Backing up the bucket finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/couchbase_run1_uniform_heavy_mixed.csv
+Size computation started
+Appending first iteration...
+First iteration: Appended values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_couchbase_run1_uniform_heavy_after_mixed.csv
+Total size: 2347100, Field length average: 234
+Workload file fieldlength set to: 234 (expected: 234)
+Bucket 'ycsb_backup' flush requested successfully (HTTP 200).
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:1 Run:1 Iteration:1 TotalSize:2340000 ExpectedFieldLength:234
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/couchbase_run1_uniform_heavy_mixed.csv
+=== Setting parameter values for extend phase ===
+=== Executing the extend phase with extendproportion=1 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/couchbase_run1_uniform_heavy_mixed.csv
+Size computation started
+Extend verification - Min:1700 Max:4600 Avg:3217 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 2...
+Iteration 2: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_couchbase_run1_uniform_heavy_before_mixed.csv
+=== Setting parameter values for run phase ===
+Checking query plan before run phase
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/couchbase_run1_uniform_heavy_mixed.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/couchbase_run1_uniform_heavy_mixed.csv
+Backing up the bucket started
+Bucket 'ycsb_backup' flush requested successfully (HTTP 200).
+Backing up the bucket finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/couchbase_run1_uniform_heavy_mixed.csv
+Size computation started
+Appending subsequent iteration 2...
+Iteration 2: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_couchbase_run1_uniform_heavy_after_mixed.csv
+Total size: 3532900, Field length average: 353
+Workload file fieldlength set to: 353 (expected: 353)
+Bucket 'ycsb_backup' flush requested successfully (HTTP 200).
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:1 Run:2 Iteration:2 TotalSize:3530000 ExpectedFieldLength:353
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/couchbase_run1_uniform_heavy_mixed.csv
+=== Setting parameter values for extend phase ===
+=== Executing the extend phase with extendproportion=1 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/couchbase_run1_uniform_heavy_mixed.csv
+Size computation started
+Extend verification - Min:2500 Max:6200 Avg:4414 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 3...
+Iteration 3: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_couchbase_run1_uniform_heavy_before_mixed.csv
+=== Setting parameter values for run phase ===
+Checking query plan before run phase
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/couchbase_run1_uniform_heavy_mixed.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/couchbase_run1_uniform_heavy_mixed.csv
+Backing up the bucket started
+Bucket 'ycsb_backup' flush requested successfully (HTTP 200).
+Backing up the bucket finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/couchbase_run1_uniform_heavy_mixed.csv
+Size computation started
+Appending subsequent iteration 3...
+Iteration 3: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_couchbase_run1_uniform_heavy_after_mixed.csv
+Total size: 4753700, Field length average: 475
+Workload file fieldlength set to: 475 (expected: 475)
+Bucket 'ycsb_backup' flush requested successfully (HTTP 200).
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:1 Run:3 Iteration:3 TotalSize:4750000 ExpectedFieldLength:475
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/couchbase_run1_uniform_heavy_mixed.csv
+=== Setting parameter values for extend phase ===
+=== Executing the extend phase with extendproportion=1 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/couchbase_run1_uniform_heavy_mixed.csv
+Size computation started
+Extend verification - Min:4200 Max:8000 Avg:5622 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 11...
+Iteration 11: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_couchbase_run1_uniform_heavy_before_mixed.csv
+=== Setting parameter values for run phase ===
+Checking query plan before run phase
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Restored original workload file: ../workloads/workloada-extend

@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Epoch-to-Epoch Counter Change Correlation Report: postgresql_uniform_heavy_mixed</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/libs/quarto-html/quarto.js"></script>
+<script src="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/libs/quarto-html/popper.min.js"></script>
+<script src="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/libs/quarto-html/anchor.min.js"></script>
+<link href="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">1</span> Overview</a></li>
+  <li><a href="#load-and-prepare-transition-data" id="toc-load-and-prepare-transition-data" class="nav-link" data-scroll-target="#load-and-prepare-transition-data"><span class="header-section-number">2</span> Load And Prepare Transition Data</a></li>
+  <li><a href="#transition-coverage" id="toc-transition-coverage" class="nav-link" data-scroll-target="#transition-coverage"><span class="header-section-number">3</span> Transition Coverage</a></li>
+  <li><a href="#cross-phase-transition-summary" id="toc-cross-phase-transition-summary" class="nav-link" data-scroll-target="#cross-phase-transition-summary"><span class="header-section-number">4</span> Cross-Phase Transition Summary</a></li>
+  <li><a href="#run-vs-clean-run-p95-significance" id="toc-run-vs-clean-run-p95-significance" class="nav-link" data-scroll-target="#run-vs-clean-run-p95-significance"><span class="header-section-number">5</span> Run Vs Clean-Run P95 Significance</a>
+  <ul class="collapse">
+  <li><a href="#paired-log-ratio-test" id="toc-paired-log-ratio-test" class="nav-link" data-scroll-target="#paired-log-ratio-test"><span class="header-section-number">5.1</span> Paired Log-Ratio Test</a></li>
+  <li><a href="#run-level-log-ratio-trend-over-epoch" id="toc-run-level-log-ratio-trend-over-epoch" class="nav-link" data-scroll-target="#run-level-log-ratio-trend-over-epoch"><span class="header-section-number">5.2</span> Run-Level Log-Ratio Trend Over Epoch</a></li>
+  <li><a href="#p95-ratio-over-epoch" id="toc-p95-ratio-over-epoch" class="nav-link" data-scroll-target="#p95-ratio-over-epoch"><span class="header-section-number">5.3</span> P95 Ratio Over Epoch</a></li>
+  </ul></li>
+  <li><a href="#strongest-same-step-correlations" id="toc-strongest-same-step-correlations" class="nav-link" data-scroll-target="#strongest-same-step-correlations"><span class="header-section-number">6</span> Strongest Same-Step Correlations</a></li>
+  <li><a href="#top-correlations-by-phase" id="toc-top-correlations-by-phase" class="nav-link" data-scroll-target="#top-correlations-by-phase"><span class="header-section-number">7</span> Top Correlations By Phase</a></li>
+  <li><a href="#correlation-heatmaps" id="toc-correlation-heatmaps" class="nav-link" data-scroll-target="#correlation-heatmaps"><span class="header-section-number">8</span> Correlation Heatmaps</a></li>
+  <li><a href="#block-reads-over-epoch" id="toc-block-reads-over-epoch" class="nav-link" data-scroll-target="#block-reads-over-epoch"><span class="header-section-number">9</span> Block Reads Over Epoch</a></li>
+  <li><a href="#latency-transition-vs-cache-hit-ratio-transition-by-run" id="toc-latency-transition-vs-cache-hit-ratio-transition-by-run" class="nav-link" data-scroll-target="#latency-transition-vs-cache-hit-ratio-transition-by-run"><span class="header-section-number">10</span> Latency Transition Vs Cache-Hit-Ratio Transition By Run</a></li>
+  <li><a href="#epoch-14---15-transition-check" id="toc-epoch-14---15-transition-check" class="nav-link" data-scroll-target="#epoch-14---15-transition-check"><span class="header-section-number">11</span> Epoch <code>14 -&gt; 15</code> Transition Check</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="header-section-number">12</span> Conclusions</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Epoch-to-Epoch Counter Change Correlation Report: postgresql_uniform_heavy_mixed</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="overview" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="overview"><span class="header-section-number">1</span> Overview</h2>
+<p>This report analyzes <strong>transition-level</strong> behavior for PostgreSQL <code>uniform_heavy_mixed</code>.</p>
+<p>The unit of analysis is a same-phase epoch transition:</p>
+<ul>
+<li><code>epoch N-1 -&gt; N</code></li>
+</ul>
+<p>So a run with <code>100</code> epochs contributes <code>99</code> transition points for each repeated phase. The shorter <code>run2</code> file contributes fewer because it ends at epoch <code>89</code>.</p>
+<p>The goal is narrower than the earlier markdown report: for each phase, correlate <strong>performance changes between epochs</strong> with the <strong>matching change in PostgreSQL counters</strong> over the same interval.</p>
+<p>Repeated phases included here:</p>
+<ul>
+<li><code>run</code></li>
+<li><code>reference</code></li>
+<li><code>clean-run</code></li>
+<li><code>avg-run</code></li>
+<li><code>extend</code></li>
+</ul>
+<p>The report excludes <code>load</code> because it does not repeat across epochs.</p>
+</section>
+<section id="load-and-prepare-transition-data" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="load-and-prepare-transition-data"><span class="header-section-number">2</span> Load And Prepare Transition Data</h2>
+<div id="6282b7cc" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">scenario</th>
+<th data-quarto-table-cell-role="th">run_files</th>
+<th data-quarto-table-cell-role="th">total_transition_rows</th>
+<th data-quarto-table-cell-role="th">phases</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>postgresql_uniform_heavy_mixed</td>
+<td>4</td>
+<td>1922</td>
+<td>run, reference, clean-run, avg-run, extend</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="transition-coverage" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="transition-coverage"><span class="header-section-number">3</span> Transition Coverage</h2>
+<div id="1c6ea773" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_1fee9" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="index_name level0" data-quarto-table-cell-role="th">phase</th>
+<th id="T_1fee9_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">source_file</th>
+<th id="T_1fee9_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">avg-run</th>
+<th id="T_1fee9_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">clean-run</th>
+<th id="T_1fee9_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">extend</th>
+<th id="T_1fee9_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">reference</th>
+<th id="T_1fee9_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">run</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_1fee9_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_1fee9_row0_col0" class="data row0 col0">postgresql_run1_uniform_heavy_mixed.csv</td>
+<td id="T_1fee9_row0_col1" class="data row0 col1">99</td>
+<td id="T_1fee9_row0_col2" class="data row0 col2">99</td>
+<td id="T_1fee9_row0_col3" class="data row0 col3">99</td>
+<td id="T_1fee9_row0_col4" class="data row0 col4">99</td>
+<td id="T_1fee9_row0_col5" class="data row0 col5">99</td>
+</tr>
+<tr class="even">
+<td id="T_1fee9_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_1fee9_row1_col0" class="data row1 col0">postgresql_run2_uniform_heavy_mixed.csv</td>
+<td id="T_1fee9_row1_col1" class="data row1 col1">87</td>
+<td id="T_1fee9_row1_col2" class="data row1 col2">87</td>
+<td id="T_1fee9_row1_col3" class="data row1 col3">88</td>
+<td id="T_1fee9_row1_col4" class="data row1 col4">87</td>
+<td id="T_1fee9_row1_col5" class="data row1 col5">88</td>
+</tr>
+<tr class="odd">
+<td id="T_1fee9_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_1fee9_row2_col0" class="data row2 col0">postgresql_run3_uniform_heavy_mixed.csv</td>
+<td id="T_1fee9_row2_col1" class="data row2 col1">99</td>
+<td id="T_1fee9_row2_col2" class="data row2 col2">99</td>
+<td id="T_1fee9_row2_col3" class="data row2 col3">99</td>
+<td id="T_1fee9_row2_col4" class="data row2 col4">99</td>
+<td id="T_1fee9_row2_col5" class="data row2 col5">99</td>
+</tr>
+<tr class="even">
+<td id="T_1fee9_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_1fee9_row3_col0" class="data row3 col0">postgresql_run4_uniform_heavy_mixed.csv</td>
+<td id="T_1fee9_row3_col1" class="data row3 col1">99</td>
+<td id="T_1fee9_row3_col2" class="data row3 col2">99</td>
+<td id="T_1fee9_row3_col3" class="data row3 col3">99</td>
+<td id="T_1fee9_row3_col4" class="data row3 col4">99</td>
+<td id="T_1fee9_row3_col5" class="data row3 col5">99</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_b80ca" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_b80ca_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">source_file</th>
+<th id="T_b80ca_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">min_epoch</th>
+<th id="T_b80ca_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">max_epoch</th>
+<th id="T_b80ca_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">epoch_count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_b80ca_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_b80ca_row0_col0" class="data row0 col0">postgresql_run1_uniform_heavy_mixed.csv</td>
+<td id="T_b80ca_row0_col1" class="data row0 col1">1</td>
+<td id="T_b80ca_row0_col2" class="data row0 col2">100</td>
+<td id="T_b80ca_row0_col3" class="data row0 col3">100</td>
+</tr>
+<tr class="even">
+<td id="T_b80ca_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_b80ca_row1_col0" class="data row1 col0">postgresql_run2_uniform_heavy_mixed.csv</td>
+<td id="T_b80ca_row1_col1" class="data row1 col1">1</td>
+<td id="T_b80ca_row1_col2" class="data row1 col2">89</td>
+<td id="T_b80ca_row1_col3" class="data row1 col3">89</td>
+</tr>
+<tr class="odd">
+<td id="T_b80ca_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_b80ca_row2_col0" class="data row2 col0">postgresql_run3_uniform_heavy_mixed.csv</td>
+<td id="T_b80ca_row2_col1" class="data row2 col1">1</td>
+<td id="T_b80ca_row2_col2" class="data row2 col2">100</td>
+<td id="T_b80ca_row2_col3" class="data row2 col3">100</td>
+</tr>
+<tr class="even">
+<td id="T_b80ca_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_b80ca_row3_col0" class="data row3 col0">postgresql_run4_uniform_heavy_mixed.csv</td>
+<td id="T_b80ca_row3_col1" class="data row3 col1">1</td>
+<td id="T_b80ca_row3_col2" class="data row3 col2">100</td>
+<td id="T_b80ca_row3_col3" class="data row3 col3">100</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<ul>
+<li>Runs 1, 3, and 4 span <code>100</code> epochs and therefore contribute <code>99</code> transitions per repeated phase.</li>
+<li>Run 2 ends at epoch <code>89</code>, so it contributes <code>88</code> transitions per repeated phase.</li>
+<li>Across all runs and phases, the report analyzes <strong>1,922 transition rows</strong>.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="cross-phase-transition-summary" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="cross-phase-transition-summary"><span class="header-section-number">4</span> Cross-Phase Transition Summary</h2>
+<div id="c6439bb7" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_bcf01" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_bcf01_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Phase</th>
+<th id="T_bcf01_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Transitions</th>
+<th id="T_bcf01_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Mean throughput change %</th>
+<th id="T_bcf01_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Median throughput change %</th>
+<th id="T_bcf01_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Mean READ latency change %</th>
+<th id="T_bcf01_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Median READ latency change %</th>
+<th id="T_bcf01_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Mean UPDATE latency change %</th>
+<th id="T_bcf01_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Median UPDATE latency change %</th>
+<th id="T_bcf01_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">Mean EXTEND latency change %</th>
+<th id="T_bcf01_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">Median EXTEND latency change %</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_bcf01_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_bcf01_row0_col0" class="data row0 col0">run</td>
+<td id="T_bcf01_row0_col1" class="data row0 col1">385</td>
+<td id="T_bcf01_row0_col2" class="data row0 col2">-0.58</td>
+<td id="T_bcf01_row0_col3" class="data row0 col3">-0.91</td>
+<td id="T_bcf01_row0_col4" class="data row0 col4">+1.25</td>
+<td id="T_bcf01_row0_col5" class="data row0 col5">+0.94</td>
+<td id="T_bcf01_row0_col6" class="data row0 col6">+0.67</td>
+<td id="T_bcf01_row0_col7" class="data row0 col7">+0.85</td>
+<td id="T_bcf01_row0_col8" class="data row0 col8">+nan</td>
+<td id="T_bcf01_row0_col9" class="data row0 col9">+nan</td>
+</tr>
+<tr class="even">
+<td id="T_bcf01_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_bcf01_row1_col0" class="data row1 col0">reference</td>
+<td id="T_bcf01_row1_col1" class="data row1 col1">384</td>
+<td id="T_bcf01_row1_col2" class="data row1 col2">-0.46</td>
+<td id="T_bcf01_row1_col3" class="data row1 col3">-0.70</td>
+<td id="T_bcf01_row1_col4" class="data row1 col4">+1.43</td>
+<td id="T_bcf01_row1_col5" class="data row1 col5">+0.95</td>
+<td id="T_bcf01_row1_col6" class="data row1 col6">+0.89</td>
+<td id="T_bcf01_row1_col7" class="data row1 col7">+0.73</td>
+<td id="T_bcf01_row1_col8" class="data row1 col8">+nan</td>
+<td id="T_bcf01_row1_col9" class="data row1 col9">+nan</td>
+</tr>
+<tr class="odd">
+<td id="T_bcf01_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_bcf01_row2_col0" class="data row2 col0">clean-run</td>
+<td id="T_bcf01_row2_col1" class="data row2 col1">384</td>
+<td id="T_bcf01_row2_col2" class="data row2 col2">-0.32</td>
+<td id="T_bcf01_row2_col3" class="data row2 col3">-0.64</td>
+<td id="T_bcf01_row2_col4" class="data row2 col4">+1.31</td>
+<td id="T_bcf01_row2_col5" class="data row2 col5">+1.03</td>
+<td id="T_bcf01_row2_col6" class="data row2 col6">+0.91</td>
+<td id="T_bcf01_row2_col7" class="data row2 col7">+0.66</td>
+<td id="T_bcf01_row2_col8" class="data row2 col8">+nan</td>
+<td id="T_bcf01_row2_col9" class="data row2 col9">+nan</td>
+</tr>
+<tr class="even">
+<td id="T_bcf01_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_bcf01_row3_col0" class="data row3 col0">avg-run</td>
+<td id="T_bcf01_row3_col1" class="data row3 col1">384</td>
+<td id="T_bcf01_row3_col2" class="data row3 col2">-0.16</td>
+<td id="T_bcf01_row3_col3" class="data row3 col3">-0.16</td>
+<td id="T_bcf01_row3_col4" class="data row3 col4">+0.99</td>
+<td id="T_bcf01_row3_col5" class="data row3 col5">+0.94</td>
+<td id="T_bcf01_row3_col6" class="data row3 col6">+0.27</td>
+<td id="T_bcf01_row3_col7" class="data row3 col7">+0.03</td>
+<td id="T_bcf01_row3_col8" class="data row3 col8">+nan</td>
+<td id="T_bcf01_row3_col9" class="data row3 col9">+nan</td>
+</tr>
+<tr class="odd">
+<td id="T_bcf01_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_bcf01_row4_col0" class="data row4 col0">extend</td>
+<td id="T_bcf01_row4_col1" class="data row4 col1">385</td>
+<td id="T_bcf01_row4_col2" class="data row4 col2">-0.61</td>
+<td id="T_bcf01_row4_col3" class="data row4 col3">-0.77</td>
+<td id="T_bcf01_row4_col4" class="data row4 col4">+nan</td>
+<td id="T_bcf01_row4_col5" class="data row4 col5">+nan</td>
+<td id="T_bcf01_row4_col6" class="data row4 col6">+nan</td>
+<td id="T_bcf01_row4_col7" class="data row4 col7">+nan</td>
+<td id="T_bcf01_row4_col8" class="data row4 col8">+0.74</td>
+<td id="T_bcf01_row4_col9" class="data row4 col9">+0.78</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="run-vs-clean-run-p95-significance" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="run-vs-clean-run-p95-significance"><span class="header-section-number">5</span> Run Vs Clean-Run P95 Significance</h2>
+<p>This section addresses the concern that raw latency variance may grow with epoch even when the <strong>percentage</strong> gap between <code>run</code> and <code>clean-run</code> is more stable.</p>
+<p>It therefore adds two analyses on the <strong>full 100-epoch runs only</strong>:</p>
+<ul>
+<li>a paired one-sample test on <code>log(clean-run P95 / run P95)</code> by epoch</li>
+<li>a <code>statsmodels</code>-free run-level trend analysis on <code>log(clean-run P95 / run P95)</code> over epoch</li>
+</ul>
+<p>This section uses:</p>
+<ul>
+<li><a href="./home/nhan/Desktop/Projects/YCSB-IVS-DATA/DATA/postgresql_run1_uniform_heavy_mixed.csv">postgresql_run1_uniform_heavy_mixed.csv</a></li>
+<li><a href="./home/nhan/Desktop/Projects/YCSB-IVS-DATA/DATA/postgresql_run3_uniform_heavy_mixed.csv">postgresql_run3_uniform_heavy_mixed.csv</a></li>
+<li><a href="./home/nhan/Desktop/Projects/YCSB-IVS-DATA/DATA/postgresql_run4_uniform_heavy_mixed.csv">postgresql_run4_uniform_heavy_mixed.csv</a></li>
+</ul>
+<p><code>run2</code> is excluded here because it does not have the full <code>100</code> matched epochs.</p>
+<section id="paired-log-ratio-test" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="paired-log-ratio-test"><span class="header-section-number">5.1</span> Paired Log-Ratio Test</h3>
+<div id="a52b2809" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_75bc4" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_75bc4_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Operation</th>
+<th id="T_75bc4_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Pairs</th>
+<th id="T_75bc4_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Run mean P95 (us)</th>
+<th id="T_75bc4_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Clean-run mean P95 (us)</th>
+<th id="T_75bc4_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Mean log ratio</th>
+<th id="T_75bc4_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">t</th>
+<th id="T_75bc4_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">p</th>
+<th id="T_75bc4_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Geometric clean/run ratio</th>
+<th id="T_75bc4_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">Pct difference</th>
+<th id="T_75bc4_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">Ratio CI low</th>
+<th id="T_75bc4_level0_col10" class="col_heading level0 col10" data-quarto-table-cell-role="th">Ratio CI high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_75bc4_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_75bc4_row0_col0" class="data row0 col0">READ</td>
+<td id="T_75bc4_row0_col1" class="data row0 col1">300</td>
+<td id="T_75bc4_row0_col2" class="data row0 col2">487.25</td>
+<td id="T_75bc4_row0_col3" class="data row0 col3">455.04</td>
+<td id="T_75bc4_row0_col4" class="data row0 col4">-0.0679</td>
+<td id="T_75bc4_row0_col5" class="data row0 col5">-15.292</td>
+<td id="T_75bc4_row0_col6" class="data row0 col6">2.120e-39</td>
+<td id="T_75bc4_row0_col7" class="data row0 col7">0.9343</td>
+<td id="T_75bc4_row0_col8" class="data row0 col8">-6.57%</td>
+<td id="T_75bc4_row0_col9" class="data row0 col9">0.9262</td>
+<td id="T_75bc4_row0_col10" class="data row0 col10">0.9425</td>
+</tr>
+<tr class="even">
+<td id="T_75bc4_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_75bc4_row1_col0" class="data row1 col0">UPDATE</td>
+<td id="T_75bc4_row1_col1" class="data row1 col1">300</td>
+<td id="T_75bc4_row1_col2" class="data row1 col2">2,057.69</td>
+<td id="T_75bc4_row1_col3" class="data row1 col3">1,728.11</td>
+<td id="T_75bc4_row1_col4" class="data row1 col4">-0.1390</td>
+<td id="T_75bc4_row1_col5" class="data row1 col5">-11.780</td>
+<td id="T_75bc4_row1_col6" class="data row1 col6">1.439e-26</td>
+<td id="T_75bc4_row1_col7" class="data row1 col7">0.8702</td>
+<td id="T_75bc4_row1_col8" class="data row1 col8">-12.98%</td>
+<td id="T_75bc4_row1_col9" class="data row1 col9">0.8502</td>
+<td id="T_75bc4_row1_col10" class="data row1 col10">0.8907</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<ul>
+<li>The paired test is run on <code>log(clean-run / run)</code> so a stable percentage gap becomes an additive effect on the analysis scale.</li>
+<li>For <code>READ</code>, the geometric mean clean/run P95 ratio is about <strong>0.934</strong>, which means clean-run P95 is about <strong>6.6% lower</strong> on average.</li>
+<li>For <code>UPDATE</code>, the geometric mean clean/run P95 ratio is about <strong>0.870</strong>, which means clean-run P95 is about <strong>13.0% lower</strong> on average.</li>
+<li>Both paired log-ratio tests are overwhelmingly significant.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="run-level-log-ratio-trend-over-epoch" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="run-level-log-ratio-trend-over-epoch"><span class="header-section-number">5.2</span> Run-Level Log-Ratio Trend Over Epoch</h3>
+<p>To keep the report dependency-light, this replaces the earlier mixed-effects fit with a paired, run-level trend model that uses only <code>SciPy</code>.</p>
+<p>Within each full <code>100</code>-epoch run and for each operation, fit:</p>
+<p><code>log(clean-run P95 / run P95) ~ epoch_centered</code></p>
+<p>Then summarize the run-level midpoint effects and slopes across runs with one-sample t-tests.</p>
+<p>Interpretation:</p>
+<ul>
+<li>the midpoint log ratio is the clean-run effect at epoch <code>50.5</code></li>
+<li>the slope tests whether the clean-run advantage changes over time</li>
+<li>because the pairing is done within epoch, most run-specific baseline shift is already removed before fitting the trend</li>
+</ul>
+<div id="099fa399" class="cell" data-execution_count="5">
+<section id="per-run-fits" class="level4 cell-output cell-output-display cell-output-markdown" data-number="5.2.1">
+<h4 data-number="5.2.1" class="anchored" data-anchor-id="per-run-fits"><span class="header-section-number">5.2.1</span> Per-run fits</h4>
+</section>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_fc518" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_fc518_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Operation</th>
+<th id="T_fc518_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">source_file</th>
+<th id="T_fc518_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">run</th>
+<th id="T_fc518_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Pairs</th>
+<th id="T_fc518_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Midpoint log ratio</th>
+<th id="T_fc518_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Midpoint clean/run ratio</th>
+<th id="T_fc518_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Slope per epoch</th>
+<th id="T_fc518_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Slope p (within run)</th>
+<th id="T_fc518_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">R^2 (within run)</th>
+<th id="T_fc518_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">Pred ratio epoch 1</th>
+<th id="T_fc518_level0_col10" class="col_heading level0 col10" data-quarto-table-cell-role="th">Pred ratio epoch 50.5</th>
+<th id="T_fc518_level0_col11" class="col_heading level0 col11" data-quarto-table-cell-role="th">Pred ratio epoch 100</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_fc518_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_fc518_row0_col0" class="data row0 col0">READ</td>
+<td id="T_fc518_row0_col1" class="data row0 col1">postgresql_run1_uniform_heavy_mixed.csv</td>
+<td id="T_fc518_row0_col2" class="data row0 col2">1</td>
+<td id="T_fc518_row0_col3" class="data row0 col3">100</td>
+<td id="T_fc518_row0_col4" class="data row0 col4">-0.0731</td>
+<td id="T_fc518_row0_col5" class="data row0 col5">0.9295</td>
+<td id="T_fc518_row0_col6" class="data row0 col6">-0.00059</td>
+<td id="T_fc518_row0_col7" class="data row0 col7">1.094e-02</td>
+<td id="T_fc518_row0_col8" class="data row0 col8">0.064</td>
+<td id="T_fc518_row0_col9" class="data row0 col9">0.9569</td>
+<td id="T_fc518_row0_col10" class="data row0 col10">0.9295</td>
+<td id="T_fc518_row0_col11" class="data row0 col11">0.9029</td>
+</tr>
+<tr class="even">
+<td id="T_fc518_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_fc518_row1_col0" class="data row1 col0">READ</td>
+<td id="T_fc518_row1_col1" class="data row1 col1">postgresql_run3_uniform_heavy_mixed.csv</td>
+<td id="T_fc518_row1_col2" class="data row1 col2">3</td>
+<td id="T_fc518_row1_col3" class="data row1 col3">100</td>
+<td id="T_fc518_row1_col4" class="data row1 col4">-0.0748</td>
+<td id="T_fc518_row1_col5" class="data row1 col5">0.9279</td>
+<td id="T_fc518_row1_col6" class="data row1 col6">-0.00090</td>
+<td id="T_fc518_row1_col7" class="data row1 col7">1.063e-03</td>
+<td id="T_fc518_row1_col8" class="data row1 col8">0.104</td>
+<td id="T_fc518_row1_col9" class="data row1 col9">0.9704</td>
+<td id="T_fc518_row1_col10" class="data row1 col10">0.9279</td>
+<td id="T_fc518_row1_col11" class="data row1 col11">0.8873</td>
+</tr>
+<tr class="odd">
+<td id="T_fc518_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_fc518_row2_col0" class="data row2 col0">READ</td>
+<td id="T_fc518_row2_col1" class="data row2 col1">postgresql_run4_uniform_heavy_mixed.csv</td>
+<td id="T_fc518_row2_col2" class="data row2 col2">4</td>
+<td id="T_fc518_row2_col3" class="data row2 col3">100</td>
+<td id="T_fc518_row2_col4" class="data row2 col4">-0.0559</td>
+<td id="T_fc518_row2_col5" class="data row2 col5">0.9456</td>
+<td id="T_fc518_row2_col6" class="data row2 col6">+0.00004</td>
+<td id="T_fc518_row2_col7" class="data row2 col7">8.976e-01</td>
+<td id="T_fc518_row2_col8" class="data row2 col8">0.000</td>
+<td id="T_fc518_row2_col9" class="data row2 col9">0.9439</td>
+<td id="T_fc518_row2_col10" class="data row2 col10">0.9456</td>
+<td id="T_fc518_row2_col11" class="data row2 col11">0.9473</td>
+</tr>
+<tr class="even">
+<td id="T_fc518_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_fc518_row3_col0" class="data row3 col0">UPDATE</td>
+<td id="T_fc518_row3_col1" class="data row3 col1">postgresql_run1_uniform_heavy_mixed.csv</td>
+<td id="T_fc518_row3_col2" class="data row3 col2">1</td>
+<td id="T_fc518_row3_col3" class="data row3 col3">100</td>
+<td id="T_fc518_row3_col4" class="data row3 col4">-0.1201</td>
+<td id="T_fc518_row3_col5" class="data row3 col5">0.8868</td>
+<td id="T_fc518_row3_col6" class="data row3 col6">-0.00283</td>
+<td id="T_fc518_row3_col7" class="data row3 col7">3.986e-08</td>
+<td id="T_fc518_row3_col8" class="data row3 col8">0.266</td>
+<td id="T_fc518_row3_col9" class="data row3 col9">1.0200</td>
+<td id="T_fc518_row3_col10" class="data row3 col10">0.8868</td>
+<td id="T_fc518_row3_col11" class="data row3 col11">0.7710</td>
+</tr>
+<tr class="odd">
+<td id="T_fc518_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_fc518_row4_col0" class="data row4 col0">UPDATE</td>
+<td id="T_fc518_row4_col1" class="data row4 col1">postgresql_run3_uniform_heavy_mixed.csv</td>
+<td id="T_fc518_row4_col2" class="data row4 col2">3</td>
+<td id="T_fc518_row4_col3" class="data row4 col3">100</td>
+<td id="T_fc518_row4_col4" class="data row4 col4">-0.1501</td>
+<td id="T_fc518_row4_col5" class="data row4 col5">0.8607</td>
+<td id="T_fc518_row4_col6" class="data row4 col6">-0.00464</td>
+<td id="T_fc518_row4_col7" class="data row4 col7">3.907e-10</td>
+<td id="T_fc518_row4_col8" class="data row4 col8">0.331</td>
+<td id="T_fc518_row4_col9" class="data row4 col9">1.0826</td>
+<td id="T_fc518_row4_col10" class="data row4 col10">0.8607</td>
+<td id="T_fc518_row4_col11" class="data row4 col11">0.6842</td>
+</tr>
+<tr class="even">
+<td id="T_fc518_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_fc518_row5_col0" class="data row5 col0">UPDATE</td>
+<td id="T_fc518_row5_col1" class="data row5 col1">postgresql_run4_uniform_heavy_mixed.csv</td>
+<td id="T_fc518_row5_col2" class="data row5 col2">4</td>
+<td id="T_fc518_row5_col3" class="data row5 col3">100</td>
+<td id="T_fc518_row5_col4" class="data row5 col4">-0.1469</td>
+<td id="T_fc518_row5_col5" class="data row5 col5">0.8634</td>
+<td id="T_fc518_row5_col6" class="data row5 col6">-0.00467</td>
+<td id="T_fc518_row5_col7" class="data row5 col7">1.523e-12</td>
+<td id="T_fc518_row5_col8" class="data row5 col8">0.401</td>
+<td id="T_fc518_row5_col9" class="data row5 col9">1.0877</td>
+<td id="T_fc518_row5_col10" class="data row5 col10">0.8634</td>
+<td id="T_fc518_row5_col11" class="data row5 col11">0.6854</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="across-run-summary" class="level4 cell-output cell-output-display cell-output-markdown" data-number="5.2.2">
+<h4 data-number="5.2.2" class="anchored" data-anchor-id="across-run-summary"><span class="header-section-number">5.2.2</span> Across-run summary</h4>
+</section>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_a2ce6" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_a2ce6_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Operation</th>
+<th id="T_a2ce6_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Runs</th>
+<th id="T_a2ce6_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Mean midpoint log ratio</th>
+<th id="T_a2ce6_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Midpoint p</th>
+<th id="T_a2ce6_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Midpoint clean/run ratio</th>
+<th id="T_a2ce6_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Midpoint ratio CI low</th>
+<th id="T_a2ce6_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Midpoint ratio CI high</th>
+<th id="T_a2ce6_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Mean slope per epoch</th>
+<th id="T_a2ce6_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">Slope p</th>
+<th id="T_a2ce6_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">Slope CI low</th>
+<th id="T_a2ce6_level0_col10" class="col_heading level0 col10" data-quarto-table-cell-role="th">Slope CI high</th>
+<th id="T_a2ce6_level0_col11" class="col_heading level0 col11" data-quarto-table-cell-role="th">Pred ratio epoch 1</th>
+<th id="T_a2ce6_level0_col12" class="col_heading level0 col12" data-quarto-table-cell-role="th">Pred ratio epoch 50.5</th>
+<th id="T_a2ce6_level0_col13" class="col_heading level0 col13" data-quarto-table-cell-role="th">Pred ratio epoch 100</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_a2ce6_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_a2ce6_row0_col0" class="data row0 col0">READ</td>
+<td id="T_a2ce6_row0_col1" class="data row0 col1">3</td>
+<td id="T_a2ce6_row0_col2" class="data row0 col2">-0.0679</td>
+<td id="T_a2ce6_row0_col3" class="data row0 col3">7.783e-03</td>
+<td id="T_a2ce6_row0_col4" class="data row0 col4">0.9343</td>
+<td id="T_a2ce6_row0_col5" class="data row0 col5">0.9104</td>
+<td id="T_a2ce6_row0_col6" class="data row0 col6">0.9589</td>
+<td id="T_a2ce6_row0_col7" class="data row0 col7">-0.00048</td>
+<td id="T_a2ce6_row0_col8" class="data row0 col8">2.214e-01</td>
+<td id="T_a2ce6_row0_col9" class="data row0 col9">-0.00167</td>
+<td id="T_a2ce6_row0_col10" class="data row0 col10">+0.00070</td>
+<td id="T_a2ce6_row0_col11" class="data row0 col11">0.9570</td>
+<td id="T_a2ce6_row0_col12" class="data row0 col12">0.9343</td>
+<td id="T_a2ce6_row0_col13" class="data row0 col13">0.9122</td>
+</tr>
+<tr class="even">
+<td id="T_a2ce6_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_a2ce6_row1_col0" class="data row1 col0">UPDATE</td>
+<td id="T_a2ce6_row1_col1" class="data row1 col1">3</td>
+<td id="T_a2ce6_row1_col2" class="data row1 col2">-0.1390</td>
+<td id="T_a2ce6_row1_col3" class="data row1 col3">4.632e-03</td>
+<td id="T_a2ce6_row1_col4" class="data row1 col4">0.8702</td>
+<td id="T_a2ce6_row1_col5" class="data row1 col5">0.8354</td>
+<td id="T_a2ce6_row1_col6" class="data row1 col6">0.9065</td>
+<td id="T_a2ce6_row1_col7" class="data row1 col7">-0.00404</td>
+<td id="T_a2ce6_row1_col8" class="data row1 col8">2.190e-02</td>
+<td id="T_a2ce6_row1_col9" class="data row1 col9">-0.00666</td>
+<td id="T_a2ce6_row1_col10" class="data row1 col10">-0.00143</td>
+<td id="T_a2ce6_row1_col11" class="data row1 col11">1.0630</td>
+<td id="T_a2ce6_row1_col12" class="data row1 col12">0.8702</td>
+<td id="T_a2ce6_row1_col13" class="data row1 col13">0.7124</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<ul>
+<li>For <code>READ</code>, the midpoint clean-run effect is significantly below <code>1</code>, but the mean slope across runs is not significant at the <code>0.05</code> level.</li>
+<li>That means the <strong>READ</strong> clean-run advantage is still present on the percentage scale, but its time trend is weak and not consistent enough across runs to call significant here.</li>
+<li>For <code>UPDATE</code>, the midpoint clean-run effect is significantly below <code>1</code> and the mean slope is significantly negative.</li>
+<li>That means the <strong>UPDATE</strong> clean-run advantage grows stronger over time rather than staying flat.</li>
+<li>This version keeps the log-scale variance stabilization while avoiding a <code>statsmodels</code> dependency.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="p95-ratio-over-epoch" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="p95-ratio-over-epoch"><span class="header-section-number">5.3</span> P95 Ratio Over Epoch</h3>
+<div id="ff3de5a6" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/figure-html/cell-7-output-1.png" width="1190" height="496" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="strongest-same-step-correlations" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="strongest-same-step-correlations"><span class="header-section-number">6</span> Strongest Same-Step Correlations</h2>
+<div id="833097f5" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_ef3e2" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_ef3e2_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Phase</th>
+<th id="T_ef3e2_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Target</th>
+<th id="T_ef3e2_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Counter</th>
+<th id="T_ef3e2_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Spearman rho</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_ef3e2_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_ef3e2_row0_col0" class="data row0 col0">run</td>
+<td id="T_ef3e2_row0_col1" class="data row0 col1">Throughput change %</td>
+<td id="T_ef3e2_row0_col2" class="data row0 col2">No counter &gt;= threshold</td>
+<td id="T_ef3e2_row0_col3" class="data row0 col3">+nan</td>
+</tr>
+<tr class="even">
+<td id="T_ef3e2_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_ef3e2_row1_col0" class="data row1 col0">run</td>
+<td id="T_ef3e2_row1_col1" class="data row1 col1">READ latency change %</td>
+<td id="T_ef3e2_row1_col2" class="data row1 col2">No counter &gt;= threshold</td>
+<td id="T_ef3e2_row1_col3" class="data row1 col3">+nan</td>
+</tr>
+<tr class="odd">
+<td id="T_ef3e2_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_ef3e2_row2_col0" class="data row2 col0">run</td>
+<td id="T_ef3e2_row2_col1" class="data row2 col1">UPDATE latency change %</td>
+<td id="T_ef3e2_row2_col2" class="data row2 col2">No counter &gt;= threshold</td>
+<td id="T_ef3e2_row2_col3" class="data row2 col3">+nan</td>
+</tr>
+<tr class="even">
+<td id="T_ef3e2_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_ef3e2_row3_col0" class="data row3 col0">reference</td>
+<td id="T_ef3e2_row3_col1" class="data row3 col1">Throughput change %</td>
+<td id="T_ef3e2_row3_col2" class="data row3 col2">No counter &gt;= threshold</td>
+<td id="T_ef3e2_row3_col3" class="data row3 col3">+nan</td>
+</tr>
+<tr class="odd">
+<td id="T_ef3e2_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_ef3e2_row4_col0" class="data row4 col0">reference</td>
+<td id="T_ef3e2_row4_col1" class="data row4 col1">READ latency change %</td>
+<td id="T_ef3e2_row4_col2" class="data row4 col2">No counter &gt;= threshold</td>
+<td id="T_ef3e2_row4_col3" class="data row4 col3">+nan</td>
+</tr>
+<tr class="even">
+<td id="T_ef3e2_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_ef3e2_row5_col0" class="data row5 col0">reference</td>
+<td id="T_ef3e2_row5_col1" class="data row5 col1">UPDATE latency change %</td>
+<td id="T_ef3e2_row5_col2" class="data row5 col2">No counter &gt;= threshold</td>
+<td id="T_ef3e2_row5_col3" class="data row5 col3">+nan</td>
+</tr>
+<tr class="odd">
+<td id="T_ef3e2_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_ef3e2_row6_col0" class="data row6 col0">clean-run</td>
+<td id="T_ef3e2_row6_col1" class="data row6 col1">Throughput change %</td>
+<td id="T_ef3e2_row6_col2" class="data row6 col2">Block hits/op</td>
+<td id="T_ef3e2_row6_col3" class="data row6 col3">-0.349</td>
+</tr>
+<tr class="even">
+<td id="T_ef3e2_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_ef3e2_row7_col0" class="data row7 col0">clean-run</td>
+<td id="T_ef3e2_row7_col1" class="data row7 col1">Throughput change %</td>
+<td id="T_ef3e2_row7_col2" class="data row7 col2">Block reads/op</td>
+<td id="T_ef3e2_row7_col3" class="data row7 col3">-0.348</td>
+</tr>
+<tr class="odd">
+<td id="T_ef3e2_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_ef3e2_row8_col0" class="data row8 col0">clean-run</td>
+<td id="T_ef3e2_row8_col1" class="data row8 col1">READ latency change %</td>
+<td id="T_ef3e2_row8_col2" class="data row8 col2">Block hits/op</td>
+<td id="T_ef3e2_row8_col3" class="data row8 col3">+0.308</td>
+</tr>
+<tr class="even">
+<td id="T_ef3e2_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_ef3e2_row9_col0" class="data row9 col0">clean-run</td>
+<td id="T_ef3e2_row9_col1" class="data row9 col1">READ latency change %</td>
+<td id="T_ef3e2_row9_col2" class="data row9 col2">Block reads/op</td>
+<td id="T_ef3e2_row9_col3" class="data row9 col3">+0.240</td>
+</tr>
+<tr class="odd">
+<td id="T_ef3e2_level0_row10" class="row_heading level0 row10" data-quarto-table-cell-role="th">10</td>
+<td id="T_ef3e2_row10_col0" class="data row10 col0">clean-run</td>
+<td id="T_ef3e2_row10_col1" class="data row10 col1">UPDATE latency change %</td>
+<td id="T_ef3e2_row10_col2" class="data row10 col2">Block reads/op</td>
+<td id="T_ef3e2_row10_col3" class="data row10 col3">+0.340</td>
+</tr>
+<tr class="even">
+<td id="T_ef3e2_level0_row11" class="row_heading level0 row11" data-quarto-table-cell-role="th">11</td>
+<td id="T_ef3e2_row11_col0" class="data row11 col0">clean-run</td>
+<td id="T_ef3e2_row11_col1" class="data row11 col1">UPDATE latency change %</td>
+<td id="T_ef3e2_row11_col2" class="data row11 col2">Block hits/op</td>
+<td id="T_ef3e2_row11_col3" class="data row11 col3">+0.331</td>
+</tr>
+<tr class="odd">
+<td id="T_ef3e2_level0_row12" class="row_heading level0 row12" data-quarto-table-cell-role="th">12</td>
+<td id="T_ef3e2_row12_col0" class="data row12 col0">avg-run</td>
+<td id="T_ef3e2_row12_col1" class="data row12 col1">Throughput change %</td>
+<td id="T_ef3e2_row12_col2" class="data row12 col2">No counter &gt;= threshold</td>
+<td id="T_ef3e2_row12_col3" class="data row12 col3">+nan</td>
+</tr>
+<tr class="even">
+<td id="T_ef3e2_level0_row13" class="row_heading level0 row13" data-quarto-table-cell-role="th">13</td>
+<td id="T_ef3e2_row13_col0" class="data row13 col0">avg-run</td>
+<td id="T_ef3e2_row13_col1" class="data row13 col1">READ latency change %</td>
+<td id="T_ef3e2_row13_col2" class="data row13 col2">No counter &gt;= threshold</td>
+<td id="T_ef3e2_row13_col3" class="data row13 col3">+nan</td>
+</tr>
+<tr class="odd">
+<td id="T_ef3e2_level0_row14" class="row_heading level0 row14" data-quarto-table-cell-role="th">14</td>
+<td id="T_ef3e2_row14_col0" class="data row14 col0">avg-run</td>
+<td id="T_ef3e2_row14_col1" class="data row14 col1">UPDATE latency change %</td>
+<td id="T_ef3e2_row14_col2" class="data row14 col2">No counter &gt;= threshold</td>
+<td id="T_ef3e2_row14_col3" class="data row14 col3">+nan</td>
+</tr>
+<tr class="even">
+<td id="T_ef3e2_level0_row15" class="row_heading level0 row15" data-quarto-table-cell-role="th">15</td>
+<td id="T_ef3e2_row15_col0" class="data row15 col0">extend</td>
+<td id="T_ef3e2_row15_col1" class="data row15 col1">Throughput change %</td>
+<td id="T_ef3e2_row15_col2" class="data row15 col2">Checkpoint buffers/op</td>
+<td id="T_ef3e2_row15_col3" class="data row15 col3">-0.158</td>
+</tr>
+<tr class="odd">
+<td id="T_ef3e2_level0_row16" class="row_heading level0 row16" data-quarto-table-cell-role="th">16</td>
+<td id="T_ef3e2_row16_col0" class="data row16 col0">extend</td>
+<td id="T_ef3e2_row16_col1" class="data row16 col1">EXTEND latency change %</td>
+<td id="T_ef3e2_row16_col2" class="data row16 col2">Checkpoint buffers/op</td>
+<td id="T_ef3e2_row16_col3" class="data row16 col3">+0.158</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<ul>
+<li>The threshold for calling a same-step relationship meaningful in this report is <code>|rho| &gt;= 0.15</code>.</li>
+<li><code>clean-run</code> shows the clearest epoch-to-epoch I/O sensitivity: block reads/op and block hits/op move with both throughput loss and latency growth.</li>
+<li><code>extend</code> shows a smaller checkpoint-driven effect through <code>checkpoint buffers/op</code>.</li>
+<li><code>run</code>, <code>avg-run</code>, and <code>reference</code> do not have a counter that crosses the same threshold for throughput or latency change.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="top-correlations-by-phase" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="top-correlations-by-phase"><span class="header-section-number">7</span> Top Correlations By Phase</h2>
+<div id="b0998ec7" class="cell" data-execution_count="8">
+<section id="run" class="level3 cell-output cell-output-display cell-output-markdown" data-number="7.1">
+<h3 data-number="7.1" class="anchored" data-anchor-id="run"><span class="header-section-number">7.1</span> run</h3>
+</section>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_9dd79" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_9dd79_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target</th>
+<th id="T_9dd79_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Counter</th>
+<th id="T_9dd79_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Spearman rho</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_9dd79_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_9dd79_row0_col0" class="data row0 col0">Throughput change %</td>
+<td id="T_9dd79_row0_col1" class="data row0 col1">Checkpoint buffers/op</td>
+<td id="T_9dd79_row0_col2" class="data row0 col2">-0.050</td>
+</tr>
+<tr class="even">
+<td id="T_9dd79_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_9dd79_row1_col0" class="data row1 col0">Throughput change %</td>
+<td id="T_9dd79_row1_col1" class="data row1 col1">Checkpoint sync ms/op</td>
+<td id="T_9dd79_row1_col2" class="data row1 col2">-0.029</td>
+</tr>
+<tr class="odd">
+<td id="T_9dd79_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_9dd79_row2_col0" class="data row2 col0">Throughput change %</td>
+<td id="T_9dd79_row2_col1" class="data row2 col1">Checkpoint write ms/op</td>
+<td id="T_9dd79_row2_col2" class="data row2 col2">-0.027</td>
+</tr>
+<tr class="even">
+<td id="T_9dd79_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_9dd79_row3_col0" class="data row3 col0">Throughput change %</td>
+<td id="T_9dd79_row3_col1" class="data row3 col1">WAL FPIs/op</td>
+<td id="T_9dd79_row3_col2" class="data row3 col2">-0.025</td>
+</tr>
+<tr class="odd">
+<td id="T_9dd79_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_9dd79_row4_col0" class="data row4 col0">Throughput change %</td>
+<td id="T_9dd79_row4_col1" class="data row4 col1">Block hits/op</td>
+<td id="T_9dd79_row4_col2" class="data row4 col2">-0.024</td>
+</tr>
+<tr class="even">
+<td id="T_9dd79_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_9dd79_row5_col0" class="data row5 col0">READ latency change %</td>
+<td id="T_9dd79_row5_col1" class="data row5 col1">Cleaner buffers/op</td>
+<td id="T_9dd79_row5_col2" class="data row5 col2">-0.128</td>
+</tr>
+<tr class="odd">
+<td id="T_9dd79_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_9dd79_row6_col0" class="data row6 col0">READ latency change %</td>
+<td id="T_9dd79_row6_col1" class="data row6 col1">WAL records/op</td>
+<td id="T_9dd79_row6_col2" class="data row6 col2">-0.120</td>
+</tr>
+<tr class="even">
+<td id="T_9dd79_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_9dd79_row7_col0" class="data row7 col0">READ latency change %</td>
+<td id="T_9dd79_row7_col1" class="data row7 col1">Cache-hit ratio</td>
+<td id="T_9dd79_row7_col2" class="data row7 col2">+0.118</td>
+</tr>
+<tr class="odd">
+<td id="T_9dd79_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_9dd79_row8_col0" class="data row8 col0">READ latency change %</td>
+<td id="T_9dd79_row8_col1" class="data row8 col1">Block reads/op</td>
+<td id="T_9dd79_row8_col2" class="data row8 col2">-0.118</td>
+</tr>
+<tr class="even">
+<td id="T_9dd79_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_9dd79_row9_col0" class="data row9 col0">READ latency change %</td>
+<td id="T_9dd79_row9_col1" class="data row9 col1">WAL FPIs/op</td>
+<td id="T_9dd79_row9_col2" class="data row9 col2">-0.118</td>
+</tr>
+<tr class="odd">
+<td id="T_9dd79_level0_row10" class="row_heading level0 row10" data-quarto-table-cell-role="th">10</td>
+<td id="T_9dd79_row10_col0" class="data row10 col0">UPDATE latency change %</td>
+<td id="T_9dd79_row10_col1" class="data row10 col1">Checkpoint sync ms/op</td>
+<td id="T_9dd79_row10_col2" class="data row10 col2">+0.057</td>
+</tr>
+<tr class="even">
+<td id="T_9dd79_level0_row11" class="row_heading level0 row11" data-quarto-table-cell-role="th">11</td>
+<td id="T_9dd79_row11_col0" class="data row11 col0">UPDATE latency change %</td>
+<td id="T_9dd79_row11_col1" class="data row11 col1">Checkpoint write ms/op</td>
+<td id="T_9dd79_row11_col2" class="data row11 col2">+0.056</td>
+</tr>
+<tr class="odd">
+<td id="T_9dd79_level0_row12" class="row_heading level0 row12" data-quarto-table-cell-role="th">12</td>
+<td id="T_9dd79_row12_col0" class="data row12 col0">UPDATE latency change %</td>
+<td id="T_9dd79_row12_col1" class="data row12 col1">WAL FPIs/op</td>
+<td id="T_9dd79_row12_col2" class="data row12 col2">+0.055</td>
+</tr>
+<tr class="even">
+<td id="T_9dd79_level0_row13" class="row_heading level0 row13" data-quarto-table-cell-role="th">13</td>
+<td id="T_9dd79_row13_col0" class="data row13 col0">UPDATE latency change %</td>
+<td id="T_9dd79_row13_col1" class="data row13 col1">WAL records/op</td>
+<td id="T_9dd79_row13_col2" class="data row13 col2">+0.051</td>
+</tr>
+<tr class="odd">
+<td id="T_9dd79_level0_row14" class="row_heading level0 row14" data-quarto-table-cell-role="th">14</td>
+<td id="T_9dd79_row14_col0" class="data row14 col0">UPDATE latency change %</td>
+<td id="T_9dd79_row14_col1" class="data row14 col1">Block hits/op</td>
+<td id="T_9dd79_row14_col2" class="data row14 col2">+0.048</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="reference" class="level3 cell-output cell-output-display cell-output-markdown" data-number="7.2">
+<h3 data-number="7.2" class="anchored" data-anchor-id="reference"><span class="header-section-number">7.2</span> reference</h3>
+</section>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_73182" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_73182_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target</th>
+<th id="T_73182_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Counter</th>
+<th id="T_73182_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Spearman rho</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_73182_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_73182_row0_col0" class="data row0 col0">Throughput change %</td>
+<td id="T_73182_row0_col1" class="data row0 col1">Checkpoint buffers/op</td>
+<td id="T_73182_row0_col2" class="data row0 col2">-0.054</td>
+</tr>
+<tr class="even">
+<td id="T_73182_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_73182_row1_col0" class="data row1 col0">Throughput change %</td>
+<td id="T_73182_row1_col1" class="data row1 col1">Buffer allocs/op</td>
+<td id="T_73182_row1_col2" class="data row1 col2">+0.044</td>
+</tr>
+<tr class="odd">
+<td id="T_73182_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_73182_row2_col0" class="data row2 col0">Throughput change %</td>
+<td id="T_73182_row2_col1" class="data row2 col1">Cache-hit ratio</td>
+<td id="T_73182_row2_col2" class="data row2 col2">-0.022</td>
+</tr>
+<tr class="even">
+<td id="T_73182_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_73182_row3_col0" class="data row3 col0">Throughput change %</td>
+<td id="T_73182_row3_col1" class="data row3 col1">WAL bytes/op</td>
+<td id="T_73182_row3_col2" class="data row3 col2">+0.021</td>
+</tr>
+<tr class="odd">
+<td id="T_73182_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_73182_row4_col0" class="data row4 col0">Throughput change %</td>
+<td id="T_73182_row4_col1" class="data row4 col1">WAL FPIs/op</td>
+<td id="T_73182_row4_col2" class="data row4 col2">-0.018</td>
+</tr>
+<tr class="even">
+<td id="T_73182_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_73182_row5_col0" class="data row5 col0">READ latency change %</td>
+<td id="T_73182_row5_col1" class="data row5 col1">Buffer allocs/op</td>
+<td id="T_73182_row5_col2" class="data row5 col2">-0.105</td>
+</tr>
+<tr class="odd">
+<td id="T_73182_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_73182_row6_col0" class="data row6 col0">READ latency change %</td>
+<td id="T_73182_row6_col1" class="data row6 col1">WAL records/op</td>
+<td id="T_73182_row6_col2" class="data row6 col2">-0.099</td>
+</tr>
+<tr class="even">
+<td id="T_73182_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_73182_row7_col0" class="data row7 col0">READ latency change %</td>
+<td id="T_73182_row7_col1" class="data row7 col1">WAL bytes/op</td>
+<td id="T_73182_row7_col2" class="data row7 col2">-0.099</td>
+</tr>
+<tr class="odd">
+<td id="T_73182_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_73182_row8_col0" class="data row8 col0">READ latency change %</td>
+<td id="T_73182_row8_col1" class="data row8 col1">Checkpoint sync ms/op</td>
+<td id="T_73182_row8_col2" class="data row8 col2">-0.099</td>
+</tr>
+<tr class="even">
+<td id="T_73182_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_73182_row9_col0" class="data row9 col0">READ latency change %</td>
+<td id="T_73182_row9_col1" class="data row9 col1">Cache-hit ratio</td>
+<td id="T_73182_row9_col2" class="data row9 col2">+0.099</td>
+</tr>
+<tr class="odd">
+<td id="T_73182_level0_row10" class="row_heading level0 row10" data-quarto-table-cell-role="th">10</td>
+<td id="T_73182_row10_col0" class="data row10 col0">UPDATE latency change %</td>
+<td id="T_73182_row10_col1" class="data row10 col1">Checkpoint buffers/op</td>
+<td id="T_73182_row10_col2" class="data row10 col2">+0.050</td>
+</tr>
+<tr class="even">
+<td id="T_73182_level0_row11" class="row_heading level0 row11" data-quarto-table-cell-role="th">11</td>
+<td id="T_73182_row11_col0" class="data row11 col0">UPDATE latency change %</td>
+<td id="T_73182_row11_col1" class="data row11 col1">WAL FPIs/op</td>
+<td id="T_73182_row11_col2" class="data row11 col2">+0.038</td>
+</tr>
+<tr class="odd">
+<td id="T_73182_level0_row12" class="row_heading level0 row12" data-quarto-table-cell-role="th">12</td>
+<td id="T_73182_row12_col0" class="data row12 col0">UPDATE latency change %</td>
+<td id="T_73182_row12_col1" class="data row12 col1">Checkpoint sync ms/op</td>
+<td id="T_73182_row12_col2" class="data row12 col2">+0.031</td>
+</tr>
+<tr class="even">
+<td id="T_73182_level0_row13" class="row_heading level0 row13" data-quarto-table-cell-role="th">13</td>
+<td id="T_73182_row13_col0" class="data row13 col0">UPDATE latency change %</td>
+<td id="T_73182_row13_col1" class="data row13 col1">Backend buffers/op</td>
+<td id="T_73182_row13_col2" class="data row13 col2">+0.031</td>
+</tr>
+<tr class="odd">
+<td id="T_73182_level0_row14" class="row_heading level0 row14" data-quarto-table-cell-role="th">14</td>
+<td id="T_73182_row14_col0" class="data row14 col0">UPDATE latency change %</td>
+<td id="T_73182_row14_col1" class="data row14 col1">Block hits/op</td>
+<td id="T_73182_row14_col2" class="data row14 col2">+0.030</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="clean-run" class="level3 cell-output cell-output-display cell-output-markdown" data-number="7.3">
+<h3 data-number="7.3" class="anchored" data-anchor-id="clean-run"><span class="header-section-number">7.3</span> clean-run</h3>
+</section>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_27451" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_27451_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target</th>
+<th id="T_27451_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Counter</th>
+<th id="T_27451_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Spearman rho</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_27451_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_27451_row0_col0" class="data row0 col0">Throughput change %</td>
+<td id="T_27451_row0_col1" class="data row0 col1">Block hits/op</td>
+<td id="T_27451_row0_col2" class="data row0 col2">-0.349</td>
+</tr>
+<tr class="even">
+<td id="T_27451_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_27451_row1_col0" class="data row1 col0">Throughput change %</td>
+<td id="T_27451_row1_col1" class="data row1 col1">Block reads/op</td>
+<td id="T_27451_row1_col2" class="data row1 col2">-0.348</td>
+</tr>
+<tr class="odd">
+<td id="T_27451_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_27451_row2_col0" class="data row2 col0">Throughput change %</td>
+<td id="T_27451_row2_col1" class="data row2 col1">Checkpoint buffers/op</td>
+<td id="T_27451_row2_col2" class="data row2 col2">-0.107</td>
+</tr>
+<tr class="even">
+<td id="T_27451_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_27451_row3_col0" class="data row3 col0">Throughput change %</td>
+<td id="T_27451_row3_col1" class="data row3 col1">Checkpoint write ms/op</td>
+<td id="T_27451_row3_col2" class="data row3 col2">-0.068</td>
+</tr>
+<tr class="odd">
+<td id="T_27451_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_27451_row4_col0" class="data row4 col0">Throughput change %</td>
+<td id="T_27451_row4_col1" class="data row4 col1">WAL FPIs/op</td>
+<td id="T_27451_row4_col2" class="data row4 col2">-0.051</td>
+</tr>
+<tr class="even">
+<td id="T_27451_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_27451_row5_col0" class="data row5 col0">READ latency change %</td>
+<td id="T_27451_row5_col1" class="data row5 col1">Block hits/op</td>
+<td id="T_27451_row5_col2" class="data row5 col2">+0.308</td>
+</tr>
+<tr class="odd">
+<td id="T_27451_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_27451_row6_col0" class="data row6 col0">READ latency change %</td>
+<td id="T_27451_row6_col1" class="data row6 col1">Block reads/op</td>
+<td id="T_27451_row6_col2" class="data row6 col2">+0.240</td>
+</tr>
+<tr class="even">
+<td id="T_27451_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_27451_row7_col0" class="data row7 col0">READ latency change %</td>
+<td id="T_27451_row7_col1" class="data row7 col1">Cache-hit ratio</td>
+<td id="T_27451_row7_col2" class="data row7 col2">+0.133</td>
+</tr>
+<tr class="odd">
+<td id="T_27451_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_27451_row8_col0" class="data row8 col0">READ latency change %</td>
+<td id="T_27451_row8_col1" class="data row8 col1">Buffer allocs/op</td>
+<td id="T_27451_row8_col2" class="data row8 col2">-0.081</td>
+</tr>
+<tr class="even">
+<td id="T_27451_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_27451_row9_col0" class="data row9 col0">READ latency change %</td>
+<td id="T_27451_row9_col1" class="data row9 col1">Backend buffers/op</td>
+<td id="T_27451_row9_col2" class="data row9 col2">-0.079</td>
+</tr>
+<tr class="odd">
+<td id="T_27451_level0_row10" class="row_heading level0 row10" data-quarto-table-cell-role="th">10</td>
+<td id="T_27451_row10_col0" class="data row10 col0">UPDATE latency change %</td>
+<td id="T_27451_row10_col1" class="data row10 col1">Block reads/op</td>
+<td id="T_27451_row10_col2" class="data row10 col2">+0.340</td>
+</tr>
+<tr class="even">
+<td id="T_27451_level0_row11" class="row_heading level0 row11" data-quarto-table-cell-role="th">11</td>
+<td id="T_27451_row11_col0" class="data row11 col0">UPDATE latency change %</td>
+<td id="T_27451_row11_col1" class="data row11 col1">Block hits/op</td>
+<td id="T_27451_row11_col2" class="data row11 col2">+0.331</td>
+</tr>
+<tr class="odd">
+<td id="T_27451_level0_row12" class="row_heading level0 row12" data-quarto-table-cell-role="th">12</td>
+<td id="T_27451_row12_col0" class="data row12 col0">UPDATE latency change %</td>
+<td id="T_27451_row12_col1" class="data row12 col1">Checkpoint buffers/op</td>
+<td id="T_27451_row12_col2" class="data row12 col2">+0.102</td>
+</tr>
+<tr class="even">
+<td id="T_27451_level0_row13" class="row_heading level0 row13" data-quarto-table-cell-role="th">13</td>
+<td id="T_27451_row13_col0" class="data row13 col0">UPDATE latency change %</td>
+<td id="T_27451_row13_col1" class="data row13 col1">Checkpoint write ms/op</td>
+<td id="T_27451_row13_col2" class="data row13 col2">+0.078</td>
+</tr>
+<tr class="odd">
+<td id="T_27451_level0_row14" class="row_heading level0 row14" data-quarto-table-cell-role="th">14</td>
+<td id="T_27451_row14_col0" class="data row14 col0">UPDATE latency change %</td>
+<td id="T_27451_row14_col1" class="data row14 col1">WAL FPIs/op</td>
+<td id="T_27451_row14_col2" class="data row14 col2">+0.062</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="avg-run" class="level3 cell-output cell-output-display cell-output-markdown" data-number="7.4">
+<h3 data-number="7.4" class="anchored" data-anchor-id="avg-run"><span class="header-section-number">7.4</span> avg-run</h3>
+</section>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_eba9b" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_eba9b_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target</th>
+<th id="T_eba9b_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Counter</th>
+<th id="T_eba9b_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Spearman rho</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_eba9b_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_eba9b_row0_col0" class="data row0 col0">Throughput change %</td>
+<td id="T_eba9b_row0_col1" class="data row0 col1">Cache-hit ratio</td>
+<td id="T_eba9b_row0_col2" class="data row0 col2">+0.103</td>
+</tr>
+<tr class="even">
+<td id="T_eba9b_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_eba9b_row1_col0" class="data row1 col0">Throughput change %</td>
+<td id="T_eba9b_row1_col1" class="data row1 col1">Block reads/op</td>
+<td id="T_eba9b_row1_col2" class="data row1 col2">-0.054</td>
+</tr>
+<tr class="odd">
+<td id="T_eba9b_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_eba9b_row2_col0" class="data row2 col0">Throughput change %</td>
+<td id="T_eba9b_row2_col1" class="data row2 col1">Checkpoint buffers/op</td>
+<td id="T_eba9b_row2_col2" class="data row2 col2">+0.044</td>
+</tr>
+<tr class="even">
+<td id="T_eba9b_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_eba9b_row3_col0" class="data row3 col0">Throughput change %</td>
+<td id="T_eba9b_row3_col1" class="data row3 col1">Checkpoint sync ms/op</td>
+<td id="T_eba9b_row3_col2" class="data row3 col2">-0.042</td>
+</tr>
+<tr class="odd">
+<td id="T_eba9b_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_eba9b_row4_col0" class="data row4 col0">Throughput change %</td>
+<td id="T_eba9b_row4_col1" class="data row4 col1">Cleaner buffers/op</td>
+<td id="T_eba9b_row4_col2" class="data row4 col2">-0.039</td>
+</tr>
+<tr class="even">
+<td id="T_eba9b_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_eba9b_row5_col0" class="data row5 col0">READ latency change %</td>
+<td id="T_eba9b_row5_col1" class="data row5 col1">Block reads/op</td>
+<td id="T_eba9b_row5_col2" class="data row5 col2">+0.144</td>
+</tr>
+<tr class="odd">
+<td id="T_eba9b_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_eba9b_row6_col0" class="data row6 col0">READ latency change %</td>
+<td id="T_eba9b_row6_col1" class="data row6 col1">Block hits/op</td>
+<td id="T_eba9b_row6_col2" class="data row6 col2">+0.077</td>
+</tr>
+<tr class="even">
+<td id="T_eba9b_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_eba9b_row7_col0" class="data row7 col0">READ latency change %</td>
+<td id="T_eba9b_row7_col1" class="data row7 col1">Cache-hit ratio</td>
+<td id="T_eba9b_row7_col2" class="data row7 col2">-0.072</td>
+</tr>
+<tr class="odd">
+<td id="T_eba9b_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_eba9b_row8_col0" class="data row8 col0">READ latency change %</td>
+<td id="T_eba9b_row8_col1" class="data row8 col1">Checkpoint write ms/op</td>
+<td id="T_eba9b_row8_col2" class="data row8 col2">-0.027</td>
+</tr>
+<tr class="even">
+<td id="T_eba9b_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_eba9b_row9_col0" class="data row9 col0">READ latency change %</td>
+<td id="T_eba9b_row9_col1" class="data row9 col1">Checkpoint sync ms/op</td>
+<td id="T_eba9b_row9_col2" class="data row9 col2">+0.009</td>
+</tr>
+<tr class="odd">
+<td id="T_eba9b_level0_row10" class="row_heading level0 row10" data-quarto-table-cell-role="th">10</td>
+<td id="T_eba9b_row10_col0" class="data row10 col0">UPDATE latency change %</td>
+<td id="T_eba9b_row10_col1" class="data row10 col1">Cache-hit ratio</td>
+<td id="T_eba9b_row10_col2" class="data row10 col2">-0.096</td>
+</tr>
+<tr class="even">
+<td id="T_eba9b_level0_row11" class="row_heading level0 row11" data-quarto-table-cell-role="th">11</td>
+<td id="T_eba9b_row11_col0" class="data row11 col0">UPDATE latency change %</td>
+<td id="T_eba9b_row11_col1" class="data row11 col1">Checkpoint buffers/op</td>
+<td id="T_eba9b_row11_col2" class="data row11 col2">-0.048</td>
+</tr>
+<tr class="odd">
+<td id="T_eba9b_level0_row12" class="row_heading level0 row12" data-quarto-table-cell-role="th">12</td>
+<td id="T_eba9b_row12_col0" class="data row12 col0">UPDATE latency change %</td>
+<td id="T_eba9b_row12_col1" class="data row12 col1">Checkpoint sync ms/op</td>
+<td id="T_eba9b_row12_col2" class="data row12 col2">+0.044</td>
+</tr>
+<tr class="even">
+<td id="T_eba9b_level0_row13" class="row_heading level0 row13" data-quarto-table-cell-role="th">13</td>
+<td id="T_eba9b_row13_col0" class="data row13 col0">UPDATE latency change %</td>
+<td id="T_eba9b_row13_col1" class="data row13 col1">Cleaner buffers/op</td>
+<td id="T_eba9b_row13_col2" class="data row13 col2">+0.041</td>
+</tr>
+<tr class="odd">
+<td id="T_eba9b_level0_row14" class="row_heading level0 row14" data-quarto-table-cell-role="th">14</td>
+<td id="T_eba9b_row14_col0" class="data row14 col0">UPDATE latency change %</td>
+<td id="T_eba9b_row14_col1" class="data row14 col1">WAL records/op</td>
+<td id="T_eba9b_row14_col2" class="data row14 col2">+0.033</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="extend" class="level3 cell-output cell-output-display cell-output-markdown" data-number="7.5">
+<h3 data-number="7.5" class="anchored" data-anchor-id="extend"><span class="header-section-number">7.5</span> extend</h3>
+</section>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_11334" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_11334_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target</th>
+<th id="T_11334_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Counter</th>
+<th id="T_11334_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Spearman rho</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_11334_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_11334_row0_col0" class="data row0 col0">Throughput change %</td>
+<td id="T_11334_row0_col1" class="data row0 col1">Checkpoint buffers/op</td>
+<td id="T_11334_row0_col2" class="data row0 col2">-0.158</td>
+</tr>
+<tr class="even">
+<td id="T_11334_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_11334_row1_col0" class="data row1 col0">Throughput change %</td>
+<td id="T_11334_row1_col1" class="data row1 col1">WAL FPIs/op</td>
+<td id="T_11334_row1_col2" class="data row1 col2">+0.060</td>
+</tr>
+<tr class="odd">
+<td id="T_11334_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_11334_row2_col0" class="data row2 col0">Throughput change %</td>
+<td id="T_11334_row2_col1" class="data row2 col1">Block reads/op</td>
+<td id="T_11334_row2_col2" class="data row2 col2">+0.059</td>
+</tr>
+<tr class="even">
+<td id="T_11334_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_11334_row3_col0" class="data row3 col0">Throughput change %</td>
+<td id="T_11334_row3_col1" class="data row3 col1">WAL records/op</td>
+<td id="T_11334_row3_col2" class="data row3 col2">+0.059</td>
+</tr>
+<tr class="odd">
+<td id="T_11334_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_11334_row4_col0" class="data row4 col0">Throughput change %</td>
+<td id="T_11334_row4_col1" class="data row4 col1">Cache-hit ratio</td>
+<td id="T_11334_row4_col2" class="data row4 col2">-0.055</td>
+</tr>
+<tr class="even">
+<td id="T_11334_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_11334_row5_col0" class="data row5 col0">EXTEND latency change %</td>
+<td id="T_11334_row5_col1" class="data row5 col1">Checkpoint buffers/op</td>
+<td id="T_11334_row5_col2" class="data row5 col2">+0.158</td>
+</tr>
+<tr class="odd">
+<td id="T_11334_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_11334_row6_col0" class="data row6 col0">EXTEND latency change %</td>
+<td id="T_11334_row6_col1" class="data row6 col1">WAL FPIs/op</td>
+<td id="T_11334_row6_col2" class="data row6 col2">-0.061</td>
+</tr>
+<tr class="even">
+<td id="T_11334_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_11334_row7_col0" class="data row7 col0">EXTEND latency change %</td>
+<td id="T_11334_row7_col1" class="data row7 col1">Block reads/op</td>
+<td id="T_11334_row7_col2" class="data row7 col2">-0.059</td>
+</tr>
+<tr class="odd">
+<td id="T_11334_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_11334_row8_col0" class="data row8 col0">EXTEND latency change %</td>
+<td id="T_11334_row8_col1" class="data row8 col1">WAL records/op</td>
+<td id="T_11334_row8_col2" class="data row8 col2">-0.059</td>
+</tr>
+<tr class="even">
+<td id="T_11334_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_11334_row9_col0" class="data row9 col0">EXTEND latency change %</td>
+<td id="T_11334_row9_col1" class="data row9 col1">Cache-hit ratio</td>
+<td id="T_11334_row9_col2" class="data row9 col2">+0.055</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="correlation-heatmaps" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="correlation-heatmaps"><span class="header-section-number">8</span> Correlation Heatmaps</h2>
+<div id="f80a927e" class="cell" data-execution_count="9">
+<section id="run-1" class="level3 cell-output cell-output-display cell-output-markdown" data-number="8.1">
+<h3 data-number="8.1" class="anchored" data-anchor-id="run-1"><span class="header-section-number">8.1</span> run</h3>
+</section>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/figure-html/cell-10-output-2.png" width="810" height="642" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<section id="reference-1" class="level3 cell-output cell-output-display cell-output-markdown" data-number="8.2">
+<h3 data-number="8.2" class="anchored" data-anchor-id="reference-1"><span class="header-section-number">8.2</span> reference</h3>
+</section>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/figure-html/cell-10-output-4.png" width="810" height="642" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<section id="clean-run-1" class="level3 cell-output cell-output-display cell-output-markdown" data-number="8.3">
+<h3 data-number="8.3" class="anchored" data-anchor-id="clean-run-1"><span class="header-section-number">8.3</span> clean-run</h3>
+</section>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/figure-html/cell-10-output-6.png" width="810" height="642" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<section id="avg-run-1" class="level3 cell-output cell-output-display cell-output-markdown" data-number="8.4">
+<h3 data-number="8.4" class="anchored" data-anchor-id="avg-run-1"><span class="header-section-number">8.4</span> avg-run</h3>
+</section>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/figure-html/cell-10-output-8.png" width="810" height="642" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<section id="extend-1" class="level3 cell-output cell-output-display cell-output-markdown" data-number="8.5">
+<h3 data-number="8.5" class="anchored" data-anchor-id="extend-1"><span class="header-section-number">8.5</span> extend</h3>
+</section>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/figure-html/cell-10-output-10.png" width="810" height="642" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="block-reads-over-epoch" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="block-reads-over-epoch"><span class="header-section-number">9</span> Block Reads Over Epoch</h2>
+<p><code>blks_read</code> in the CSV is cumulative, so the first figure shows the raw cumulative snapshot at each epoch. The second figure shows the transition-normalized view already used elsewhere in this report:</p>
+<p><code>d_blks_read_per_op = (blks_read_N - blks_read_(N-1)) / total_operations_N</code></p>
+<div id="c38b75da" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/figure-html/cell-11-output-1.png" width="1334" height="920" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/figure-html/cell-11-output-2.png" width="1335" height="920" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="latency-transition-vs-cache-hit-ratio-transition-by-run" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="latency-transition-vs-cache-hit-ratio-transition-by-run"><span class="header-section-number">10</span> Latency Transition Vs Cache-Hit-Ratio Transition By Run</h2>
+<p>These plots use:</p>
+<ul>
+<li>x-axis: <code>cache_hit_ratio_change_pts</code></li>
+<li>y-axis: latency transition over the same <code>epoch N-1 -&gt; N</code> step</li>
+</ul>
+<p>Here <code>cache_hit_ratio_change_pts</code> is computed from the same-phase epoch snapshots:</p>
+<p><code>100 * (cache_hit_ratio_N - cache_hit_ratio_(N-1))</code></p>
+<p>where:</p>
+<p><code>cache_hit_ratio_e = blks_hit / (blks_hit + blks_read)</code></p>
+<p>This keeps the plot at the transition level, so a <code>100</code>-epoch run still contributes <code>99</code> points per phase.</p>
+<div id="84bb4215" class="cell" data-execution_count="11">
+<section id="run-1-1" class="level3 cell-output cell-output-display cell-output-markdown" data-number="10.1">
+<h3 data-number="10.1" class="anchored" data-anchor-id="run-1-1"><span class="header-section-number">10.1</span> Run 1</h3>
+</section>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/figure-html/cell-12-output-2.png" width="1527" height="496" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<section id="run-2" class="level3 cell-output cell-output-display cell-output-markdown" data-number="10.2">
+<h3 data-number="10.2" class="anchored" data-anchor-id="run-2"><span class="header-section-number">10.2</span> Run 2</h3>
+</section>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/figure-html/cell-12-output-4.png" width="1527" height="496" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<section id="run-3" class="level3 cell-output cell-output-display cell-output-markdown" data-number="10.3">
+<h3 data-number="10.3" class="anchored" data-anchor-id="run-3"><span class="header-section-number">10.3</span> Run 3</h3>
+</section>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/figure-html/cell-12-output-6.png" width="1527" height="496" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<section id="run-4" class="level3 cell-output cell-output-display cell-output-markdown" data-number="10.4">
+<h3 data-number="10.4" class="anchored" data-anchor-id="run-4"><span class="header-section-number">10.4</span> Run 4</h3>
+</section>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="postgresql_uniform_heavy_mixed_epoch_change_correlation_report_files/figure-html/cell-12-output-8.png" width="1527" height="496" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="epoch-14---15-transition-check" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="epoch-14---15-transition-check"><span class="header-section-number">11</span> Epoch <code>14 -&gt; 15</code> Transition Check</h2>
+<div id="4a2c0e46" class="cell" data-execution_count="12">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_a4e2b" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_a4e2b_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Phase</th>
+<th id="T_a4e2b_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Mean throughput change %</th>
+<th id="T_a4e2b_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Mean READ latency change %</th>
+<th id="T_a4e2b_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Mean UPDATE latency change %</th>
+<th id="T_a4e2b_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Mean EXTEND latency change %</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_a4e2b_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_a4e2b_row0_col0" class="data row0 col0">run</td>
+<td id="T_a4e2b_row0_col1" class="data row0 col1">+6.78</td>
+<td id="T_a4e2b_row0_col2" class="data row0 col2">-8.44</td>
+<td id="T_a4e2b_row0_col3" class="data row0 col3">-5.90</td>
+<td id="T_a4e2b_row0_col4" class="data row0 col4">+nan</td>
+</tr>
+<tr class="even">
+<td id="T_a4e2b_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_a4e2b_row1_col0" class="data row1 col0">reference</td>
+<td id="T_a4e2b_row1_col1" class="data row1 col1">-0.17</td>
+<td id="T_a4e2b_row1_col2" class="data row1 col2">+1.35</td>
+<td id="T_a4e2b_row1_col3" class="data row1 col3">+0.01</td>
+<td id="T_a4e2b_row1_col4" class="data row1 col4">+nan</td>
+</tr>
+<tr class="odd">
+<td id="T_a4e2b_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_a4e2b_row2_col0" class="data row2 col0">clean-run</td>
+<td id="T_a4e2b_row2_col1" class="data row2 col1">+5.51</td>
+<td id="T_a4e2b_row2_col2" class="data row2 col2">-5.94</td>
+<td id="T_a4e2b_row2_col3" class="data row2 col3">-3.42</td>
+<td id="T_a4e2b_row2_col4" class="data row2 col4">+nan</td>
+</tr>
+<tr class="even">
+<td id="T_a4e2b_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_a4e2b_row3_col0" class="data row3 col0">avg-run</td>
+<td id="T_a4e2b_row3_col1" class="data row3 col1">+7.14</td>
+<td id="T_a4e2b_row3_col2" class="data row3 col2">-14.51</td>
+<td id="T_a4e2b_row3_col3" class="data row3 col3">-5.41</td>
+<td id="T_a4e2b_row3_col4" class="data row3 col4">+nan</td>
+</tr>
+<tr class="odd">
+<td id="T_a4e2b_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_a4e2b_row4_col0" class="data row4 col0">extend</td>
+<td id="T_a4e2b_row4_col1" class="data row4 col1">+8.47</td>
+<td id="T_a4e2b_row4_col2" class="data row4 col2">+nan</td>
+<td id="T_a4e2b_row4_col3" class="data row4 col3">+nan</td>
+<td id="T_a4e2b_row4_col4" class="data row4 col4">-7.76</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display">
+<style type="text/css">
+</style>
+
+<table id="T_1ee56" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_1ee56_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">phase</th>
+<th id="T_1ee56_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Cache-hit ratio</th>
+<th id="T_1ee56_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Block reads/op</th>
+<th id="T_1ee56_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Block hits/op</th>
+<th id="T_1ee56_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">WAL bytes/op</th>
+<th id="T_1ee56_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">WAL records/op</th>
+<th id="T_1ee56_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">WAL FPIs/op</th>
+<th id="T_1ee56_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">Buffer allocs/op</th>
+<th id="T_1ee56_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">Backend buffers/op</th>
+<th id="T_1ee56_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">Checkpoint buffers/op</th>
+<th id="T_1ee56_level0_col10" class="col_heading level0 col10" data-quarto-table-cell-role="th">Cleaner buffers/op</th>
+<th id="T_1ee56_level0_col11" class="col_heading level0 col11" data-quarto-table-cell-role="th">Checkpoint write ms/op</th>
+<th id="T_1ee56_level0_col12" class="col_heading level0 col12" data-quarto-table-cell-role="th">Checkpoint sync ms/op</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_1ee56_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_1ee56_row0_col0" class="data row0 col0">avg-run</td>
+<td id="T_1ee56_row0_col1" class="data row0 col1">+1.033</td>
+<td id="T_1ee56_row0_col2" class="data row0 col2">-0.20</td>
+<td id="T_1ee56_row0_col3" class="data row0 col3">+7.26</td>
+<td id="T_1ee56_row0_col4" class="data row0 col4">+19746.49</td>
+<td id="T_1ee56_row0_col5" class="data row0 col5">+33.49</td>
+<td id="T_1ee56_row0_col6" class="data row0 col6">+1.680</td>
+<td id="T_1ee56_row0_col7" class="data row0 col7">+18.40</td>
+<td id="T_1ee56_row0_col8" class="data row0 col8">+7.63</td>
+<td id="T_1ee56_row0_col9" class="data row0 col9">+0.12</td>
+<td id="T_1ee56_row0_col10" class="data row0 col10">+2.06</td>
+<td id="T_1ee56_row0_col11" class="data row0 col11">+3.310</td>
+<td id="T_1ee56_row0_col12" class="data row0 col12">+0.034</td>
+</tr>
+<tr class="even">
+<td id="T_1ee56_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_1ee56_row1_col0" class="data row1 col0">clean-run</td>
+<td id="T_1ee56_row1_col1" class="data row1 col1">+0.966</td>
+<td id="T_1ee56_row1_col2" class="data row1 col2">+0.23</td>
+<td id="T_1ee56_row1_col3" class="data row1 col3">+6.55</td>
+<td id="T_1ee56_row1_col4" class="data row1 col4">+19980.17</td>
+<td id="T_1ee56_row1_col5" class="data row1 col5">+33.29</td>
+<td id="T_1ee56_row1_col6" class="data row1 col6">+1.715</td>
+<td id="T_1ee56_row1_col7" class="data row1 col7">+18.65</td>
+<td id="T_1ee56_row1_col8" class="data row1 col8">+7.81</td>
+<td id="T_1ee56_row1_col9" class="data row1 col9">+0.11</td>
+<td id="T_1ee56_row1_col10" class="data row1 col10">+2.08</td>
+<td id="T_1ee56_row1_col11" class="data row1 col11">+3.310</td>
+<td id="T_1ee56_row1_col12" class="data row1 col12">+0.034</td>
+</tr>
+<tr class="odd">
+<td id="T_1ee56_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_1ee56_row2_col0" class="data row2 col0">extend</td>
+<td id="T_1ee56_row2_col1" class="data row2 col1">+0.862</td>
+<td id="T_1ee56_row2_col2" class="data row2 col2">+12.89</td>
+<td id="T_1ee56_row2_col3" class="data row2 col3">+80.76</td>
+<td id="T_1ee56_row2_col4" class="data row2 col4">+19688.35</td>
+<td id="T_1ee56_row2_col5" class="data row2 col5">+29.99</td>
+<td id="T_1ee56_row2_col6" class="data row2 col6">+1.717</td>
+<td id="T_1ee56_row2_col7" class="data row2 col7">+17.84</td>
+<td id="T_1ee56_row2_col8" class="data row2 col8">+7.41</td>
+<td id="T_1ee56_row2_col9" class="data row2 col9">+0.10</td>
+<td id="T_1ee56_row2_col10" class="data row2 col10">+2.12</td>
+<td id="T_1ee56_row2_col11" class="data row2 col11">+3.348</td>
+<td id="T_1ee56_row2_col12" class="data row2 col12">+0.023</td>
+</tr>
+<tr class="even">
+<td id="T_1ee56_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_1ee56_row3_col0" class="data row3 col0">reference</td>
+<td id="T_1ee56_row3_col1" class="data row3 col1">+0.857</td>
+<td id="T_1ee56_row3_col2" class="data row3 col2">+4.44</td>
+<td id="T_1ee56_row3_col3" class="data row3 col3">+26.65</td>
+<td id="T_1ee56_row3_col4" class="data row3 col4">+19698.43</td>
+<td id="T_1ee56_row3_col5" class="data row3 col5">+31.60</td>
+<td id="T_1ee56_row3_col6" class="data row3 col6">+1.700</td>
+<td id="T_1ee56_row3_col7" class="data row3 col7">+18.40</td>
+<td id="T_1ee56_row3_col8" class="data row3 col8">+7.71</td>
+<td id="T_1ee56_row3_col9" class="data row3 col9">+0.10</td>
+<td id="T_1ee56_row3_col10" class="data row3 col10">+2.10</td>
+<td id="T_1ee56_row3_col11" class="data row3 col11">+3.242</td>
+<td id="T_1ee56_row3_col12" class="data row3 col12">+0.031</td>
+</tr>
+<tr class="odd">
+<td id="T_1ee56_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_1ee56_row4_col0" class="data row4 col0">run</td>
+<td id="T_1ee56_row4_col1" class="data row4 col1">+0.860</td>
+<td id="T_1ee56_row4_col2" class="data row4 col2">+13.35</td>
+<td id="T_1ee56_row4_col3" class="data row4 col3">+82.21</td>
+<td id="T_1ee56_row4_col4" class="data row4 col4">+19692.28</td>
+<td id="T_1ee56_row4_col5" class="data row4 col5">+30.93</td>
+<td id="T_1ee56_row4_col6" class="data row4 col6">+1.710</td>
+<td id="T_1ee56_row4_col7" class="data row4 col7">+18.14</td>
+<td id="T_1ee56_row4_col8" class="data row4 col8">+7.57</td>
+<td id="T_1ee56_row4_col9" class="data row4 col9">+0.11</td>
+<td id="T_1ee56_row4_col10" class="data row4 col10">+2.10</td>
+<td id="T_1ee56_row4_col11" class="data row4 col11">+3.348</td>
+<td id="T_1ee56_row4_col12" class="data row4 col12">+0.023</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<ul>
+<li>The <code>14 -&gt; 15</code> step is still a useful sanity check: active phases improve strongly, but the counter deltas do not collapse.</li>
+<li>That matches the broader transition-level result in this report: short-run performance changes are only partially explained by counter movement, and the epoch <code>15</code> jump is not a simple counter-relief event.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="conclusions" class="level2" data-number="12">
+<h2 data-number="12" class="anchored" data-anchor-id="conclusions"><span class="header-section-number">12</span> Conclusions</h2>
+<ul>
+<li>This Quarto report uses the transition definition you asked for: one data point per same-phase <code>epoch N-1 -&gt; N</code> change.</li>
+<li>In runs with <code>100</code> epochs, that yields <code>99</code> transition points per phase.</li>
+<li>The strongest same-step relationships are phase-specific rather than universal.</li>
+<li><code>clean-run</code> is the most counter-sensitive phase from one epoch to the next, especially for block reads/op and block hits/op.</li>
+<li><code>extend</code> has a weaker checkpoint-buffer signal.</li>
+<li><code>run</code>, <code>avg-run</code>, and <code>reference</code> show mostly weak same-step relationships, even though their long-run degradation is obvious.</li>
+<li>The practical takeaway is that counters are excellent at describing the broad drift of the workload, but they only partially explain individual epoch-to-epoch jumps and drops.</li>
+</ul>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

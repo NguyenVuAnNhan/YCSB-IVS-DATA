@@ -1,0 +1,1055 @@
+---
+title: "Epoch-to-Epoch Counter Change Correlation Report: postgresql_uniform_heavy_mixed"
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: cosmo
+execute:
+  echo: false
+  warning: false
+  message: false
+  error: true
+jupyter: python3
+---
+
+## Overview
+
+This report analyzes **transition-level** behavior for PostgreSQL `uniform_heavy_mixed`.
+
+The unit of analysis is a same-phase epoch transition:
+
+- `epoch N-1 -> N`
+
+So a run with `100` epochs contributes `99` transition points for each repeated phase. The shorter `run2` file contributes fewer because it ends at epoch `89`.
+
+The goal is narrower than the earlier markdown report: for each phase, correlate **performance changes between epochs** with the **matching change in PostgreSQL counters** over the same interval.
+
+Repeated phases included here:
+
+- `run`
+- `reference`
+- `clean-run`
+- `avg-run`
+- `extend`
+
+The report excludes `load` because it does not repeat across epochs.
+
+## Load And Prepare Transition Data
+
+```{python}
+from pathlib import Path
+import re
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from IPython.display import Markdown, display
+from scipy import stats
+
+
+plt.style.use("seaborn-v0_8-whitegrid")
+plt.rcParams["figure.figsize"] = (11, 6)
+plt.rcParams["axes.spines.top"] = False
+plt.rcParams["axes.spines.right"] = False
+
+
+PHASES = ["run", "reference", "clean-run", "avg-run", "extend"]
+PHASE_LABELS = {
+    "run": "run",
+    "reference": "reference",
+    "clean-run": "clean-run",
+    "avg-run": "avg-run",
+    "extend": "extend",
+}
+PHASE_COLORS = {
+    "run": "#005f73",
+    "reference": "#6c757d",
+    "clean-run": "#ae2012",
+    "avg-run": "#0a9396",
+    "extend": "#bb3e03",
+}
+
+SHARED_COUNTERS = [
+    "blks_read",
+    "blks_hit",
+    "wal_bytes",
+    "wal_records",
+    "wal_fpi",
+    "buffers_alloc",
+    "buffers_backend",
+    "buffers_checkpoint",
+    "buffers_clean",
+    "checkpoint_write_time",
+    "checkpoint_sync_time",
+]
+
+COUNTER_LABELS = {
+    "interval_cache_hit_ratio": "Cache-hit ratio",
+    "cache_hit_ratio_change_pts": "Cache-hit ratio change (pts)",
+    "d_blks_read_per_op": "Block reads/op",
+    "d_blks_hit_per_op": "Block hits/op",
+    "d_wal_bytes_per_op": "WAL bytes/op",
+    "d_wal_records_per_op": "WAL records/op",
+    "d_wal_fpi_per_op": "WAL FPIs/op",
+    "d_buffers_alloc_per_op": "Buffer allocs/op",
+    "d_buffers_backend_per_op": "Backend buffers/op",
+    "d_buffers_checkpoint_per_op": "Checkpoint buffers/op",
+    "d_buffers_clean_per_op": "Cleaner buffers/op",
+    "d_checkpoint_write_time_per_op": "Checkpoint write ms/op",
+    "d_checkpoint_sync_time_per_op": "Checkpoint sync ms/op",
+}
+
+TARGET_LABELS = {
+    "throughput_change_pct": "Throughput change %",
+    "read_latency_change_pct": "READ latency change %",
+    "update_latency_change_pct": "UPDATE latency change %",
+    "extend_latency_change_pct": "EXTEND latency change %",
+}
+
+
+def resolve_data_dir() -> Path:
+    candidates = [Path("DATA"), Path("../DATA")]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate.resolve()
+    raise FileNotFoundError(f"Could not find DATA directory from {Path.cwd()}")
+
+
+def parse_run_number(path: Path) -> int | None:
+    match = re.search(r"_run(\d+)_", path.name)
+    return int(match.group(1)) if match else None
+
+
+def load_phase_epoch_rows() -> pd.DataFrame:
+    data_dir = resolve_data_dir()
+    files = sorted(data_dir.glob("postgresql_run*_uniform_heavy_mixed.csv"))
+    if not files:
+        raise FileNotFoundError("No postgresql_run*_uniform_heavy_mixed.csv files found.")
+
+    phase_map: dict[tuple[str, int, str], dict] = {}
+
+    for csv_path in files:
+        run_number = parse_run_number(csv_path)
+        df = pd.read_csv(csv_path)
+        df = df[df["Phase"].isin(PHASES)].copy()
+        df["Epoch"] = pd.to_numeric(df["Epoch"], errors="coerce")
+        df["Operations"] = pd.to_numeric(df["Operations"], errors="coerce")
+        df["Throughput(ops/sec)"] = pd.to_numeric(df["Throughput(ops/sec)"], errors="coerce")
+        df["AverageLatency(us)"] = pd.to_numeric(df["AverageLatency(us)"], errors="coerce")
+        df["95thPercentileLatency(us)"] = pd.to_numeric(df["95thPercentileLatency(us)"], errors="coerce")
+
+        for col in SHARED_COUNTERS:
+            df[col] = pd.to_numeric(df[col], errors="coerce")
+
+        for row in df.to_dict(orient="records"):
+            key = (csv_path.name, int(row["Epoch"]), row["Phase"])
+            if key not in phase_map:
+                phase_map[key] = {
+                    "source_file": csv_path.name,
+                    "run": run_number,
+                    "epoch": int(row["Epoch"]),
+                    "phase": row["Phase"],
+                    "throughput": float(row["Throughput(ops/sec)"]),
+                    "ops_total": 0,
+                    "lat_read": np.nan,
+                    "lat_update": np.nan,
+                    "lat_extend": np.nan,
+                    "p95_read": np.nan,
+                    "p95_update": np.nan,
+                    "p95_extend": np.nan,
+                }
+                for counter in SHARED_COUNTERS:
+                    phase_map[key][counter] = float(row[counter])
+
+            phase_map[key]["ops_total"] += int(row["Operations"])
+
+            if row["Operation"] == "READ":
+                phase_map[key]["lat_read"] = float(row["AverageLatency(us)"])
+                phase_map[key]["p95_read"] = float(row["95thPercentileLatency(us)"])
+            elif row["Operation"] == "UPDATE":
+                phase_map[key]["lat_update"] = float(row["AverageLatency(us)"])
+                phase_map[key]["p95_update"] = float(row["95thPercentileLatency(us)"])
+            elif row["Operation"] == "EXTEND":
+                phase_map[key]["lat_extend"] = float(row["AverageLatency(us)"])
+                phase_map[key]["p95_extend"] = float(row["95thPercentileLatency(us)"])
+
+    phase_epoch_df = pd.DataFrame(phase_map.values()).sort_values(["source_file", "phase", "epoch"]).reset_index(drop=True)
+    return phase_epoch_df
+
+
+def build_transition_rows(phase_epoch_df: pd.DataFrame) -> pd.DataFrame:
+    rows = []
+
+    for (source_file, phase), group in phase_epoch_df.groupby(["source_file", "phase"], dropna=False):
+        group = group.sort_values("epoch").reset_index(drop=True)
+        for i in range(1, len(group)):
+            prev = group.iloc[i - 1]
+            curr = group.iloc[i]
+            row = {
+                "source_file": source_file,
+                "run": curr["run"],
+                "phase": phase,
+                "epoch_from": int(prev["epoch"]),
+                "epoch_to": int(curr["epoch"]),
+                "throughput_change_pct": 100 * (curr["throughput"] / prev["throughput"] - 1),
+            }
+
+            if pd.notna(prev["lat_read"]) and pd.notna(curr["lat_read"]):
+                row["read_latency_change_pct"] = 100 * (curr["lat_read"] / prev["lat_read"] - 1)
+            if pd.notna(prev["lat_update"]) and pd.notna(curr["lat_update"]):
+                row["update_latency_change_pct"] = 100 * (curr["lat_update"] / prev["lat_update"] - 1)
+            if pd.notna(prev["lat_extend"]) and pd.notna(curr["lat_extend"]):
+                row["extend_latency_change_pct"] = 100 * (curr["lat_extend"] / prev["lat_extend"] - 1)
+
+            ops = curr["ops_total"]
+            for counter in SHARED_COUNTERS:
+                row[f"d_{counter}_per_op"] = (curr[counter] - prev[counter]) / ops
+
+            prev_denom = prev["blks_hit"] + prev["blks_read"]
+            curr_denom = curr["blks_hit"] + curr["blks_read"]
+            prev_cache_hit_ratio = prev["blks_hit"] / prev_denom if prev_denom else np.nan
+            curr_cache_hit_ratio = curr["blks_hit"] / curr_denom if curr_denom else np.nan
+            row["cache_hit_ratio_change_pts"] = 100 * (curr_cache_hit_ratio - prev_cache_hit_ratio)
+
+            denom = row["d_blks_hit_per_op"] + row["d_blks_read_per_op"]
+            row["interval_cache_hit_ratio"] = row["d_blks_hit_per_op"] / denom if denom else np.nan
+
+            rows.append(row)
+
+    transitions = pd.DataFrame(rows).sort_values(["source_file", "phase", "epoch_to"]).reset_index(drop=True)
+    return transitions
+
+
+def target_columns_for_phase(phase: str) -> list[str]:
+    if phase == "extend":
+        return ["throughput_change_pct", "extend_latency_change_pct"]
+    return ["throughput_change_pct", "read_latency_change_pct", "update_latency_change_pct"]
+
+
+def counter_columns() -> list[str]:
+    return ["interval_cache_hit_ratio"] + [f"d_{counter}_per_op" for counter in SHARED_COUNTERS]
+
+
+def correlation_table(phase_df: pd.DataFrame, phase: str, top_n: int = 5) -> pd.DataFrame:
+    rows = []
+    targets = target_columns_for_phase(phase)
+    counters = counter_columns()
+
+    for target in targets:
+        valid = phase_df[counters + [target]].dropna()
+        if valid.empty:
+            continue
+
+        corr = valid.corr(method="spearman", numeric_only=True)[target].drop(target)
+        ranked = corr.sort_values(key=lambda s: s.abs(), ascending=False).head(top_n)
+        for metric, value in ranked.items():
+            rows.append(
+                {
+                    "Target": TARGET_LABELS[target],
+                    "Counter": COUNTER_LABELS[metric],
+                    "Spearman rho": value,
+                }
+            )
+
+    return pd.DataFrame(rows)
+
+
+def strongest_relationships(phase_df: pd.DataFrame, phase: str, threshold: float = 0.15) -> pd.DataFrame:
+    rows = []
+    targets = target_columns_for_phase(phase)
+    counters = counter_columns()
+
+    for target in targets:
+        valid = phase_df[counters + [target]].dropna()
+        if valid.empty:
+            continue
+
+        corr = valid.corr(method="spearman", numeric_only=True)[target].drop(target)
+        strong = corr[corr.abs() >= threshold].sort_values(key=lambda s: s.abs(), ascending=False)
+        if strong.empty:
+            rows.append(
+                {
+                    "Target": TARGET_LABELS[target],
+                    "Counter": "No counter >= threshold",
+                    "Spearman rho": np.nan,
+                }
+            )
+        else:
+            for metric, value in strong.items():
+                rows.append(
+                    {
+                        "Target": TARGET_LABELS[target],
+                        "Counter": COUNTER_LABELS[metric],
+                        "Spearman rho": value,
+                    }
+                )
+
+    return pd.DataFrame(rows)
+
+
+def render_phase_heatmap(phase_df: pd.DataFrame, phase: str) -> None:
+    targets = target_columns_for_phase(phase)
+    counters = counter_columns()
+    valid = phase_df[counters + targets].dropna()
+    corr = valid.corr(method="spearman", numeric_only=True).loc[counters, targets]
+    corr.index = [COUNTER_LABELS[idx] for idx in corr.index]
+    corr.columns = [TARGET_LABELS[idx] for idx in corr.columns]
+
+    fig, ax = plt.subplots(figsize=(8.5, 6.8))
+    image = ax.imshow(corr.values, cmap="RdBu_r", vmin=-1, vmax=1, aspect="auto")
+    ax.set_xticks(range(len(corr.columns)))
+    ax.set_xticklabels(corr.columns, rotation=20, ha="right")
+    ax.set_yticks(range(len(corr.index)))
+    ax.set_yticklabels(corr.index)
+    ax.set_title(f"{PHASE_LABELS[phase]}: Spearman rho for transition changes")
+
+    for i in range(corr.shape[0]):
+        for j in range(corr.shape[1]):
+            ax.text(
+                j,
+                i,
+                f"{corr.iloc[i, j]:+.2f}",
+                ha="center",
+                va="center",
+                fontsize=8,
+                color="black",
+            )
+
+    colorbar = fig.colorbar(image, ax=ax, fraction=0.046, pad=0.04)
+    colorbar.set_label("Spearman rho")
+    fig.tight_layout()
+    plt.show()
+
+
+def render_run_latency_vs_cache_transition(run_df: pd.DataFrame, run_number: int) -> None:
+    panels = [
+        ("read_latency_change_pct", "READ latency change %"),
+        ("update_latency_change_pct", "UPDATE latency change %"),
+        ("extend_latency_change_pct", "EXTEND latency change %"),
+    ]
+
+    fig, axes = plt.subplots(1, 3, figsize=(16, 4.8), sharex=False, sharey=False)
+
+    for ax, (target, title) in zip(axes, panels):
+        target_df = run_df[run_df[target].notna()].copy()
+        if target_df.empty:
+            ax.set_title(title)
+            ax.set_xlabel("Cache-hit ratio change (pts)")
+            ax.set_ylabel("Latency change %")
+            ax.axhline(0, color="#666666", linewidth=0.8, alpha=0.6)
+            ax.axvline(0, color="#666666", linewidth=0.8, alpha=0.6)
+            continue
+
+        for phase in PHASES:
+            phase_df = target_df[target_df["phase"] == phase]
+            if phase_df.empty:
+                continue
+            ax.scatter(
+                phase_df["cache_hit_ratio_change_pts"],
+                phase_df[target],
+                label=PHASE_LABELS[phase],
+                color=PHASE_COLORS[phase],
+                alpha=0.78,
+                s=26,
+            )
+
+        ax.axhline(0, color="#666666", linewidth=0.8, alpha=0.6)
+        ax.axvline(0, color="#666666", linewidth=0.8, alpha=0.6)
+        ax.set_title(title)
+        ax.set_xlabel("Cache-hit ratio change (pts)")
+        ax.set_ylabel("Latency change %")
+        ax.grid(True, alpha=0.25)
+
+    handles, labels = axes[0].get_legend_handles_labels()
+    if handles:
+        fig.legend(
+            handles,
+            labels,
+            loc="lower center",
+            bbox_to_anchor=(0.5, -0.03),
+            ncol=min(len(labels), 5),
+            frameon=False,
+        )
+
+    fig.suptitle(f"Run {run_number}: latency transitions vs cache-hit-ratio transitions", y=1.02, fontsize=14)
+    fig.tight_layout(rect=(0, 0.08, 1, 0.98))
+    plt.show()
+
+
+def render_block_reads_over_epoch(phase_epoch_df: pd.DataFrame) -> None:
+    runs = sorted(phase_epoch_df["run"].dropna().unique())
+    fig, axes = plt.subplots(2, 2, figsize=(14, 9), sharex=False, sharey=False)
+    axes = axes.flatten()
+
+    for ax, run_number in zip(axes, runs):
+        run_df = phase_epoch_df[phase_epoch_df["run"] == run_number].copy()
+        for phase in PHASES:
+            phase_df = run_df[run_df["phase"] == phase].sort_values("epoch")
+            if phase_df.empty:
+                continue
+            ax.plot(
+                phase_df["epoch"],
+                phase_df["blks_read"],
+                marker="o",
+                markersize=2.8,
+                linewidth=1.8,
+                color=PHASE_COLORS[phase],
+                label=PHASE_LABELS[phase],
+                alpha=0.9,
+            )
+
+        ax.set_title(f"Run {int(run_number)}")
+        ax.set_xlabel("Epoch")
+        ax.set_ylabel("Cumulative block reads")
+        ax.grid(True, alpha=0.25)
+
+    handles, labels = axes[0].get_legend_handles_labels()
+    if handles:
+        fig.legend(
+            handles,
+            labels,
+            loc="lower center",
+            bbox_to_anchor=(0.5, -0.03),
+            ncol=min(len(labels), 5),
+            frameon=False,
+        )
+
+    fig.suptitle("Cumulative `blks_read` over epoch by run and phase", y=1.02, fontsize=14)
+    fig.tight_layout(rect=(0, 0.08, 1, 0.98))
+    plt.show()
+
+
+def render_block_read_transition_over_epoch(transitions: pd.DataFrame) -> None:
+    runs = sorted(transitions["run"].dropna().unique())
+    fig, axes = plt.subplots(2, 2, figsize=(14, 9), sharex=False, sharey=False)
+    axes = axes.flatten()
+
+    for ax, run_number in zip(axes, runs):
+        run_df = transitions[transitions["run"] == run_number].copy()
+        for phase in PHASES:
+            phase_df = run_df[run_df["phase"] == phase].sort_values("epoch_to")
+            if phase_df.empty:
+                continue
+            ax.plot(
+                phase_df["epoch_to"],
+                phase_df["d_blks_read_per_op"],
+                marker="o",
+                markersize=2.8,
+                linewidth=1.8,
+                color=PHASE_COLORS[phase],
+                label=PHASE_LABELS[phase],
+                alpha=0.9,
+            )
+
+        ax.axhline(0, color="#666666", linewidth=0.8, alpha=0.6)
+        ax.set_title(f"Run {int(run_number)}")
+        ax.set_xlabel("Epoch transition end (`epoch_to`)")
+        ax.set_ylabel("Delta block reads / op")
+        ax.grid(True, alpha=0.25)
+
+    handles, labels = axes[0].get_legend_handles_labels()
+    if handles:
+        fig.legend(
+            handles,
+            labels,
+            loc="lower center",
+            bbox_to_anchor=(0.5, -0.03),
+            ncol=min(len(labels), 5),
+            frameon=False,
+        )
+
+    fig.suptitle("Transition `d_blks_read_per_op` over epoch by run and phase", y=1.02, fontsize=14)
+    fig.tight_layout(rect=(0, 0.08, 1, 0.98))
+    plt.show()
+
+
+phase_epoch_df = load_phase_epoch_rows()
+transitions = build_transition_rows(phase_epoch_df)
+
+
+def build_run_clean_p95_rows(phase_epoch_df: pd.DataFrame) -> pd.DataFrame:
+    coverage = (
+        phase_epoch_df[phase_epoch_df["phase"].isin(["run", "clean-run"])]
+        .groupby(["source_file", "phase"], dropna=False)["epoch"]
+        .nunique()
+        .unstack(fill_value=0)
+    )
+    full_sources = coverage[(coverage["run"] >= 100) & (coverage["clean-run"] >= 100)].index.tolist()
+
+    sub = phase_epoch_df[
+        phase_epoch_df["source_file"].isin(full_sources) & phase_epoch_df["phase"].isin(["run", "clean-run"])
+    ].copy()
+
+    rows = []
+    for row in sub.to_dict(orient="records"):
+        for operation, p95_col in [("READ", "p95_read"), ("UPDATE", "p95_update")]:
+            p95 = row[p95_col]
+            if pd.isna(p95):
+                continue
+            rows.append(
+                {
+                    "source_file": row["source_file"],
+                    "run": row["run"],
+                    "epoch": row["epoch"],
+                    "phase": row["phase"],
+                    "operation": operation,
+                    "p95": float(p95),
+                }
+            )
+
+    out = pd.DataFrame(rows).sort_values(["source_file", "operation", "phase", "epoch"]).reset_index(drop=True)
+    out["phase_clean"] = (out["phase"] == "clean-run").astype(int)
+    out["log_p95"] = np.log(out["p95"])
+    out["epoch_c"] = out["epoch"] - out["epoch"].mean()
+    return out
+
+
+def build_paired_ratio_frame(p95_df: pd.DataFrame, operation: str) -> pd.DataFrame:
+    sub = p95_df[p95_df["operation"] == operation].copy().rename(columns={"run": "run_id"})
+    pivot = (
+        sub.pivot_table(index=["source_file", "run_id", "epoch"], columns="phase", values="p95")
+        .reset_index()
+        .sort_values(["source_file", "epoch"])
+    )
+    pivot.columns.name = None
+    pivot["log_ratio"] = np.log(pivot["clean-run"]) - np.log(pivot["run"])
+    pivot["ratio"] = np.exp(pivot["log_ratio"])
+    pivot["epoch_c"] = pivot["epoch"] - pivot["epoch"].mean()
+    return pivot
+
+
+def mean_ci(series: pd.Series, confidence: float = 0.95) -> tuple[float, float]:
+    values = pd.Series(series).dropna().astype(float)
+    if values.empty:
+        return (np.nan, np.nan)
+    if len(values) == 1:
+        value = float(values.iloc[0])
+        return (value, value)
+
+    mean = float(values.mean())
+    sd = float(values.std(ddof=1))
+    se = sd / np.sqrt(len(values))
+    alpha = 1 - confidence
+    tcrit = stats.t.ppf(1 - alpha / 2, df=len(values) - 1)
+    return (mean - tcrit * se, mean + tcrit * se)
+
+
+def paired_log_ratio_test(p95_df: pd.DataFrame, operation: str) -> dict:
+    paired = build_paired_ratio_frame(p95_df, operation)
+    log_ratio = paired["log_ratio"]
+    run_mean = paired["run"].mean()
+    clean_mean = paired["clean-run"].mean()
+
+    test = stats.ttest_1samp(log_ratio, popmean=0.0)
+    n = len(log_ratio)
+    mean_log_ratio = float(log_ratio.mean())
+    sd_log_ratio = float(log_ratio.std(ddof=1))
+    se_log_ratio = sd_log_ratio / np.sqrt(n)
+    tcrit = stats.t.ppf(0.975, df=n - 1)
+    ci_log = (
+        mean_log_ratio - tcrit * se_log_ratio,
+        mean_log_ratio + tcrit * se_log_ratio,
+    )
+
+    geom_ratio = float(np.exp(mean_log_ratio))
+    ci_ratio = (float(np.exp(ci_log[0])), float(np.exp(ci_log[1])))
+
+    return {
+        "Operation": operation,
+        "Pairs": n,
+        "Run mean P95 (us)": float(run_mean),
+        "Clean-run mean P95 (us)": float(clean_mean),
+        "Mean log ratio": mean_log_ratio,
+        "t": float(test.statistic),
+        "p": float(test.pvalue),
+        "Geometric clean/run ratio": geom_ratio,
+        "Pct difference": 100 * (geom_ratio - 1),
+        "Ratio CI low": ci_ratio[0],
+        "Ratio CI high": ci_ratio[1],
+    }
+
+
+def fit_run_level_log_ratio_trends(p95_df: pd.DataFrame, operation: str) -> pd.DataFrame:
+    paired = build_paired_ratio_frame(p95_df, operation)
+    epoch_mean = float(paired["epoch"].mean())
+    rows = []
+
+    for source_file, group in paired.groupby("source_file", dropna=False):
+        group = group.sort_values("epoch").reset_index(drop=True)
+        fit = stats.linregress(group["epoch_c"], group["log_ratio"])
+        midpoint_log_ratio = float(group["log_ratio"].mean())
+
+        rows.append(
+            {
+                "Operation": operation,
+                "source_file": source_file,
+                "run": int(group["run_id"].iloc[0]),
+                "Pairs": int(len(group)),
+                "Midpoint log ratio": midpoint_log_ratio,
+                "Midpoint clean/run ratio": float(np.exp(midpoint_log_ratio)),
+                "Slope per epoch": float(fit.slope),
+                "Slope p (within run)": float(fit.pvalue),
+                "R^2 (within run)": float(fit.rvalue**2),
+                "Pred ratio epoch 1": float(np.exp(midpoint_log_ratio + fit.slope * (1 - epoch_mean))),
+                "Pred ratio epoch 50.5": float(np.exp(midpoint_log_ratio + fit.slope * (50.5 - epoch_mean))),
+                "Pred ratio epoch 100": float(np.exp(midpoint_log_ratio + fit.slope * (100 - epoch_mean))),
+            }
+        )
+
+    return pd.DataFrame(rows).sort_values(["Operation", "run"]).reset_index(drop=True)
+
+
+def summarize_run_level_log_ratio_trends(run_level_df: pd.DataFrame) -> pd.DataFrame:
+    rows = []
+    epoch_mean = 50.5
+
+    for operation, group in run_level_df.groupby("Operation", dropna=False):
+        midpoint_test = stats.ttest_1samp(group["Midpoint log ratio"], popmean=0.0)
+        slope_test = stats.ttest_1samp(group["Slope per epoch"], popmean=0.0)
+
+        midpoint_ci = mean_ci(group["Midpoint log ratio"])
+        slope_ci = mean_ci(group["Slope per epoch"])
+        mean_midpoint = float(group["Midpoint log ratio"].mean())
+        mean_slope = float(group["Slope per epoch"].mean())
+
+        rows.append(
+            {
+                "Operation": operation,
+                "Runs": int(len(group)),
+                "Mean midpoint log ratio": mean_midpoint,
+                "Midpoint p": float(midpoint_test.pvalue),
+                "Midpoint clean/run ratio": float(np.exp(mean_midpoint)),
+                "Midpoint ratio CI low": float(np.exp(midpoint_ci[0])),
+                "Midpoint ratio CI high": float(np.exp(midpoint_ci[1])),
+                "Mean slope per epoch": mean_slope,
+                "Slope p": float(slope_test.pvalue),
+                "Slope CI low": float(slope_ci[0]),
+                "Slope CI high": float(slope_ci[1]),
+                "Pred ratio epoch 1": float(np.exp(mean_midpoint + mean_slope * (1 - epoch_mean))),
+                "Pred ratio epoch 50.5": float(np.exp(mean_midpoint)),
+                "Pred ratio epoch 100": float(np.exp(mean_midpoint + mean_slope * (100 - epoch_mean))),
+            }
+        )
+
+    return pd.DataFrame(rows)
+
+
+def render_p95_ratio_over_epoch(p95_df: pd.DataFrame) -> None:
+    fig, axes = plt.subplots(1, 2, figsize=(12.5, 4.8), sharex=False, sharey=False)
+
+    for ax, operation in zip(axes, ["READ", "UPDATE"]):
+        pivot = build_paired_ratio_frame(p95_df, operation)
+
+        for source_file, g in pivot.groupby("source_file", dropna=False):
+            ax.plot(g["epoch"], g["ratio"], linewidth=1.4, alpha=0.55, label=source_file)
+
+        mean_ratio = pivot.groupby("epoch", dropna=False)["ratio"].mean().reset_index()
+        ax.plot(mean_ratio["epoch"], mean_ratio["ratio"], color="black", linewidth=2.8, label="mean across runs")
+        ax.axhline(1.0, color="#666666", linewidth=0.9, alpha=0.7)
+        ax.set_title(f"{operation}: clean-run / run P95 ratio by epoch")
+        ax.set_xlabel("Epoch")
+        ax.set_ylabel("P95 ratio")
+        ax.grid(True, alpha=0.25)
+
+    handles, labels = axes[0].get_legend_handles_labels()
+    if handles:
+        fig.legend(
+            handles,
+            labels,
+            loc="lower center",
+            bbox_to_anchor=(0.5, -0.03),
+            ncol=2,
+            frameon=False,
+        )
+
+    fig.suptitle("Run vs clean-run P95 ratio across the full 100-epoch runs", y=1.02, fontsize=14)
+    fig.tight_layout(rect=(0, 0.08, 1, 0.98))
+    plt.show()
+
+
+display(
+    pd.DataFrame(
+        {
+            "scenario": ["postgresql_uniform_heavy_mixed"],
+            "run_files": [phase_epoch_df["source_file"].nunique()],
+            "total_transition_rows": [len(transitions)],
+            "phases": [", ".join(PHASES)],
+        }
+    )
+)
+```
+
+## Transition Coverage
+
+```{python}
+coverage = (
+    transitions.groupby(["source_file", "phase"], dropna=False)
+    .size()
+    .rename("transitions")
+    .reset_index()
+    .pivot(index="source_file", columns="phase", values="transitions")
+    .reset_index()
+)
+display(coverage.fillna(0).style.format(precision=0))
+
+epoch_coverage = (
+    phase_epoch_df.groupby("source_file", dropna=False)["epoch"]
+    .agg(["min", "max", "nunique"])
+    .rename(columns={"min": "min_epoch", "max": "max_epoch", "nunique": "epoch_count"})
+    .reset_index()
+)
+display(epoch_coverage.style.format(precision=0))
+
+display(
+    Markdown(
+        "\n".join(
+            [
+                "- Runs 1, 3, and 4 span `100` epochs and therefore contribute `99` transitions per repeated phase.",
+                "- Run 2 ends at epoch `89`, so it contributes `88` transitions per repeated phase.",
+                "- Across all runs and phases, the report analyzes **1,922 transition rows**.",
+            ]
+        )
+    )
+)
+```
+
+## Cross-Phase Transition Summary
+
+```{python}
+summary_rows = []
+for phase in PHASES:
+    sub = transitions[transitions["phase"] == phase].copy()
+    row = {
+        "Phase": phase,
+        "Transitions": len(sub),
+        "Mean throughput change %": sub["throughput_change_pct"].mean(),
+        "Median throughput change %": sub["throughput_change_pct"].median(),
+    }
+    if "read_latency_change_pct" in sub:
+        row["Mean READ latency change %"] = sub["read_latency_change_pct"].mean()
+        row["Median READ latency change %"] = sub["read_latency_change_pct"].median()
+    if "update_latency_change_pct" in sub:
+        row["Mean UPDATE latency change %"] = sub["update_latency_change_pct"].mean()
+        row["Median UPDATE latency change %"] = sub["update_latency_change_pct"].median()
+    if "extend_latency_change_pct" in sub:
+        row["Mean EXTEND latency change %"] = sub["extend_latency_change_pct"].mean()
+        row["Median EXTEND latency change %"] = sub["extend_latency_change_pct"].median()
+    summary_rows.append(row)
+
+summary_df = pd.DataFrame(summary_rows)
+display(
+    summary_df.style.format(
+        {
+            "Mean throughput change %": "{:+.2f}",
+            "Median throughput change %": "{:+.2f}",
+            "Mean READ latency change %": "{:+.2f}",
+            "Median READ latency change %": "{:+.2f}",
+            "Mean UPDATE latency change %": "{:+.2f}",
+            "Median UPDATE latency change %": "{:+.2f}",
+            "Mean EXTEND latency change %": "{:+.2f}",
+            "Median EXTEND latency change %": "{:+.2f}",
+        }
+    )
+)
+```
+
+## Run Vs Clean-Run P95 Significance
+
+This section addresses the concern that raw latency variance may grow with epoch even when the **percentage** gap between `run` and `clean-run` is more stable.
+
+It therefore adds two analyses on the **full 100-epoch runs only**:
+
+- a paired one-sample test on `log(clean-run P95 / run P95)` by epoch
+- a `statsmodels`-free run-level trend analysis on `log(clean-run P95 / run P95)` over epoch
+
+This section uses:
+
+- [postgresql_run1_uniform_heavy_mixed.csv](/home/nhan/Desktop/Projects/YCSB-IVS-DATA/DATA/postgresql_run1_uniform_heavy_mixed.csv)
+- [postgresql_run3_uniform_heavy_mixed.csv](/home/nhan/Desktop/Projects/YCSB-IVS-DATA/DATA/postgresql_run3_uniform_heavy_mixed.csv)
+- [postgresql_run4_uniform_heavy_mixed.csv](/home/nhan/Desktop/Projects/YCSB-IVS-DATA/DATA/postgresql_run4_uniform_heavy_mixed.csv)
+
+`run2` is excluded here because it does not have the full `100` matched epochs.
+
+### Paired Log-Ratio Test
+
+```{python}
+run_clean_p95_df = build_run_clean_p95_rows(phase_epoch_df)
+paired_log_ratio_results = pd.DataFrame(
+    [paired_log_ratio_test(run_clean_p95_df, operation) for operation in ["READ", "UPDATE"]]
+)
+
+display(
+    paired_log_ratio_results.style.format(
+        {
+            "Run mean P95 (us)": "{:,.2f}",
+            "Clean-run mean P95 (us)": "{:,.2f}",
+            "Mean log ratio": "{:+.4f}",
+            "t": "{:+.3f}",
+            "p": "{:.3e}",
+            "Geometric clean/run ratio": "{:.4f}",
+            "Pct difference": "{:+.2f}%",
+            "Ratio CI low": "{:.4f}",
+            "Ratio CI high": "{:.4f}",
+        }
+    )
+)
+
+display(
+    Markdown(
+        "\n".join(
+            [
+                "- The paired test is run on `log(clean-run / run)` so a stable percentage gap becomes an additive effect on the analysis scale.",
+                "- For `READ`, the geometric mean clean/run P95 ratio is about **0.934**, which means clean-run P95 is about **6.6% lower** on average.",
+                "- For `UPDATE`, the geometric mean clean/run P95 ratio is about **0.870**, which means clean-run P95 is about **13.0% lower** on average.",
+                "- Both paired log-ratio tests are overwhelmingly significant.",
+            ]
+        )
+    )
+)
+```
+
+### Run-Level Log-Ratio Trend Over Epoch
+
+To keep the report dependency-light, this replaces the earlier mixed-effects fit with a paired, run-level trend model that uses only `SciPy`.
+
+Within each full `100`-epoch run and for each operation, fit:
+
+`log(clean-run P95 / run P95) ~ epoch_centered`
+
+Then summarize the run-level midpoint effects and slopes across runs with one-sample t-tests.
+
+Interpretation:
+
+- the midpoint log ratio is the clean-run effect at epoch `50.5`
+- the slope tests whether the clean-run advantage changes over time
+- because the pairing is done within epoch, most run-specific baseline shift is already removed before fitting the trend
+
+```{python}
+run_clean_p95_df = build_run_clean_p95_rows(phase_epoch_df)
+run_level_log_ratio_results = pd.concat(
+    [fit_run_level_log_ratio_trends(run_clean_p95_df, operation) for operation in ["READ", "UPDATE"]],
+    ignore_index=True,
+)
+run_level_log_ratio_summary = summarize_run_level_log_ratio_trends(run_level_log_ratio_results)
+
+display(Markdown("#### Per-run fits"))
+display(
+    run_level_log_ratio_results.style.format(
+        {
+            "Midpoint log ratio": "{:+.4f}",
+            "Midpoint clean/run ratio": "{:.4f}",
+            "Slope per epoch": "{:+.5f}",
+            "Slope p (within run)": "{:.3e}",
+            "R^2 (within run)": "{:.3f}",
+            "Pred ratio epoch 1": "{:.4f}",
+            "Pred ratio epoch 50.5": "{:.4f}",
+            "Pred ratio epoch 100": "{:.4f}",
+        }
+    )
+)
+
+display(Markdown("#### Across-run summary"))
+display(
+    run_level_log_ratio_summary.style.format(
+        {
+            "Mean midpoint log ratio": "{:+.4f}",
+            "Midpoint p": "{:.3e}",
+            "Midpoint clean/run ratio": "{:.4f}",
+            "Midpoint ratio CI low": "{:.4f}",
+            "Midpoint ratio CI high": "{:.4f}",
+            "Mean slope per epoch": "{:+.5f}",
+            "Slope p": "{:.3e}",
+            "Slope CI low": "{:+.5f}",
+            "Slope CI high": "{:+.5f}",
+            "Pred ratio epoch 1": "{:.4f}",
+            "Pred ratio epoch 50.5": "{:.4f}",
+            "Pred ratio epoch 100": "{:.4f}",
+        }
+    )
+)
+
+display(
+    Markdown(
+        "\n".join(
+            [
+                "- For `READ`, the midpoint clean-run effect is significantly below `1`, but the mean slope across runs is not significant at the `0.05` level.",
+                "- That means the **READ** clean-run advantage is still present on the percentage scale, but its time trend is weak and not consistent enough across runs to call significant here.",
+                "- For `UPDATE`, the midpoint clean-run effect is significantly below `1` and the mean slope is significantly negative.",
+                "- That means the **UPDATE** clean-run advantage grows stronger over time rather than staying flat.",
+                "- This version keeps the log-scale variance stabilization while avoiding a `statsmodels` dependency.",
+            ]
+        )
+    )
+)
+```
+
+### P95 Ratio Over Epoch
+
+```{python}
+run_clean_p95_df = build_run_clean_p95_rows(phase_epoch_df)
+render_p95_ratio_over_epoch(run_clean_p95_df)
+```
+
+## Strongest Same-Step Correlations
+
+```{python}
+threshold = 0.15
+all_rows = []
+for phase in PHASES:
+    strong = strongest_relationships(transitions[transitions["phase"] == phase], phase, threshold=threshold)
+    if strong.empty:
+        continue
+    strong.insert(0, "Phase", phase)
+    all_rows.append(strong)
+
+strong_df = pd.concat(all_rows, ignore_index=True)
+display(
+    strong_df.style.format({"Spearman rho": "{:+.3f}"})
+)
+
+display(
+    Markdown(
+        "\n".join(
+            [
+                f"- The threshold for calling a same-step relationship meaningful in this report is `|rho| >= {threshold:.2f}`.",
+                "- `clean-run` shows the clearest epoch-to-epoch I/O sensitivity: block reads/op and block hits/op move with both throughput loss and latency growth.",
+                "- `extend` shows a smaller checkpoint-driven effect through `checkpoint buffers/op`.",
+                "- `run`, `avg-run`, and `reference` do not have a counter that crosses the same threshold for throughput or latency change.",
+            ]
+        )
+    )
+)
+```
+
+## Top Correlations By Phase
+
+```{python}
+for phase in PHASES:
+    sub = transitions[transitions["phase"] == phase].copy()
+    table = correlation_table(sub, phase, top_n=5)
+    display(Markdown(f"### {PHASE_LABELS[phase]}"))
+    display(table.style.format({"Spearman rho": "{:+.3f}"}))
+```
+
+## Correlation Heatmaps
+
+```{python}
+for phase in PHASES:
+    display(Markdown(f"### {PHASE_LABELS[phase]}"))
+    render_phase_heatmap(transitions[transitions["phase"] == phase], phase)
+```
+
+## Block Reads Over Epoch
+
+`blks_read` in the CSV is cumulative, so the first figure shows the raw cumulative snapshot at each epoch. The second figure shows the transition-normalized view already used elsewhere in this report:
+
+`d_blks_read_per_op = (blks_read_N - blks_read_(N-1)) / total_operations_N`
+
+```{python}
+render_block_reads_over_epoch(phase_epoch_df)
+render_block_read_transition_over_epoch(transitions)
+```
+
+## Latency Transition Vs Cache-Hit-Ratio Transition By Run
+
+These plots use:
+
+- x-axis: `cache_hit_ratio_change_pts`
+- y-axis: latency transition over the same `epoch N-1 -> N` step
+
+Here `cache_hit_ratio_change_pts` is computed from the same-phase epoch snapshots:
+
+`100 * (cache_hit_ratio_N - cache_hit_ratio_(N-1))`
+
+where:
+
+`cache_hit_ratio_e = blks_hit / (blks_hit + blks_read)`
+
+This keeps the plot at the transition level, so a `100`-epoch run still contributes `99` points per phase.
+
+```{python}
+for run_number in sorted(transitions["run"].dropna().unique()):
+    run_df = transitions[transitions["run"] == run_number].copy()
+    display(Markdown(f"### Run {int(run_number)}"))
+    render_run_latency_vs_cache_transition(run_df, int(run_number))
+```
+
+## Epoch `14 -> 15` Transition Check
+
+```{python}
+case = transitions[transitions["epoch_to"] == 15].copy()
+
+perf_rows = []
+for phase in PHASES:
+    sub = case[case["phase"] == phase]
+    row = {
+        "Phase": phase,
+        "Mean throughput change %": sub["throughput_change_pct"].mean(),
+    }
+    if "read_latency_change_pct" in sub:
+        row["Mean READ latency change %"] = sub["read_latency_change_pct"].mean()
+    if "update_latency_change_pct" in sub:
+        row["Mean UPDATE latency change %"] = sub["update_latency_change_pct"].mean()
+    if "extend_latency_change_pct" in sub:
+        row["Mean EXTEND latency change %"] = sub["extend_latency_change_pct"].mean()
+    perf_rows.append(row)
+
+perf_case = pd.DataFrame(perf_rows)
+display(
+    perf_case.style.format(
+        {
+            "Mean throughput change %": "{:+.2f}",
+            "Mean READ latency change %": "{:+.2f}",
+            "Mean UPDATE latency change %": "{:+.2f}",
+            "Mean EXTEND latency change %": "{:+.2f}",
+        }
+    )
+)
+
+counter_case = (
+    case.groupby("phase", dropna=False)[counter_columns()]
+    .mean()
+    .rename(columns=COUNTER_LABELS)
+    .reset_index()
+)
+display(
+    counter_case.style.format(
+        {
+            "Cache-hit ratio": "{:+.3f}",
+            "Block reads/op": "{:+.2f}",
+            "Block hits/op": "{:+.2f}",
+            "WAL bytes/op": "{:+.2f}",
+            "WAL records/op": "{:+.2f}",
+            "WAL FPIs/op": "{:+.3f}",
+            "Buffer allocs/op": "{:+.2f}",
+            "Backend buffers/op": "{:+.2f}",
+            "Checkpoint buffers/op": "{:+.2f}",
+            "Cleaner buffers/op": "{:+.2f}",
+            "Checkpoint write ms/op": "{:+.3f}",
+            "Checkpoint sync ms/op": "{:+.3f}",
+        }
+    )
+)
+
+display(
+    Markdown(
+        "\n".join(
+            [
+                "- The `14 -> 15` step is still a useful sanity check: active phases improve strongly, but the counter deltas do not collapse.",
+                "- That matches the broader transition-level result in this report: short-run performance changes are only partially explained by counter movement, and the epoch `15` jump is not a simple counter-relief event.",
+            ]
+        )
+    )
+)
+```
+
+## Conclusions
+
+- This Quarto report uses the transition definition you asked for: one data point per same-phase `epoch N-1 -> N` change.
+- In runs with `100` epochs, that yields `99` transition points per phase.
+- The strongest same-step relationships are phase-specific rather than universal.
+- `clean-run` is the most counter-sensitive phase from one epoch to the next, especially for block reads/op and block hits/op.
+- `extend` has a weaker checkpoint-buffer signal.
+- `run`, `avg-run`, and `reference` show mostly weak same-step relationships, even though their long-run degradation is obvious.
+- The practical takeaway is that counters are excellent at describing the broad drift of the workload, but they only partially explain individual epoch-to-epoch jumps and drops.

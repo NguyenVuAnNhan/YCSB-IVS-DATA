@@ -1,0 +1,2598 @@
+=== Executing the load phase ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:1000 Max:3600 Avg:2000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending first iteration...
+First iteration: Appended values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending first iteration...
+First iteration: Appended values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 20000000, Field length average: 200
+Workload file fieldlength set to: 200 (expected: 200)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:1 Run:1 Iteration:1 TotalSize:20000000 ExpectedFieldLength:200
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:1600 Max:4900 Avg:3000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 2...
+Iteration 2: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 2...
+Iteration 2: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 30000000, Field length average: 300
+Workload file fieldlength set to: 300 (expected: 300)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:1 Run:2 Iteration:2 TotalSize:30000000 ExpectedFieldLength:300
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:2200 Max:6400 Avg:4000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 3...
+Iteration 3: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 3...
+Iteration 3: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 40000000, Field length average: 400
+Workload file fieldlength set to: 400 (expected: 400)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:1 Run:3 Iteration:3 TotalSize:40000000 ExpectedFieldLength:400
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:3000 Max:7200 Avg:5000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 4...
+Iteration 4: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 4...
+Iteration 4: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 50000000, Field length average: 500
+Workload file fieldlength set to: 500 (expected: 500)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:1 Run:4 Iteration:4 TotalSize:50000000 ExpectedFieldLength:500
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:3500 Max:8900 Avg:6000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 5...
+Iteration 5: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 5...
+Iteration 5: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 59993500, Field length average: 599
+Workload file fieldlength set to: 599 (expected: 599)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:1 Run:5 Iteration:5 TotalSize:59900000 ExpectedFieldLength:599
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:4500 Max:9900 Avg:7000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 6...
+Iteration 6: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 6...
+Iteration 6: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 69985500, Field length average: 699
+Workload file fieldlength set to: 699 (expected: 699)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:1 Run:6 Iteration:6 TotalSize:69900000 ExpectedFieldLength:699
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:5000 Max:11100 Avg:8000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 7...
+Iteration 7: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 7...
+Iteration 7: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 79983000, Field length average: 799
+Workload file fieldlength set to: 799 (expected: 799)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:1 Run:7 Iteration:7 TotalSize:79900000 ExpectedFieldLength:799
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:5700 Max:12700 Avg:9000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 8...
+Iteration 8: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 8...
+Iteration 8: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 89971800, Field length average: 899
+Workload file fieldlength set to: 899 (expected: 899)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:1 Run:8 Iteration:8 TotalSize:89900000 ExpectedFieldLength:899
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:6500 Max:14000 Avg:10000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 9...
+Iteration 9: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 9...
+Iteration 9: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 99969200, Field length average: 999
+Workload file fieldlength set to: 999 (expected: 999)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:1 Run:9 Iteration:9 TotalSize:99900000 ExpectedFieldLength:999
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 3 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:7500 Max:15400 Avg:11000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 10...
+Iteration 10: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 10...
+Iteration 10: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 109966000, Field length average: 1099
+Workload file fieldlength set to: 1099 (expected: 1099)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:1 Run:10 Iteration:10 TotalSize:109900000 ExpectedFieldLength:1099
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:8200 Max:16600 Avg:12000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 11...
+Iteration 11: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 11...
+Iteration 11: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 119963700, Field length average: 1199
+Workload file fieldlength set to: 1199 (expected: 1199)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:2 Run:1 Iteration:11 TotalSize:119900000 ExpectedFieldLength:1199
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:9100 Max:18100 Avg:13000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 12...
+Iteration 12: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 12...
+Iteration 12: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 129961400, Field length average: 1299
+Workload file fieldlength set to: 1299 (expected: 1299)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:2 Run:2 Iteration:12 TotalSize:129900000 ExpectedFieldLength:1299
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:10000 Max:19400 Avg:14000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 13...
+Iteration 13: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 13...
+Iteration 13: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 139959000, Field length average: 1399
+Workload file fieldlength set to: 1399 (expected: 1399)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:2 Run:3 Iteration:13 TotalSize:139900000 ExpectedFieldLength:1399
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:10700 Max:20400 Avg:15000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 14...
+Iteration 14: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 14...
+Iteration 14: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 149956500, Field length average: 1499
+Workload file fieldlength set to: 1499 (expected: 1499)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:2 Run:4 Iteration:14 TotalSize:149900000 ExpectedFieldLength:1499
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:11500 Max:21400 Avg:16000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 15...
+Iteration 15: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 15...
+Iteration 15: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 159953600, Field length average: 1599
+Workload file fieldlength set to: 1599 (expected: 1599)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:2 Run:5 Iteration:15 TotalSize:159900000 ExpectedFieldLength:1599
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:12500 Max:22800 Avg:17000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 16...
+Iteration 16: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 16...
+Iteration 16: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 169950800, Field length average: 1699
+Workload file fieldlength set to: 1699 (expected: 1699)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:2 Run:6 Iteration:16 TotalSize:169900000 ExpectedFieldLength:1699
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 4 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:13300 Max:24200 Avg:18000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 17...
+Iteration 17: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 17...
+Iteration 17: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 179947800, Field length average: 1799
+Workload file fieldlength set to: 1799 (expected: 1799)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:2 Run:7 Iteration:17 TotalSize:179900000 ExpectedFieldLength:1799
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 3 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:14100 Max:25300 Avg:19000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 18...
+Iteration 18: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 18...
+Iteration 18: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 189944900, Field length average: 1899
+Workload file fieldlength set to: 1899 (expected: 1899)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:2 Run:8 Iteration:18 TotalSize:189900000 ExpectedFieldLength:1899
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:14600 Max:26100 Avg:20000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 19...
+Iteration 19: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 19...
+Iteration 19: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 199942100, Field length average: 1999
+Workload file fieldlength set to: 1999 (expected: 1999)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:2 Run:9 Iteration:19 TotalSize:199900000 ExpectedFieldLength:1999
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:16000 Max:26700 Avg:21000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 20...
+Iteration 20: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 20...
+Iteration 20: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 209939000, Field length average: 2099
+Workload file fieldlength set to: 2099 (expected: 2099)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:2 Run:10 Iteration:20 TotalSize:209900000 ExpectedFieldLength:2099
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:16700 Max:28200 Avg:22000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 21...
+Iteration 21: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 21...
+Iteration 21: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 219936200, Field length average: 2199
+Workload file fieldlength set to: 2199 (expected: 2199)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:3 Run:1 Iteration:21 TotalSize:219900000 ExpectedFieldLength:2199
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:17200 Max:29000 Avg:23000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 22...
+Iteration 22: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 22...
+Iteration 22: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 229933100, Field length average: 2299
+Workload file fieldlength set to: 2299 (expected: 2299)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:3 Run:2 Iteration:22 TotalSize:229900000 ExpectedFieldLength:2299
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:18300 Max:30100 Avg:24000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 23...
+Iteration 23: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 23...
+Iteration 23: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 239929600, Field length average: 2399
+Workload file fieldlength set to: 2399 (expected: 2399)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:3 Run:3 Iteration:23 TotalSize:239900000 ExpectedFieldLength:2399
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:19100 Max:31300 Avg:25000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 24...
+Iteration 24: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 24...
+Iteration 24: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 249926600, Field length average: 2499
+Workload file fieldlength set to: 2499 (expected: 2499)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:3 Run:4 Iteration:24 TotalSize:249900000 ExpectedFieldLength:2499
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:19800 Max:32900 Avg:26000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 25...
+Iteration 25: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 25...
+Iteration 25: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 259922800, Field length average: 2599
+Workload file fieldlength set to: 2599 (expected: 2599)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:3 Run:5 Iteration:25 TotalSize:259900000 ExpectedFieldLength:2599
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:20700 Max:33800 Avg:27000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 26...
+Iteration 26: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 26...
+Iteration 26: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 269920800, Field length average: 2699
+Workload file fieldlength set to: 2699 (expected: 2699)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:3 Run:6 Iteration:26 TotalSize:269900000 ExpectedFieldLength:2699
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 7 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:22100 Max:34900 Avg:28000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 27...
+Iteration 27: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 27...
+Iteration 27: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 279917300, Field length average: 2799
+Workload file fieldlength set to: 2799 (expected: 2799)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:3 Run:7 Iteration:27 TotalSize:279900000 ExpectedFieldLength:2799
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:23300 Max:35900 Avg:29000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 28...
+Iteration 28: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 28...
+Iteration 28: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 289914200, Field length average: 2899
+Workload file fieldlength set to: 2899 (expected: 2899)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:3 Run:8 Iteration:28 TotalSize:289900000 ExpectedFieldLength:2899
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:23800 Max:36900 Avg:30000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 29...
+Iteration 29: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 29...
+Iteration 29: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 299911500, Field length average: 2999
+Workload file fieldlength set to: 2999 (expected: 2999)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:3 Run:9 Iteration:29 TotalSize:299900000 ExpectedFieldLength:2999
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:25100 Max:38100 Avg:31000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 30...
+Iteration 30: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 30...
+Iteration 30: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 309908500, Field length average: 3099
+Workload file fieldlength set to: 3099 (expected: 3099)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:3 Run:10 Iteration:30 TotalSize:309900000 ExpectedFieldLength:3099
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:25700 Max:39000 Avg:32000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 31...
+Iteration 31: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 31...
+Iteration 31: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 319905800, Field length average: 3199
+Workload file fieldlength set to: 3199 (expected: 3199)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:4 Run:1 Iteration:31 TotalSize:319900000 ExpectedFieldLength:3199
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 3 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:26100 Max:39600 Avg:33000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 32...
+Iteration 32: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 32...
+Iteration 32: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 329902500, Field length average: 3299
+Workload file fieldlength set to: 3299 (expected: 3299)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:4 Run:2 Iteration:32 TotalSize:329900000 ExpectedFieldLength:3299
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:27000 Max:40800 Avg:34000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 33...
+Iteration 33: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 33...
+Iteration 33: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 339900000, Field length average: 3399
+Workload file fieldlength set to: 3399 (expected: 3399)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:4 Run:3 Iteration:33 TotalSize:339900000 ExpectedFieldLength:3399
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:27900 Max:41800 Avg:35000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 34...
+Iteration 34: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 34...
+Iteration 34: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 349897300, Field length average: 3498
+Workload file fieldlength set to: 3498 (expected: 3498)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:4 Run:4 Iteration:34 TotalSize:349800000 ExpectedFieldLength:3498
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:28500 Max:43100 Avg:36000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 35...
+Iteration 35: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 35...
+Iteration 35: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 359894900, Field length average: 3598
+Workload file fieldlength set to: 3598 (expected: 3598)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:4 Run:5 Iteration:35 TotalSize:359800000 ExpectedFieldLength:3598
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:29100 Max:44200 Avg:37000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 36...
+Iteration 36: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 36...
+Iteration 36: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 369893100, Field length average: 3698
+Workload file fieldlength set to: 3698 (expected: 3698)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:4 Run:6 Iteration:36 TotalSize:369800000 ExpectedFieldLength:3698
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:29900 Max:44900 Avg:38000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 37...
+Iteration 37: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 37...
+Iteration 37: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 379890300, Field length average: 3798
+Workload file fieldlength set to: 3798 (expected: 3798)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:4 Run:7 Iteration:37 TotalSize:379800000 ExpectedFieldLength:3798
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:31500 Max:46400 Avg:39000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 38...
+Iteration 38: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 38...
+Iteration 38: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 389887600, Field length average: 3898
+Workload file fieldlength set to: 3898 (expected: 3898)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:4 Run:8 Iteration:38 TotalSize:389800000 ExpectedFieldLength:3898
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 3 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:32200 Max:47600 Avg:40000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 39...
+Iteration 39: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 39...
+Iteration 39: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 399884700, Field length average: 3998
+Workload file fieldlength set to: 3998 (expected: 3998)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:4 Run:9 Iteration:39 TotalSize:399800000 ExpectedFieldLength:3998
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:33200 Max:48300 Avg:41000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 40...
+Iteration 40: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 40...
+Iteration 40: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 409880800, Field length average: 4098
+Workload file fieldlength set to: 4098 (expected: 4098)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:4 Run:10 Iteration:40 TotalSize:409800000 ExpectedFieldLength:4098
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:34100 Max:49100 Avg:42000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 41...
+Iteration 41: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 41...
+Iteration 41: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 419878200, Field length average: 4198
+Workload file fieldlength set to: 4198 (expected: 4198)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:5 Run:1 Iteration:41 TotalSize:419800000 ExpectedFieldLength:4198
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 3 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:34600 Max:50500 Avg:43000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 42...
+Iteration 42: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 42...
+Iteration 42: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 429875400, Field length average: 4298
+Workload file fieldlength set to: 4298 (expected: 4298)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:5 Run:2 Iteration:42 TotalSize:429800000 ExpectedFieldLength:4298
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:35600 Max:51800 Avg:44000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 43...
+Iteration 43: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 43...
+Iteration 43: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 439872100, Field length average: 4398
+Workload file fieldlength set to: 4398 (expected: 4398)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:5 Run:3 Iteration:43 TotalSize:439800000 ExpectedFieldLength:4398
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 3 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:36800 Max:52800 Avg:45000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 44...
+Iteration 44: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 44...
+Iteration 44: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 449869200, Field length average: 4498
+Workload file fieldlength set to: 4498 (expected: 4498)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:5 Run:4 Iteration:44 TotalSize:449800000 ExpectedFieldLength:4498
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:37900 Max:54100 Avg:46000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 45...
+Iteration 45: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 45...
+Iteration 45: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 459866500, Field length average: 4598
+Workload file fieldlength set to: 4598 (expected: 4598)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:5 Run:5 Iteration:45 TotalSize:459800000 ExpectedFieldLength:4598
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:38900 Max:55300 Avg:47000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 46...
+Iteration 46: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 46...
+Iteration 46: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 469863300, Field length average: 4698
+Workload file fieldlength set to: 4698 (expected: 4698)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:5 Run:6 Iteration:46 TotalSize:469800000 ExpectedFieldLength:4698
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:39600 Max:56700 Avg:48000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 47...
+Iteration 47: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 47...
+Iteration 47: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 479859200, Field length average: 4798
+Workload file fieldlength set to: 4798 (expected: 4798)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:5 Run:7 Iteration:47 TotalSize:479800000 ExpectedFieldLength:4798
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 3 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:40600 Max:57600 Avg:49000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 48...
+Iteration 48: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 48...
+Iteration 48: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 489856500, Field length average: 4898
+Workload file fieldlength set to: 4898 (expected: 4898)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:5 Run:8 Iteration:48 TotalSize:489800000 ExpectedFieldLength:4898
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 3 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:41500 Max:58800 Avg:50000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 49...
+Iteration 49: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 49...
+Iteration 49: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 499852800, Field length average: 4998
+Workload file fieldlength set to: 4998 (expected: 4998)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:5 Run:9 Iteration:49 TotalSize:499800000 ExpectedFieldLength:4998
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 3 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:42500 Max:59700 Avg:51000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 50...
+Iteration 50: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 50...
+Iteration 50: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 509850700, Field length average: 5098
+Workload file fieldlength set to: 5098 (expected: 5098)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:5 Run:10 Iteration:50 TotalSize:509800000 ExpectedFieldLength:5098
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 7 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:43100 Max:61100 Avg:52000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 51...
+Iteration 51: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 51...
+Iteration 51: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 519847800, Field length average: 5198
+Workload file fieldlength set to: 5198 (expected: 5198)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:6 Run:1 Iteration:51 TotalSize:519800000 ExpectedFieldLength:5198
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 3 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:44200 Max:62200 Avg:53000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 52...
+Iteration 52: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 52...
+Iteration 52: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 529844300, Field length average: 5298
+Workload file fieldlength set to: 5298 (expected: 5298)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:6 Run:2 Iteration:52 TotalSize:529800000 ExpectedFieldLength:5298
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:45200 Max:63200 Avg:54000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 53...
+Iteration 53: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 53...
+Iteration 53: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 539841900, Field length average: 5398
+Workload file fieldlength set to: 5398 (expected: 5398)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:6 Run:3 Iteration:53 TotalSize:539800000 ExpectedFieldLength:5398
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 3 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:46100 Max:64800 Avg:55000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 54...
+Iteration 54: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 54...
+Iteration 54: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 549839600, Field length average: 5498
+Workload file fieldlength set to: 5498 (expected: 5498)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:6 Run:4 Iteration:54 TotalSize:549800000 ExpectedFieldLength:5498
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:46800 Max:65800 Avg:56000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 55...
+Iteration 55: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 55...
+Iteration 55: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 559836500, Field length average: 5598
+Workload file fieldlength set to: 5598 (expected: 5598)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:6 Run:5 Iteration:55 TotalSize:559800000 ExpectedFieldLength:5598
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 3 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:48500 Max:66800 Avg:57000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 56...
+Iteration 56: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 56...
+Iteration 56: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 569833500, Field length average: 5698
+Workload file fieldlength set to: 5698 (expected: 5698)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:6 Run:6 Iteration:56 TotalSize:569800000 ExpectedFieldLength:5698
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 4 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:49300 Max:68000 Avg:58000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 57...
+Iteration 57: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 57...
+Iteration 57: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 579830800, Field length average: 5798
+Workload file fieldlength set to: 5798 (expected: 5798)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:6 Run:7 Iteration:57 TotalSize:579800000 ExpectedFieldLength:5798
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 3 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:50300 Max:69000 Avg:59000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 58...
+Iteration 58: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 58...
+Iteration 58: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 589827900, Field length average: 5898
+Workload file fieldlength set to: 5898 (expected: 5898)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:6 Run:8 Iteration:58 TotalSize:589800000 ExpectedFieldLength:5898
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 7 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:51300 Max:69900 Avg:60000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 59...
+Iteration 59: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 59...
+Iteration 59: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 599823700, Field length average: 5998
+Workload file fieldlength set to: 5998 (expected: 5998)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:6 Run:9 Iteration:59 TotalSize:599800000 ExpectedFieldLength:5998
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:52100 Max:70600 Avg:61000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 60...
+Iteration 60: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 60...
+Iteration 60: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 609821000, Field length average: 6098
+Workload file fieldlength set to: 6098 (expected: 6098)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:6 Run:10 Iteration:60 TotalSize:609800000 ExpectedFieldLength:6098
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 3 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:53100 Max:71800 Avg:62000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 61...
+Iteration 61: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 61...
+Iteration 61: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 619817700, Field length average: 6198
+Workload file fieldlength set to: 6198 (expected: 6198)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:7 Run:1 Iteration:61 TotalSize:619800000 ExpectedFieldLength:6198
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:53600 Max:72900 Avg:63000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 62...
+Iteration 62: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 62...
+Iteration 62: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 629814900, Field length average: 6298
+Workload file fieldlength set to: 6298 (expected: 6298)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:7 Run:2 Iteration:62 TotalSize:629800000 ExpectedFieldLength:6298
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:54700 Max:73700 Avg:64000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 63...
+Iteration 63: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 63...
+Iteration 63: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 639812800, Field length average: 6398
+Workload file fieldlength set to: 6398 (expected: 6398)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:7 Run:3 Iteration:63 TotalSize:639800000 ExpectedFieldLength:6398
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:55500 Max:75500 Avg:65000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 64...
+Iteration 64: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 64...
+Iteration 64: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 649809300, Field length average: 6498
+Workload file fieldlength set to: 6498 (expected: 6498)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:7 Run:4 Iteration:64 TotalSize:649800000 ExpectedFieldLength:6498
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 3 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:56100 Max:76300 Avg:66000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 65...
+Iteration 65: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 65...
+Iteration 65: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 659805300, Field length average: 6598
+Workload file fieldlength set to: 6598 (expected: 6598)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:7 Run:5 Iteration:65 TotalSize:659800000 ExpectedFieldLength:6598
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:57400 Max:77200 Avg:67000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 66...
+Iteration 66: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 66...
+Iteration 66: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 669802900, Field length average: 6698
+Workload file fieldlength set to: 6698 (expected: 6698)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:7 Run:6 Iteration:66 TotalSize:669800000 ExpectedFieldLength:6698
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:58200 Max:78400 Avg:68000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 67...
+Iteration 67: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 67...
+Iteration 67: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 679800300, Field length average: 6798
+Workload file fieldlength set to: 6798 (expected: 6798)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:7 Run:7 Iteration:67 TotalSize:679800000 ExpectedFieldLength:6798
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:59300 Max:79400 Avg:69000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 68...
+Iteration 68: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 68...
+Iteration 68: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 689797600, Field length average: 6897
+Workload file fieldlength set to: 6897 (expected: 6897)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:7 Run:8 Iteration:68 TotalSize:689700000 ExpectedFieldLength:6897
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:60000 Max:81300 Avg:70001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 69...
+Iteration 69: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 69...
+Iteration 69: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 699795000, Field length average: 6997
+Workload file fieldlength set to: 6997 (expected: 6997)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:7 Run:9 Iteration:69 TotalSize:699700000 ExpectedFieldLength:6997
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:61000 Max:82300 Avg:71001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 70...
+Iteration 70: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 70...
+Iteration 70: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 709792900, Field length average: 7097
+Workload file fieldlength set to: 7097 (expected: 7097)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:7 Run:10 Iteration:70 TotalSize:709700000 ExpectedFieldLength:7097
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:61700 Max:83200 Avg:72001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 71...
+Iteration 71: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 71...
+Iteration 71: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 719789000, Field length average: 7197
+Workload file fieldlength set to: 7197 (expected: 7197)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:8 Run:1 Iteration:71 TotalSize:719700000 ExpectedFieldLength:7197
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:62900 Max:84300 Avg:73001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 72...
+Iteration 72: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 72...
+Iteration 72: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 729787200, Field length average: 7297
+Workload file fieldlength set to: 7297 (expected: 7297)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:8 Run:2 Iteration:72 TotalSize:729700000 ExpectedFieldLength:7297
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:64100 Max:85400 Avg:74001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 73...
+Iteration 73: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 73...
+Iteration 73: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 739783500, Field length average: 7397
+Workload file fieldlength set to: 7397 (expected: 7397)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:8 Run:3 Iteration:73 TotalSize:739700000 ExpectedFieldLength:7397
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:65300 Max:86000 Avg:75000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 74...
+Iteration 74: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 74...
+Iteration 74: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 749779500, Field length average: 7497
+Workload file fieldlength set to: 7497 (expected: 7497)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:8 Run:4 Iteration:74 TotalSize:749700000 ExpectedFieldLength:7497
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:66400 Max:87000 Avg:76000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 75...
+Iteration 75: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 75...
+Iteration 75: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 759776400, Field length average: 7597
+Workload file fieldlength set to: 7597 (expected: 7597)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:8 Run:5 Iteration:75 TotalSize:759700000 ExpectedFieldLength:7597
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:67400 Max:87500 Avg:77000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 76...
+Iteration 76: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 76...
+Iteration 76: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 769773500, Field length average: 7697
+Workload file fieldlength set to: 7697 (expected: 7697)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:8 Run:6 Iteration:76 TotalSize:769700000 ExpectedFieldLength:7697
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 3 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:68100 Max:88200 Avg:78001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 77...
+Iteration 77: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 77...
+Iteration 77: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 779771000, Field length average: 7797
+Workload file fieldlength set to: 7797 (expected: 7797)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:8 Run:7 Iteration:77 TotalSize:779700000 ExpectedFieldLength:7797
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:69000 Max:88900 Avg:79001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 78...
+Iteration 78: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 78...
+Iteration 78: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 789768400, Field length average: 7897
+Workload file fieldlength set to: 7897 (expected: 7897)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:8 Run:8 Iteration:78 TotalSize:789700000 ExpectedFieldLength:7897
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:70000 Max:89800 Avg:80001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 79...
+Iteration 79: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 79...
+Iteration 79: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 799766000, Field length average: 7997
+Workload file fieldlength set to: 7997 (expected: 7997)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:8 Run:9 Iteration:79 TotalSize:799700000 ExpectedFieldLength:7997
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:70700 Max:90900 Avg:81001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 80...
+Iteration 80: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 80...
+Iteration 80: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 809763600, Field length average: 8097
+Workload file fieldlength set to: 8097 (expected: 8097)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:8 Run:10 Iteration:80 TotalSize:809700000 ExpectedFieldLength:8097
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:71300 Max:92300 Avg:82001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 81...
+Iteration 81: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 81...
+Iteration 81: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 819760700, Field length average: 8197
+Workload file fieldlength set to: 8197 (expected: 8197)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:9 Run:1 Iteration:81 TotalSize:819700000 ExpectedFieldLength:8197
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:72300 Max:93100 Avg:83001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 82...
+Iteration 82: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 82...
+Iteration 82: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 829758200, Field length average: 8297
+Workload file fieldlength set to: 8297 (expected: 8297)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:9 Run:2 Iteration:82 TotalSize:829700000 ExpectedFieldLength:8297
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 4 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:73300 Max:94400 Avg:84001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 83...
+Iteration 83: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 83...
+Iteration 83: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 839755400, Field length average: 8397
+Workload file fieldlength set to: 8397 (expected: 8397)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:9 Run:3 Iteration:83 TotalSize:839700000 ExpectedFieldLength:8397
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:74100 Max:95300 Avg:85001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 84...
+Iteration 84: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 84...
+Iteration 84: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 849752700, Field length average: 8497
+Workload file fieldlength set to: 8497 (expected: 8497)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:9 Run:4 Iteration:84 TotalSize:849700000 ExpectedFieldLength:8497
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:74800 Max:96300 Avg:86001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 85...
+Iteration 85: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 85...
+Iteration 85: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 859749800, Field length average: 8597
+Workload file fieldlength set to: 8597 (expected: 8597)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:9 Run:5 Iteration:85 TotalSize:859700000 ExpectedFieldLength:8597
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:75600 Max:97300 Avg:87001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 86...
+Iteration 86: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 86...
+Iteration 86: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 869745900, Field length average: 8697
+Workload file fieldlength set to: 8697 (expected: 8697)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:9 Run:6 Iteration:86 TotalSize:869700000 ExpectedFieldLength:8697
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:76600 Max:98400 Avg:88001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 87...
+Iteration 87: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 87...
+Iteration 87: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 879743900, Field length average: 8797
+Workload file fieldlength set to: 8797 (expected: 8797)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:9 Run:7 Iteration:87 TotalSize:879700000 ExpectedFieldLength:8797
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:77400 Max:99500 Avg:89001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 88...
+Iteration 88: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 88...
+Iteration 88: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 889740800, Field length average: 8897
+Workload file fieldlength set to: 8897 (expected: 8897)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:9 Run:8 Iteration:88 TotalSize:889700000 ExpectedFieldLength:8897
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 5 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:78200 Max:100500 Avg:90001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 89...
+Iteration 89: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 89...
+Iteration 89: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 899737300, Field length average: 8997
+Workload file fieldlength set to: 8997 (expected: 8997)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:9 Run:9 Iteration:89 TotalSize:899700000 ExpectedFieldLength:8997
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:78700 Max:101600 Avg:91001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 90...
+Iteration 90: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 90...
+Iteration 90: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 909734900, Field length average: 9097
+Workload file fieldlength set to: 9097 (expected: 9097)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:9 Run:10 Iteration:90 TotalSize:909700000 ExpectedFieldLength:9097
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:80200 Max:102800 Avg:92001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 91...
+Iteration 91: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 91...
+Iteration 91: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 919731800, Field length average: 9197
+Workload file fieldlength set to: 9197 (expected: 9197)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:10 Run:1 Iteration:91 TotalSize:919700000 ExpectedFieldLength:9197
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:80900 Max:104500 Avg:93001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 92...
+Iteration 92: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 92...
+Iteration 92: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 929729500, Field length average: 9297
+Workload file fieldlength set to: 9297 (expected: 9297)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:10 Run:2 Iteration:92 TotalSize:929700000 ExpectedFieldLength:9297
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:82200 Max:106100 Avg:94001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 93...
+Iteration 93: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 93...
+Iteration 93: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 939727000, Field length average: 9397
+Workload file fieldlength set to: 9397 (expected: 9397)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:10 Run:3 Iteration:93 TotalSize:939700000 ExpectedFieldLength:9397
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:83000 Max:106900 Avg:95001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 94...
+Iteration 94: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 94...
+Iteration 94: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 949723500, Field length average: 9497
+Workload file fieldlength set to: 9497 (expected: 9497)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:10 Run:4 Iteration:94 TotalSize:949700000 ExpectedFieldLength:9497
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:84400 Max:108200 Avg:96001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 95...
+Iteration 95: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 95...
+Iteration 95: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 959721300, Field length average: 9597
+Workload file fieldlength set to: 9597 (expected: 9597)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:10 Run:5 Iteration:95 TotalSize:959700000 ExpectedFieldLength:9597
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:85400 Max:109100 Avg:97001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 96...
+Iteration 96: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 96...
+Iteration 96: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 969718000, Field length average: 9697
+Workload file fieldlength set to: 9697 (expected: 9697)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:10 Run:6 Iteration:96 TotalSize:969700000 ExpectedFieldLength:9697
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:86200 Max:110600 Avg:98001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 97...
+Iteration 97: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 97...
+Iteration 97: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 979715300, Field length average: 9797
+Workload file fieldlength set to: 9797 (expected: 9797)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:10 Run:7 Iteration:97 TotalSize:979700000 ExpectedFieldLength:9797
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:86800 Max:112500 Avg:99001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 98...
+Iteration 98: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 98...
+Iteration 98: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 989713000, Field length average: 9897
+Workload file fieldlength set to: 9897 (expected: 9897)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:10 Run:8 Iteration:98 TotalSize:989700000 ExpectedFieldLength:9897
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 2 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:87400 Max:113500 Avg:100001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 99...
+Iteration 99: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 99...
+Iteration 99: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 999710700, Field length average: 9997
+Workload file fieldlength set to: 9997 (expected: 9997)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:10 Run:9 Iteration:99 TotalSize:999700000 ExpectedFieldLength:9997
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== Setting parameter values for extend phase ===
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+WARNING: 1 EXTEND operations failed during extend phase
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Extend verification - Min:88100 Max:114300 Avg:101001 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 100...
+Iteration 100: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_before.csv
+=== Setting parameter values for run phase ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+Size computation started
+Appending subsequent iteration 100...
+Iteration 100: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_run1_uniform_heavy_after.csv
+Total size: 1009707300, Field length average: 10097
+Workload file fieldlength set to: 10097 (expected: 10097)
+=== Executing the load phase for the comparison study ===
+Avg-run verification - Epoch:10 Run:10 Iteration:100 TotalSize:1009700000 ExpectedFieldLength:10097
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_run1_uniform_heavy.csv
+=== All steps completed. Results are logged in ./ycsb_postgresql_results.log ===

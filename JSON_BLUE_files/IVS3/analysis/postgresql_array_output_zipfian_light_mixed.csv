@@ -1,0 +1,37 @@
+/usr/bin/java  -classpath /home/ycsb/ycsb-ec2-bundle/conf:/home/ycsb/ycsb-ec2-bundle/core/target/core-0.18.0-SNAPSHOT.jar:/home/ycsb/ycsb-ec2-bundle/core/target/dependency/HdrHistogram-2.1.4.jar:/home/ycsb/ycsb-ec2-bundle/core/target/dependency/htrace-core4-4.1.0-incubating.jar:/home/ycsb/ycsb-ec2-bundle/core/target/dependency/jackson-core-asl-1.9.4.jar:/home/ycsb/ycsb-ec2-bundle/core/target/dependency/jackson-mapper-asl-1.9.4.jar:/home/ycsb/ycsb-ec2-bundle/jdbc-array/src/main/conf:/home/ycsb/ycsb-ec2-bundle/jdbc-array/target/jdbc-array-binding-0.18.0-SNAPSHOT.jar:/home/ycsb/ycsb-ec2-bundle/jdbc-array/target/jdbc-binding-0.18.0-SNAPSHOT.jar:/home/ycsb/ycsb-ec2-bundle/jdbc-array/target/dependency/checker-qual-3.5.0.jar:/home/ycsb/ycsb-ec2-bundle/jdbc-array/target/dependency/commons-collections-3.2.1.jar:/home/ycsb/ycsb-ec2-bundle/jdbc-array/target/dependency/commons-lang-2.4.jar:/home/ycsb/ycsb-ec2-bundle/jdbc-array/target/dependency/commons-pool-1.5.4.jar:/home/ycsb/ycsb-ec2-bundle/jdbc-array/target/dependency/geronimo-jms_1.1_spec-1.1.1.jar:/home/ycsb/ycsb-ec2-bundle/jdbc-array/target/dependency/geronimo-jta_1.1_spec-1.1.1.jar:/home/ycsb/ycsb-ec2-bundle/jdbc-array/target/dependency/openjpa-jdbc-2.1.1.jar:/home/ycsb/ycsb-ec2-bundle/jdbc-array/target/dependency/openjpa-kernel-2.1.1.jar:/home/ycsb/ycsb-ec2-bundle/jdbc-array/target/dependency/openjpa-lib-2.1.1.jar:/home/ycsb/ycsb-ec2-bundle/jdbc-array/target/dependency/postgresql-42.5.4.jar:/home/ycsb/ycsb-ec2-bundle/jdbc-array/target/dependency/serp-1.13.1.jar site.ycsb.Client -t -db site.ycsb.db.JdbcDBClient -s -P ../workloads/workloada-extend -P ../jdbc-binding/conf/postgres.properties -p db.url=jdbc:postgresql://localhost:5432/ycsb_backup -p db.user=ycsb -p db.passwd=USyd2025
+Adding shard node URL: jdbc:postgresql://localhost:5432/ycsb_backup
+Using shards: 1, batchSize:-1, fetchSize: -1
+[OVERALL], RunTime(ms), 68600
+[OVERALL], Throughput(ops/sec), 1457.725947521866
+[TOTAL_GCS_G1_Young_Generation], Count, 16
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 17
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.024781341107871717
+[TOTAL_GCS_G1_Concurrent_GC], Count, 0
+[TOTAL_GC_TIME_G1_Concurrent_GC], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Concurrent_GC], Time(%), 0.0
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 16
+[TOTAL_GC_TIME], Time(ms), 17
+[TOTAL_GC_TIME_%], Time(%), 0.024781341107871717
+[READ], Operations, 49960
+[READ], AverageLatency(us), 157.88736989591672
+[READ], MinLatency(us), 22
+[READ], MaxLatency(us), 16399
+[READ], 95thPercentileLatency(us), 403
+[READ], 99thPercentileLatency(us), 511
+[READ], Return=OK, 49960
+[CLEANUP], Operations, 1
+[CLEANUP], AverageLatency(us), 926.0
+[CLEANUP], MinLatency(us), 926
+[CLEANUP], MaxLatency(us), 926
+[CLEANUP], 95thPercentileLatency(us), 926
+[CLEANUP], 99thPercentileLatency(us), 926
+[UPDATE], Operations, 50040
+[UPDATE], AverageLatency(us), 1200.6579136690648
+[UPDATE], MinLatency(us), 368
+[UPDATE], MaxLatency(us), 171903
+[UPDATE], 95thPercentileLatency(us), 1494
+[UPDATE], 99thPercentileLatency(us), 2055
+[UPDATE], Return=OK, 50040

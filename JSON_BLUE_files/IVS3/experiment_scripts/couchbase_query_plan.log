@@ -1,0 +1,1566 @@
+========================================
+Epoch=1 Run=1 Phase=run Time=Mon Mar  9 02:32:16 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "d24652e1-6ad1-4a5b-8b42-9ab6643af564",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "607.857µs",
+    "executionTime": "541.956µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=1 Run=1 Phase=run Time=Mon Mar  9 02:42:44 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "e9147be1-30fb-4ba1-a67d-2afb789aee9c",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "468.019µs",
+    "executionTime": "392.163µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=1 Run=1 Phase=run Time=Mon Mar  9 02:51:02 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "19f36d6a-b7ec-475a-887e-41ee94ffde36",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "521.9µs",
+    "executionTime": "460.698µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=1 Run=1 Phase=run Time=Mon Mar  9 03:13:54 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "6b143211-b8b1-4cb3-94bc-2879cb75f23e",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "474.331µs",
+    "executionTime": "421.64µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=1 Run=1 Phase=run Time=Mon Mar  9 03:14:37 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "1a7bc24d-ca34-4821-b0c3-92667cbb7bf0",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "414.796µs",
+    "executionTime": "363.616µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=1 Run=1 Phase=run Time=Mon Mar  9 03:16:02 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "5d92e3da-d86a-4077-8cbc-5af086c1632c",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "418.966µs",
+    "executionTime": "369.841µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=1 Run=1 Phase=run Time=Mon Mar  9 03:23:35 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "e411e15c-d715-4a4b-851e-323bd522d65c",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "535.467µs",
+    "executionTime": "476.102µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=1 Run=1 Phase=run Time=Mon Mar  9 03:24:06 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "6daf17c7-c2eb-4fb6-a9fe-ab8421cb990f",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "394.145µs",
+    "executionTime": "343.521µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=1 Run=1 Phase=run Time=Mon Mar  9 03:26:31 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "105d9409-8af9-469f-8807-4fc293164a6c",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "556.648µs",
+    "executionTime": "499.593µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=1 Run=1 Phase=run Time=Mon Mar  9 03:28:41 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "d2a0097f-67c4-481d-8631-dd21be20199c",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "405.881µs",
+    "executionTime": "356.911µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=1 Run=2 Phase=run Time=Mon Mar  9 03:28:56 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "7b604033-8b94-4036-ab9f-3879faf26b97",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "405.604µs",
+    "executionTime": "351.435µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=1 Run=3 Phase=run Time=Mon Mar  9 03:29:12 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "e3053a6b-e2db-4149-9bc9-ff132787bd50",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "522.773µs",
+    "executionTime": "458.234µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=2 Run=1 Phase=run Time=Mon Mar  9 03:29:28 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "d5949110-3001-47ba-8783-3cf6a7fc1a60",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "535.576µs",
+    "executionTime": "476.351µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=2 Run=2 Phase=run Time=Mon Mar  9 03:29:45 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "2977e921-e093-496a-b55c-1708116c574a",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "552.393µs",
+    "executionTime": "488.879µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=2 Run=3 Phase=run Time=Mon Mar  9 03:30:02 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "6db74973-77e7-422c-9718-e4d7d0a6409d",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "534.894µs",
+    "executionTime": "470.434µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=3 Run=1 Phase=run Time=Mon Mar  9 03:30:18 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "861c9929-0dfe-418a-a538-0039fc038a7e",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "581.218µs",
+    "executionTime": "522.385µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=3 Run=2 Phase=run Time=Mon Mar  9 03:30:34 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "bc48c2bf-a295-486e-9394-1025b55626c0",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "632.055µs",
+    "executionTime": "571.511µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=3 Run=3 Phase=run Time=Mon Mar  9 03:30:49 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "d29905ef-64fa-4a31-bb6e-204125cf6442",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "446.161µs",
+    "executionTime": "397.234µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=1 Run=1 Phase=run Time=Mon Mar  9 03:32:29 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "244d5da7-d952-47ad-a2d2-1fe7019f678d",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "535.886µs",
+    "executionTime": "486.098µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=1 Run=2 Phase=run Time=Mon Mar  9 03:33:23 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "47462531-d20f-4ce5-8ef7-612fa932fd7c",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "401.151µs",
+    "executionTime": "350.069µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=1 Run=3 Phase=run Time=Mon Mar  9 03:34:14 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "9ba81c15-04a7-43c2-b98a-0c5d1217775d",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "508.149µs",
+    "executionTime": "461.471µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=2 Run=1 Phase=run Time=Mon Mar  9 03:35:08 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "f35ab03e-97f5-4c16-8e21-9f7acf0dd5a3",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "663.462µs",
+    "executionTime": "595.842µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=2 Run=2 Phase=run Time=Mon Mar  9 03:36:07 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "52a73acc-b34d-4946-bb87-c589ed0016c4",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "501.424µs",
+    "executionTime": "435.12µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=1 Run=1 Phase=run Time=Mon Mar  9 03:42:23 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "10ec08d0-ddb4-4ea8-a17b-80d6ec19c597",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "413.364µs",
+    "executionTime": "356.754µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=1 Run=2 Phase=run Time=Mon Mar  9 03:43:16 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "c328f663-eff4-42b6-9a9e-c8b65f87fe36",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "615.027µs",
+    "executionTime": "550.296µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=1 Run=3 Phase=run Time=Mon Mar  9 03:44:09 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "2f015547-6684-40b6-b272-285456b7dc8c",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "540.713µs",
+    "executionTime": "466.912µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+
+========================================
+Epoch=2 Run=1 Phase=run Time=Mon Mar  9 03:45:02 AM AEDT 2026
+Bucket=ycsb
+Key=usertable:user1000385178204227360
+----------------------------------------
+{
+  "requestID": "0cf90654-51e5-4be6-bcac-59a9b460afc0",
+  "signature": "json",
+  "results": [
+    {
+      "plan": {
+        "#operator": "Sequence",
+        "~children": [
+          {
+            "#operator": "KeyScan",
+            "keys": "[\"usertable:user1000385178204227360\"]"
+          },
+          {
+            "#operator": "Fetch",
+            "keyspace": "ycsb",
+            "namespace": "default"
+          },
+          {
+            "#operator": "Parallel",
+            "~child": {
+              "#operator": "Sequence",
+              "~children": [
+                {
+                  "#operator": "InitialProject",
+                  "discard_original": true,
+                  "preserve_order": true,
+                  "result_terms": [
+                    {
+                      "expr": "self",
+                      "star": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "text": "SELECT * FROM `ycsb` USE KEYS [\"usertable:user1000385178204227360\"];"
+    }
+  ],
+  "status": "success",
+  "metrics": {
+    "elapsedTime": "635.249µs",
+    "executionTime": "578.453µs",
+    "resultCount": 1,
+    "resultSize": 457,
+    "serviceLoad": 1,
+    "usedMemory": 577,
+    "sessionMemory": 1048576
+  }
+}
+

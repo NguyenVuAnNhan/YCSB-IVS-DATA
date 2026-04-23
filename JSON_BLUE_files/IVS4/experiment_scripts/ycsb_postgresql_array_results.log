@@ -1,0 +1,270 @@
+Initializing PostgreSQL database ycsb...
+Done initializing ycsb.
+Initializing PostgreSQL database ycsb_unchange...
+Done initializing ycsb_unchange.
+=== Executing the load phase ===
+Initial-load verification - TotalSize:10000000 ExpectedFieldLength:100
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Reference-load verification - TotalSize:10000000 ExpectedFieldLength:100
+=== Setting parameter values for extend phase ===
+=== Executing the extend phase with extendproportion=1 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Size computation started
+Extend verification - Min:1000 Max:1600 Avg:1100 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending first iteration...
+First iteration: Appended values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_run1_uniform_heavy_before_mixed.csv
+VACUUM start: 1773702515
+VACUUM end: 1773702515
+=== Setting parameter values for run phase ===
+Checking query plan before run phase
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Size computation started
+Appending first iteration...
+First iteration: Appended values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_run1_uniform_heavy_after_mixed.csv
+Total size: 11000000, Field length average: 110
+Workload file fieldlength set to: 110 (expected: 110)
+=== Executing the load phase for the comparison study ===
+Comparison-load verification - Epoch:1 Run:1 TotalSize:11000000 ExpectedFieldLength:110
+Avg-run verification - Epoch:1 Run:1 Iteration:1 TotalSize:11000000 ExpectedFieldLength:110
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+=== Setting parameter values for extend phase ===
+=== Executing the extend phase with extendproportion=1 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Size computation started
+Extend verification - Min:1000 Max:2100 Avg:1200 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 2...
+Iteration 2: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_run1_uniform_heavy_before_mixed.csv
+VACUUM start: 1773702543
+VACUUM end: 1773702543
+=== Setting parameter values for run phase ===
+Checking query plan before run phase
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Size computation started
+Appending subsequent iteration 2...
+Iteration 2: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_run1_uniform_heavy_after_mixed.csv
+Total size: 12000000, Field length average: 120
+Workload file fieldlength set to: 120 (expected: 120)
+=== Executing the load phase for the comparison study ===
+Comparison-load verification - Epoch:1 Run:2 TotalSize:12000000 ExpectedFieldLength:120
+Avg-run verification - Epoch:1 Run:2 Iteration:2 TotalSize:12000000 ExpectedFieldLength:120
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+=== Setting parameter values for extend phase ===
+=== Executing the extend phase with extendproportion=1 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Size computation started
+Extend verification - Min:1000 Max:2200 Avg:1300 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 3...
+Iteration 3: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_run1_uniform_heavy_before_mixed.csv
+VACUUM start: 1773702556
+VACUUM end: 1773702556
+=== Setting parameter values for run phase ===
+Checking query plan before run phase
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Size computation started
+Appending subsequent iteration 3...
+Iteration 3: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_run1_uniform_heavy_after_mixed.csv
+Total size: 13000000, Field length average: 130
+Workload file fieldlength set to: 130 (expected: 130)
+=== Executing the load phase for the comparison study ===
+Comparison-load verification - Epoch:1 Run:3 TotalSize:13000000 ExpectedFieldLength:130
+Avg-run verification - Epoch:1 Run:3 Iteration:3 TotalSize:13000000 ExpectedFieldLength:130
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+=== Setting parameter values for extend phase ===
+=== Executing the extend phase with extendproportion=1 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Size computation started
+Extend verification - Min:1000 Max:2400 Avg:1400 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 11...
+Iteration 11: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_run1_uniform_heavy_before_mixed.csv
+VACUUM start: 1773702570
+VACUUM end: 1773702571
+=== Setting parameter values for run phase ===
+Checking query plan before run phase
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Size computation started
+Appending subsequent iteration 11...
+Iteration 11: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_run1_uniform_heavy_after_mixed.csv
+Total size: 14000000, Field length average: 140
+Workload file fieldlength set to: 140 (expected: 140)
+=== Executing the load phase for the comparison study ===
+Comparison-load verification - Epoch:2 Run:1 TotalSize:14000000 ExpectedFieldLength:140
+Avg-run verification - Epoch:2 Run:1 Iteration:11 TotalSize:14000000 ExpectedFieldLength:140
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+=== Setting parameter values for extend phase ===
+=== Executing the extend phase with extendproportion=1 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Size computation started
+Extend verification - Min:1000 Max:2700 Avg:1500 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 12...
+Iteration 12: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_run1_uniform_heavy_before_mixed.csv
+VACUUM start: 1773702584
+VACUUM end: 1773702585
+=== Setting parameter values for run phase ===
+Checking query plan before run phase
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Size computation started
+Appending subsequent iteration 12...
+Iteration 12: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_run1_uniform_heavy_after_mixed.csv
+Total size: 15000000, Field length average: 150
+Workload file fieldlength set to: 150 (expected: 150)
+=== Executing the load phase for the comparison study ===
+Comparison-load verification - Epoch:2 Run:2 TotalSize:15000000 ExpectedFieldLength:150
+Avg-run verification - Epoch:2 Run:2 Iteration:12 TotalSize:15000000 ExpectedFieldLength:150
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+=== Setting parameter values for extend phase ===
+=== Executing the extend phase with extendproportion=1 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Size computation started
+Extend verification - Min:1000 Max:2800 Avg:1600 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 13...
+Iteration 13: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_run1_uniform_heavy_before_mixed.csv
+VACUUM start: 1773702599
+VACUUM end: 1773702599
+=== Setting parameter values for run phase ===
+Checking query plan before run phase
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Size computation started
+Appending subsequent iteration 13...
+Iteration 13: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_run1_uniform_heavy_after_mixed.csv
+Total size: 16000000, Field length average: 160
+Workload file fieldlength set to: 160 (expected: 160)
+=== Executing the load phase for the comparison study ===
+Comparison-load verification - Epoch:2 Run:3 TotalSize:16000000 ExpectedFieldLength:160
+Avg-run verification - Epoch:2 Run:3 Iteration:13 TotalSize:16000000 ExpectedFieldLength:160
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+=== Setting parameter values for extend phase ===
+=== Executing the extend phase with extendproportion=1 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Size computation started
+Extend verification - Min:1000 Max:3100 Avg:1700 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 21...
+Iteration 21: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_run1_uniform_heavy_before_mixed.csv
+VACUUM start: 1773702613
+VACUUM end: 1773702614
+=== Setting parameter values for run phase ===
+Checking query plan before run phase
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Size computation started
+Appending subsequent iteration 21...
+Iteration 21: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_run1_uniform_heavy_after_mixed.csv
+Total size: 17000000, Field length average: 170
+Workload file fieldlength set to: 170 (expected: 170)
+=== Executing the load phase for the comparison study ===
+Comparison-load verification - Epoch:3 Run:1 TotalSize:17000000 ExpectedFieldLength:170
+Avg-run verification - Epoch:3 Run:1 Iteration:21 TotalSize:17000000 ExpectedFieldLength:170
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+=== Setting parameter values for extend phase ===
+=== Executing the extend phase with extendproportion=1 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Size computation started
+Extend verification - Min:1000 Max:3100 Avg:1800 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 22...
+Iteration 22: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_run1_uniform_heavy_before_mixed.csv
+VACUUM start: 1773702628
+VACUUM end: 1773702628
+=== Setting parameter values for run phase ===
+Checking query plan before run phase
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Size computation started
+Appending subsequent iteration 22...
+Iteration 22: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_run1_uniform_heavy_after_mixed.csv
+Total size: 18000000, Field length average: 180
+Workload file fieldlength set to: 180 (expected: 180)
+=== Executing the load phase for the comparison study ===
+Comparison-load verification - Epoch:3 Run:2 TotalSize:18000000 ExpectedFieldLength:180
+Avg-run verification - Epoch:3 Run:2 Iteration:22 TotalSize:18000000 ExpectedFieldLength:180
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+=== Setting parameter values for extend phase ===
+=== Executing the extend phase with extendproportion=1 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Size computation started
+Extend verification - Min:1000 Max:3200 Avg:1900 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending subsequent iteration 23...
+Iteration 23: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_run1_uniform_heavy_before_mixed.csv
+VACUUM start: 1773702642
+VACUUM end: 1773702642
+=== Setting parameter values for run phase ===
+Checking query plan before run phase
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+Size computation started
+Appending subsequent iteration 23...
+Iteration 23: Appended new size values from key_sizes.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_run1_uniform_heavy_after_mixed.csv
+Total size: 19000000, Field length average: 190
+Workload file fieldlength set to: 190 (expected: 190)
+=== Executing the load phase for the comparison study ===
+Comparison-load verification - Epoch:3 Run:3 TotalSize:19000000 ExpectedFieldLength:190
+Avg-run verification - Epoch:3 Run:3 Iteration:23 TotalSize:19000000 ExpectedFieldLength:190
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_run1_uniform_heavy_mixed.csv
+=== All steps completed. Results are logged in ./ycsb_postgresql_array_results.log ===

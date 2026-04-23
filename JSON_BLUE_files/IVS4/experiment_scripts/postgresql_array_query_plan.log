@@ -1,0 +1,153 @@
+========================================
+Epoch=1 Run=1 Phase=run Time=Tue Mar 17 10:08:35 AM AEDT 2026
+DB=ycsb
+Key=user4052466453699787802
+----------------------------------------
+                                                         QUERY PLAN                                                          
+-----------------------------------------------------------------------------------------------------------------------------
+ Index Scan using usertable_pkey on usertable  (cost=0.29..8.30 rows=1 width=1213) (actual time=0.016..0.017 rows=1 loops=1)
+   Index Cond: (ycsb_key = 'user4052466453699787802'::text)
+   Buffers: shared hit=3
+ Planning:
+   Buffers: shared hit=161
+ Planning Time: 0.345 ms
+ Execution Time: 0.045 ms
+(7 rows)
+
+
+========================================
+Epoch=1 Run=2 Phase=run Time=Tue Mar 17 10:09:03 AM AEDT 2026
+DB=ycsb
+Key=user1000385178204227360
+----------------------------------------
+                                                         QUERY PLAN                                                          
+-----------------------------------------------------------------------------------------------------------------------------
+ Index Scan using usertable_pkey on usertable  (cost=0.29..8.30 rows=1 width=1321) (actual time=0.011..0.012 rows=1 loops=1)
+   Index Cond: (ycsb_key = 'user1000385178204227360'::text)
+   Buffers: shared hit=3
+ Planning:
+   Buffers: shared hit=160
+ Planning Time: 0.338 ms
+ Execution Time: 0.034 ms
+(7 rows)
+
+
+========================================
+Epoch=1 Run=3 Phase=run Time=Tue Mar 17 10:09:17 AM AEDT 2026
+DB=ycsb
+Key=user4178498776356793781
+----------------------------------------
+                                                         QUERY PLAN                                                          
+-----------------------------------------------------------------------------------------------------------------------------
+ Index Scan using usertable_pkey on usertable  (cost=0.29..8.30 rows=1 width=1427) (actual time=0.018..0.018 rows=1 loops=1)
+   Index Cond: (ycsb_key = 'user4178498776356793781'::text)
+   Buffers: shared hit=3
+ Planning:
+   Buffers: shared hit=164
+ Planning Time: 0.370 ms
+ Execution Time: 0.045 ms
+(7 rows)
+
+
+========================================
+Epoch=2 Run=1 Phase=run Time=Tue Mar 17 10:09:31 AM AEDT 2026
+DB=ycsb
+Key=user7697331399106995587
+----------------------------------------
+                                                         QUERY PLAN                                                          
+-----------------------------------------------------------------------------------------------------------------------------
+ Index Scan using usertable_pkey on usertable  (cost=0.29..8.30 rows=1 width=1526) (actual time=0.014..0.014 rows=1 loops=1)
+   Index Cond: (ycsb_key = 'user7697331399106995587'::text)
+   Buffers: shared hit=3
+ Planning:
+   Buffers: shared hit=155
+ Planning Time: 0.359 ms
+ Execution Time: 0.035 ms
+(7 rows)
+
+
+========================================
+Epoch=2 Run=2 Phase=run Time=Tue Mar 17 10:09:45 AM AEDT 2026
+DB=ycsb
+Key=user1000385178204227360
+----------------------------------------
+                                                         QUERY PLAN                                                          
+-----------------------------------------------------------------------------------------------------------------------------
+ Index Scan using usertable_pkey on usertable  (cost=0.29..8.30 rows=1 width=1614) (actual time=0.017..0.017 rows=1 loops=1)
+   Index Cond: (ycsb_key = 'user1000385178204227360'::text)
+   Buffers: shared hit=3
+ Planning:
+   Buffers: shared hit=175
+ Planning Time: 0.402 ms
+ Execution Time: 0.040 ms
+(7 rows)
+
+
+========================================
+Epoch=2 Run=3 Phase=run Time=Tue Mar 17 10:09:59 AM AEDT 2026
+DB=ycsb
+Key=user1000385178204227360
+----------------------------------------
+                                                         QUERY PLAN                                                          
+-----------------------------------------------------------------------------------------------------------------------------
+ Index Scan using usertable_pkey on usertable  (cost=0.29..8.30 rows=1 width=1686) (actual time=0.024..0.025 rows=1 loops=1)
+   Index Cond: (ycsb_key = 'user1000385178204227360'::text)
+   Buffers: shared hit=3
+ Planning:
+   Buffers: shared hit=176
+ Planning Time: 0.612 ms
+ Execution Time: 0.063 ms
+(7 rows)
+
+
+========================================
+Epoch=3 Run=1 Phase=run Time=Tue Mar 17 10:10:14 AM AEDT 2026
+DB=ycsb
+Key=user1000385178204227360
+----------------------------------------
+                                                         QUERY PLAN                                                          
+-----------------------------------------------------------------------------------------------------------------------------
+ Index Scan using usertable_pkey on usertable  (cost=0.29..8.30 rows=1 width=1736) (actual time=0.016..0.016 rows=1 loops=1)
+   Index Cond: (ycsb_key = 'user1000385178204227360'::text)
+   Buffers: shared hit=3
+ Planning:
+   Buffers: shared hit=175
+ Planning Time: 0.367 ms
+ Execution Time: 0.037 ms
+(7 rows)
+
+
+========================================
+Epoch=3 Run=2 Phase=run Time=Tue Mar 17 10:10:28 AM AEDT 2026
+DB=ycsb
+Key=user1000385178204227360
+----------------------------------------
+                                                         QUERY PLAN                                                          
+-----------------------------------------------------------------------------------------------------------------------------
+ Index Scan using usertable_pkey on usertable  (cost=0.29..8.30 rows=1 width=1773) (actual time=0.016..0.016 rows=1 loops=1)
+   Index Cond: (ycsb_key = 'user1000385178204227360'::text)
+   Buffers: shared hit=3
+ Planning:
+   Buffers: shared hit=182
+ Planning Time: 0.423 ms
+ Execution Time: 0.039 ms
+(7 rows)
+
+
+========================================
+Epoch=3 Run=3 Phase=run Time=Tue Mar 17 10:10:43 AM AEDT 2026
+DB=ycsb
+Key=user1000385178204227360
+----------------------------------------
+                                                         QUERY PLAN                                                          
+-----------------------------------------------------------------------------------------------------------------------------
+ Index Scan using usertable_pkey on usertable  (cost=0.29..8.30 rows=1 width=1794) (actual time=0.021..0.022 rows=1 loops=1)
+   Index Cond: (ycsb_key = 'user1000385178204227360'::text)
+   Buffers: shared hit=3
+ Planning:
+   Buffers: shared hit=182
+ Planning Time: 0.557 ms
+ Execution Time: 0.051 ms
+(7 rows)
+
+

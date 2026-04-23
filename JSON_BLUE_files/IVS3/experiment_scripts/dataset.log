@@ -1,0 +1,164 @@
+KEYSPACE recordcount=100 insertstart=0 insertcount=100 insertorder=hashed
+=== HEADER epoch=0 run=0 phase=load ===
+Epoch,Phase,Recordcount,Readallfields,Requestdist,Operation,transaction_commits,transaction_rollbacks,nodes_created,nodes_deleted,relationships_created,relationships_deleted,properties_set,index_hits,index_misses,lock_acquisition_time,lock_wait_time,checkpoint_total_time,checkpoint_total_events,log_rotation_events,log_rotation_total_time,transaction_started,transaction_peak_concurrent,transaction_active,transaction_terminated,Readprop,Updateprop,Scanprop,Insertprop,Extendprop,Runtime(ms),Throughput(ops/sec),RETURN=ERROR,Operations,AverageLatency(us),MinLatency(us),MaxLatency(us),95thPercentileLatency(us),99thPercentileLatency(us),Return=OK,Return=NOT_FOUND
+
+=== INPUTS epoch=0 run=0 phase=load ===
+[overall_output]
+[OVERALL], RunTime(ms), 1234
+[OVERALL], Throughput(ops/sec), 81.03727714748784
+[filtered_output]
+[INSERT], Operations, 100
+[INSERT], AverageLatency(us), 8009.54
+[INSERT], MinLatency(us), 5080
+[INSERT], MaxLatency(us), 140543
+[INSERT], 95thPercentileLatency(us), 8119
+[INSERT], 99thPercentileLatency(us), 13391
+[INSERT], Return=OK, 100
+run_specific=1234 81.03727714748784
+return_error_value=0
+op=INSERT prop_fields=0.5 0.5 0 0 0
+op=INSERT dynamic_fields=1234 81.03727714748784 0 100 8009.54 5080 140543 8119 13391 100 0
+op=INSERT col_dump=1=0 2=load 3=100 4=true 5=uniform 6=INSERT 7=0 8=0 9=200 10=0 11=0 12=0 13=NULL 14=0 15=0 16=0 17=0 18=0 19=0 20=0 21=0 22=0 23=0 24=1 25=0 26=0.5 27=0.5 28=0 29=0 30=0 31=1234 32=81.03727714748784 33=0 34=100 35=8009.54 36=5080 37=140543 38=8119 39=13391 40=100 41=0 
+[row1] 0,load,100,true,uniform,INSERT,0,0,200,0,0,0,NULL,0,0,0,0,0,0,0,0,0,0,1,0,0.5,0.5,0,0,0,1234,81.03727714748784,0,100,8009.54,5080,140543,8119,13391,100,0
+
+KEYSPACE recordcount=100 insertstart=0 insertcount=100 insertorder=hashed
+=== INPUTS epoch=1 run=1 phase=extend ===
+[overall_output]
+[OVERALL], RunTime(ms), 16025
+[OVERALL], Throughput(ops/sec), 312.01248049922
+[filtered_output]
+[EXTEND], Operations, 5000
+[EXTEND], AverageLatency(us), 3090.6774
+[EXTEND], MinLatency(us), 808
+[EXTEND], MaxLatency(us), 226303
+[EXTEND], 95thPercentileLatency(us), 6187
+[EXTEND], 99thPercentileLatency(us), 8783
+[EXTEND], Return=OK, 5000
+run_specific=16025 312.01248049922
+return_error_value=0
+op=EXTEND prop_fields=0 0 0 0 1
+op=EXTEND dynamic_fields=16025 312.01248049922 0 5000 3090.6774 808 226303 6187 8783 5000 0
+op=EXTEND col_dump=1=1 2=extend 3=100 4=true 5=uniform 6=EXTEND 7=0 8=0 9=200 10=0 11=0 12=0 13=NULL 14=5143 15=0 16=0 17=0 18=0 19=0 20=0 21=0 22=0 23=0 24=1 25=0 26=0 27=0 28=0 29=0 30=1 31=16025 32=312.01248049922 33=0 34=5000 35=3090.6774 36=808 37=226303 38=6187 39=8783 40=5000 41=0 
+[row1] 1,extend,100,true,uniform,EXTEND,0,0,200,0,0,0,NULL,5143,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,16025,312.01248049922,0,5000,3090.6774,808,226303,6187,8783,5000,0
+
+KEYSPACE recordcount=100 insertstart=0 insertcount=100 insertorder=hashed
+=== INPUTS epoch=1 run=1 phase=run ===
+[overall_output]
+[OVERALL], RunTime(ms), 5867
+[OVERALL], Throughput(ops/sec), 852.2243054371911
+[filtered_output]
+[READ], Operations, 2517
+[READ], AverageLatency(us), 692.6897099721891
+[READ], MinLatency(us), 136
+[READ], MaxLatency(us), 9735
+[READ], 95thPercentileLatency(us), 1556
+[READ], 99thPercentileLatency(us), 2099
+[READ], Return=OK, 2517
+[UPDATE], Operations, 2483
+[UPDATE], AverageLatency(us), 1456.9363672976237
+[UPDATE], MinLatency(us), 430
+[UPDATE], MaxLatency(us), 31215
+[UPDATE], 95thPercentileLatency(us), 2505
+[UPDATE], 99thPercentileLatency(us), 3123
+[UPDATE], Return=OK, 2483
+run_specific=5867 852.2243054371911
+return_error_value=0
+op=READ prop_fields=0.5 0.5 0 0 0
+op=READ dynamic_fields=5867 852.2243054371911 0 2517 692.6897099721891 136 9735 1556 2099 2517 0
+op=READ col_dump=1=1 2=run 3=100 4=true 5=uniform 6=READ 7=0 8=0 9=200 10=0 11=0 12=0 13=NULL 14=15071 15=0 16=0 17=0 18=0 19=0 20=0 21=0 22=0 23=0 24=1 25=0 26=0.5 27=0.5 28=0 29=0 30=0 31=5867 32=852.2243054371911 33=0 34=2517 35=692.6897099721891 36=136 37=9735 38=1556 39=2099 40=2517 41=0 
+op=UPDATE prop_fields=0.5 0.5 0 0 0
+op=UPDATE dynamic_fields=5867 852.2243054371911 0 2483 1456.9363672976237 430 31215 2505 3123 2483 0
+op=UPDATE col_dump=1=1 2=run 3=100 4=true 5=uniform 6=UPDATE 7=0 8=0 9=200 10=0 11=0 12=0 13=NULL 14=15071 15=0 16=0 17=0 18=0 19=0 20=0 21=0 22=0 23=0 24=1 25=0 26=0.5 27=0.5 28=0 29=0 30=0 31=5867 32=852.2243054371911 33=0 34=2483 35=1456.9363672976237 36=430 37=31215 38=2505 39=3123 40=2483 41=0 
+[row1] 1,run,100,true,uniform,READ,0,0,200,0,0,0,NULL,15071,0,0,0,0,0,0,0,0,0,1,0,0.5,0.5,0,0,0,5867,852.2243054371911,0,2517,692.6897099721891,136,9735,1556,2099,2517,0
+[row2] 1,run,100,true,uniform,UPDATE,0,0,200,0,0,0,NULL,15071,0,0,0,0,0,0,0,0,0,1,0,0.5,0.5,0,0,0,5867,852.2243054371911,0,2483,1456.9363672976237,430,31215,2505,3123,2483,0
+
+=== INPUTS epoch=1 run=1 phase=reference ===
+[overall_output]
+[OVERALL], RunTime(ms), 17682
+[OVERALL], Throughput(ops/sec), 282.77344191833504
+[filtered_output]
+[READ], Operations, 2473
+[READ], AverageLatency(us), 1456.527699150829
+[READ], MinLatency(us), 324
+[READ], MaxLatency(us), 35167
+[READ], 95thPercentileLatency(us), 3067
+[READ], 99thPercentileLatency(us), 4327
+[READ], Return=OK, 2473
+[UPDATE], Operations, 2527
+[UPDATE], AverageLatency(us), 5357.8599129402455
+[UPDATE], MinLatency(us), 1047
+[UPDATE], MaxLatency(us), 126975
+[UPDATE], 95thPercentileLatency(us), 10799
+[UPDATE], 99thPercentileLatency(us), 14807
+[UPDATE], Return=OK, 2527
+run_specific=17682 282.77344191833504
+return_error_value=0
+op=READ prop_fields=0.5 0.5 0 0 0
+op=READ dynamic_fields=17682 282.77344191833504 0 2473 1456.527699150829 324 35167 3067 4327 2473 0
+op=READ col_dump=1=1 2=reference 3=100 4=true 5=uniform 6=READ 7=0 8=0 9=200 10=0 11=0 12=0 13=NULL 14=5101 15=0 16=0 17=0 18=0 19=0 20=0 21=0 22=0 23=0 24=1 25=0 26=0.5 27=0.5 28=0 29=0 30=0 31=17682 32=282.77344191833504 33=0 34=2473 35=1456.527699150829 36=324 37=35167 38=3067 39=4327 40=2473 41=0 
+op=UPDATE prop_fields=0.5 0.5 0 0 0
+op=UPDATE dynamic_fields=17682 282.77344191833504 0 2527 5357.8599129402455 1047 126975 10799 14807 2527 0
+op=UPDATE col_dump=1=1 2=reference 3=100 4=true 5=uniform 6=UPDATE 7=0 8=0 9=200 10=0 11=0 12=0 13=NULL 14=5101 15=0 16=0 17=0 18=0 19=0 20=0 21=0 22=0 23=0 24=1 25=0 26=0.5 27=0.5 28=0 29=0 30=0 31=17682 32=282.77344191833504 33=0 34=2527 35=5357.8599129402455 36=1047 37=126975 38=10799 39=14807 40=2527 41=0 
+[row1] 1,reference,100,true,uniform,READ,0,0,200,0,0,0,NULL,5101,0,0,0,0,0,0,0,0,0,1,0,0.5,0.5,0,0,0,17682,282.77344191833504,0,2473,1456.527699150829,324,35167,3067,4327,2473,0
+[row2] 1,reference,100,true,uniform,UPDATE,0,0,200,0,0,0,NULL,5101,0,0,0,0,0,0,0,0,0,1,0,0.5,0.5,0,0,0,17682,282.77344191833504,0,2527,5357.8599129402455,1047,126975,10799,14807,2527,0
+
+=== INPUTS epoch=1 run=1 phase=clean-run ===
+[overall_output]
+[OVERALL], RunTime(ms), 11669
+[OVERALL], Throughput(ops/sec), 428.48573142514357
+[filtered_output]
+[READ], Operations, 2456
+[READ], AverageLatency(us), 1335.046009771987
+[READ], MinLatency(us), 253
+[READ], MaxLatency(us), 46591
+[READ], 95thPercentileLatency(us), 3521
+[READ], 99thPercentileLatency(us), 4835
+[READ], Return=OK, 2456
+[UPDATE], Operations, 2544
+[UPDATE], AverageLatency(us), 3081.7885220125786
+[UPDATE], MinLatency(us), 626
+[UPDATE], MaxLatency(us), 64735
+[UPDATE], 95thPercentileLatency(us), 11407
+[UPDATE], 99thPercentileLatency(us), 20063
+[UPDATE], Return=OK, 2544
+run_specific=11669 428.48573142514357
+return_error_value=0
+op=READ prop_fields=0.5 0.5 0 0 0
+op=READ dynamic_fields=11669 428.48573142514357 0 2456 1335.046009771987 253 46591 3521 4835 2456 0
+op=READ col_dump=1=1 2=clean-run 3=100 4=true 5=uniform 6=READ 7=0 8=0 9=200 10=0 11=0 12=0 13=NULL 14=4228 15=0 16=0 17=0 18=0 19=0 20=0 21=0 22=0 23=0 24=1 25=0 26=0.5 27=0.5 28=0 29=0 30=0 31=11669 32=428.48573142514357 33=0 34=2456 35=1335.046009771987 36=253 37=46591 38=3521 39=4835 40=2456 41=0 
+op=UPDATE prop_fields=0.5 0.5 0 0 0
+op=UPDATE dynamic_fields=11669 428.48573142514357 0 2544 3081.7885220125786 626 64735 11407 20063 2544 0
+op=UPDATE col_dump=1=1 2=clean-run 3=100 4=true 5=uniform 6=UPDATE 7=0 8=0 9=200 10=0 11=0 12=0 13=NULL 14=4228 15=0 16=0 17=0 18=0 19=0 20=0 21=0 22=0 23=0 24=1 25=0 26=0.5 27=0.5 28=0 29=0 30=0 31=11669 32=428.48573142514357 33=0 34=2544 35=3081.7885220125786 36=626 37=64735 38=11407 39=20063 40=2544 41=0 
+[row1] 1,clean-run,100,true,uniform,READ,0,0,200,0,0,0,NULL,4228,0,0,0,0,0,0,0,0,0,1,0,0.5,0.5,0,0,0,11669,428.48573142514357,0,2456,1335.046009771987,253,46591,3521,4835,2456,0
+[row2] 1,clean-run,100,true,uniform,UPDATE,0,0,200,0,0,0,NULL,4228,0,0,0,0,0,0,0,0,0,1,0,0.5,0.5,0,0,0,11669,428.48573142514357,0,2544,3081.7885220125786,626,64735,11407,20063,2544,0
+
+=== INPUTS epoch=1 run=1 phase=avg-run ===
+[overall_output]
+[OVERALL], RunTime(ms), 8900
+[OVERALL], Throughput(ops/sec), 561.7977528089888
+[filtered_output]
+[READ], Operations, 2451
+[READ], AverageLatency(us), 1228.8176254589964
+[READ], MinLatency(us), 206
+[READ], MaxLatency(us), 58047
+[READ], 95thPercentileLatency(us), 3015
+[READ], 99thPercentileLatency(us), 4435
+[READ], Return=OK, 2451
+[UPDATE], Operations, 2549
+[UPDATE], AverageLatency(us), 2098.0455080423694
+[UPDATE], MinLatency(us), 681
+[UPDATE], MaxLatency(us), 35647
+[UPDATE], 95thPercentileLatency(us), 4439
+[UPDATE], 99thPercentileLatency(us), 5635
+[UPDATE], Return=OK, 2549
+run_specific=8900 561.7977528089888
+return_error_value=0
+op=READ prop_fields=0.5 0.5 0 0 0
+op=READ dynamic_fields=8900 561.7977528089888 0 2451 1228.8176254589964 206 58047 3015 4435 2451 0
+op=READ col_dump=1=1 2=avg-run 3=100 4=true 5=uniform 6=READ 7=0 8=0 9=200 10=0 11=0 12=0 13=NULL 14=818 15=0 16=0 17=0 18=0 19=0 20=0 21=0 22=0 23=0 24=1 25=0 26=0.5 27=0.5 28=0 29=0 30=0 31=8900 32=561.7977528089888 33=0 34=2451 35=1228.8176254589964 36=206 37=58047 38=3015 39=4435 40=2451 41=0 
+op=UPDATE prop_fields=0.5 0.5 0 0 0
+op=UPDATE dynamic_fields=8900 561.7977528089888 0 2549 2098.0455080423694 681 35647 4439 5635 2549 0
+op=UPDATE col_dump=1=1 2=avg-run 3=100 4=true 5=uniform 6=UPDATE 7=0 8=0 9=200 10=0 11=0 12=0 13=NULL 14=818 15=0 16=0 17=0 18=0 19=0 20=0 21=0 22=0 23=0 24=1 25=0 26=0.5 27=0.5 28=0 29=0 30=0 31=8900 32=561.7977528089888 33=0 34=2549 35=2098.0455080423694 36=681 37=35647 38=4439 39=5635 40=2549 41=0 
+[row1] 1,avg-run,100,true,uniform,READ,0,0,200,0,0,0,NULL,818,0,0,0,0,0,0,0,0,0,1,0,0.5,0.5,0,0,0,8900,561.7977528089888,0,2451,1228.8176254589964,206,58047,3015,4435,2451,0
+[row2] 1,avg-run,100,true,uniform,UPDATE,0,0,200,0,0,0,NULL,818,0,0,0,0,0,0,0,0,0,1,0,0.5,0.5,0,0,0,8900,561.7977528089888,0,2549,2098.0455080423694,681,35647,4439,5635,2549,0
+

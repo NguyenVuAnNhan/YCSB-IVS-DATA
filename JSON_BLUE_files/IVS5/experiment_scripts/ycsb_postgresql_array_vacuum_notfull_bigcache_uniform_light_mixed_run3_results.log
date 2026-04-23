@@ -1,0 +1,38 @@
+Initializing PostgreSQL database ycsb...
+Done initializing ycsb.
+Initializing PostgreSQL database ycsb_unchange...
+Done initializing ycsb_unchange.
+=== Executing the load phase ===
+Initial-load verification - TotalSize:1000000 ExpectedFieldLength:100
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_vacuum_notfull_bigcache_run3_uniform_light_mixed.csv
+Reference-load verification - TotalSize:1000000 ExpectedFieldLength:100
+=== Setting parameter values for extend phase ===
+=== Executing the extend phase with extendproportion=1 and other proportions=0 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_vacuum_notfull_bigcache_run3_uniform_light_mixed.csv
+Size computation started
+Extend verification - Min:1200 Max:3000 Avg:2000 (Expected avg per record: ~1000 bytes initially)
+Generating histogram from key size log: key_sizes_postgresql_array_vacuum_notfull_bigcache_uniform_light_mixed_run3.csv
+Histogram written to histogram.txt (BlockSize = 100)
+Appending first iteration...
+First iteration: Appended values from key_sizes_postgresql_array_vacuum_notfull_bigcache_uniform_light_mixed_run3.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_vacuum_notfull_bigcache_run3_uniform_light_before_mixed.csv
+VACUUM start: 1774715630
+VACUUM end: 1774715630
+=== Setting parameter values for run phase ===
+Checking query plan before run phase
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_vacuum_notfull_bigcache_run3_uniform_light_mixed.csv
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_vacuum_notfull_bigcache_run3_uniform_light_mixed.csv
+Backing up the database started
+Backing up the database finished
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_vacuum_notfull_bigcache_run3_uniform_light_mixed.csv
+Size computation started
+Appending first iteration...
+First iteration: Appended values from key_sizes_postgresql_array_vacuum_notfull_bigcache_uniform_light_mixed_run3.csv to ../analysis/Data/Value_size_data/value_sizes_postgresql_array_vacuum_notfull_bigcache_run3_uniform_light_after_mixed.csv
+Total size: 2542100, Field length average: 254
+Workload file fieldlength set to: 254 (expected: 254)
+=== Executing the load phase for the comparison study ===
+Comparison-load verification - Epoch:1 Run:1 TotalSize:2540000 ExpectedFieldLength:254
+Avg-run verification - Epoch:1 Run:1 Iteration:1 TotalSize:2540000 ExpectedFieldLength:254
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+Arrangement completed. Output saved to ../analysis/Data/Workload_data/postgresql_array_vacuum_notfull_bigcache_run3_uniform_light_mixed.csv
+=== All steps completed. Results are logged in ./ycsb_postgresql_array_vacuum_notfull_bigcache_uniform_light_mixed_run3_results.log ===

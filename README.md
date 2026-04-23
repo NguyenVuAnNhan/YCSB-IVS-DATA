@@ -78,6 +78,12 @@ python3 scripts/plot_postgresql_epoch_metrics.py
 python3 scripts/organize_and_summarize_postgresql_plots.py
 ```
 
+4. Multi-metric PostgreSQL arrayjson epoch plots:
+
+```bash
+python3 scripts/plot_postgresql_arrayjson_epoch_metrics.py
+```
+
 ## 6) Typical Update Workflow for New Data
 
 1. Copy new CSVs into `DATA/`.

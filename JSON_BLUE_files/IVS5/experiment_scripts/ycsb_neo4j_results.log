@@ -1,0 +1,28 @@
+=== Executing the load phase ===
+KEYSPACE recordcount=100 insertstart=0 insertcount=100 insertorder=hashed
+=== Setting parameter values for extend phase ===
+KEYSPACE recordcount=100 insertstart=0 insertcount=100 insertorder=hashed
+=== Executing the run phase with extendproportion=0.2 and other proportions=0 ===
+=== Setting parameter values for run phase ===
+KEYSPACE recordcount=100 insertstart=0 insertcount=100 insertorder=hashed
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+APOC output: apoc.version()
+"5.19.0"
+APOC output: apoc.version()
+"5.19.0"
+Exporting database via APOC from bolt://localhost:7687...
+APOC export result: file, source, format, nodes, relationships, properties, time, rows, batchSize, batches, done, data
+"tmp/ycsb_neo4j_backup.graphml", "database: nodes(100), rels(0)", "graphml", 100, 0, 1100, 44, 100, -1, 0, TRUE, NULL
+Clearing target database on bolt://localhost:7787...
+Importing database via APOC into bolt://localhost:7787...
+APOC import result: file, source, format, nodes, relationships, properties, time, rows, batchSize, batches, done, data
+"tmp/ycsb_neo4j_backup.graphml", "file", "graphml", 100, 0, 1200, 196, 0, -1, 0, TRUE, NULL
+BACKUP CHECK usertable_count=100 total_count=100
+[FIELDLEN] Computed average field length
+[FIELDLEN]   total_size_bytes=638700
+[FIELDLEN]   recordcount=100
+[FIELDLEN]   fields_per_record=10
+[FIELDLEN]   fieldlengthaverage=638
+=== Executing the load phase for the comparison study ===
+=== Executing the run phase with extendproportion=0 and read/update proportions=0.5 ===
+=== All steps completed. Results are logged in ./ycsb_neo4j_results.log ===

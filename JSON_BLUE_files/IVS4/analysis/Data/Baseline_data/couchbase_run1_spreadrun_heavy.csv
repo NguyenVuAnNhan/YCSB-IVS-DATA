@@ -1,0 +1,11 @@
+Epoch,Phase,Recordcount,Readallfields,Requestdist,Operation,blks_read,blks_hit,tup_returned,tup_fetched,tup_inserted,tup_updated,tup_deleted,deadlocks,temp_files,temp_bytes,checkpoints_timed,checkpoints_req,buffers_checkpoint,buffers_clean,buffers_backend,buffers_alloc,checkpoint_write_time,checkpoint_sync_time,wal_bytes,wal_records,wal_fpi,wal_buffers_full,Readprop,Updateprop,Scanprop,Insertprop,Extendprop,Runtime(ms),Throughput(ops/sec),Operations,AverageLatency(us),MinLatency(us),MaxLatency(us),95thPercentileLatency(us),99thPercentileLatency(us),Return=OK
+0,load,8000,true,uniform,INSERT,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,4041,1979.707993071022,8000,452.725125,196,29295,882,1322,8000
+1,spread-run,9000,true,uniform,READ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1244,803.8585209003215,1000,835.279,237,27199,1732,2493,1000
+2,spread-run,10000,true,uniform,READ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1026,974.6588693957115,1000,656.769,295,18655,1217,1595,1000
+3,spread-run,11000,true,uniform,READ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1052,950.5703422053232,1000,670.775,282,21551,1234,1624,1000
+11,spread-run,12000,true,uniform,READ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1059,944.2870632672333,1000,684.237,224,19951,1297,1719,1000
+12,spread-run,13000,true,uniform,READ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1048,954.1984732824427,1000,671.453,292,20207,1282,1843,1000
+13,spread-run,14000,true,uniform,READ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1057,946.073793755913,1000,684.071,238,22271,1389,1931,1000
+21,spread-run,15000,true,uniform,READ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1036,965.2509652509652,1000,658.421,298,21311,1251,1633,1000
+22,spread-run,16000,true,uniform,READ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1000,1000.0,1000,626.711,268,18207,1212,1634,1000
+23,spread-run,17000,true,uniform,READ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1009,991.0802775024777,1000,627.959,278,17935,1200,1572,1000

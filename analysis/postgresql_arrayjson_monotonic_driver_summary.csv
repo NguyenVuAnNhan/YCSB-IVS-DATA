@@ -1,0 +1,176 @@
+scenario,phase,driver,driver_label,latency_spearman_rho,throughput_spearman_rho
+vacuum_notfull_uniform_heavy_pure,avg-run,blks_hit_per_op,Block hits/op,-0.36216862502576785,0.3616285301999587
+vacuum_notfull_uniform_heavy_pure,avg-run,blks_read_per_op,Block reads/op,0.21934501937834538,-0.21898436877438307
+vacuum_notfull_uniform_heavy_pure,avg-run,buffers_alloc_per_op,Buffer allocs/op,0.9963224077509792,-0.9963017934446506
+vacuum_notfull_uniform_heavy_pure,avg-run,buffers_backend_per_op,Backend buffers/op,0.9941084312512883,-0.9940754483611626
+vacuum_notfull_uniform_heavy_pure,avg-run,buffers_checkpoint_per_op,Checkpoint buffers/op,0.771758400329829,-0.7717171717171718
+vacuum_notfull_uniform_heavy_pure,avg-run,buffers_clean_per_op,Cleaner buffers/op,0.9768954854669141,-0.9769078540507112
+vacuum_notfull_uniform_heavy_pure,avg-run,cache_hit_ratio,Cache-hit ratio,-0.3433223322332233,0.3432943294329433
+vacuum_notfull_uniform_heavy_pure,avg-run,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.9212629410806062,-0.9211516214550293
+vacuum_notfull_uniform_heavy_pure,avg-run,checkpoint_write_time_per_op,Checkpoint write time/op,0.9302989074417646,-0.9303195217480932
+vacuum_notfull_uniform_heavy_pure,avg-run,internal_inserts_per_logical_update,Internal inserts/logical update,-0.03422681589688859,0.03432749041616776
+vacuum_notfull_uniform_heavy_pure,avg-run,tup_fetched_per_op,Tuples fetched/op,-0.1511976911976912,0.15144918573490002
+vacuum_notfull_uniform_heavy_pure,avg-run,tup_inserted_per_op,Internal tuple inserts/op,-0.17956631680072596,0.1796508363554606
+vacuum_notfull_uniform_heavy_pure,avg-run,tup_returned_per_op,Tuples returned/op,-0.148266456380899,0.14851382812058483
+vacuum_notfull_uniform_heavy_pure,avg-run,tup_updated_per_op,Logical tuple updates/op,0.04812596334577716,-0.04809021785885866
+vacuum_notfull_uniform_heavy_pure,avg-run,wal_buffers_full_per_op,WAL buffers full/op,0.8951638837353123,-0.8951886209029066
+vacuum_notfull_uniform_heavy_pure,avg-run,wal_bytes_per_op,WAL bytes/op,0.9967965367965368,-0.9967800453514739
+vacuum_notfull_uniform_heavy_pure,avg-run,wal_fpi_per_op,WAL FPIs/op,0.9874417645846217,-0.9874417645846217
+vacuum_notfull_uniform_heavy_pure,avg-run,wal_records_per_op,WAL records/op,0.9975675118532261,-0.9975633889919604
+vacuum_notfull_uniform_heavy_pure,clean-run,blks_hit_per_op,Block hits/op,-0.343850752422181,0.34371469800041227
+vacuum_notfull_uniform_heavy_pure,clean-run,blks_read_per_op,Block reads/op,0.09239901831249525,-0.09214968496270733
+vacuum_notfull_uniform_heavy_pure,clean-run,buffers_alloc_per_op,Buffer allocs/op,0.9875984333127189,-0.9875324675324676
+vacuum_notfull_uniform_heavy_pure,clean-run,buffers_backend_per_op,Backend buffers/op,0.9864357864357864,-0.9863780663780664
+vacuum_notfull_uniform_heavy_pure,clean-run,buffers_checkpoint_per_op,Checkpoint buffers/op,0.7773545060808784,-0.7773957349740036
+vacuum_notfull_uniform_heavy_pure,clean-run,buffers_clean_per_op,Cleaner buffers/op,0.9665986394557824,-0.9665367965367966
+vacuum_notfull_uniform_heavy_pure,clean-run,cache_hit_ratio,Cache-hit ratio,-0.33000500050005005,0.33004900490049005
+vacuum_notfull_uniform_heavy_pure,clean-run,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.9101737403519166,-0.9102191003810128
+vacuum_notfull_uniform_heavy_pure,clean-run,checkpoint_write_time_per_op,Checkpoint write time/op,0.9320057720057721,-0.9319892805607092
+vacuum_notfull_uniform_heavy_pure,clean-run,internal_inserts_per_logical_update,Internal inserts/logical update,-0.06734885341696488,0.06734885341696488
+vacuum_notfull_uniform_heavy_pure,clean-run,tup_fetched_per_op,Tuples fetched/op,-0.20648158364993785,0.20617236809886788
+vacuum_notfull_uniform_heavy_pure,clean-run,tup_inserted_per_op,Internal tuple inserts/op,-0.17998087250516628,0.17962630340213434
+vacuum_notfull_uniform_heavy_pure,clean-run,tup_returned_per_op,Tuples returned/op,-0.2049519965492409,0.20463865812415663
+vacuum_notfull_uniform_heavy_pure,clean-run,tup_updated_per_op,Logical tuple updates/op,-0.0011786031639429405,0.0014239535607853359
+vacuum_notfull_uniform_heavy_pure,clean-run,wal_buffers_full_per_op,WAL buffers full/op,0.8843949701092558,-0.8842300556586271
+vacuum_notfull_uniform_heavy_pure,clean-run,wal_bytes_per_op,WAL bytes/op,0.987994227994228,-0.9879282622139764
+vacuum_notfull_uniform_heavy_pure,clean-run,wal_fpi_per_op,WAL FPIs/op,0.9798721913007628,-0.9797732426303855
+vacuum_notfull_uniform_heavy_pure,clean-run,wal_records_per_op,WAL records/op,0.9884642341785198,-0.9883941455370028
+vacuum_notfull_uniform_heavy_pure,extend,blks_hit_per_op,Block hits/op,0.9692764378478665,-0.9689301175015461
+vacuum_notfull_uniform_heavy_pure,extend,blks_read_per_op,Block reads/op,0.9760420531849103,-0.975930735930736
+vacuum_notfull_uniform_heavy_pure,extend,buffers_alloc_per_op,Buffer allocs/op,0.9734157905586477,-0.9730859616573903
+vacuum_notfull_uniform_heavy_pure,extend,buffers_backend_per_op,Backend buffers/op,0.972005772005772,-0.9716883116883116
+vacuum_notfull_uniform_heavy_pure,extend,buffers_checkpoint_per_op,Checkpoint buffers/op,0.7488765203050917,-0.7485095856524427
+vacuum_notfull_uniform_heavy_pure,extend,buffers_clean_per_op,Cleaner buffers/op,0.9789115646258504,-0.9788559059987632
+vacuum_notfull_uniform_heavy_pure,extend,cache_hit_ratio,Cache-hit ratio,-0.3282328232823282,0.32842484248424847
+vacuum_notfull_uniform_heavy_pure,extend,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.8954086983088018,-0.8950623532266763
+vacuum_notfull_uniform_heavy_pure,extend,checkpoint_write_time_per_op,Checkpoint write time/op,0.9075860647289219,-0.9071861471861471
+vacuum_notfull_uniform_heavy_pure,extend,internal_inserts_per_logical_update,Internal inserts/logical update,0.9737950937950938,-0.9734570191713049
+vacuum_notfull_uniform_heavy_pure,extend,tup_fetched_per_op,Tuples fetched/op,0.9737992166563595,-0.9734611420325706
+vacuum_notfull_uniform_heavy_pure,extend,tup_inserted_per_op,Internal tuple inserts/op,0.9737950937950938,-0.9734570191713049
+vacuum_notfull_uniform_heavy_pure,extend,tup_returned_per_op,Tuples returned/op,0.9737786023500309,-0.973440527726242
+vacuum_notfull_uniform_heavy_pure,extend,tup_updated_per_op,Logical tuple updates/op,0.5322966429744359,-0.532123989153907
+vacuum_notfull_uniform_heavy_pure,extend,wal_buffers_full_per_op,WAL buffers full/op,0.8717460317460318,-0.8712471655328798
+vacuum_notfull_uniform_heavy_pure,extend,wal_bytes_per_op,WAL bytes/op,0.9747186147186148,-0.9743599257884972
+vacuum_notfull_uniform_heavy_pure,extend,wal_fpi_per_op,WAL FPIs/op,0.9651082251082251,-0.9647041847041847
+vacuum_notfull_uniform_heavy_pure,extend,wal_records_per_op,WAL records/op,0.9734034219748505,-0.9730406101834673
+vacuum_notfull_uniform_heavy_pure,reference,blks_hit_per_op,Block hits/op,0.02847692672988619,-0.029605144166312266
+vacuum_notfull_uniform_heavy_pure,reference,blks_read_per_op,Block reads/op,0.04021712483276566,-0.036046976048824536
+vacuum_notfull_uniform_heavy_pure,reference,buffers_alloc_per_op,Buffer allocs/op,0.004708307565450429,-0.005093826307870697
+vacuum_notfull_uniform_heavy_pure,reference,buffers_backend_per_op,Backend buffers/op,0.0049062049062049045,-0.005149487140535032
+vacuum_notfull_uniform_heavy_pure,reference,buffers_checkpoint_per_op,Checkpoint buffers/op,0.01204700061842919,-0.009657917833128601
+vacuum_notfull_uniform_heavy_pure,reference,buffers_clean_per_op,Cleaner buffers/op,0.029990633732696545,-0.029753016410025868
+vacuum_notfull_uniform_heavy_pure,reference,cache_hit_ratio,Cache-hit ratio,-0.03528752875287528,0.03454204912620929
+vacuum_notfull_uniform_heavy_pure,reference,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.03274859430596657,-0.032513062427402865
+vacuum_notfull_uniform_heavy_pure,reference,checkpoint_write_time_per_op,Checkpoint write time/op,0.007965367965367965,-0.010488704516778517
+vacuum_notfull_uniform_heavy_pure,reference,tup_fetched_per_op,Tuples fetched/op,0.009805413177120198,-0.00969097751474783
+vacuum_notfull_uniform_heavy_pure,reference,tup_returned_per_op,Tuples returned/op,0.003272973002472287,-0.00390245936718097
+vacuum_notfull_uniform_heavy_pure,reference,wal_buffers_full_per_op,WAL buffers full/op,0.04763141620284478,-0.048543408020626365
+vacuum_notfull_uniform_heavy_pure,reference,wal_bytes_per_op,WAL bytes/op,0.009420737992166568,-0.009849633151248796
+vacuum_notfull_uniform_heavy_pure,reference,wal_fpi_per_op,WAL FPIs/op,0.007239744382601526,-0.007965481486650794
+vacuum_notfull_uniform_heavy_pure,reference,wal_records_per_op,WAL records/op,0.008315811172954032,-0.00851586515124888
+vacuum_notfull_uniform_heavy_pure,run,blks_hit_per_op,Block hits/op,0.9901875901875902,-0.9900309214594928
+vacuum_notfull_uniform_heavy_pure,run,blks_read_per_op,Block reads/op,0.9942980828695114,-0.99430426716141
+vacuum_notfull_uniform_heavy_pure,run,buffers_alloc_per_op,Buffer allocs/op,0.9935188620902906,-0.9933415790558647
+vacuum_notfull_uniform_heavy_pure,run,buffers_backend_per_op,Backend buffers/op,0.9926901669758813,-0.9925046382189239
+vacuum_notfull_uniform_heavy_pure,run,buffers_checkpoint_per_op,Checkpoint buffers/op,0.7639703153988867,-0.7639703153988867
+vacuum_notfull_uniform_heavy_pure,run,buffers_clean_per_op,Cleaner buffers/op,0.9737708260115037,-0.9738326689304894
+vacuum_notfull_uniform_heavy_pure,run,cache_hit_ratio,Cache-hit ratio,-0.33236123612361235,0.33248924892489246
+vacuum_notfull_uniform_heavy_pure,run,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.913586859773857,-0.9131023756337017
+vacuum_notfull_uniform_heavy_pure,run,checkpoint_write_time_per_op,Checkpoint write time/op,0.893469387755102,-0.893395176252319
+vacuum_notfull_uniform_heavy_pure,run,internal_inserts_per_logical_update,Internal inserts/logical update,0.9945124716553289,-0.9943640486497629
+vacuum_notfull_uniform_heavy_pure,run,tup_fetched_per_op,Tuples fetched/op,0.9944918573490003,-0.9943434343434343
+vacuum_notfull_uniform_heavy_pure,run,tup_inserted_per_op,Internal tuple inserts/op,0.9945124716553289,-0.9943640486497629
+vacuum_notfull_uniform_heavy_pure,run,tup_returned_per_op,Tuples returned/op,0.9944918573490003,-0.9943434343434343
+vacuum_notfull_uniform_heavy_pure,run,tup_updated_per_op,Logical tuple updates/op,0.5577802768797165,-0.5573217562059071
+vacuum_notfull_uniform_heavy_pure,run,wal_buffers_full_per_op,WAL buffers full/op,0.9011296639868068,-0.9008451865594722
+vacuum_notfull_uniform_heavy_pure,run,wal_bytes_per_op,WAL bytes/op,0.9937950937950939,-0.9936714079571223
+vacuum_notfull_uniform_heavy_pure,run,wal_fpi_per_op,WAL FPIs/op,0.9841640898783757,-0.9840568954854669
+vacuum_notfull_uniform_heavy_pure,run,wal_records_per_op,WAL records/op,0.9943351886209029,-0.9941991341991342
+vacuum_notfull_zipfian_heavy_pure,avg-run,blks_hit_per_op,Block hits/op,-0.39448773448773444,0.3945949288806432
+vacuum_notfull_zipfian_heavy_pure,avg-run,blks_read_per_op,Block reads/op,0.1941797469893153,-0.19427044993716114
+vacuum_notfull_zipfian_heavy_pure,avg-run,buffers_alloc_per_op,Buffer allocs/op,0.9949618635332921,-0.9949701092558235
+vacuum_notfull_zipfian_heavy_pure,avg-run,buffers_backend_per_op,Backend buffers/op,0.9927685013399299,-0.992723149866007
+vacuum_notfull_zipfian_heavy_pure,avg-run,buffers_checkpoint_per_op,Checkpoint buffers/op,0.9868686868686868,-0.986881055452484
+vacuum_notfull_zipfian_heavy_pure,avg-run,buffers_clean_per_op,Cleaner buffers/op,0.9449408201297455,-0.9449615418023337
+vacuum_notfull_zipfian_heavy_pure,avg-run,cache_hit_ratio,Cache-hit ratio,-0.3326212621262126,0.33256925692569256
+vacuum_notfull_zipfian_heavy_pure,avg-run,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.9804503771494871,-0.9804091486133212
+vacuum_notfull_zipfian_heavy_pure,avg-run,checkpoint_write_time_per_op,Checkpoint write time/op,0.9869800041228612,-0.9870294784580498
+vacuum_notfull_zipfian_heavy_pure,avg-run,internal_inserts_per_logical_update,Internal inserts/logical update,0.02358597882270766,-0.02214757982333305
+vacuum_notfull_zipfian_heavy_pure,avg-run,tup_fetched_per_op,Tuples fetched/op,-0.15671407957122244,0.1565326736755308
+vacuum_notfull_zipfian_heavy_pure,avg-run,tup_inserted_per_op,Internal tuple inserts/op,-0.27604407849927587,0.2758688547345814
+vacuum_notfull_zipfian_heavy_pure,avg-run,tup_returned_per_op,Tuples returned/op,-0.15750154607297465,0.15731601731601733
+vacuum_notfull_zipfian_heavy_pure,avg-run,tup_updated_per_op,Logical tuple updates/op,0.0433912077480503,-0.04246991255894528
+vacuum_notfull_zipfian_heavy_pure,avg-run,wal_buffers_full_per_op,WAL buffers full/op,0.8957586007535748,-0.895511229013889
+vacuum_notfull_zipfian_heavy_pure,avg-run,wal_bytes_per_op,WAL bytes/op,0.9952793238507525,-0.9952628324056896
+vacuum_notfull_zipfian_heavy_pure,avg-run,wal_fpi_per_op,WAL FPIs/op,0.9931849103277676,-0.993164296021439
+vacuum_notfull_zipfian_heavy_pure,avg-run,wal_records_per_op,WAL records/op,0.9952916924345496,-0.9952669552669553
+vacuum_notfull_zipfian_heavy_pure,clean-run,blks_hit_per_op,Block hits/op,-0.3344547515976088,0.3342650999793857
+vacuum_notfull_zipfian_heavy_pure,clean-run,blks_read_per_op,Block reads/op,0.2249890438040045,-0.2239889104022008
+vacuum_notfull_zipfian_heavy_pure,clean-run,buffers_alloc_per_op,Buffer allocs/op,0.9717212945784374,-0.971770768913626
+vacuum_notfull_zipfian_heavy_pure,clean-run,buffers_backend_per_op,Backend buffers/op,0.9709750566893424,-0.9710781282209854
+vacuum_notfull_zipfian_heavy_pure,clean-run,buffers_checkpoint_per_op,Checkpoint buffers/op,0.962284065141208,-0.9622923108637395
+vacuum_notfull_zipfian_heavy_pure,clean-run,buffers_clean_per_op,Cleaner buffers/op,0.9270141755689659,-0.9270964109040105
+vacuum_notfull_zipfian_heavy_pure,clean-run,cache_hit_ratio,Cache-hit ratio,-0.3151875187518752,0.3154995499549955
+vacuum_notfull_zipfian_heavy_pure,clean-run,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.9565439594645998,-0.9567665936287378
+vacuum_notfull_zipfian_heavy_pure,clean-run,checkpoint_write_time_per_op,Checkpoint write time/op,0.9665883323026181,-0.9666542980828695
+vacuum_notfull_zipfian_heavy_pure,clean-run,internal_inserts_per_logical_update,Internal inserts/logical update,-0.03919338315623145,0.03919338315623145
+vacuum_notfull_zipfian_heavy_pure,clean-run,tup_fetched_per_op,Tuples fetched/op,-0.09676767676767677,0.09602556173984746
+vacuum_notfull_zipfian_heavy_pure,clean-run,tup_inserted_per_op,Internal tuple inserts/op,-0.2988639279188332,0.2991236691537932
+vacuum_notfull_zipfian_heavy_pure,clean-run,tup_returned_per_op,Tuples returned/op,-0.09532879818594105,0.09459492888064318
+vacuum_notfull_zipfian_heavy_pure,clean-run,tup_updated_per_op,Logical tuple updates/op,0.015774548301196106,-0.01661805072762872
+vacuum_notfull_zipfian_heavy_pure,clean-run,wal_buffers_full_per_op,WAL buffers full/op,0.8818026867231309,-0.8825736614866037
+vacuum_notfull_zipfian_heavy_pure,clean-run,wal_bytes_per_op,WAL bytes/op,0.9720882292310864,-0.9721541950113378
+vacuum_notfull_zipfian_heavy_pure,clean-run,wal_fpi_per_op,WAL FPIs/op,0.9700639043496185,-0.9701628530199958
+vacuum_notfull_zipfian_heavy_pure,clean-run,wal_records_per_op,WAL records/op,0.9720717377860235,-0.9721418264275407
+vacuum_notfull_zipfian_heavy_pure,extend,blks_hit_per_op,Block hits/op,0.9984498041640899,-0.9984498041640899
+vacuum_notfull_zipfian_heavy_pure,extend,blks_read_per_op,Block reads/op,0.9908196195258073,-0.9908196195258073
+vacuum_notfull_zipfian_heavy_pure,extend,buffers_alloc_per_op,Buffer allocs/op,0.9990806019377448,-0.9990806019377448
+vacuum_notfull_zipfian_heavy_pure,extend,buffers_backend_per_op,Backend buffers/op,0.9967058338486909,-0.9967058338486909
+vacuum_notfull_zipfian_heavy_pure,extend,buffers_checkpoint_per_op,Checkpoint buffers/op,0.9886992372706658,-0.9886992372706658
+vacuum_notfull_zipfian_heavy_pure,extend,buffers_clean_per_op,Cleaner buffers/op,0.955603641665804,-0.955603641665804
+vacuum_notfull_zipfian_heavy_pure,extend,cache_hit_ratio,Cache-hit ratio,-0.9961316131613162,0.9961316131613162
+vacuum_notfull_zipfian_heavy_pure,extend,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.9841434755720471,-0.9841434755720471
+vacuum_notfull_zipfian_heavy_pure,extend,checkpoint_write_time_per_op,Checkpoint write time/op,0.9902824159967017,-0.9902824159967017
+vacuum_notfull_zipfian_heavy_pure,extend,internal_inserts_per_logical_update,Internal inserts/logical update,0.9993609565038136,-0.9993609565038136
+vacuum_notfull_zipfian_heavy_pure,extend,tup_fetched_per_op,Tuples fetched/op,0.9993362193362193,-0.9993362193362193
+vacuum_notfull_zipfian_heavy_pure,extend,tup_inserted_per_op,Internal tuple inserts/op,0.9993609565038136,-0.9993609565038136
+vacuum_notfull_zipfian_heavy_pure,extend,tup_returned_per_op,Tuples returned/op,0.9993362193362193,-0.9993362193362193
+vacuum_notfull_zipfian_heavy_pure,extend,tup_updated_per_op,Logical tuple updates/op,0.9941334339564443,-0.9941334339564443
+vacuum_notfull_zipfian_heavy_pure,extend,wal_buffers_full_per_op,WAL buffers full/op,0.9033158073149247,-0.9033158073149247
+vacuum_notfull_zipfian_heavy_pure,extend,wal_bytes_per_op,WAL bytes/op,0.9993362193362193,-0.9993362193362193
+vacuum_notfull_zipfian_heavy_pure,extend,wal_fpi_per_op,WAL FPIs/op,0.994904143475572,-0.994904143475572
+vacuum_notfull_zipfian_heavy_pure,extend,wal_records_per_op,WAL records/op,0.9991877963306535,-0.9991877963306535
+vacuum_notfull_zipfian_heavy_pure,reference,blks_hit_per_op,Block hits/op,0.5997980764171285,-0.6103836399561154
+vacuum_notfull_zipfian_heavy_pure,reference,blks_read_per_op,Block reads/op,0.6932132592660597,-0.7104011521210197
+vacuum_notfull_zipfian_heavy_pure,reference,buffers_alloc_per_op,Buffer allocs/op,0.6896145124716554,-0.7065141669968691
+vacuum_notfull_zipfian_heavy_pure,reference,buffers_backend_per_op,Backend buffers/op,0.6886373943516801,-0.7052731222848974
+vacuum_notfull_zipfian_heavy_pure,reference,buffers_checkpoint_per_op,Checkpoint buffers/op,0.6811708925994641,-0.6983136886320428
+vacuum_notfull_zipfian_heavy_pure,reference,buffers_clean_per_op,Cleaner buffers/op,0.6597238186943285,-0.6760959570970323
+vacuum_notfull_zipfian_heavy_pure,reference,cache_hit_ratio,Cache-hit ratio,-0.6951975197519752,0.7112480088979338
+vacuum_notfull_zipfian_heavy_pure,reference,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.6744959802102658,-0.6910530667593529
+vacuum_notfull_zipfian_heavy_pure,reference,checkpoint_write_time_per_op,Checkpoint write time/op,0.679620696763554,-0.6941061975981292
+vacuum_notfull_zipfian_heavy_pure,reference,tup_fetched_per_op,Tuples fetched/op,0.6810448586286958,-0.6967041972467491
+vacuum_notfull_zipfian_heavy_pure,reference,tup_returned_per_op,Tuples returned/op,0.6894100561249886,-0.7054777946449047
+vacuum_notfull_zipfian_heavy_pure,reference,tup_updated_per_op,Logical tuple updates/op,-0.12548531360958193,0.12195204084311556
+vacuum_notfull_zipfian_heavy_pure,reference,wal_buffers_full_per_op,WAL buffers full/op,0.5748718933974762,-0.5931478338846565
+vacuum_notfull_zipfian_heavy_pure,reference,wal_bytes_per_op,WAL bytes/op,0.6903566274994847,-0.7072521718230882
+vacuum_notfull_zipfian_heavy_pure,reference,wal_fpi_per_op,WAL FPIs/op,0.6911482168625026,-0.7079118138166073
+vacuum_notfull_zipfian_heavy_pure,reference,wal_records_per_op,WAL records/op,0.6900762729334158,-0.7067491790387744
+vacuum_notfull_zipfian_heavy_pure,run,blks_hit_per_op,Block hits/op,0.9780746237889094,-0.9781735724592867
+vacuum_notfull_zipfian_heavy_pure,run,blks_read_per_op,Block reads/op,0.9771732350400972,-0.9772804294330059
+vacuum_notfull_zipfian_heavy_pure,run,buffers_alloc_per_op,Buffer allocs/op,0.97856524427953,-0.9786806843949701
+vacuum_notfull_zipfian_heavy_pure,run,buffers_backend_per_op,Backend buffers/op,0.9753081838796125,-0.9754071325499897
+vacuum_notfull_zipfian_heavy_pure,run,buffers_checkpoint_per_op,Checkpoint buffers/op,0.9684065141207997,-0.9685301999587713
+vacuum_notfull_zipfian_heavy_pure,run,buffers_clean_per_op,Cleaner buffers/op,0.9443022633761227,-0.9444341949366256
+vacuum_notfull_zipfian_heavy_pure,run,cache_hit_ratio,Cache-hit ratio,-0.9761376137613761,0.9762456245624563
+vacuum_notfull_zipfian_heavy_pure,run,checkpoint_sync_time_per_op,Checkpoint sync time/op,0.9638095238095238,-0.9638713667285096
+vacuum_notfull_zipfian_heavy_pure,run,checkpoint_write_time_per_op,Checkpoint write time/op,0.9645104102246959,-0.9648443619872191
+vacuum_notfull_zipfian_heavy_pure,run,internal_inserts_per_logical_update,Internal inserts/logical update,0.9787095444238302,-0.9788249845392704
+vacuum_notfull_zipfian_heavy_pure,run,tup_fetched_per_op,Tuples fetched/op,0.9787590187590188,-0.978874458874459
+vacuum_notfull_zipfian_heavy_pure,run,tup_inserted_per_op,Internal tuple inserts/op,0.9787095444238302,-0.9788249845392704
+vacuum_notfull_zipfian_heavy_pure,run,tup_returned_per_op,Tuples returned/op,0.9787590187590188,-0.978874458874459
+vacuum_notfull_zipfian_heavy_pure,run,tup_updated_per_op,Logical tuple updates/op,0.974858168697328,-0.9749944331750401
+vacuum_notfull_zipfian_heavy_pure,run,wal_buffers_full_per_op,WAL buffers full/op,0.8738661800997235,-0.8739568837614881
+vacuum_notfull_zipfian_heavy_pure,run,wal_bytes_per_op,WAL bytes/op,0.9787590187590188,-0.9788703360131931
+vacuum_notfull_zipfian_heavy_pure,run,wal_fpi_per_op,WAL FPIs/op,0.976705833848691,-0.976837765409194
+vacuum_notfull_zipfian_heavy_pure,run,wal_records_per_op,WAL records/op,0.9786848072562359,-0.978800247371676
