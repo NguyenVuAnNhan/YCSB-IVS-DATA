@@ -1,0 +1,6 @@
+phase,plots,metrics_dir
+avg-run,40,/home/nhan/Desktop/Projects/YCSB-IVS-DATA/JSON_BLUE_COMBINED_TRUNCATED/run4/metric_plots/avg-run/metrics
+clean-run,40,/home/nhan/Desktop/Projects/YCSB-IVS-DATA/JSON_BLUE_COMBINED_TRUNCATED/run4/metric_plots/clean-run/metrics
+extend,40,/home/nhan/Desktop/Projects/YCSB-IVS-DATA/JSON_BLUE_COMBINED_TRUNCATED/run4/metric_plots/extend/metrics
+reference,40,/home/nhan/Desktop/Projects/YCSB-IVS-DATA/JSON_BLUE_COMBINED_TRUNCATED/run4/metric_plots/reference/metrics
+run,40,/home/nhan/Desktop/Projects/YCSB-IVS-DATA/JSON_BLUE_COMBINED_TRUNCATED/run4/metric_plots/run/metrics
