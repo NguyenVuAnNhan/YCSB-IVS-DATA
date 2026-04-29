@@ -1,0 +1,10 @@
+feature,spearman_rho,pearson_r,n
+watcher_samples,0.9674577637976022,0.9214403491774145,300
+watcher_cpu_mean_pct,-0.592652338314846,-0.7201576850859353,300
+watcher_cpu_max_pct,-0.48409126953276793,-0.575603150732621,300
+watcher_mem_mean_mib,0.7339781574663522,0.5138749227975137,300
+watcher_mem_max_mib,0.7966979523081819,0.5548453109850312,300
+watcher_delta_read_sum,,,300
+watcher_delta_read_max,,,300
+watcher_delta_write_sum,,,300
+watcher_delta_write_max,,,300
