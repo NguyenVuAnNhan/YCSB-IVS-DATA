@@ -14,3 +14,4 @@ TOAST_HYPOTHESIS/IVS3.tar.gz
 *_slow_read_sample.csv
 *_buffer_page_identity.csv
 runs/
+.env
