@@ -1,1 +1,16 @@
 NEW_DATA/
+
+# Large local result bundles and generated archives.
+FULL_VIEW/full_view_run1/
+FULL_VIEW/full_view_run2_3_106_232_96/
+FULL_VIEW/*.zip
+SALVAGED_3_107_72_70/
+PERSISTED_3_107_72_70_2026-05-26/
+TOAST_hypothesis_2/
+TOAST_hypothesis_2.zip
+TOAST_HYPOTHESIS/IVS3.tar.gz
+
+# High-volume diagnostic captures are kept locally, not in Git.
+*_slow_read_sample.csv
+*_buffer_page_identity.csv
+runs/

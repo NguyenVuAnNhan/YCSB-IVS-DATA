@@ -1,0 +1,1205 @@
+run_name,epoch,phase,event,timestamp_unix_ms,timestamp_iso,record_count,operation_count,request_distribution,field_length,notes
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,0,load,load_start,1777544230173,2026-04-30T10:17:10+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,0,load,load_end,1777544241458,2026-04-30T10:17:21+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,0,load,load_start,1777544242260,2026-04-30T10:17:22+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,0,load,load_end,1777544253388,2026-04-30T10:17:33+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,1,extend,extend_start,1777544253588,2026-04-30T10:17:33+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,1,extend,extend_end,1777544356934,2026-04-30T10:19:16+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,1,vacuum,vacuum_start,1777544357393,2026-04-30T10:19:17+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,1,vacuum,vacuum_end,1777544357746,2026-04-30T10:19:17+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,1,run,run_start,1777544358036,2026-04-30T10:19:18+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,1,run,run_end,1777544365172,2026-04-30T10:19:25+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,1,reference,reference_start,1777544366251,2026-04-30T10:19:26+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,1,reference,reference_end,1777544371745,2026-04-30T10:19:31+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,1,clean-run,clean-run_start,1777544373151,2026-04-30T10:19:33+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,1,clean-run,clean-run_end,1777544380303,2026-04-30T10:19:40+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,1,avg-run,avg-run_start,1777544391619,2026-04-30T10:19:51+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,1,avg-run,avg-run_end,1777544398137,2026-04-30T10:19:58+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,2,extend,extend_start,1777544398356,2026-04-30T10:19:58+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,2,extend,extend_end,1777544510939,2026-04-30T10:21:50+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,2,vacuum,vacuum_start,1777544511484,2026-04-30T10:21:51+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,2,vacuum,vacuum_end,1777544511949,2026-04-30T10:21:51+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,2,run,run_start,1777544512238,2026-04-30T10:21:52+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,2,run,run_end,1777544520613,2026-04-30T10:22:00+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,2,reference,reference_start,1777544521707,2026-04-30T10:22:01+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,2,reference,reference_end,1777544527309,2026-04-30T10:22:07+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,2,clean-run,clean-run_start,1777544529874,2026-04-30T10:22:09+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,2,clean-run,clean-run_end,1777544538420,2026-04-30T10:22:18+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,2,avg-run,avg-run_start,1777544550900,2026-04-30T10:22:30+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,2,avg-run,avg-run_end,1777544558969,2026-04-30T10:22:38+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,3,extend,extend_start,1777544559192,2026-04-30T10:22:39+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,3,extend,extend_end,1777544679334,2026-04-30T10:24:39+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,3,vacuum,vacuum_start,1777544679954,2026-04-30T10:24:39+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,3,vacuum,vacuum_end,1777544681431,2026-04-30T10:24:41+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,3,run,run_start,1777544681721,2026-04-30T10:24:41+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,3,run,run_end,1777544691541,2026-04-30T10:24:51+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,3,reference,reference_start,1777544692616,2026-04-30T10:24:52+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,3,reference,reference_end,1777544698201,2026-04-30T10:24:58+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,3,clean-run,clean-run_start,1777544703021,2026-04-30T10:25:03+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,3,clean-run,clean-run_end,1777544712229,2026-04-30T10:25:12+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,3,avg-run,avg-run_start,1777544725047,2026-04-30T10:25:25+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,3,avg-run,avg-run_end,1777544734221,2026-04-30T10:25:34+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,4,extend,extend_start,1777544734445,2026-04-30T10:25:34+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,4,extend,extend_end,1777544868225,2026-04-30T10:27:48+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,4,vacuum,vacuum_start,1777544868891,2026-04-30T10:27:48+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,4,vacuum,vacuum_end,1777544869447,2026-04-30T10:27:49+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,4,run,run_start,1777544869741,2026-04-30T10:27:49+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,4,run,run_end,1777544881293,2026-04-30T10:28:01+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,4,reference,reference_start,1777544882398,2026-04-30T10:28:02+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,4,reference,reference_end,1777544888118,2026-04-30T10:28:08+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,4,clean-run,clean-run_start,1777544893723,2026-04-30T10:28:13+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,4,clean-run,clean-run_end,1777544904767,2026-04-30T10:28:24+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,4,avg-run,avg-run_start,1777544918258,2026-04-30T10:28:38+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,4,avg-run,avg-run_end,1777544928173,2026-04-30T10:28:48+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,5,extend,extend_start,1777544928393,2026-04-30T10:28:48+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,5,extend,extend_end,1777545071981,2026-04-30T10:31:11+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,5,vacuum,vacuum_start,1777545072693,2026-04-30T10:31:12+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,5,vacuum,vacuum_end,1777545073325,2026-04-30T10:31:13+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,5,run,run_start,1777545073617,2026-04-30T10:31:13+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,5,run,run_end,1777545086101,2026-04-30T10:31:26+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,5,reference,reference_start,1777545087216,2026-04-30T10:31:27+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,5,reference,reference_end,1777545092863,2026-04-30T10:31:32+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,5,clean-run,clean-run_start,1777545099549,2026-04-30T10:31:39+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,5,clean-run,clean-run_end,1777545111263,2026-04-30T10:31:51+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,5,avg-run,avg-run_start,1777545124701,2026-04-30T10:32:04+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,5,avg-run,avg-run_end,1777545135387,2026-04-30T10:32:15+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,6,extend,extend_start,1777545135608,2026-04-30T10:32:15+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,6,extend,extend_end,1777545288675,2026-04-30T10:34:48+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,6,vacuum,vacuum_start,1777545289438,2026-04-30T10:34:49+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,6,vacuum,vacuum_end,1777545290221,2026-04-30T10:34:50+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,6,run,run_start,1777545290515,2026-04-30T10:34:50+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,6,run,run_end,1777545304345,2026-04-30T10:35:04+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,6,reference,reference_start,1777545305430,2026-04-30T10:35:05+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,6,reference,reference_end,1777545310988,2026-04-30T10:35:10+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,6,clean-run,clean-run_start,1777545318824,2026-04-30T10:35:18+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,6,clean-run,clean-run_end,1777545331397,2026-04-30T10:35:31+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,6,avg-run,avg-run_start,1777545345224,2026-04-30T10:35:45+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,6,avg-run,avg-run_end,1777545356858,2026-04-30T10:35:56+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,7,extend,extend_start,1777545357080,2026-04-30T10:35:57+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,7,extend,extend_end,1777545518650,2026-04-30T10:38:38+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,7,vacuum,vacuum_start,1777545519461,2026-04-30T10:38:39+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,7,vacuum,vacuum_end,1777545520266,2026-04-30T10:38:40+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,7,run,run_start,1777545520560,2026-04-30T10:38:40+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,7,run,run_end,1777545535529,2026-04-30T10:38:55+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,7,reference,reference_start,1777545536623,2026-04-30T10:38:56+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,7,reference,reference_end,1777545542403,2026-04-30T10:39:02+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,7,clean-run,clean-run_start,1777545553308,2026-04-30T10:39:13+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,7,clean-run,clean-run_end,1777545566741,2026-04-30T10:39:26+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,7,avg-run,avg-run_start,1777545580911,2026-04-30T10:39:40+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,7,avg-run,avg-run_end,1777545593448,2026-04-30T10:39:53+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,8,extend,extend_start,1777545593670,2026-04-30T10:39:53+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,8,extend,extend_end,1777545762519,2026-04-30T10:42:42+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,8,vacuum,vacuum_start,1777545763359,2026-04-30T10:42:43+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,8,vacuum,vacuum_end,1777545764132,2026-04-30T10:42:44+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,8,run,run_start,1777545764425,2026-04-30T10:42:44+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,8,run,run_end,1777545780195,2026-04-30T10:43:00+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,8,reference,reference_start,1777545781289,2026-04-30T10:43:01+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,8,reference,reference_end,1777545786847,2026-04-30T10:43:06+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,8,clean-run,clean-run_start,1777545795650,2026-04-30T10:43:15+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,8,clean-run,clean-run_end,1777545810188,2026-04-30T10:43:30+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,8,avg-run,avg-run_start,1777545824909,2026-04-30T10:43:44+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,8,avg-run,avg-run_end,1777545838215,2026-04-30T10:43:58+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,9,extend,extend_start,1777545838435,2026-04-30T10:43:58+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,9,extend,extend_end,1777546016821,2026-04-30T10:46:56+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,9,vacuum,vacuum_start,1777546017682,2026-04-30T10:46:57+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,9,vacuum,vacuum_end,1777546019513,2026-04-30T10:46:59+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,9,run,run_start,1777546019803,2026-04-30T10:46:59+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,9,run,run_end,1777546036956,2026-04-30T10:47:16+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,9,reference,reference_start,1777546038079,2026-04-30T10:47:18+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,9,reference,reference_end,1777546043564,2026-04-30T10:47:23+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,9,clean-run,clean-run_start,1777546054482,2026-04-30T10:47:34+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,9,clean-run,clean-run_end,1777546070035,2026-04-30T10:47:50+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,9,avg-run,avg-run_start,1777546085096,2026-04-30T10:48:05+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,9,avg-run,avg-run_end,1777546099346,2026-04-30T10:48:19+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,10,extend,extend_start,1777546099568,2026-04-30T10:48:19+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,10,extend,extend_end,1777546285702,2026-04-30T10:51:25+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,10,vacuum,vacuum_start,1777546286605,2026-04-30T10:51:26+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,10,vacuum,vacuum_end,1777546288506,2026-04-30T10:51:28+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,10,run,run_start,1777546288802,2026-04-30T10:51:28+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,10,run,run_end,1777546306920,2026-04-30T10:51:46+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,10,reference,reference_start,1777546308017,2026-04-30T10:51:48+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,10,reference,reference_end,1777546313454,2026-04-30T10:51:53+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,10,clean-run,clean-run_start,1777546327414,2026-04-30T10:52:07+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,10,clean-run,clean-run_end,1777546343851,2026-04-30T10:52:23+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,10,avg-run,avg-run_start,1777546359211,2026-04-30T10:52:39+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,10,avg-run,avg-run_end,1777546373827,2026-04-30T10:52:53+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,11,extend,extend_start,1777546374049,2026-04-30T10:52:54+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,11,extend,extend_end,1777546568472,2026-04-30T10:56:08+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,11,vacuum,vacuum_start,1777546569414,2026-04-30T10:56:09+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,11,vacuum,vacuum_end,1777546571311,2026-04-30T10:56:11+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,11,run,run_start,1777546571606,2026-04-30T10:56:11+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,11,run,run_end,1777546591076,2026-04-30T10:56:31+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,11,reference,reference_start,1777546592185,2026-04-30T10:56:32+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,11,reference,reference_end,1777546597645,2026-04-30T10:56:37+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,11,clean-run,clean-run_start,1777546611112,2026-04-30T10:56:51+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,11,clean-run,clean-run_end,1777546628625,2026-04-30T10:57:08+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,11,avg-run,avg-run_start,1777546645458,2026-04-30T10:57:25+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,11,avg-run,avg-run_end,1777546663161,2026-04-30T10:57:43+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,12,extend,extend_start,1777546663382,2026-04-30T10:57:43+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,12,extend,extend_end,1777546864219,2026-04-30T11:01:04+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,12,vacuum,vacuum_start,1777546865199,2026-04-30T11:01:05+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,12,vacuum,vacuum_end,1777546866582,2026-04-30T11:01:06+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,12,run,run_start,1777546866872,2026-04-30T11:01:06+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,12,run,run_end,1777546886711,2026-04-30T11:01:26+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,12,reference,reference_start,1777546887817,2026-04-30T11:01:27+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,12,reference,reference_end,1777546893187,2026-04-30T11:01:33+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,12,clean-run,clean-run_start,1777546912827,2026-04-30T11:01:52+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,12,clean-run,clean-run_end,1777546931179,2026-04-30T11:02:11+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,12,avg-run,avg-run_start,1777546947195,2026-04-30T11:02:27+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,12,avg-run,avg-run_end,1777546963621,2026-04-30T11:02:43+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,13,extend,extend_start,1777546963844,2026-04-30T11:02:43+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,13,extend,extend_end,1777547170034,2026-04-30T11:06:10+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,13,vacuum,vacuum_start,1777547171055,2026-04-30T11:06:11+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,13,vacuum,vacuum_end,1777547172351,2026-04-30T11:06:12+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,13,run,run_start,1777547172645,2026-04-30T11:06:12+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,13,run,run_end,1777547193674,2026-04-30T11:06:33+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,13,reference,reference_start,1777547194786,2026-04-30T11:06:34+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,13,reference,reference_end,1777547200331,2026-04-30T11:06:40+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,13,clean-run,clean-run_start,1777547220627,2026-04-30T11:07:00+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,13,clean-run,clean-run_end,1777547240098,2026-04-30T11:07:20+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,13,avg-run,avg-run_start,1777547256489,2026-04-30T11:07:36+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,13,avg-run,avg-run_end,1777547273648,2026-04-30T11:07:53+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,14,extend,extend_start,1777547273868,2026-04-30T11:07:53+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,14,extend,extend_end,1777547480004,2026-04-30T11:11:20+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,14,vacuum,vacuum_start,1777547481055,2026-04-30T11:11:21+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,14,vacuum,vacuum_end,1777547482535,2026-04-30T11:11:22+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,14,run,run_start,1777547482830,2026-04-30T11:11:22+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,14,run,run_end,1777547504827,2026-04-30T11:11:44+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,14,reference,reference_start,1777547505937,2026-04-30T11:11:45+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,14,reference,reference_end,1777547511485,2026-04-30T11:11:51+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,14,clean-run,clean-run_start,1777547535040,2026-04-30T11:12:15+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,14,clean-run,clean-run_end,1777547555313,2026-04-30T11:12:35+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,14,avg-run,avg-run_start,1777547572910,2026-04-30T11:12:52+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,14,avg-run,avg-run_end,1777547592862,2026-04-30T11:13:12+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,15,extend,extend_start,1777547593087,2026-04-30T11:13:13+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,15,extend,extend_end,1777547804836,2026-04-30T11:16:44+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,15,vacuum,vacuum_start,1777547805914,2026-04-30T11:16:45+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,15,vacuum,vacuum_end,1777547808662,2026-04-30T11:16:48+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,15,run,run_start,1777547808953,2026-04-30T11:16:48+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,15,run,run_end,1777547832041,2026-04-30T11:17:12+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,15,reference,reference_start,1777547833150,2026-04-30T11:17:13+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,15,reference,reference_end,1777547838744,2026-04-30T11:17:18+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,15,clean-run,clean-run_start,1777547865594,2026-04-30T11:17:45+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,15,clean-run,clean-run_end,1777547886459,2026-04-30T11:18:06+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,15,avg-run,avg-run_start,1777547903522,2026-04-30T11:18:23+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,15,avg-run,avg-run_end,1777547922340,2026-04-30T11:18:42+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,16,extend,extend_start,1777547922562,2026-04-30T11:18:42+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,16,extend,extend_end,1777548136308,2026-04-30T11:22:16+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,16,vacuum,vacuum_start,1777548137409,2026-04-30T11:22:17+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,16,vacuum,vacuum_end,1777548141928,2026-04-30T11:22:21+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,16,run,run_start,1777548142362,2026-04-30T11:22:22+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,16,run,run_end,1777548166696,2026-04-30T11:22:46+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,16,reference,reference_start,1777548167817,2026-04-30T11:22:47+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,16,reference,reference_end,1777548173359,2026-04-30T11:22:53+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,16,clean-run,clean-run_start,1777548205999,2026-04-30T11:23:26+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,16,clean-run,clean-run_end,1777548228012,2026-04-30T11:23:48+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,16,avg-run,avg-run_start,1777548245302,2026-04-30T11:24:05+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,16,avg-run,avg-run_end,1777548264767,2026-04-30T11:24:24+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,17,extend,extend_start,1777548264990,2026-04-30T11:24:24+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,17,extend,extend_end,1777548496673,2026-04-30T11:28:16+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,17,vacuum,vacuum_start,1777548497804,2026-04-30T11:28:17+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,17,vacuum,vacuum_end,1777548501607,2026-04-30T11:28:21+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,17,run,run_start,1777548502042,2026-04-30T11:28:22+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,17,run,run_end,1777548527614,2026-04-30T11:28:47+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,17,reference,reference_start,1777548528734,2026-04-30T11:28:48+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,17,reference,reference_end,1777548534288,2026-04-30T11:28:54+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,17,clean-run,clean-run_start,1777548560185,2026-04-30T11:29:20+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,17,clean-run,clean-run_end,1777548584077,2026-04-30T11:29:44+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,17,avg-run,avg-run_start,1777548601799,2026-04-30T11:30:01+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,17,avg-run,avg-run_end,1777548621971,2026-04-30T11:30:21+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,18,extend,extend_start,1777548622195,2026-04-30T11:30:22+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,18,extend,extend_end,1777548861919,2026-04-30T11:34:21+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,18,vacuum,vacuum_start,1777548863096,2026-04-30T11:34:23+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,18,vacuum,vacuum_end,1777548866831,2026-04-30T11:34:26+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,18,run,run_start,1777548867127,2026-04-30T11:34:27+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,18,run,run_end,1777548893325,2026-04-30T11:34:53+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,18,reference,reference_start,1777548894440,2026-04-30T11:34:54+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,18,reference,reference_end,1777548900182,2026-04-30T11:35:00+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,18,clean-run,clean-run_start,1777548933809,2026-04-30T11:35:33+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,18,clean-run,clean-run_end,1777548957849,2026-04-30T11:35:57+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,18,avg-run,avg-run_start,1777548975760,2026-04-30T11:36:15+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,18,avg-run,avg-run_end,1777548998793,2026-04-30T11:36:38+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,19,extend,extend_start,1777548999015,2026-04-30T11:36:39+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,19,extend,extend_end,1777549250023,2026-04-30T11:40:50+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,19,vacuum,vacuum_start,1777549251257,2026-04-30T11:40:51+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,19,vacuum,vacuum_end,1777549255621,2026-04-30T11:40:55+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,19,run,run_start,1777549256060,2026-04-30T11:40:56+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,19,run,run_end,1777549283304,2026-04-30T11:41:23+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,19,reference,reference_start,1777549284426,2026-04-30T11:41:24+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,19,reference,reference_end,1777549289928,2026-04-30T11:41:29+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,19,clean-run,clean-run_start,1777549324542,2026-04-30T11:42:04+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,19,clean-run,clean-run_end,1777549349760,2026-04-30T11:42:29+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,19,avg-run,avg-run_start,1777549368432,2026-04-30T11:42:48+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,19,avg-run,avg-run_end,1777549393908,2026-04-30T11:43:13+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,20,extend,extend_start,1777549394130,2026-04-30T11:43:14+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,20,extend,extend_end,1777549635131,2026-04-30T11:47:15+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,20,vacuum,vacuum_start,1777549636431,2026-04-30T11:47:16+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,20,vacuum,vacuum_end,1777549645767,2026-04-30T11:47:25+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,20,run,run_start,1777549646067,2026-04-30T11:47:26+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,20,run,run_end,1777549674219,2026-04-30T11:47:54+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,20,reference,reference_start,1777549675356,2026-04-30T11:47:55+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,20,reference,reference_end,1777549681129,2026-04-30T11:48:01+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,20,clean-run,clean-run_start,1777549716877,2026-04-30T11:48:36+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,20,clean-run,clean-run_end,1777549742520,2026-04-30T11:49:02+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,20,avg-run,avg-run_start,1777549761440,2026-04-30T11:49:21+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,20,avg-run,avg-run_end,1777549785260,2026-04-30T11:49:45+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,21,extend,extend_start,1777549785490,2026-04-30T11:49:45+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,21,extend,extend_end,1777550045878,2026-04-30T11:54:05+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,21,vacuum,vacuum_start,1777550047259,2026-04-30T11:54:07+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,21,vacuum,vacuum_end,1777550054527,2026-04-30T11:54:14+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,21,run,run_start,1777550054819,2026-04-30T11:54:14+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,21,run,run_end,1777550084197,2026-04-30T11:54:44+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,21,reference,reference_start,1777550085324,2026-04-30T11:54:45+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,21,reference,reference_end,1777550090918,2026-04-30T11:54:50+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,21,clean-run,clean-run_start,1777550127154,2026-04-30T11:55:27+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,21,clean-run,clean-run_end,1777550153801,2026-04-30T11:55:53+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,21,avg-run,avg-run_start,1777550173435,2026-04-30T11:56:13+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,21,avg-run,avg-run_end,1777550198125,2026-04-30T11:56:38+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,22,extend,extend_start,1777550198348,2026-04-30T11:56:38+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,22,extend,extend_end,1777550467775,2026-04-30T12:01:07+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,22,vacuum,vacuum_start,1777550469179,2026-04-30T12:01:09+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,22,vacuum,vacuum_end,1777550477978,2026-04-30T12:01:17+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,22,run,run_start,1777550478334,2026-04-30T12:01:18+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,22,run,run_end,1777550508008,2026-04-30T12:01:48+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,22,reference,reference_start,1777550509141,2026-04-30T12:01:49+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,22,reference,reference_end,1777550514756,2026-04-30T12:01:54+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,22,clean-run,clean-run_start,1777550550723,2026-04-30T12:02:30+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,22,clean-run,clean-run_end,1777550579138,2026-04-30T12:02:59+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,22,avg-run,avg-run_start,1777550599198,2026-04-30T12:03:19+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,22,avg-run,avg-run_end,1777550623636,2026-04-30T12:03:43+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,23,extend,extend_start,1777550623858,2026-04-30T12:03:43+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,23,extend,extend_end,1777550900582,2026-04-30T12:08:20+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,23,vacuum,vacuum_start,1777550901984,2026-04-30T12:08:21+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,23,vacuum,vacuum_end,1777550915950,2026-04-30T12:08:35+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,23,run,run_start,1777550916308,2026-04-30T12:08:36+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,23,run,run_end,1777550948061,2026-04-30T12:09:08+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,23,reference,reference_start,1777550949195,2026-04-30T12:09:09+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,23,reference,reference_end,1777550954732,2026-04-30T12:09:14+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,23,clean-run,clean-run_start,1777550981106,2026-04-30T12:09:41+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,23,clean-run,clean-run_end,1777551009853,2026-04-30T12:10:09+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,23,avg-run,avg-run_start,1777551030672,2026-04-30T12:10:30+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,23,avg-run,avg-run_end,1777551057675,2026-04-30T12:10:57+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,24,extend,extend_start,1777551057897,2026-04-30T12:10:57+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,24,extend,extend_end,1777551349879,2026-04-30T12:15:49+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,24,vacuum,vacuum_start,1777551351302,2026-04-30T12:15:51+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,24,vacuum,vacuum_end,1777551386319,2026-04-30T12:16:26+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,24,run,run_start,1777551386679,2026-04-30T12:16:26+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,24,run,run_end,1777551418577,2026-04-30T12:16:58+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,24,reference,reference_start,1777551419740,2026-04-30T12:16:59+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,24,reference,reference_end,1777551425349,2026-04-30T12:17:05+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,24,clean-run,clean-run_start,1777551459457,2026-04-30T12:17:39+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,24,clean-run,clean-run_end,1777551489213,2026-04-30T12:18:09+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,24,avg-run,avg-run_start,1777551510164,2026-04-30T12:18:30+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,24,avg-run,avg-run_end,1777551537978,2026-04-30T12:18:57+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,25,extend,extend_start,1777551538202,2026-04-30T12:18:58+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,25,extend,extend_end,1777551811470,2026-04-30T12:23:31+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,25,vacuum,vacuum_start,1777551812997,2026-04-30T12:23:32+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,25,vacuum,vacuum_end,1777551859505,2026-04-30T12:24:19+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,25,run,run_start,1777551859877,2026-04-30T12:24:19+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,25,run,run_end,1777551893688,2026-04-30T12:24:53+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,25,reference,reference_start,1777551894826,2026-04-30T12:24:54+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,25,reference,reference_end,1777551900365,2026-04-30T12:25:00+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,25,clean-run,clean-run_start,1777551930274,2026-04-30T12:25:30+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,25,clean-run,clean-run_end,1777551960871,2026-04-30T12:26:00+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,25,avg-run,avg-run_start,1777551982082,2026-04-30T12:26:22+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,25,avg-run,avg-run_end,1777552010353,2026-04-30T12:26:50+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,26,extend,extend_start,1777552010576,2026-04-30T12:26:50+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,26,extend,extend_end,1777552305059,2026-04-30T12:31:45+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,26,vacuum,vacuum_start,1777552306616,2026-04-30T12:31:46+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,26,vacuum,vacuum_end,1777552328254,2026-04-30T12:32:08+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,26,run,run_start,1777552328644,2026-04-30T12:32:08+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,26,run,run_end,1777552362582,2026-04-30T12:32:42+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,26,reference,reference_start,1777552363737,2026-04-30T12:32:43+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,26,reference,reference_end,1777552369417,2026-04-30T12:32:49+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,26,clean-run,clean-run_start,1777552394862,2026-04-30T12:33:14+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,26,clean-run,clean-run_end,1777552426173,2026-04-30T12:33:46+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,26,avg-run,avg-run_start,1777552447522,2026-04-30T12:34:07+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,26,avg-run,avg-run_end,1777552475263,2026-04-30T12:34:35+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,27,extend,extend_start,1777552475483,2026-04-30T12:34:35+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,27,extend,extend_end,1777552767760,2026-04-30T12:39:27+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,27,vacuum,vacuum_start,1777552769309,2026-04-30T12:39:29+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,27,vacuum,vacuum_end,1777552818537,2026-04-30T12:40:18+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,27,run,run_start,1777552818831,2026-04-30T12:40:18+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,27,run,run_end,1777552854769,2026-04-30T12:40:54+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,27,reference,reference_start,1777552855920,2026-04-30T12:40:55+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,27,reference,reference_end,1777552861579,2026-04-30T12:41:01+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,27,clean-run,clean-run_start,1777552901063,2026-04-30T12:41:41+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,27,clean-run,clean-run_end,1777552933175,2026-04-30T12:42:13+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,27,avg-run,avg-run_start,1777552955130,2026-04-30T12:42:35+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,27,avg-run,avg-run_end,1777552985043,2026-04-30T12:43:05+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,28,extend,extend_start,1777552985264,2026-04-30T12:43:05+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,28,extend,extend_end,1777553297406,2026-04-30T12:48:17+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,28,vacuum,vacuum_start,1777553299010,2026-04-30T12:48:19+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,28,vacuum,vacuum_end,1777553348542,2026-04-30T12:49:08+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,28,run,run_start,1777553348834,2026-04-30T12:49:08+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,28,run,run_end,1777553383184,2026-04-30T12:49:43+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,28,reference,reference_start,1777553384337,2026-04-30T12:49:44+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,28,reference,reference_end,1777553389803,2026-04-30T12:49:49+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,28,clean-run,clean-run_start,1777553431845,2026-04-30T12:50:31+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,28,clean-run,clean-run_end,1777553464542,2026-04-30T12:51:04+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,28,avg-run,avg-run_start,1777553486332,2026-04-30T12:51:26+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,28,avg-run,avg-run_end,1777553517046,2026-04-30T12:51:57+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,29,extend,extend_start,1777553517274,2026-04-30T12:51:57+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,29,extend,extend_end,1777553843671,2026-04-30T12:57:23+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,29,vacuum,vacuum_start,1777553845310,2026-04-30T12:57:25+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,29,vacuum,vacuum_end,1777553894028,2026-04-30T12:58:14+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,29,run,run_start,1777553894320,2026-04-30T12:58:14+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,29,run,run_end,1777553930595,2026-04-30T12:58:50+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,29,reference,reference_start,1777553931764,2026-04-30T12:58:51+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,29,reference,reference_end,1777553937391,2026-04-30T12:58:57+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,29,clean-run,clean-run_start,1777553975508,2026-04-30T12:59:35+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,29,clean-run,clean-run_end,1777554009466,2026-04-30T13:00:09+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,29,avg-run,avg-run_start,1777554031661,2026-04-30T13:00:31+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,29,avg-run,avg-run_end,1777554061841,2026-04-30T13:01:01+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,30,extend,extend_start,1777554062065,2026-04-30T13:01:02+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,30,extend,extend_end,1777554386767,2026-04-30T13:06:26+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,30,vacuum,vacuum_start,1777554388381,2026-04-30T13:06:28+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,30,vacuum,vacuum_end,1777554463694,2026-04-30T13:07:43+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,30,run,run_start,1777554464063,2026-04-30T13:07:44+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,30,run,run_end,1777554501305,2026-04-30T13:08:21+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,30,reference,reference_start,1777554502499,2026-04-30T13:08:22+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,30,reference,reference_end,1777554508973,2026-04-30T13:08:28+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,30,clean-run,clean-run_start,1777554546304,2026-04-30T13:09:06+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,30,clean-run,clean-run_end,1777554582128,2026-04-30T13:09:42+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,30,avg-run,avg-run_start,1777554605379,2026-04-30T13:10:05+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,30,avg-run,avg-run_end,1777554636036,2026-04-30T13:10:36+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,31,extend,extend_start,1777554636262,2026-04-30T13:10:36+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,31,extend,extend_end,1777554958797,2026-04-30T13:15:58+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,31,vacuum,vacuum_start,1777554960423,2026-04-30T13:16:00+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,31,vacuum,vacuum_end,1777555029954,2026-04-30T13:17:09+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,31,run,run_start,1777555030272,2026-04-30T13:17:10+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,31,run,run_end,1777555069451,2026-04-30T13:17:49+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,31,reference,reference_start,1777555070622,2026-04-30T13:17:50+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,31,reference,reference_end,1777555076385,2026-04-30T13:17:56+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,31,clean-run,clean-run_start,1777555111812,2026-04-30T13:18:31+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,31,clean-run,clean-run_end,1777555147922,2026-04-30T13:19:07+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,31,avg-run,avg-run_start,1777555171231,2026-04-30T13:19:31+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,31,avg-run,avg-run_end,1777555205297,2026-04-30T13:20:05+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,32,extend,extend_start,1777555205526,2026-04-30T13:20:05+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,32,extend,extend_end,1777555537156,2026-04-30T13:25:37+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,32,vacuum,vacuum_start,1777555538908,2026-04-30T13:25:38+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,32,vacuum,vacuum_end,1777555623749,2026-04-30T13:27:03+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,32,run,run_start,1777555624158,2026-04-30T13:27:04+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,32,run,run_end,1777555663529,2026-04-30T13:27:43+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,32,reference,reference_start,1777555664698,2026-04-30T13:27:44+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,32,reference,reference_end,1777555670356,2026-04-30T13:27:50+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,32,clean-run,clean-run_start,1777555697197,2026-04-30T13:28:17+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,32,clean-run,clean-run_end,1777555734349,2026-04-30T13:28:54+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,32,avg-run,avg-run_start,1777555757955,2026-04-30T13:29:17+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,32,avg-run,avg-run_end,1777555792733,2026-04-30T13:29:52+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,33,extend,extend_start,1777555792955,2026-04-30T13:29:52+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,33,extend,extend_end,1777556126465,2026-04-30T13:35:26+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,33,vacuum,vacuum_start,1777556128756,2026-04-30T13:35:28+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,33,vacuum,vacuum_end,1777556235414,2026-04-30T13:37:15+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,33,run,run_start,1777556235793,2026-04-30T13:37:15+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,33,run,run_end,1777556277072,2026-04-30T13:37:57+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,33,reference,reference_start,1777556278225,2026-04-30T13:37:58+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,33,reference,reference_end,1777556283931,2026-04-30T13:38:03+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,33,clean-run,clean-run_start,1777556327141,2026-04-30T13:38:47+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,33,clean-run,clean-run_end,1777556364796,2026-04-30T13:39:24+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,33,avg-run,avg-run_start,1777556388997,2026-04-30T13:39:48+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,33,avg-run,avg-run_end,1777556424364,2026-04-30T13:40:24+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,34,extend,extend_start,1777556424586,2026-04-30T13:40:24+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,34,extend,extend_end,1777556789642,2026-04-30T13:46:29+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,34,vacuum,vacuum_start,1777556792464,2026-04-30T13:46:32+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,34,vacuum,vacuum_end,1777556872406,2026-04-30T13:47:52+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,34,run,run_start,1777556872728,2026-04-30T13:47:52+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,34,run,run_end,1777556914421,2026-04-30T13:48:34+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,34,reference,reference_start,1777556915581,2026-04-30T13:48:35+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,34,reference,reference_end,1777556921332,2026-04-30T13:48:41+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,34,clean-run,clean-run_start,1777556951607,2026-04-30T13:49:11+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,34,clean-run,clean-run_end,1777556990203,2026-04-30T13:49:50+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,34,avg-run,avg-run_start,1777557014534,2026-04-30T13:50:14+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,34,avg-run,avg-run_end,1777557050621,2026-04-30T13:50:50+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,35,extend,extend_start,1777557050844,2026-04-30T13:50:50+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,35,extend,extend_end,1777557416162,2026-04-30T13:56:56+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,35,vacuum,vacuum_start,1777557419358,2026-04-30T13:56:59+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,35,vacuum,vacuum_end,1777557514435,2026-04-30T13:58:34+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,35,run,run_start,1777557514871,2026-04-30T13:58:34+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,35,run,run_end,1777557556734,2026-04-30T13:59:16+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,35,reference,reference_start,1777557557895,2026-04-30T13:59:17+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,35,reference,reference_end,1777557563294,2026-04-30T13:59:23+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,35,clean-run,clean-run_start,1777557595646,2026-04-30T13:59:55+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,35,clean-run,clean-run_end,1777557635579,2026-04-30T14:00:35+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,35,avg-run,avg-run_start,1777557660034,2026-04-30T14:01:00+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,35,avg-run,avg-run_end,1777557696072,2026-04-30T14:01:36+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,36,extend,extend_start,1777557696297,2026-04-30T14:01:36+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,36,extend,extend_end,1777558076167,2026-04-30T14:07:56+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,36,vacuum,vacuum_start,1777558079145,2026-04-30T14:07:59+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,36,vacuum,vacuum_end,1777558166310,2026-04-30T14:09:26+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,36,run,run_start,1777558166709,2026-04-30T14:09:26+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,36,run,run_end,1777558209443,2026-04-30T14:10:09+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,36,reference,reference_start,1777558210610,2026-04-30T14:10:10+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,36,reference,reference_end,1777558216350,2026-04-30T14:10:16+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,36,clean-run,clean-run_start,1777558256332,2026-04-30T14:10:56+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,36,clean-run,clean-run_end,1777558296487,2026-04-30T14:11:36+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,36,avg-run,avg-run_start,1777558321261,2026-04-30T14:12:01+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,36,avg-run,avg-run_end,1777558357856,2026-04-30T14:12:37+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,37,extend,extend_start,1777558358082,2026-04-30T14:12:38+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,37,extend,extend_end,1777558740546,2026-04-30T14:19:00+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,37,vacuum,vacuum_start,1777558749365,2026-04-30T14:19:09+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,37,vacuum,vacuum_end,1777558850961,2026-04-30T14:20:50+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,37,run,run_start,1777558851257,2026-04-30T14:20:51+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,37,run,run_end,1777558894038,2026-04-30T14:21:34+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,37,reference,reference_start,1777558895202,2026-04-30T14:21:35+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,37,reference,reference_end,1777558900692,2026-04-30T14:21:40+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,37,clean-run,clean-run_start,1777558943626,2026-04-30T14:22:23+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,37,clean-run,clean-run_end,1777558985651,2026-04-30T14:23:05+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,37,avg-run,avg-run_start,1777559010734,2026-04-30T14:23:30+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,37,avg-run,avg-run_end,1777559048039,2026-04-30T14:24:08+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,38,extend,extend_start,1777559048261,2026-04-30T14:24:08+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,38,extend,extend_end,1777559466997,2026-04-30T14:31:06+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,38,vacuum,vacuum_start,1777559472430,2026-04-30T14:31:12+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,38,vacuum,vacuum_end,1777559571694,2026-04-30T14:32:51+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,38,run,run_start,1777559572043,2026-04-30T14:32:52+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,38,run,run_end,1777559617467,2026-04-30T14:33:37+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,38,reference,reference_start,1777559618641,2026-04-30T14:33:38+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,38,reference,reference_end,1777559624274,2026-04-30T14:33:44+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,38,clean-run,clean-run_start,1777559650605,2026-04-30T14:34:10+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,38,clean-run,clean-run_end,1777559692947,2026-04-30T14:34:52+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,38,avg-run,avg-run_start,1777559718000,2026-04-30T14:35:18+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,38,avg-run,avg-run_end,1777559755958,2026-04-30T14:35:55+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,39,extend,extend_start,1777559756183,2026-04-30T14:35:56+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,39,extend,extend_end,1777560167266,2026-04-30T14:42:47+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,39,vacuum,vacuum_start,1777560172224,2026-04-30T14:42:52+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,39,vacuum,vacuum_end,1777560288152,2026-04-30T14:44:48+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,39,run,run_start,1777560288474,2026-04-30T14:44:48+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,39,run,run_end,1777560335071,2026-04-30T14:45:35+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,39,reference,reference_start,1777560336246,2026-04-30T14:45:36+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,39,reference,reference_end,1777560341960,2026-04-30T14:45:41+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,39,clean-run,clean-run_start,1777560375823,2026-04-30T14:46:15+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,39,clean-run,clean-run_end,1777560419245,2026-04-30T14:46:59+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,39,avg-run,avg-run_start,1777560445507,2026-04-30T14:47:25+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,39,avg-run,avg-run_end,1777560487325,2026-04-30T14:48:07+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,40,extend,extend_start,1777560487548,2026-04-30T14:48:07+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,40,extend,extend_end,1777560910176,2026-04-30T14:55:10+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,40,vacuum,vacuum_start,1777560915788,2026-04-30T14:55:15+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,40,vacuum,vacuum_end,1777561053467,2026-04-30T14:57:33+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,40,run,run_start,1777561053761,2026-04-30T14:57:33+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,40,run,run_end,1777561100085,2026-04-30T14:58:20+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,40,reference,reference_start,1777561101256,2026-04-30T14:58:21+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,40,reference,reference_end,1777561106782,2026-04-30T14:58:26+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,40,clean-run,clean-run_start,1777561150908,2026-04-30T14:59:10+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,40,clean-run,clean-run_end,1777561196980,2026-04-30T14:59:56+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,40,avg-run,avg-run_start,1777561223528,2026-04-30T15:00:23+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,40,avg-run,avg-run_end,1777561267308,2026-04-30T15:01:07+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,41,extend,extend_start,1777561267532,2026-04-30T15:01:07+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,41,extend,extend_end,1777561690785,2026-04-30T15:08:10+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,41,vacuum,vacuum_start,1777561696083,2026-04-30T15:08:16+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,41,vacuum,vacuum_end,1777561808523,2026-04-30T15:10:08+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,41,run,run_start,1777561808916,2026-04-30T15:10:08+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,41,run,run_end,1777561856320,2026-04-30T15:10:56+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,41,reference,reference_start,1777561857547,2026-04-30T15:10:57+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,41,reference,reference_end,1777561863221,2026-04-30T15:11:03+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,41,clean-run,clean-run_start,1777561901031,2026-04-30T15:11:41+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,41,clean-run,clean-run_end,1777561947138,2026-04-30T15:12:27+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,41,avg-run,avg-run_start,1777561973950,2026-04-30T15:12:53+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,41,avg-run,avg-run_end,1777562018880,2026-04-30T15:13:38+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,42,extend,extend_start,1777562019109,2026-04-30T15:13:39+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,42,extend,extend_end,1777562446105,2026-04-30T15:20:46+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,42,vacuum,vacuum_start,1777562453447,2026-04-30T15:20:53+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,42,vacuum,vacuum_end,1777562593100,2026-04-30T15:23:13+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,42,run,run_start,1777562593488,2026-04-30T15:23:13+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,42,run,run_end,1777562642963,2026-04-30T15:24:02+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,42,reference,reference_start,1777562644187,2026-04-30T15:24:04+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,42,reference,reference_end,1777562649646,2026-04-30T15:24:09+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,42,clean-run,clean-run_start,1777562693318,2026-04-30T15:24:53+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,42,clean-run,clean-run_end,1777562740697,2026-04-30T15:25:40+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,42,avg-run,avg-run_start,1777562767760,2026-04-30T15:26:07+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,42,avg-run,avg-run_end,1777562813318,2026-04-30T15:26:53+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,43,extend,extend_start,1777562813543,2026-04-30T15:26:53+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,43,extend,extend_end,1777563256793,2026-04-30T15:34:16+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,43,vacuum,vacuum_start,1777563262354,2026-04-30T15:34:22+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,43,vacuum,vacuum_end,1777563403216,2026-04-30T15:36:43+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,43,run,run_start,1777563403565,2026-04-30T15:36:43+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,43,run,run_end,1777563454341,2026-04-30T15:37:34+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,43,reference,reference_start,1777563455510,2026-04-30T15:37:35+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,43,reference,reference_end,1777563461074,2026-04-30T15:37:41+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,43,clean-run,clean-run_start,1777563505524,2026-04-30T15:38:25+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,43,clean-run,clean-run_end,1777563553459,2026-04-30T15:39:13+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,43,avg-run,avg-run_start,1777563581153,2026-04-30T15:39:41+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,43,avg-run,avg-run_end,1777563627353,2026-04-30T15:40:27+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,44,extend,extend_start,1777563627578,2026-04-30T15:40:27+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,44,extend,extend_end,1777564084298,2026-04-30T15:48:04+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,44,vacuum,vacuum_start,1777564089970,2026-04-30T15:48:09+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,44,vacuum,vacuum_end,1777564232726,2026-04-30T15:50:32+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,44,run,run_start,1777564233130,2026-04-30T15:50:33+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,44,run,run_end,1777564286583,2026-04-30T15:51:26+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,44,reference,reference_start,1777564287763,2026-04-30T15:51:27+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,44,reference,reference_end,1777564293304,2026-04-30T15:51:33+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,44,clean-run,clean-run_start,1777564341089,2026-04-30T15:52:21+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,44,clean-run,clean-run_end,1777564389833,2026-04-30T15:53:09+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,44,avg-run,avg-run_start,1777564417655,2026-04-30T15:53:37+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,44,avg-run,avg-run_end,1777564464474,2026-04-30T15:54:24+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,45,extend,extend_start,1777564464697,2026-04-30T15:54:24+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,45,extend,extend_end,1777564952462,2026-04-30T16:02:32+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,45,vacuum,vacuum_start,1777564958714,2026-04-30T16:02:38+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,45,vacuum,vacuum_end,1777565099464,2026-04-30T16:04:59+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,45,run,run_start,1777565099759,2026-04-30T16:04:59+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,45,run,run_end,1777565151127,2026-04-30T16:05:51+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,45,reference,reference_start,1777565152327,2026-04-30T16:05:52+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,45,reference,reference_end,1777565157785,2026-04-30T16:05:57+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,45,clean-run,clean-run_start,1777565202390,2026-04-30T16:06:42+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,45,clean-run,clean-run_end,1777565252048,2026-04-30T16:07:32+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,45,avg-run,avg-run_start,1777565279907,2026-04-30T16:07:59+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,45,avg-run,avg-run_end,1777565327450,2026-04-30T16:08:47+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,46,extend,extend_start,1777565327674,2026-04-30T16:08:47+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,46,extend,extend_end,1777565823750,2026-04-30T16:17:03+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,46,vacuum,vacuum_start,1777565831198,2026-04-30T16:17:11+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,46,vacuum,vacuum_end,1777565969774,2026-04-30T16:19:29+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,46,run,run_start,1777565970187,2026-04-30T16:19:30+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,46,run,run_end,1777566023604,2026-04-30T16:20:23+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,46,reference,reference_start,1777566024787,2026-04-30T16:20:24+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,46,reference,reference_end,1777566030569,2026-04-30T16:20:30+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,46,clean-run,clean-run_start,1777566065782,2026-04-30T16:21:05+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,46,clean-run,clean-run_end,1777566116386,2026-04-30T16:21:56+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,46,avg-run,avg-run_start,1777566147564,2026-04-30T16:22:27+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,46,avg-run,avg-run_end,1777566197089,2026-04-30T16:23:17+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,47,extend,extend_start,1777566197312,2026-04-30T16:23:17+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,47,extend,extend_end,1777566710343,2026-04-30T16:31:50+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,47,vacuum,vacuum_start,1777566718167,2026-04-30T16:31:58+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,47,vacuum,vacuum_end,1777566881654,2026-04-30T16:34:41+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,47,run,run_start,1777566882031,2026-04-30T16:34:42+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,47,run,run_end,1777566937783,2026-04-30T16:35:37+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,47,reference,reference_start,1777566938976,2026-04-30T16:35:38+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,47,reference,reference_end,1777566944682,2026-04-30T16:35:44+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,47,clean-run,clean-run_start,1777566982357,2026-04-30T16:36:22+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,47,clean-run,clean-run_end,1777567032341,2026-04-30T16:37:12+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,47,avg-run,avg-run_start,1777567064503,2026-04-30T16:37:44+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,47,avg-run,avg-run_end,1777567114466,2026-04-30T16:38:34+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,48,extend,extend_start,1777567114689,2026-04-30T16:38:34+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,48,extend,extend_end,1777567628842,2026-04-30T16:47:08+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,48,vacuum,vacuum_start,1777567639062,2026-04-30T16:47:19+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,48,vacuum,vacuum_end,1777567806488,2026-04-30T16:50:06+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,48,run,run_start,1777567806782,2026-04-30T16:50:06+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,48,run,run_end,1777567863216,2026-04-30T16:51:03+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,48,reference,reference_start,1777567864406,2026-04-30T16:51:04+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,48,reference,reference_end,1777567869936,2026-04-30T16:51:09+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,48,clean-run,clean-run_start,1777567908846,2026-04-30T16:51:48+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,48,clean-run,clean-run_end,1777567961587,2026-04-30T16:52:41+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,48,avg-run,avg-run_start,1777567993591,2026-04-30T16:53:13+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,48,avg-run,avg-run_end,1777568044322,2026-04-30T16:54:04+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,49,extend,extend_start,1777568044546,2026-04-30T16:54:04+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,49,extend,extend_end,1777568542125,2026-04-30T17:02:22+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,49,vacuum,vacuum_start,1777568556732,2026-04-30T17:02:36+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,49,vacuum,vacuum_end,1777568753157,2026-04-30T17:05:53+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,49,run,run_start,1777568753483,2026-04-30T17:05:53+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,49,run,run_end,1777568811231,2026-04-30T17:06:51+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,49,reference,reference_start,1777568812426,2026-04-30T17:06:52+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,49,reference,reference_end,1777568817770,2026-04-30T17:06:57+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,49,clean-run,clean-run_start,1777568851728,2026-04-30T17:07:31+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,49,clean-run,clean-run_end,1777568905412,2026-04-30T17:08:25+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,49,avg-run,avg-run_start,1777568937324,2026-04-30T17:08:57+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,49,avg-run,avg-run_end,1777568989133,2026-04-30T17:09:49+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,50,extend,extend_start,1777568989356,2026-04-30T17:09:49+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,50,extend,extend_end,1777569510320,2026-04-30T17:18:30+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,50,vacuum,vacuum_start,1777569527523,2026-04-30T17:18:47+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,50,vacuum,vacuum_end,1777569731935,2026-04-30T17:22:11+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,50,run,run_start,1777569732231,2026-04-30T17:22:12+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,50,run,run_end,1777569790539,2026-04-30T17:23:10+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,50,reference,reference_start,1777569791798,2026-04-30T17:23:11+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,50,reference,reference_end,1777569798119,2026-04-30T17:23:18+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,50,clean-run,clean-run_start,1777569837207,2026-04-30T17:23:57+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,50,clean-run,clean-run_end,1777569890826,2026-04-30T17:24:50+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,50,avg-run,avg-run_start,1777569923892,2026-04-30T17:25:23+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,50,avg-run,avg-run_end,1777569975978,2026-04-30T17:26:15+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,51,extend,extend_start,1777569976205,2026-04-30T17:26:16+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,51,extend,extend_end,1777570487616,2026-04-30T17:34:47+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,51,vacuum,vacuum_start,1777570505579,2026-04-30T17:35:05+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,51,vacuum,vacuum_end,1777570746295,2026-04-30T17:39:06+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,51,run,run_start,1777570746590,2026-04-30T17:39:06+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,51,run,run_end,1777570803418,2026-04-30T17:40:03+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,51,reference,reference_start,1777570804664,2026-04-30T17:40:04+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,51,reference,reference_end,1777570810461,2026-04-30T17:40:10+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,51,clean-run,clean-run_start,1777570837349,2026-04-30T17:40:37+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,51,clean-run,clean-run_end,1777570893651,2026-04-30T17:41:33+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,51,avg-run,avg-run_start,1777570927195,2026-04-30T17:42:07+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,51,avg-run,avg-run_end,1777570980110,2026-04-30T17:43:00+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,52,extend,extend_start,1777570980334,2026-04-30T17:43:00+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,52,extend,extend_end,1777571506633,2026-04-30T17:51:46+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,52,vacuum,vacuum_start,1777571524221,2026-04-30T17:52:04+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,52,vacuum,vacuum_end,1777571768432,2026-04-30T17:56:08+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,52,run,run_start,1777571768811,2026-04-30T17:56:08+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,52,run,run_end,1777571830084,2026-04-30T17:57:10+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,52,reference,reference_start,1777571831284,2026-04-30T17:57:11+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,52,reference,reference_end,1777571837055,2026-04-30T17:57:17+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,52,clean-run,clean-run_start,1777571876099,2026-04-30T17:57:56+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,52,clean-run,clean-run_end,1777571933113,2026-04-30T17:58:53+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,52,avg-run,avg-run_start,1777571966747,2026-04-30T17:59:26+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,52,avg-run,avg-run_end,1777572020160,2026-04-30T18:00:20+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,53,extend,extend_start,1777572020385,2026-04-30T18:00:20+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,53,extend,extend_end,1777572559454,2026-04-30T18:09:19+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,53,vacuum,vacuum_start,1777572577706,2026-04-30T18:09:37+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,53,vacuum,vacuum_end,1777572823990,2026-04-30T18:13:43+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,53,run,run_start,1777572824322,2026-04-30T18:13:44+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,53,run,run_end,1777572883731,2026-04-30T18:14:43+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,53,reference,reference_start,1777572884936,2026-04-30T18:14:44+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,53,reference,reference_end,1777572890747,2026-04-30T18:14:50+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,53,clean-run,clean-run_start,1777572921280,2026-04-30T18:15:21+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,53,clean-run,clean-run_end,1777572979501,2026-04-30T18:16:19+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,53,avg-run,avg-run_start,1777573012499,2026-04-30T18:16:52+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,53,avg-run,avg-run_end,1777573066747,2026-04-30T18:17:46+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,54,extend,extend_start,1777573066972,2026-04-30T18:17:46+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,54,extend,extend_end,1777573613339,2026-04-30T18:26:53+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,54,vacuum,vacuum_start,1777573633583,2026-04-30T18:27:13+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,54,vacuum,vacuum_end,1777573907129,2026-04-30T18:31:47+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,54,run,run_start,1777573907447,2026-04-30T18:31:47+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,54,run,run_end,1777573970629,2026-04-30T18:32:50+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,54,reference,reference_start,1777573971829,2026-04-30T18:32:51+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,54,reference,reference_end,1777573977527,2026-04-30T18:32:57+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,54,clean-run,clean-run_start,1777574005276,2026-04-30T18:33:25+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,54,clean-run,clean-run_end,1777574062741,2026-04-30T18:34:22+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,54,avg-run,avg-run_start,1777574095174,2026-04-30T18:34:55+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,54,avg-run,avg-run_end,1777574150271,2026-04-30T18:35:50+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,55,extend,extend_start,1777574150496,2026-04-30T18:35:50+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,55,extend,extend_end,1777574715615,2026-04-30T18:45:15+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,55,vacuum,vacuum_start,1777574739775,2026-04-30T18:45:39+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,55,vacuum,vacuum_end,1777575011507,2026-04-30T18:50:11+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,55,run,run_start,1777575011801,2026-04-30T18:50:11+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,55,run,run_end,1777575072584,2026-04-30T18:51:12+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,55,reference,reference_start,1777575073830,2026-04-30T18:51:13+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,55,reference,reference_end,1777575080043,2026-04-30T18:51:20+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,55,clean-run,clean-run_start,1777575119538,2026-04-30T18:51:59+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,55,clean-run,clean-run_end,1777575178185,2026-04-30T18:52:58+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,55,avg-run,avg-run_start,1777575211262,2026-04-30T18:53:31+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,55,avg-run,avg-run_end,1777575267287,2026-04-30T18:54:27+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,56,extend,extend_start,1777575267511,2026-04-30T18:54:27+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,56,extend,extend_end,1777575854193,2026-04-30T19:04:14+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,56,vacuum,vacuum_start,1777575879098,2026-04-30T19:04:39+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,56,vacuum,vacuum_end,1777576142611,2026-04-30T19:09:02+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,56,run,run_start,1777576143238,2026-04-30T19:09:03+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,56,run,run_end,1777576205250,2026-04-30T19:10:05+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,56,reference,reference_start,1777576206451,2026-04-30T19:10:06+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,56,reference,reference_end,1777576212142,2026-04-30T19:10:12+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,56,clean-run,clean-run_start,1777576261295,2026-04-30T19:11:01+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,56,clean-run,clean-run_end,1777576320908,2026-04-30T19:12:00+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,56,avg-run,avg-run_start,1777576354215,2026-04-30T19:12:34+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,56,avg-run,avg-run_end,1777576410907,2026-04-30T19:13:30+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,57,extend,extend_start,1777576411132,2026-04-30T19:13:31+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,57,extend,extend_end,1777577054809,2026-04-30T19:24:14+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,57,vacuum,vacuum_start,1777577086010,2026-04-30T19:24:46+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,57,vacuum,vacuum_end,1777577371015,2026-04-30T19:29:31+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,57,run,run_start,1777577371450,2026-04-30T19:29:31+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,57,run,run_end,1777577438450,2026-04-30T19:30:38+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,57,reference,reference_start,1777577439685,2026-04-30T19:30:39+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,57,reference,reference_end,1777577445499,2026-04-30T19:30:45+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,57,clean-run,clean-run_start,1777577486932,2026-04-30T19:31:26+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,57,clean-run,clean-run_end,1777577547408,2026-04-30T19:32:27+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,57,avg-run,avg-run_start,1777577580914,2026-04-30T19:33:00+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,57,avg-run,avg-run_end,1777577638175,2026-04-30T19:33:58+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,58,extend,extend_start,1777577638398,2026-04-30T19:33:58+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,58,extend,extend_end,1777578278198,2026-04-30T19:44:38+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,58,vacuum,vacuum_start,1777578302084,2026-04-30T19:45:02+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,58,vacuum,vacuum_end,1777578610435,2026-04-30T19:50:10+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,58,run,run_start,1777578611044,2026-04-30T19:50:11+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,58,run,run_end,1777578679960,2026-04-30T19:51:19+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,58,reference,reference_start,1777578681177,2026-04-30T19:51:21+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,58,reference,reference_end,1777578686936,2026-04-30T19:51:26+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,58,clean-run,clean-run_start,1777578733594,2026-04-30T19:52:13+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,58,clean-run,clean-run_end,1777578794561,2026-04-30T19:53:14+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,58,avg-run,avg-run_start,1777578828019,2026-04-30T19:53:48+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,58,avg-run,avg-run_end,1777578885992,2026-04-30T19:54:45+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,59,extend,extend_start,1777578886219,2026-04-30T19:54:46+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,59,extend,extend_end,1777579482134,2026-04-30T20:04:42+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,59,vacuum,vacuum_start,1777579507628,2026-04-30T20:05:07+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,59,vacuum,vacuum_end,1777579803119,2026-04-30T20:10:03+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,59,run,run_start,1777579803412,2026-04-30T20:10:03+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,59,run,run_end,1777579875666,2026-04-30T20:11:15+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,59,reference,reference_start,1777579876916,2026-04-30T20:11:16+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,59,reference,reference_end,1777579882573,2026-04-30T20:11:22+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,59,clean-run,clean-run_start,1777579917886,2026-04-30T20:11:57+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,59,clean-run,clean-run_end,1777579981844,2026-04-30T20:13:01+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,59,avg-run,avg-run_start,1777580017041,2026-04-30T20:13:37+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,59,avg-run,avg-run_end,1777580076042,2026-04-30T20:14:36+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,60,extend,extend_start,1777580076265,2026-04-30T20:14:36+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,60,extend,extend_end,1777580698159,2026-04-30T20:24:58+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,60,vacuum,vacuum_start,1777580725728,2026-04-30T20:25:25+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,60,vacuum,vacuum_end,1777581032583,2026-04-30T20:30:32+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,60,run,run_start,1777581032939,2026-04-30T20:30:32+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,60,run,run_end,1777581102266,2026-04-30T20:31:42+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,60,reference,reference_start,1777581103517,2026-04-30T20:31:43+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,60,reference,reference_end,1777581109236,2026-04-30T20:31:49+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,60,clean-run,clean-run_start,1777581156210,2026-04-30T20:32:36+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,60,clean-run,clean-run_end,1777581221070,2026-04-30T20:33:41+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,60,avg-run,avg-run_start,1777581255500,2026-04-30T20:34:15+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,60,avg-run,avg-run_end,1777581315023,2026-04-30T20:35:15+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,61,extend,extend_start,1777581315250,2026-04-30T20:35:15+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,61,extend,extend_end,1777581930878,2026-04-30T20:45:30+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,61,vacuum,vacuum_start,1777581960066,2026-04-30T20:46:00+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,61,vacuum,vacuum_end,1777582287235,2026-04-30T20:51:27+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,61,run,run_start,1777582287529,2026-04-30T20:51:27+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,61,run,run_end,1777582360217,2026-04-30T20:52:40+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,61,reference,reference_start,1777582361451,2026-04-30T20:52:41+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,61,reference,reference_end,1777582367059,2026-04-30T20:52:47+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,61,clean-run,clean-run_start,1777582396181,2026-04-30T20:53:16+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,61,clean-run,clean-run_end,1777582461443,2026-04-30T20:54:21+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,61,avg-run,avg-run_start,1777582496935,2026-04-30T20:54:56+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,61,avg-run,avg-run_end,1777582557086,2026-04-30T20:55:57+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,62,extend,extend_start,1777582557311,2026-04-30T20:55:57+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,62,extend,extend_end,1777583208810,2026-04-30T21:06:48+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,62,vacuum,vacuum_start,1777583243773,2026-04-30T21:07:23+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,62,vacuum,vacuum_end,1777583556744,2026-04-30T21:12:36+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,62,run,run_start,1777583557288,2026-04-30T21:12:37+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,62,run,run_end,1777583632868,2026-04-30T21:13:52+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,62,reference,reference_start,1777583634126,2026-04-30T21:13:54+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,62,reference,reference_end,1777583639786,2026-04-30T21:13:59+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,62,clean-run,clean-run_start,1777583687397,2026-04-30T21:14:47+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,62,clean-run,clean-run_end,1777583753604,2026-04-30T21:15:53+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,62,avg-run,avg-run_start,1777583789611,2026-04-30T21:16:29+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,62,avg-run,avg-run_end,1777583850854,2026-04-30T21:17:30+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,63,extend,extend_start,1777583851079,2026-04-30T21:17:31+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,63,extend,extend_end,1777584516545,2026-04-30T21:28:36+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,63,vacuum,vacuum_start,1777584555974,2026-04-30T21:29:15+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,63,vacuum,vacuum_end,1777584866820,2026-04-30T21:34:26+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,63,run,run_start,1777584867162,2026-04-30T21:34:27+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,63,run,run_end,1777584936271,2026-04-30T21:35:36+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,63,reference,reference_start,1777584937505,2026-04-30T21:35:37+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,63,reference,reference_end,1777584943366,2026-04-30T21:35:43+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,63,clean-run,clean-run_start,1777584987157,2026-04-30T21:36:27+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,63,clean-run,clean-run_end,1777585053126,2026-04-30T21:37:33+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,63,avg-run,avg-run_start,1777585089038,2026-04-30T21:38:09+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,63,avg-run,avg-run_end,1777585153574,2026-04-30T21:39:13+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,64,extend,extend_start,1777585153798,2026-04-30T21:39:13+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,64,extend,extend_end,1777585831371,2026-04-30T21:50:31+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,64,vacuum,vacuum_start,1777585868775,2026-04-30T21:51:08+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,64,vacuum,vacuum_end,1777586178982,2026-04-30T21:56:18+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,64,run,run_start,1777586179275,2026-04-30T21:56:19+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,64,run,run_end,1777586249073,2026-04-30T21:57:29+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,64,reference,reference_start,1777586250297,2026-04-30T21:57:30+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,64,reference,reference_end,1777586255722,2026-04-30T21:57:35+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,64,clean-run,clean-run_start,1777586297201,2026-04-30T21:58:17+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,64,clean-run,clean-run_end,1777586364976,2026-04-30T21:59:24+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,64,avg-run,avg-run_start,1777586403360,2026-04-30T22:00:03+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,64,avg-run,avg-run_end,1777586468637,2026-04-30T22:01:08+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,65,extend,extend_start,1777586468861,2026-04-30T22:01:08+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,65,extend,extend_end,1777587150022,2026-04-30T22:12:30+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,65,vacuum,vacuum_start,1777587183816,2026-04-30T22:13:03+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,65,vacuum,vacuum_end,1777587522423,2026-04-30T22:18:42+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,65,run,run_start,1777587522715,2026-04-30T22:18:42+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,65,run,run_end,1777587595914,2026-04-30T22:19:55+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,65,reference,reference_start,1777587597149,2026-04-30T22:19:57+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,65,reference,reference_end,1777587602557,2026-04-30T22:20:02+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,65,clean-run,clean-run_start,1777587640571,2026-04-30T22:20:40+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,65,clean-run,clean-run_end,1777587706551,2026-04-30T22:21:46+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,65,avg-run,avg-run_start,1777587742609,2026-04-30T22:22:22+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,65,avg-run,avg-run_end,1777587808541,2026-04-30T22:23:28+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,66,extend,extend_start,1777587808765,2026-04-30T22:23:28+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,66,extend,extend_end,1777588483802,2026-04-30T22:34:43+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,66,vacuum,vacuum_start,1777588515780,2026-04-30T22:35:15+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,66,vacuum,vacuum_end,1777588894437,2026-04-30T22:41:34+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,66,run,run_start,1777588894737,2026-04-30T22:41:34+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,66,run,run_end,1777588968986,2026-04-30T22:42:48+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,66,reference,reference_start,1777588970235,2026-04-30T22:42:50+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,66,reference,reference_end,1777588975926,2026-04-30T22:42:55+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,66,clean-run,clean-run_start,1777589007977,2026-04-30T22:43:27+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,66,clean-run,clean-run_end,1777589075343,2026-04-30T22:44:35+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,66,avg-run,avg-run_start,1777589111908,2026-04-30T22:45:11+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,66,avg-run,avg-run_end,1777589178858,2026-04-30T22:46:18+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,67,extend,extend_start,1777589179088,2026-04-30T22:46:19+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,67,extend,extend_end,1777589864010,2026-04-30T22:57:44+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,67,vacuum,vacuum_start,1777589901733,2026-04-30T22:58:21+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,67,vacuum,vacuum_end,1777590277230,2026-04-30T23:04:37+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,67,run,run_start,1777590277523,2026-04-30T23:04:37+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,67,run,run_end,1777590355617,2026-04-30T23:05:55+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,67,reference,reference_start,1777590356852,2026-04-30T23:05:56+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,67,reference,reference_end,1777590362676,2026-04-30T23:06:02+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,67,clean-run,clean-run_start,1777590405313,2026-04-30T23:06:45+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,67,clean-run,clean-run_end,1777590477129,2026-04-30T23:07:57+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,67,avg-run,avg-run_start,1777590515421,2026-04-30T23:08:35+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,67,avg-run,avg-run_end,1777590583246,2026-04-30T23:09:43+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,68,extend,extend_start,1777590583473,2026-04-30T23:09:43+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,68,extend,extend_end,1777591290129,2026-04-30T23:21:30+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,68,vacuum,vacuum_start,1777591326342,2026-04-30T23:22:06+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,68,vacuum,vacuum_end,1777591674282,2026-04-30T23:27:54+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,68,run,run_start,1777591674675,2026-04-30T23:27:54+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,68,run,run_end,1777591752009,2026-04-30T23:29:12+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,68,reference,reference_start,1777591753251,2026-04-30T23:29:13+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,68,reference,reference_end,1777591758795,2026-04-30T23:29:18+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,68,clean-run,clean-run_start,1777591793765,2026-04-30T23:29:53+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,68,clean-run,clean-run_end,1777591865155,2026-04-30T23:31:05+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,68,avg-run,avg-run_start,1777591902497,2026-04-30T23:31:42+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,68,avg-run,avg-run_end,1777591971162,2026-04-30T23:32:51+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,69,extend,extend_start,1777591971387,2026-04-30T23:32:51+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,69,extend,extend_end,1777592677882,2026-04-30T23:44:37+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,69,vacuum,vacuum_start,1777592712184,2026-04-30T23:45:12+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,69,vacuum,vacuum_end,1777593066269,2026-04-30T23:51:06+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,69,run,run_start,1777593066566,2026-04-30T23:51:06+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,69,run,run_end,1777593145973,2026-04-30T23:52:25+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,69,reference,reference_start,1777593147262,2026-04-30T23:52:27+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,69,reference,reference_end,1777593152851,2026-04-30T23:52:32+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,69,clean-run,clean-run_start,1777593191816,2026-04-30T23:53:11+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,69,clean-run,clean-run_end,1777593265092,2026-04-30T23:54:25+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,69,avg-run,avg-run_start,1777593301511,2026-04-30T23:55:01+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,69,avg-run,avg-run_end,1777593370673,2026-04-30T23:56:10+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,70,extend,extend_start,1777593370899,2026-04-30T23:56:10+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,70,extend,extend_end,1777594097019,2026-05-01T00:08:17+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,70,vacuum,vacuum_start,1777594137281,2026-05-01T00:08:57+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,70,vacuum,vacuum_end,1777594505337,2026-05-01T00:15:05+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,70,run,run_start,1777594505632,2026-05-01T00:15:05+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,70,run,run_end,1777594588445,2026-05-01T00:16:28+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,70,reference,reference_start,1777594589701,2026-05-01T00:16:29+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,70,reference,reference_end,1777594595598,2026-05-01T00:16:35+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,70,clean-run,clean-run_start,1777594641598,2026-05-01T00:17:21+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,70,clean-run,clean-run_end,1777594715935,2026-05-01T00:18:35+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,70,avg-run,avg-run_start,1777594751173,2026-05-01T00:19:11+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,70,avg-run,avg-run_end,1777594818779,2026-05-01T00:20:18+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,71,extend,extend_start,1777594819006,2026-05-01T00:20:19+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,71,extend,extend_end,1777595546929,2026-05-01T00:32:26+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,71,vacuum,vacuum_start,1777595583665,2026-05-01T00:33:03+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,71,vacuum,vacuum_end,1777596012740,2026-05-01T00:40:12+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,71,run,run_start,1777596013034,2026-05-01T00:40:13+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,71,run,run_end,1777596104244,2026-05-01T00:41:44+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,71,reference,reference_start,1777596105498,2026-05-01T00:41:45+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,71,reference,reference_end,1777596111196,2026-05-01T00:41:51+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,71,clean-run,clean-run_start,1777596149749,2026-05-01T00:42:29+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,71,clean-run,clean-run_end,1777596222042,2026-05-01T00:43:42+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,71,avg-run,avg-run_start,1777596261426,2026-05-01T00:44:21+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,71,avg-run,avg-run_end,1777596329718,2026-05-01T00:45:29+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,72,extend,extend_start,1777596329943,2026-05-01T00:45:29+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,72,extend,extend_end,1777597060807,2026-05-01T00:57:40+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,72,vacuum,vacuum_start,1777597095677,2026-05-01T00:58:15+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,72,vacuum,vacuum_end,1777597496158,2026-05-01T01:04:56+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,72,run,run_start,1777597496453,2026-05-01T01:04:56+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,72,run,run_end,1777597578671,2026-05-01T01:06:18+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,72,reference,reference_start,1777597579963,2026-05-01T01:06:19+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,72,reference,reference_end,1777597585707,2026-05-01T01:06:25+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,72,clean-run,clean-run_start,1777597620073,2026-05-01T01:07:00+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,72,clean-run,clean-run_end,1777597698078,2026-05-01T01:08:18+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,72,avg-run,avg-run_start,1777597737096,2026-05-01T01:08:57+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,72,avg-run,avg-run_end,1777597805732,2026-05-01T01:10:05+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,73,extend,extend_start,1777597805960,2026-05-01T01:10:05+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,73,extend,extend_end,1777598553695,2026-05-01T01:22:33+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,73,vacuum,vacuum_start,1777598600351,2026-05-01T01:23:20+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,73,vacuum,vacuum_end,1777598980608,2026-05-01T01:29:40+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,73,run,run_start,1777598981039,2026-05-01T01:29:41+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,73,run,run_end,1777599073921,2026-05-01T01:31:13+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,73,reference,reference_start,1777599075168,2026-05-01T01:31:15+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,73,reference,reference_end,1777599080684,2026-05-01T01:31:20+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,73,clean-run,clean-run_start,1777599122545,2026-05-01T01:32:02+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,73,clean-run,clean-run_end,1777599199679,2026-05-01T01:33:19+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,73,avg-run,avg-run_start,1777599238648,2026-05-01T01:33:58+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,73,avg-run,avg-run_end,1777599308152,2026-05-01T01:35:08+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,74,extend,extend_start,1777599308379,2026-05-01T01:35:08+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,74,extend,extend_end,1777600108555,2026-05-01T01:48:28+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,74,vacuum,vacuum_start,1777600154139,2026-05-01T01:49:14+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,74,vacuum,vacuum_end,1777600577735,2026-05-01T01:56:17+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,74,run,run_start,1777600578029,2026-05-01T01:56:18+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,74,run,run_end,1777600668463,2026-05-01T01:57:48+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,74,reference,reference_start,1777600669742,2026-05-01T01:57:49+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,74,reference,reference_end,1777600675329,2026-05-01T01:57:55+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,74,clean-run,clean-run_start,1777600720575,2026-05-01T01:58:40+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,74,clean-run,clean-run_end,1777600796310,2026-05-01T01:59:56+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,74,avg-run,avg-run_start,1777600835349,2026-05-01T02:00:35+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,74,avg-run,avg-run_end,1777600905957,2026-05-01T02:01:45+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,75,extend,extend_start,1777600906183,2026-05-01T02:01:46+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,75,extend,extend_end,1777601677840,2026-05-01T02:14:37+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,75,vacuum,vacuum_start,1777601724856,2026-05-01T02:15:24+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,75,vacuum,vacuum_end,1777602150923,2026-05-01T02:22:30+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,75,run,run_start,1777602151216,2026-05-01T02:22:31+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,75,run,run_end,1777602234090,2026-05-01T02:23:54+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,75,reference,reference_start,1777602235389,2026-05-01T02:23:55+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,75,reference,reference_end,1777602241059,2026-05-01T02:24:01+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,75,clean-run,clean-run_start,1777602273458,2026-05-01T02:24:33+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,75,clean-run,clean-run_end,1777602352639,2026-05-01T02:25:52+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,75,avg-run,avg-run_start,1777602392165,2026-05-01T02:26:32+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,75,avg-run,avg-run_end,1777602463073,2026-05-01T02:27:43+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,76,extend,extend_start,1777602463300,2026-05-01T02:27:43+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,76,extend,extend_end,1777603260083,2026-05-01T02:41:00+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,76,vacuum,vacuum_start,1777603306943,2026-05-01T02:41:46+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,76,vacuum,vacuum_end,1777603746591,2026-05-01T02:49:06+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,76,run,run_start,1777603746925,2026-05-01T02:49:06+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,76,run,run_end,1777603833015,2026-05-01T02:50:33+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,76,reference,reference_start,1777603834320,2026-05-01T02:50:34+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,76,reference,reference_end,1777603839985,2026-05-01T02:50:39+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,76,clean-run,clean-run_start,1777603875260,2026-05-01T02:51:15+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,76,clean-run,clean-run_end,1777603954109,2026-05-01T02:52:34+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,76,avg-run,avg-run_start,1777603992739,2026-05-01T02:53:12+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,76,avg-run,avg-run_end,1777604064322,2026-05-01T02:54:24+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,77,extend,extend_start,1777604064547,2026-05-01T02:54:24+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,77,extend,extend_end,1777604867678,2026-05-01T03:07:47+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,77,vacuum,vacuum_start,1777604922026,2026-05-01T03:08:42+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,77,vacuum,vacuum_end,1777605364181,2026-05-01T03:16:04+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,77,run,run_start,1777605364513,2026-05-01T03:16:04+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,77,run,run_end,1777605450750,2026-05-01T03:17:30+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,77,reference,reference_start,1777605452038,2026-05-01T03:17:32+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,77,reference,reference_end,1777605457670,2026-05-01T03:17:37+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,77,clean-run,clean-run_start,1777605494474,2026-05-01T03:18:14+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,77,clean-run,clean-run_end,1777605575243,2026-05-01T03:19:35+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,77,avg-run,avg-run_start,1777605615044,2026-05-01T03:20:15+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,77,avg-run,avg-run_end,1777605687872,2026-05-01T03:21:27+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,78,extend,extend_start,1777605688099,2026-05-01T03:21:28+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,78,extend,extend_end,1777606574855,2026-05-01T03:36:14+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,78,vacuum,vacuum_start,1777606621395,2026-05-01T03:37:01+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,78,vacuum,vacuum_end,1777607117505,2026-05-01T03:45:17+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,78,run,run_start,1777607117802,2026-05-01T03:45:17+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,78,run,run_end,1777607206251,2026-05-01T03:46:46+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,78,reference,reference_start,1777607207547,2026-05-01T03:46:47+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,78,reference,reference_end,1777607213481,2026-05-01T03:46:53+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,78,clean-run,clean-run_start,1777607257993,2026-05-01T03:47:37+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,78,clean-run,clean-run_end,1777607339715,2026-05-01T03:48:59+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,78,avg-run,avg-run_start,1777607378296,2026-05-01T03:49:38+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,78,avg-run,avg-run_end,1777607451250,2026-05-01T03:50:51+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,79,extend,extend_start,1777607451476,2026-05-01T03:50:51+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,79,extend,extend_end,1777608343989,2026-05-01T04:05:43+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,79,vacuum,vacuum_start,1777608402828,2026-05-01T04:06:42+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,79,vacuum,vacuum_end,1777608902032,2026-05-01T04:15:02+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,79,run,run_start,1777608902411,2026-05-01T04:15:02+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,79,run,run_end,1777608993591,2026-05-01T04:16:33+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,79,reference,reference_start,1777608994872,2026-05-01T04:16:34+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,79,reference,reference_end,1777609000664,2026-05-01T04:16:40+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,79,clean-run,clean-run_start,1777609046367,2026-05-01T04:17:26+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,79,clean-run,clean-run_end,1777609125734,2026-05-01T04:18:45+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,79,avg-run,avg-run_start,1777609166293,2026-05-01T04:19:26+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,79,avg-run,avg-run_end,1777609246524,2026-05-01T04:20:46+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,80,extend,extend_start,1777609246748,2026-05-01T04:20:46+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,80,extend,extend_end,1777610074161,2026-05-01T04:34:34+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,80,vacuum,vacuum_start,1777610127206,2026-05-01T04:35:27+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,80,vacuum,vacuum_end,1777610579258,2026-05-01T04:42:59+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,80,run,run_start,1777610579551,2026-05-01T04:42:59+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,80,run,run_end,1777610677696,2026-05-01T04:44:37+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,80,reference,reference_start,1777610678987,2026-05-01T04:44:38+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,80,reference,reference_end,1777610684906,2026-05-01T04:44:44+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,80,clean-run,clean-run_start,1777610729460,2026-05-01T04:45:29+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,80,clean-run,clean-run_end,1777610810585,2026-05-01T04:46:50+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,80,avg-run,avg-run_start,1777610851663,2026-05-01T04:47:31+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,80,avg-run,avg-run_end,1777610932985,2026-05-01T04:48:52+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,81,extend,extend_start,1777610933214,2026-05-01T04:48:53+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,81,extend,extend_end,1777611824324,2026-05-01T05:03:44+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,81,vacuum,vacuum_start,1777611883610,2026-05-01T05:04:43+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,81,vacuum,vacuum_end,1777612373228,2026-05-01T05:12:53+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,81,run,run_start,1777612373551,2026-05-01T05:12:53+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,81,run,run_end,1777612470366,2026-05-01T05:14:30+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,81,reference,reference_start,1777612471663,2026-05-01T05:14:31+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,81,reference,reference_end,1777612477219,2026-05-01T05:14:37+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,81,clean-run,clean-run_start,1777612524365,2026-05-01T05:15:24+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,81,clean-run,clean-run_end,1777612606737,2026-05-01T05:16:46+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,81,avg-run,avg-run_start,1777612649274,2026-05-01T05:17:29+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,81,avg-run,avg-run_end,1777612729408,2026-05-01T05:18:49+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,82,extend,extend_start,1777612729632,2026-05-01T05:18:49+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,82,extend,extend_end,1777613595535,2026-05-01T05:33:15+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,82,vacuum,vacuum_start,1777613651798,2026-05-01T05:34:11+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,82,vacuum,vacuum_end,1777614131451,2026-05-01T05:42:11+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,82,run,run_start,1777614131744,2026-05-01T05:42:11+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,82,run,run_end,1777614229682,2026-05-01T05:43:49+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,82,reference,reference_start,1777614231004,2026-05-01T05:43:51+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,82,reference,reference_end,1777614236905,2026-05-01T05:43:56+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,82,clean-run,clean-run_start,1777614275881,2026-05-01T05:44:35+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,82,clean-run,clean-run_end,1777614361958,2026-05-01T05:46:01+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,82,avg-run,avg-run_start,1777614403520,2026-05-01T05:46:43+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,82,avg-run,avg-run_end,1777614484751,2026-05-01T05:48:04+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,83,extend,extend_start,1777614484973,2026-05-01T05:48:04+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,83,extend,extend_end,1777615375493,2026-05-01T06:02:55+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,83,vacuum,vacuum_start,1777615437226,2026-05-01T06:03:57+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,83,vacuum,vacuum_end,1777615926444,2026-05-01T06:12:06+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,83,run,run_start,1777615926736,2026-05-01T06:12:06+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,83,run,run_end,1777616033511,2026-05-01T06:13:53+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,83,reference,reference_start,1777616034795,2026-05-01T06:13:54+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,83,reference,reference_end,1777616040634,2026-05-01T06:14:00+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,83,clean-run,clean-run_start,1777616087442,2026-05-01T06:14:47+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,83,clean-run,clean-run_end,1777616170854,2026-05-01T06:16:10+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,83,avg-run,avg-run_start,1777616213609,2026-05-01T06:16:53+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,83,avg-run,avg-run_end,1777616295620,2026-05-01T06:18:15+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,84,extend,extend_start,1777616295844,2026-05-01T06:18:15+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,84,extend,extend_end,1777617198286,2026-05-01T06:33:18+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,84,vacuum,vacuum_start,1777617252867,2026-05-01T06:34:12+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,84,vacuum,vacuum_end,1777617814978,2026-05-01T06:43:34+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,84,run,run_start,1777617815298,2026-05-01T06:43:35+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,84,run,run_end,1777617916012,2026-05-01T06:45:16+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,84,reference,reference_start,1777617917278,2026-05-01T06:45:17+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,84,reference,reference_end,1777617923164,2026-05-01T06:45:23+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,84,clean-run,clean-run_start,1777617968981,2026-05-01T06:46:08+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,84,clean-run,clean-run_end,1777618055256,2026-05-01T06:47:35+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,84,avg-run,avg-run_start,1777618098310,2026-05-01T06:48:18+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,84,avg-run,avg-run_end,1777618180892,2026-05-01T06:49:40+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,85,extend,extend_start,1777618181114,2026-05-01T06:49:41+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,85,extend,extend_end,1777619152245,2026-05-01T07:05:52+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,85,vacuum,vacuum_start,1777619212091,2026-05-01T07:06:52+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,85,vacuum,vacuum_end,1777619752337,2026-05-01T07:15:52+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,85,run,run_start,1777619752634,2026-05-01T07:15:52+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,85,run,run_end,1777619866569,2026-05-01T07:17:46+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,85,reference,reference_start,1777619867846,2026-05-01T07:17:47+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,85,reference,reference_end,1777619873766,2026-05-01T07:17:53+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,85,clean-run,clean-run_start,1777619920130,2026-05-01T07:18:40+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,85,clean-run,clean-run_end,1777620008218,2026-05-01T07:20:08+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,85,avg-run,avg-run_start,1777620050359,2026-05-01T07:20:50+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,85,avg-run,avg-run_end,1777620133892,2026-05-01T07:22:13+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,86,extend,extend_start,1777620134117,2026-05-01T07:22:14+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,86,extend,extend_end,1777621031293,2026-05-01T07:37:11+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,86,vacuum,vacuum_start,1777621089100,2026-05-01T07:38:09+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,86,vacuum,vacuum_end,1777621591508,2026-05-01T07:46:31+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,86,run,run_start,1777621591806,2026-05-01T07:46:31+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,86,run,run_end,1777621696154,2026-05-01T07:48:16+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,86,reference,reference_start,1777621697439,2026-05-01T07:48:17+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,86,reference,reference_end,1777621703350,2026-05-01T07:48:23+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,86,clean-run,clean-run_start,1777621743085,2026-05-01T07:49:03+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,86,clean-run,clean-run_end,1777621831413,2026-05-01T07:50:31+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,86,avg-run,avg-run_start,1777621874773,2026-05-01T07:51:14+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,86,avg-run,avg-run_end,1777621958782,2026-05-01T07:52:38+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,87,extend,extend_start,1777621959010,2026-05-01T07:52:39+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,87,extend,extend_end,1777622869090,2026-05-01T08:07:49+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,87,vacuum,vacuum_start,1777622933193,2026-05-01T08:08:53+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,87,vacuum,vacuum_end,1777623427844,2026-05-01T08:17:07+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,87,run,run_start,1777623428275,2026-05-01T08:17:08+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,87,run,run_end,1777623533512,2026-05-01T08:18:53+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,87,reference,reference_start,1777623534790,2026-05-01T08:18:54+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,87,reference,reference_end,1777623540641,2026-05-01T08:19:00+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,87,clean-run,clean-run_start,1777623590200,2026-05-01T08:19:50+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,87,clean-run,clean-run_end,1777623679721,2026-05-01T08:21:19+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,87,avg-run,avg-run_start,1777623723620,2026-05-01T08:22:03+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,87,avg-run,avg-run_end,1777623809014,2026-05-01T08:23:29+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,88,extend,extend_start,1777623809241,2026-05-01T08:23:29+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,88,extend,extend_end,1777624712451,2026-05-01T08:38:32+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,88,vacuum,vacuum_start,1777624772997,2026-05-01T08:39:32+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,88,vacuum,vacuum_end,1777625287222,2026-05-01T08:48:07+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,88,run,run_start,1777625287516,2026-05-01T08:48:07+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,88,run,run_end,1777625392405,2026-05-01T08:49:52+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,88,reference,reference_start,1777625393705,2026-05-01T08:49:53+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,88,reference,reference_end,1777625399418,2026-05-01T08:49:59+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,88,clean-run,clean-run_start,1777625448544,2026-05-01T08:50:48+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,88,clean-run,clean-run_end,1777625542235,2026-05-01T08:52:22+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,88,avg-run,avg-run_start,1777625587425,2026-05-01T08:53:07+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,88,avg-run,avg-run_end,1777625673360,2026-05-01T08:54:33+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,89,extend,extend_start,1777625673584,2026-05-01T08:54:33+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,89,extend,extend_end,1777626609959,2026-05-01T09:10:09+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,89,vacuum,vacuum_start,1777626669727,2026-05-01T09:11:09+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,89,vacuum,vacuum_end,1777627190773,2026-05-01T09:19:50+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,89,run,run_start,1777627191065,2026-05-01T09:19:51+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,89,run,run_end,1777627294844,2026-05-01T09:21:34+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,89,reference,reference_start,1777627296151,2026-05-01T09:21:36+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,89,reference,reference_end,1777627301747,2026-05-01T09:21:41+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,89,clean-run,clean-run_start,1777627350862,2026-05-01T09:22:30+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,89,clean-run,clean-run_end,1777627438505,2026-05-01T09:23:58+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,89,avg-run,avg-run_start,1777627485039,2026-05-01T09:24:45+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,89,avg-run,avg-run_end,1777627571953,2026-05-01T09:26:11+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,90,extend,extend_start,1777627572178,2026-05-01T09:26:12+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,90,extend,extend_end,1777628532011,2026-05-01T09:42:12+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,90,vacuum,vacuum_start,1777628594579,2026-05-01T09:43:14+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,90,vacuum,vacuum_end,1777629136331,2026-05-01T09:52:16+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,90,run,run_start,1777629136624,2026-05-01T09:52:16+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,90,run,run_end,1777629231053,2026-05-01T09:53:51+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,90,reference,reference_start,1777629232345,2026-05-01T09:53:52+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,90,reference,reference_end,1777629238245,2026-05-01T09:53:58+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,90,clean-run,clean-run_start,1777629286935,2026-05-01T09:54:46+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,90,clean-run,clean-run_end,1777629375888,2026-05-01T09:56:15+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,90,avg-run,avg-run_start,1777629422997,2026-05-01T09:57:02+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,90,avg-run,avg-run_end,1777629511296,2026-05-01T09:58:31+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,91,extend,extend_start,1777629511522,2026-05-01T09:58:31+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,91,extend,extend_end,1777630509116,2026-05-01T10:15:09+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,91,vacuum,vacuum_start,1777630596126,2026-05-01T10:16:36+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,91,vacuum,vacuum_end,1777631159028,2026-05-01T10:25:59+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,91,run,run_start,1777631159323,2026-05-01T10:25:59+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,91,run,run_end,1777631254111,2026-05-01T10:27:34+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,91,reference,reference_start,1777631255402,2026-05-01T10:27:35+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,91,reference,reference_end,1777631261155,2026-05-01T10:27:41+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,91,clean-run,clean-run_start,1777631309391,2026-05-01T10:28:29+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,91,clean-run,clean-run_end,1777631400682,2026-05-01T10:30:00+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,91,avg-run,avg-run_start,1777631447539,2026-05-01T10:30:47+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,91,avg-run,avg-run_end,1777631536497,2026-05-01T10:32:16+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,92,extend,extend_start,1777631536723,2026-05-01T10:32:16+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,92,extend,extend_end,1777632515400,2026-05-01T10:48:35+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,92,vacuum,vacuum_start,1777632577507,2026-05-01T10:49:37+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,92,vacuum,vacuum_end,1777633119113,2026-05-01T10:58:39+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,92,run,run_start,1777633119405,2026-05-01T10:58:39+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,92,run,run_end,1777633218515,2026-05-01T11:00:18+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,92,reference,reference_start,1777633219812,2026-05-01T11:00:19+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,92,reference,reference_end,1777633225457,2026-05-01T11:00:25+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,92,clean-run,clean-run_start,1777633267918,2026-05-01T11:01:07+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,92,clean-run,clean-run_end,1777633362601,2026-05-01T11:02:42+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,92,avg-run,avg-run_start,1777633409356,2026-05-01T11:03:29+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,92,avg-run,avg-run_end,1777633500604,2026-05-01T11:05:00+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,93,extend,extend_start,1777633500832,2026-05-01T11:05:00+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,93,extend,extend_end,1777634480278,2026-05-01T11:21:20+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,93,vacuum,vacuum_start,1777634543562,2026-05-01T11:22:23+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,93,vacuum,vacuum_end,1777635069292,2026-05-01T11:31:09+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,93,run,run_start,1777635069584,2026-05-01T11:31:09+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,93,run,run_end,1777635179457,2026-05-01T11:32:59+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,93,reference,reference_start,1777635180790,2026-05-01T11:33:00+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,93,reference,reference_end,1777635186627,2026-05-01T11:33:06+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,93,clean-run,clean-run_start,1777635235517,2026-05-01T11:33:55+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,93,clean-run,clean-run_end,1777635326838,2026-05-01T11:35:26+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,93,avg-run,avg-run_start,1777635374675,2026-05-01T11:36:14+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,93,avg-run,avg-run_end,1777635466193,2026-05-01T11:37:46+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,94,extend,extend_start,1777635466418,2026-05-01T11:37:46+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,94,extend,extend_end,1777636553174,2026-05-01T11:55:53+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,94,vacuum,vacuum_start,1777636618872,2026-05-01T11:56:58+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,94,vacuum,vacuum_end,1777637233708,2026-05-01T12:07:13+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,94,run,run_start,1777637234002,2026-05-01T12:07:14+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,94,run,run_end,1777637346069,2026-05-01T12:09:06+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,94,reference,reference_start,1777637347416,2026-05-01T12:09:07+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,94,reference,reference_end,1777637352971,2026-05-01T12:09:12+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,94,clean-run,clean-run_start,1777637395336,2026-05-01T12:09:55+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,94,clean-run,clean-run_end,1777637492781,2026-05-01T12:11:32+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,94,avg-run,avg-run_start,1777637541264,2026-05-01T12:12:21+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,94,avg-run,avg-run_end,1777637633598,2026-05-01T12:13:53+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,95,extend,extend_start,1777637633822,2026-05-01T12:13:53+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,95,extend,extend_end,1777638614973,2026-05-01T12:30:14+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,95,vacuum,vacuum_start,1777638672065,2026-05-01T12:31:12+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,95,vacuum,vacuum_end,1777639199593,2026-05-01T12:39:59+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,95,run,run_start,1777639199883,2026-05-01T12:39:59+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,95,run,run_end,1777639317210,2026-05-01T12:41:57+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,95,reference,reference_start,1777639318541,2026-05-01T12:41:58+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,95,reference,reference_end,1777639324475,2026-05-01T12:42:04+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,95,clean-run,clean-run_start,1777639374645,2026-05-01T12:42:54+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,95,clean-run,clean-run_end,1777639468472,2026-05-01T12:44:28+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,95,avg-run,avg-run_start,1777639516996,2026-05-01T12:45:16+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,95,avg-run,avg-run_end,1777639609960,2026-05-01T12:46:49+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,96,extend,extend_start,1777639610184,2026-05-01T12:46:50+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,96,extend,extend_end,1777640741177,2026-05-01T13:05:41+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,96,vacuum,vacuum_start,1777640809197,2026-05-01T13:06:49+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,96,vacuum,vacuum_end,1777641462300,2026-05-01T13:17:42+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,96,run,run_start,1777641462593,2026-05-01T13:17:42+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,96,run,run_end,1777641596921,2026-05-01T13:19:56+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,96,reference,reference_start,1777641598216,2026-05-01T13:19:58+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,96,reference,reference_end,1777641604085,2026-05-01T13:20:04+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,96,clean-run,clean-run_start,1777641652220,2026-05-01T13:20:52+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,96,clean-run,clean-run_end,1777641749619,2026-05-01T13:22:29+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,96,avg-run,avg-run_start,1777641798439,2026-05-01T13:23:18+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,96,avg-run,avg-run_end,1777641892865,2026-05-01T13:24:52+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,97,extend,extend_start,1777641893088,2026-05-01T13:24:53+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,97,extend,extend_end,1777642968863,2026-05-01T13:42:48+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,97,vacuum,vacuum_start,1777643035084,2026-05-01T13:43:55+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,97,vacuum,vacuum_end,1777643720526,2026-05-01T13:55:20+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,97,run,run_start,1777643720820,2026-05-01T13:55:20+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,97,run,run_end,1777643836360,2026-05-01T13:57:16+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,97,reference,reference_start,1777643837688,2026-05-01T13:57:17+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,97,reference,reference_end,1777643843602,2026-05-01T13:57:23+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,97,clean-run,clean-run_start,1777643886489,2026-05-01T13:58:06+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,97,clean-run,clean-run_end,1777643986097,2026-05-01T13:59:46+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,97,avg-run,avg-run_start,1777644035345,2026-05-01T14:00:35+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,97,avg-run,avg-run_end,1777644130169,2026-05-01T14:02:10+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,98,extend,extend_start,1777644130395,2026-05-01T14:02:10+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,98,extend,extend_end,1777645146176,2026-05-01T14:19:06+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,98,vacuum,vacuum_start,1777645212597,2026-05-01T14:20:12+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,98,vacuum,vacuum_end,1777645779856,2026-05-01T14:29:39+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,98,run,run_start,1777645780148,2026-05-01T14:29:40+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,98,run,run_end,1777645898278,2026-05-01T14:31:38+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,98,reference,reference_start,1777645899589,2026-05-01T14:31:39+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,98,reference,reference_end,1777645905365,2026-05-01T14:31:45+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,98,clean-run,clean-run_start,1777645959476,2026-05-01T14:32:39+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,98,clean-run,clean-run_end,1777646055620,2026-05-01T14:34:15+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,98,avg-run,avg-run_start,1777646105870,2026-05-01T14:35:05+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,98,avg-run,avg-run_end,1777646201344,2026-05-01T14:36:41+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,99,extend,extend_start,1777646201568,2026-05-01T14:36:41+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,99,extend,extend_end,1777647250839,2026-05-01T14:54:10+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,99,vacuum,vacuum_start,1777647317994,2026-05-01T14:55:17+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,99,vacuum,vacuum_end,1777647905033,2026-05-01T15:05:05+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,99,run,run_start,1777647905566,2026-05-01T15:05:05+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,99,run,run_end,1777648011243,2026-05-01T15:06:51+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,99,reference,reference_start,1777648012546,2026-05-01T15:06:52+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,99,reference,reference_end,1777648018199,2026-05-01T15:06:58+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,99,clean-run,clean-run_start,1777648073074,2026-05-01T15:07:53+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,99,clean-run,clean-run_end,1777648171328,2026-05-01T15:09:31+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,99,avg-run,avg-run_start,1777648222831,2026-05-01T15:10:22+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,99,avg-run,avg-run_end,1777648319832,2026-05-01T15:11:59+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,100,extend,extend_start,1777648320059,2026-05-01T15:12:00+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,100,extend,extend_end,1777649370654,2026-05-01T15:29:30+00:00,10000,100000,zipfian,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,100,vacuum,vacuum_start,1777649433193,2026-05-01T15:30:33+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,100,vacuum,vacuum_end,1777650021625,2026-05-01T15:40:21+00:00,10000,100000,zipfian,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,100,run,run_start,1777650022055,2026-05-01T15:40:22+00:00,10000,100000,uniform,100,db=ycsb
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,100,run,run_end,1777650131867,2026-05-01T15:42:11+00:00,10000,100000,uniform,100,db=ycsb exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,100,reference,reference_start,1777650133173,2026-05-01T15:42:13+00:00,10000,100000,uniform,100,db=ycsb_unchange
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,100,reference,reference_end,1777650138765,2026-05-01T15:42:18+00:00,10000,100000,uniform,100,db=ycsb_unchange exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,100,clean-run,clean-run_start,1777650193463,2026-05-01T15:43:13+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,100,clean-run,clean-run_end,1777650294345,2026-05-01T15:44:54+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,100,avg-run,avg-run_start,1777650345969,2026-05-01T15:45:45+00:00,10000,100000,uniform,100,db=ycsb_backup
+postgresql_arrayjson_TOAST_HYPOTHESIS_run1_zipfian_heavy_pure,100,avg-run,avg-run_end,1777650443358,2026-05-01T15:47:23+00:00,10000,100000,uniform,100,db=ycsb_backup exit=0

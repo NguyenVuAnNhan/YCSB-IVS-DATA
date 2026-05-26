@@ -4,6 +4,16 @@ This repo contains benchmark CSVs in `DATA/` and plotting/analysis scripts in `s
 
 For raw column definitions and metric meanings, see `DATA_DICTIONARY.qmd` or the rendered `DATA_DICTIONARY.html`.
 
+## Local Agent Harness
+
+This repo includes a small read-only hypothesis harness for latency-spike investigations:
+
+```bash
+python -m agents.run --input DATA/postgresql_run1_uniform_heavy.csv --out runs/agent_investigation_001 --rounds 2
+```
+
+Use `python3` if this system has no `python` alias. The harness writes `evidence_summary.json`, `state.json`, `agent_logs.jsonl`, and `report.md` under the output directory. The default backend is deterministic mock output and needs no API keys. See `docs/agent_harness.md` for input formats, backend configuration, limitations, and the warning that agents suggest hypotheses rather than conclusions.
+
 ## 1) Prerequisites
 
 Use Python 3 with:
