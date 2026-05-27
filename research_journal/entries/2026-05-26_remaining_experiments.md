@@ -11,6 +11,8 @@ The current harness has expanded observability for PostgreSQL/YCSB value-size ex
 
 The mechanism is better constrained but not fully closed. Existing FULL_VIEW runs suggest cache residency and/or run-environment differences matter, and one EC2 host had disk-space/history confounds. The remaining work should prioritize clean, comparable runs over adding more instrumentation.
 
+Status update on 2026-05-28: Heavy NOVACC is now completed, pulled, and analyzed. Heavy VACC run 3 and Heavy pg_prewarm heap plus TOAST-index are active remotely but not yet completed/pulled. Heavy pg_prewarm TOAST-index-only is active remotely as clean `run3` after two instrumentation-only early launch failures.
+
 ## Scale Modes
 
 - `light`: paper-matching lightweight scale for checking whether the mechanism appears under smaller data volume.
@@ -42,13 +44,14 @@ Before launching long runs, confirm:
    - Scale: `heavy`
    - Vacuum: on
    - Priority: highest
+   - Status: historical completed runs are local as `FULL_VIEW/full_view_run1` and `FULL_VIEW/full_view_run2_3_106_232_96`; clean run 3 is active remotely as `full_view_heavy_vacc_run3` on `3.107.72.70`.
    - Rationale: this is the main stressed baseline. It has been run, but one host had disk/history confounds, so a clean rerun is useful.
 
 2. Heavy NOVACC baseline
    - Scale: `heavy`
    - Vacuum: off
    - Priority: highest
-   - Status: running as `full_view_heavy_novacc_run1` on EC2 host `13.236.86.169`, started 2026-05-26T09:26:23Z.
+   - Status: completed, pulled, and analyzed as `FULL_VIEW_NOVACC/full_view_heavy_novacc_run1`; remote run started `2026-05-26T09:26:23Z` and ended `2026-05-27T13:45:04Z`.
    - Rationale: counterpart to heavy VACC; tests whether vacuum/free-space churn materially changes latency, WAL, dead tuples, and TOAST-related behavior.
 
 3. Light VACC baseline
@@ -70,6 +73,7 @@ Before launching long runs, confirm:
    - Vacuum: match the baseline being compared
    - Intervention: `SPIKE_TRIGGER_PREWARM_ENABLED=1`, `SPIKE_TRIGGER_PREWARM_MODE=toast_index`
    - Priority: high after the clean heavy baselines
+   - Status: active remotely as clean `full_view_heavy_prewarm_toast_index_run3` on `16.176.19.144`; `run1` and `run2` failed before vacuum/prewarm due optional workload metadata handling in instrumentation. `run3` passed epoch 1 vacuum, recorded TOAST-index-only `pg_prewarm` status `ok`, and completed the first run/read phase.
    - Rationale: if p95/p99 improves after warming the TOAST index, that is evidence consistent with cache-residency sensitivity.
 
 6. Heavy pg_prewarm, heap plus TOAST index
@@ -77,6 +81,7 @@ Before launching long runs, confirm:
    - Vacuum: match the prior intervention
    - Intervention: `SPIKE_TRIGGER_PREWARM_MODE=heap_toast_index`
    - Priority: conditional
+   - Status: active remotely as `full_view_heavy_prewarm_heap_toast_index_run1` on `3.104.54.25`; at `2026-05-27T15:08Z`, it was around epoch `97` and had successful heap plus TOAST-index prewarm rows through epoch `97`.
    - Rationale: only needed if TOAST-index-only warming helps or is ambiguous. It tests whether broader relation warming changes the result.
 
 ## Optional Follow-Ups
@@ -91,12 +96,11 @@ Before launching long runs, confirm:
 
 ## Recommended Order
 
-1. Heavy VACC clean rerun.
-2. Heavy NOVACC.
-3. Light VACC.
-4. Light NOVACC.
-5. Heavy pg_prewarm with `toast_index`.
-6. Heavy pg_prewarm with `heap_toast_index`, if the first intervention is promising or ambiguous.
+1. Let Heavy VACC run 3, Heavy pg_prewarm heap plus TOAST-index, and Heavy pg_prewarm TOAST-index-only finish.
+2. Pull completed remote run directories after compressing them on the EC2 hosts.
+3. Validate artifacts and run the VACC/NOVACC/prewarm comparison.
+4. Run Light VACC and Light NOVACC only if we still need the smaller-scale cache-threshold test.
+5. Run the JSONB ARRAY vs TEXT[] vs TEXT control after the baseline/intervention comparison is settled.
 
 ## What Success Looks Like
 

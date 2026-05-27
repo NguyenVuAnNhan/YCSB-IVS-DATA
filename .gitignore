@@ -9,6 +9,7 @@ PERSISTED_3_107_72_70_2026-05-26/
 TOAST_hypothesis_2/
 TOAST_hypothesis_2.zip
 TOAST_HYPOTHESIS/IVS3.tar.gz
+FULL_VIEW_NOVACC/
 
 # High-volume diagnostic captures are kept locally, not in Git.
 *_slow_read_sample.csv
